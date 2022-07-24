@@ -13,7 +13,10 @@ const Nav: React.FC<INavProps> = () => {
   return (
     <S.Nav>
       <S.ListContainer ref={navWrapperRef} className='network-padding' id='king-denis'>
-        <S.ListItem onClick={onPageReset}>CSS</S.ListItem>
+        <S.ListItem onClick={onPageReset}>
+          <S.ListItemLogo>CSS</S.ListItemLogo>
+          <S.ListItemLogo>HUB</S.ListItemLogo>
+        </S.ListItem>
         <S.ListItem>{utils.translate('translateTopNavigation.tvShow')}</S.ListItem>
         <S.ListItem>{utils.translate('translateTopNavigation.movie')}</S.ListItem>
         <S.ListItem>{utils.translate('translateTopNavigation.people')}</S.ListItem>

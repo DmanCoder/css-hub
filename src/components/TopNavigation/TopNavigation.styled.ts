@@ -47,6 +47,20 @@ export const ListContainer = styled.ul`
   }
 `;
 
+export const ListItemLogo = styled.li`
+  font-size: 2.4rem;
+  font-weight: 800;
+  cursor: pointer;
+
+  @media ${({ theme }) => theme.mediaQ.tablet45} {
+    font-size: 2.1rem;
+  }
+
+  &:last-child {
+    color: ${(props) => props.theme.colors.primary};
+  }
+`;
+
 export const ListItem = styled.li`
   align-self: center;
   padding: 1rem;
@@ -62,24 +76,10 @@ export const ListItem = styled.li`
 
   /* LOGO */
   &:first-child {
-    font-size: 2.4rem;
-    font-weight: 800;
     order: 1;
-    cursor: pointer;
-
-    @media ${({ theme }) => theme.mediaQ.tablet45} {
-      font-size: 2.1rem;
-    }
 
     @media ${({ theme }) => theme.mediaQ.laptop64} {
       order: 0;
-    }
-
-    &::after {
-      margin-left: 0.25rem;
-      content: 'HUB';
-      display: inline-block;
-      color: ${(props) => props.theme.colors.primary};
     }
   }
 
