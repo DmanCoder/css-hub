@@ -7,7 +7,7 @@ const isProd: boolean = process.env.NODE_ENV === 'production' ? true : false;
 const isAttr: boolean | undefined = process.env.NODE_ENV === 'production' ? undefined : true;
 
 // Base URL string
-const dbURL = !isProd ? 'http://localhost:5000' : process.env.REACT_APP_NODE_API;
+const dbURL = !isProd ? 'http://localhost:5000' : process.env.REACT_APP_CSS_HUB_NODE_API;
 
 // Image URL
 const imgURL = 'https://image.tmdb.org/t/p';
