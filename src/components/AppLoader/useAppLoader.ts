@@ -47,6 +47,7 @@ const useAppLoader = () => {
       initialLoaderTL.current.kill();
 
       onChangeBackgroundOfDotsAndExitLoadingAnimation({
+        mediaDetails,
         exitLoaderTL,
         dotsRef: dotsRef.current,
         loaderRef: loaderRef.current,

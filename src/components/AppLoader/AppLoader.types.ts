@@ -1,3 +1,5 @@
+import { MediaDetails } from '../../redux/actions/popularActions/popularActions.types';
+
 export interface IAppLoaderProps {}
 
 export type StartDotsAnimationTypes = {
@@ -14,6 +16,7 @@ export type LoadAllImagesTypes = {
 };
 
 export type ExitLoadingTypes = {
+  mediaDetails: MediaDetails;
   exitLoaderTL: React.MutableRefObject<gsap.core.Timeline>;
   dotsRef: HTMLDivElement[];
   loaderRef: HTMLDivElement | null;

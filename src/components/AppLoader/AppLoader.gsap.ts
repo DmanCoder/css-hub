@@ -29,64 +29,66 @@ export const onStartStaggeredDotsAnimation = ({
 };
 
 export const onChangeBackgroundOfDotsAndExitLoadingAnimation = ({
+  mediaDetails,
   exitLoaderTL,
   dotsRef,
   loaderRef,
+  taglineRef,
 }: ExitLoadingTypes) => {
-  exitLoaderTL.current
-    .to(dotsRef, {
-      backgroundColor: '#4a4a4a',
-      ease: 'power1.in',
-    })
-    .to(dotsRef, {
-      duration: 0.4,
-      autoAlpha: 0,
-      ease: 'power1.in',
-    })
-    .to(loaderRef, {
-      duration: 0.65,
-      autoAlpha: 0,
-      ease: 'power1.in',
-    })
-    .to('body', {
-      css: {
-        overflow: 'auto',
-      },
-    });
-
-  // exitLoaderTL.current
-  // .to(dotsRef, {
-  //   backgroundColor: '#4a4a4a',
-  // })
-  // .to(dotsRef, {
-  //   duration: 0.45,
-  //   autoAlpha: 0,
-  // })
-  // .to(taglineRef, {
-  //   duration: 1,
-  //   autoAlpha: 1,
-  //   ease: 'none',
-  // })
-  // .to(taglineRef, {
-  //   duration: 1,
-  //   autoAlpha: 0,
-  //   ease: 'none',
-  // })
-  // .fromTo(
-  //   loaderRef,
-  //   { delay: 3, autoAlpha: 1, scale: 1 },
-  //   {
-  //     delay: 3,
-  //     duration: 0.47,
-  //     autoAlpha: 0,
-  //     ease: 'none',
-  //   },
-  // )
-  // .to('body', {
-  //   css: {
-  //     overflow: 'auto',
-  //   },
-  // });
+  if (!utils.isEmpty(mediaDetails?.tagline)) {
+    exitLoaderTL.current
+      .to(dotsRef, {
+        backgroundColor: '#4a4a4a',
+        ease: 'power1.in',
+      })
+      .to(dotsRef, {
+        duration: 0.4,
+        autoAlpha: 0,
+        ease: 'power1.in',
+      })
+      .to(taglineRef, {
+        duration: 0.4,
+        autoAlpha: 1,
+        ease: 'power1.in',
+      })
+      .to(taglineRef, {
+        delay: 2,
+        duration: 0.4,
+        autoAlpha: 0,
+        ease: 'power1.in',
+      })
+      .to(loaderRef, {
+        duration: 0.65,
+        autoAlpha: 0,
+        ease: 'power1.in',
+      })
+      .to('body', {
+        css: {
+          overflow: 'auto',
+        },
+      });
+  } else {
+    exitLoaderTL.current
+      .to(dotsRef, {
+        backgroundColor: '#4a4a4a',
+        ease: 'power1.in',
+      })
+      .to(dotsRef, {
+        duration: 0.4,
+        autoAlpha: 0,
+        ease: 'power1.in',
+      })
+      .to(loaderRef, {
+        duration: 0.65,
+        autoAlpha: 0,
+        ease: 'power1.in',
+      })
+      .to('body', {
+        css: {
+          overflow: 'auto',
+        },
+      });
+  }
 };
 
 export const onLoadAllImages = ({ setHasLoadedImages }: LoadAllImagesTypes) => {

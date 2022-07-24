@@ -13,6 +13,7 @@ const AppLoader: React.FC<IAppLoaderProps> = () => {
       <S.Dots ref={(el: HTMLDivElement) => dotsRef.current.push(el)}></S.Dots>
       <S.Dots ref={(el: HTMLDivElement) => dotsRef.current.push(el)}></S.Dots>
       <S.Dots ref={(el: HTMLDivElement) => dotsRef.current.push(el)}></S.Dots>
+
       <S.MediaTagline ref={taglineRef}>{mediaDetails?.tagline}</S.MediaTagline>
     </S.AppLoaderWrapper>
   );
