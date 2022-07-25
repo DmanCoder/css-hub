@@ -14,6 +14,11 @@ import AppleTV from './logos/AppleTV';
 import HBOMax from './logos/HBOMax';
 import Netflix from './logos/Netflix';
 
+import AustraliaFlag from './imgs/flags/australia.png';
+import CanadaFlag from './imgs/flags/canada.png';
+import UnitedKingdom from './imgs/flags/united-kingdom.png';
+import UnitedStates from './imgs/flags/united-states.png';
+
 import { AssetsTypes } from './assets.types';
 
 const Assets: AssetsTypes = {
@@ -34,6 +39,12 @@ const Assets: AssetsTypes = {
     Exit,
     Play,
     Shuffle,
+  },
+  imgs: {
+    AustraliaFlag,
+    CanadaFlag,
+    UnitedKingdom,
+    UnitedStates,
   },
 };
 

@@ -34,7 +34,15 @@ export type IconsTypes = {
   Shuffle: React.FC<IShuffleProps>;
 };
 
+export type ImgsTypes = {
+  AustraliaFlag: string;
+  CanadaFlag: string;
+  UnitedKingdom: string;
+  UnitedStates: string;
+};
+
 export type AssetsTypes = {
   Logos: LogoTypes;
   Icons: IconsTypes;
+  imgs: ImgsTypes;
 };

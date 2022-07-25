@@ -17,7 +17,10 @@ const Nav: React.FC<INavProps> = () => {
         <S.ListItem {...onLongPress} onMouseLeave={onHideCountryList}>
           <S.LogoContainer>
             <S.ListItemLogo>CSS</S.ListItemLogo>
-            <S.ListItemLogo>HUB</S.ListItemLogo>
+            <S.ListItemLogo>
+              HUB
+              <S.CountryFlag src={require(`../../assets/imgs/flags/${'australia.png'}`)} />
+            </S.ListItemLogo>
           </S.LogoContainer>
 
           <S.CountryItems className='country-list'>

@@ -8,6 +8,7 @@ import { gsap } from '../../gsap';
 
 const useTopNavigation = (): UseTopNavigationReturnType => {
   const dispatch = useDispatch();
+
   const { isShowLeftNavigation } = useSelector((state: RootStore) => state.networkRXS);
   const navWrapperRef = React.useRef<HTMLUListElement>(null);
   const countryTL = React.useRef(gsap.timeline({ paused: true }));
@@ -30,12 +31,10 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
   const onPageReset = () => window.location.reload();
 
   const onShowCountryList = () => {
-    console.log('longpress is triggered');
     countryTL.current.play();
   };
 
   const onHideCountryList = () => {
-    console.log('HIDE COUNTRYLIST');
     countryTL.current.reverse();
   };
 

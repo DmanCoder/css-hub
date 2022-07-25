@@ -75,7 +75,10 @@ export const CountryItem = styled.li`
   padding: 0.5rem;
   background-color: pink;
   white-space: nowrap;
+  margin-bottom: 1rem;
 `;
+
+export const CountryFlag = styled.img``;
 
 export const ListItem = styled.li`
   align-self: center;
