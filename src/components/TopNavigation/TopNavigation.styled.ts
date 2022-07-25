@@ -68,6 +68,8 @@ export const CountryItems = styled.ul`
   position: absolute;
   bottom: -8rem;
   text-align: center;
+  background: transparent;
+  padding-top: 3rem;
 `;
 
 export const CountryItem = styled.li``;

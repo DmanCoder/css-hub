@@ -27,13 +27,16 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
     );
   };
 
-  // Short Click
   const onPageReset = () => window.location.reload();
 
-  // Long Press
   const onShowCountryList = () => {
     console.log('longpress is triggered');
     countryTL.current.play();
+  };
+
+  const onHideCountryList = () => {
+    console.log('HIDE COUNTRYLIST');
+    countryTL.current.reverse();
   };
 
   const onLongPress = useLongPress({ onPageReset, onShowCountryList });
@@ -42,6 +45,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
     onToggleSideNetworkDisplay,
     navWrapperRef,
     onLongPress,
+    onHideCountryList,
   };
 };
 

@@ -8,16 +8,18 @@ import * as S from './TopNavigation.styled';
 import utils from '../../utils';
 
 const Nav: React.FC<INavProps> = () => {
-  const { onToggleSideNetworkDisplay, navWrapperRef, onLongPress } = useTopNavigation();
+  const { onToggleSideNetworkDisplay, navWrapperRef, onLongPress, onHideCountryList } =
+    useTopNavigation();
 
   return (
     <S.Nav>
       <S.ListContainer ref={navWrapperRef} className='network-padding' id='king-denis'>
-        <S.ListItem {...onLongPress}>
+        <S.ListItem {...onLongPress} onMouseLeave={onHideCountryList}>
           <S.LogoContainer>
             <S.ListItemLogo>CSS</S.ListItemLogo>
             <S.ListItemLogo>HUB</S.ListItemLogo>
           </S.LogoContainer>
+
           <S.CountryItems className='country-list'>
             <S.CountryItem>Australia</S.CountryItem>
             <S.CountryItem>Great Britain</S.CountryItem>

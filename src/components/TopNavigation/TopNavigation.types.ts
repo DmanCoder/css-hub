@@ -16,4 +16,5 @@ export type UseTopNavigationReturnType = {
   onToggleSideNetworkDisplay: () => void;
   navWrapperRef: React.RefObject<HTMLUListElement>;
   onLongPress: object;
+  onHideCountryList: () => void;
 };
