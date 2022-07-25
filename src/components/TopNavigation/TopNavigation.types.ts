@@ -2,7 +2,7 @@ import React from 'react';
 export interface INavProps {}
 
 export type LongPressParamsTypes = {
-  onShowCountryList: (event: any) => void;
+  onShowCountryList: () => void;
   onPageReset: () => void;
   shouldPreventDefault?: ShouldPreventDefaultTypes;
 };

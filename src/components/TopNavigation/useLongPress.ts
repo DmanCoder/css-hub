@@ -33,7 +33,7 @@ const useLongPress = ({
         target.current = event.target;
       }
       timeout.current = setTimeout(() => {
-        onShowCountryList(event);
+        onShowCountryList();
         setLongPressTriggered(true);
       }, shouldPreventDefault.delay);
     },

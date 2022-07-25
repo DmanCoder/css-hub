@@ -22,7 +22,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
   const onPageReset = () => window.location.reload();
 
   // Long Press
-  const onShowCountryList = (event: any) => {
+  const onShowCountryList = () => {
     console.log('longpress is triggered');
   };
 
