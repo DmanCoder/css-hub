@@ -56,7 +56,7 @@ export const ListItemLogo = styled.span`
     font-size: 2.1rem;
   }
 
-  &:last-child {
+  &:nth-child(2) {
     color: ${(props) => props.theme.colors.primary};
   }
 `;
