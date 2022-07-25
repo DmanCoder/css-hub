@@ -66,13 +66,16 @@ export const LogoContainer = styled.div``;
 export const CountryItems = styled.ul`
   display: none;
   position: absolute;
-  bottom: -8rem;
   text-align: center;
   background: transparent;
   padding-top: 3rem;
 `;
 
-export const CountryItem = styled.li``;
+export const CountryItem = styled.li`
+  padding: 0.5rem;
+  background-color: pink;
+  white-space: nowrap;
+`;
 
 export const ListItem = styled.li`
   align-self: center;
@@ -90,7 +93,8 @@ export const ListItem = styled.li`
   /* LOGO */
   &:first-child {
     order: 1;
-    position: relative;
+    flex-direction: column;
+    /* position: relative; */
 
     @media ${({ theme }) => theme.mediaQ.laptop64} {
       order: 0;
