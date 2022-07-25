@@ -1,4 +1,6 @@
 import React from 'react';
+import { CountryFlagTypes } from '../../typescriptGlobals/types';
+
 export interface INavProps {}
 
 export type LongPressParamsTypes = {
@@ -17,4 +19,5 @@ export type UseTopNavigationReturnType = {
   navWrapperRef: React.RefObject<HTMLUListElement>;
   onLongPress: object;
   onHideCountryList: () => void;
+  countryRXS: CountryFlagTypes;
 };

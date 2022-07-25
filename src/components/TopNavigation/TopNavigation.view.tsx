@@ -8,7 +8,7 @@ import * as S from './TopNavigation.styled';
 import utils from '../../utils';
 
 const Nav: React.FC<INavProps> = () => {
-  const { onToggleSideNetworkDisplay, navWrapperRef, onLongPress, onHideCountryList } =
+  const { onToggleSideNetworkDisplay, navWrapperRef, onLongPress, onHideCountryList, countryRXS } =
     useTopNavigation();
 
   return (
@@ -20,8 +20,8 @@ const Nav: React.FC<INavProps> = () => {
             <S.ListItemLogo>
               HUB
               <S.CountryFlag
-                src={require(`../../assets/imgs/flags/${'australia.png'}`)}
-                title='Australia Flag'
+                src={require(`../../assets/imgs/flags/${countryRXS?.url}`)}
+                title={countryRXS?.name}
               />
             </S.ListItemLogo>
           </S.LogoContainer>

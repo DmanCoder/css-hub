@@ -52,3 +52,8 @@ export type SelectedNetworkTypes = {
   networkId: NetworkIdTypes;
   networkName: NetworkNameTypes;
 };
+
+export type CountryFlagTypes = {
+  name: string;
+  url: string;
+};

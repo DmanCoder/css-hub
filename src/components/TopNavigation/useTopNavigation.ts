@@ -10,6 +10,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
   const dispatch = useDispatch();
 
   const { isShowLeftNavigation } = useSelector((state: RootStore) => state.networkRXS);
+  const countryRXS = useSelector((state: RootStore) => state.countryRXS);
   const navWrapperRef = React.useRef<HTMLUListElement>(null);
   const countryTL = React.useRef(gsap.timeline({ paused: true }));
 
@@ -45,6 +46,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
     navWrapperRef,
     onLongPress,
     onHideCountryList,
+    countryRXS,
   };
 };
 

@@ -4,7 +4,7 @@ import { IDefaultState } from './countryReducer.types';
 
 const defaultState: IDefaultState = {
   name: 'Australia Flag',
-  url: '/australia.png',
+  url: 'australia.png',
 };
 
 const countryReducer = (state = defaultState, action: ICountryDispatchTypes) => {
