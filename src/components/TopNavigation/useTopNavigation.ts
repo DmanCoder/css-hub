@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleLeftSideNavigationToShowAvailableStreamingServicesAXN } from '../../redux/actions/streamingServicesActions/streamingServicesActions';
 import { RootStore } from '../../redux/store';
 import { UseTopNavigationReturnType } from './TopNavigation.types';
+import useLongPress from './useLongPress';
 
 const useTopNavigation = (): UseTopNavigationReturnType => {
   const dispatch = useDispatch();
@@ -17,13 +18,21 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
     );
   };
 
+  // Short Click
   const onPageReset = () => window.location.reload();
 
-  const onActivateCountrySelection = () => {
-    console.log('Show active');
+  // Long Press
+  const onShowCountryList = () => {
+    console.log('longpress is triggered');
   };
 
-  return { onToggleSideNetworkDisplay, navWrapperRef, onPageReset, onActivateCountrySelection };
+  const onLongPress = useLongPress({ onPageReset, onShowCountryList });
+
+  return {
+    onToggleSideNetworkDisplay,
+    navWrapperRef,
+    onLongPress,
+  };
 };
 
 export default useTopNavigation;
