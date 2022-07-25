@@ -19,7 +19,10 @@ const Nav: React.FC<INavProps> = () => {
             <S.ListItemLogo>CSS</S.ListItemLogo>
             <S.ListItemLogo>
               HUB
-              <S.CountryFlag src={require(`../../assets/imgs/flags/${'australia.png'}`)} />
+              <S.CountryFlag
+                src={require(`../../assets/imgs/flags/${'australia.png'}`)}
+                title='Australia Flag'
+              />
             </S.ListItemLogo>
           </S.LogoContainer>
 

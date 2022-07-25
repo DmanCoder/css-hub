@@ -47,10 +47,25 @@ export const ListContainer = styled.ul`
   }
 `;
 
+export const CountryFlag = styled.img`
+  width: 1.3rem;
+  border: 0.2rem solid ${({ theme }) => theme.colors.bgPrimaryInverse};
+  border-radius: 50%;
+  position: absolute;
+  right: -0.9rem;
+  top: -0.4rem;
+
+  @media ${({ theme }) => theme.mediaQ.tablet45} {
+    top: -0.5rem;
+    right: -1rem;
+  }
+`;
+
 export const ListItemLogo = styled.span`
   font-size: 2.4rem;
   font-weight: 800;
   cursor: pointer;
+  position: relative;
 
   @media ${({ theme }) => theme.mediaQ.tablet45} {
     font-size: 2.1rem;
@@ -77,8 +92,6 @@ export const CountryItem = styled.li`
   white-space: nowrap;
   margin-bottom: 1rem;
 `;
-
-export const CountryFlag = styled.img``;
 
 export const ListItem = styled.li`
   align-self: center;
