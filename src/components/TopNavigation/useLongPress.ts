@@ -1,6 +1,8 @@
 import { useCallback, useRef, useState } from 'react';
 import { LongPressParamsTypes } from './TopNavigation.types';
 
+// TODO: REFACTOR THIS LATER
+
 const isTouchEvent = (event: any) => {
   return 'touches' in event;
 };
