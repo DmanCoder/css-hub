@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from 'react';
-import { OnLongPressParams } from './TopNavigation.types';
+import { LongPressParams } from './TopNavigation.types';
 
-const useLongPress = ({ onPageReset, onShowCountryList }: OnLongPressParams) => {
+const useLongPress = ({ onPageReset, onShowCountryList }: LongPressParams) => {
   console.log('useLongPress...');
 
   return {};
