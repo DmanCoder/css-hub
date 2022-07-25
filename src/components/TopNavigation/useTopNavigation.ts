@@ -17,11 +17,13 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
     );
   };
 
-  const onPageReset = () => {
-    window.location.reload();
+  const onPageReset = () => window.location.reload();
+
+  const onActivateCountrySelection = () => {
+    console.log('Show active');
   };
 
-  return { onToggleSideNetworkDisplay, navWrapperRef, onPageReset };
+  return { onToggleSideNetworkDisplay, navWrapperRef, onPageReset, onActivateCountrySelection };
 };
 
 export default useTopNavigation;

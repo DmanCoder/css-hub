@@ -8,14 +8,23 @@ import * as S from './TopNavigation.styled';
 import utils from '../../utils';
 
 const Nav: React.FC<INavProps> = () => {
-  const { onToggleSideNetworkDisplay, navWrapperRef, onPageReset } = useTopNavigation();
+  const { onToggleSideNetworkDisplay, navWrapperRef, onPageReset, onActivateCountrySelection } =
+    useTopNavigation();
 
   return (
     <S.Nav>
       <S.ListContainer ref={navWrapperRef} className='network-padding' id='king-denis'>
         <S.ListItem onClick={onPageReset}>
-          <S.ListItemLogo>CSS</S.ListItemLogo>
-          <S.ListItemLogo>HUB</S.ListItemLogo>
+          <S.LogoContainer onMouseEnter={onActivateCountrySelection}>
+            <S.ListItemLogo>CSS</S.ListItemLogo>
+            <S.ListItemLogo>HUB</S.ListItemLogo>
+          </S.LogoContainer>
+          <S.CountryItems>
+            <S.CountryItem>Australia</S.CountryItem>
+            <S.CountryItem>Great Britain</S.CountryItem>
+            <S.CountryItem>Canada</S.CountryItem>
+            <S.CountryItem>United States</S.CountryItem>
+          </S.CountryItems>
         </S.ListItem>
         <S.ListItem>{utils.translate('translateTopNavigation.tvShow')}</S.ListItem>
         <S.ListItem>{utils.translate('translateTopNavigation.movie')}</S.ListItem>

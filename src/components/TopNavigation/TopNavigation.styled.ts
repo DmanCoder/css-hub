@@ -47,7 +47,7 @@ export const ListContainer = styled.ul`
   }
 `;
 
-export const ListItemLogo = styled.li`
+export const ListItemLogo = styled.span`
   font-size: 2.4rem;
   font-weight: 800;
   cursor: pointer;
@@ -60,6 +60,17 @@ export const ListItemLogo = styled.li`
     color: ${(props) => props.theme.colors.primary};
   }
 `;
+
+export const LogoContainer = styled.div``;
+
+export const CountryItems = styled.ul`
+  display: none;
+  position: absolute;
+  bottom: -8rem;
+  text-align: center;
+`;
+
+export const CountryItem = styled.li``;
 
 export const ListItem = styled.li`
   align-self: center;
@@ -77,6 +88,7 @@ export const ListItem = styled.li`
   /* LOGO */
   &:first-child {
     order: 1;
+    position: relative;
 
     @media ${({ theme }) => theme.mediaQ.laptop64} {
       order: 0;
