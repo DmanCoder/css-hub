@@ -18,7 +18,7 @@ const Nav: React.FC<INavProps> = () => {
             <S.ListItemLogo>CSS</S.ListItemLogo>
             <S.ListItemLogo>HUB</S.ListItemLogo>
           </S.LogoContainer>
-          <S.CountryItems>
+          <S.CountryItems className='country-list'>
             <S.CountryItem>Australia</S.CountryItem>
             <S.CountryItem>Great Britain</S.CountryItem>
             <S.CountryItem>Canada</S.CountryItem>

@@ -4,11 +4,20 @@ import { toggleLeftSideNavigationToShowAvailableStreamingServicesAXN } from '../
 import { RootStore } from '../../redux/store';
 import { UseTopNavigationReturnType } from './TopNavigation.types';
 import useLongPress from './useLongPress';
+import { gsap } from '../../gsap';
 
 const useTopNavigation = (): UseTopNavigationReturnType => {
   const dispatch = useDispatch();
   const { isShowLeftNavigation } = useSelector((state: RootStore) => state.networkRXS);
   const navWrapperRef = React.useRef<HTMLUListElement>(null);
+  const countryTL = React.useRef(gsap.timeline({ paused: true }));
+
+  React.useEffect(() => {
+    countryTL.current.to('.country-list', {
+      ease: 'power1.out',
+      css: { display: 'block' },
+    });
+  }, []);
 
   const onToggleSideNetworkDisplay = () => {
     dispatch(
@@ -24,6 +33,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
   // Long Press
   const onShowCountryList = () => {
     console.log('longpress is triggered');
+    countryTL.current.play();
   };
 
   const onLongPress = useLongPress({ onPageReset, onShowCountryList });
