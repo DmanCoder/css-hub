@@ -49,16 +49,11 @@ export const ListContainer = styled.ul`
 
 export const CountryFlag = styled.img`
   width: 1.3rem;
-  border: 0.2rem solid ${({ theme }) => theme.colors.bgPrimaryInverse};
   border-radius: 50%;
   position: absolute;
-  right: -0.9rem;
-  top: -0.4rem;
-
-  @media ${({ theme }) => theme.mediaQ.tablet45} {
-    top: -0.5rem;
-    right: -1rem;
-  }
+  top: -0.3rem;
+  right: -0.8rem;
+  border: 0.2rem solid ${({ theme }) => theme.colors.bgPrimaryInverse};
 `;
 
 export const ListItemLogo = styled.span`
