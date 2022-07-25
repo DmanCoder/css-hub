@@ -56,4 +56,5 @@ export type SelectedNetworkTypes = {
 export type CountryFlagTypes = {
   name: string;
   url: string;
+  iso: string;
 };

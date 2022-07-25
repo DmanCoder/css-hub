@@ -1,10 +1,11 @@
+import { CountryFlagTypes } from '../../../typescriptGlobals/types';
 import { ActionTypes } from '../../actions';
 import { ICountryDispatchTypes } from '../../actions/countryActions/countryActions.types';
-import { IDefaultState } from './countryReducer.types';
 
-const defaultState: IDefaultState = {
+const defaultState: CountryFlagTypes = {
   name: 'Australia Flag',
   url: 'australia.png',
+  iso: 'AU',
 };
 
 const countryReducer = (state = defaultState, action: ICountryDispatchTypes) => {
