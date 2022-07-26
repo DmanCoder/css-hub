@@ -5,6 +5,8 @@ import { RootStore } from '../../redux/store';
 import { UseTopNavigationReturnType } from './TopNavigation.types';
 import useLongPress from './useLongPress';
 import { gsap } from '../../gsap';
+import { changeCountryAXN } from '../../redux/actions/countryActions/countryActions';
+import { CountryAlpha2CodeTypes } from '../../typescriptGlobals/types';
 
 const useTopNavigation = (): UseTopNavigationReturnType => {
   const dispatch = useDispatch();
@@ -29,7 +31,9 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
     );
   };
 
-  const onPageReset = () => window.location.reload();
+  const onPageReset = () => {
+    window.location.reload();
+  };
 
   const onShowCountryList = () => {
     countryTL.current.play();
@@ -41,12 +45,20 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
 
   const onLongPress = useLongPress({ onPageReset, onShowCountryList });
 
+  const onChangeCountry = (country: CountryAlpha2CodeTypes) => {
+    return () => {
+      console.log('OS TJOS ROWEM');
+      dispatch(changeCountryAXN(country));
+    };
+  };
+
   return {
     onToggleSideNetworkDisplay,
     navWrapperRef,
     onLongPress,
     onHideCountryList,
     countryRXS,
+    onChangeCountry,
   };
 };
 

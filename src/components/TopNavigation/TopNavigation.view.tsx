@@ -8,8 +8,14 @@ import * as S from './TopNavigation.styled';
 import utils from '../../utils';
 
 const Nav: React.FC<INavProps> = () => {
-  const { onToggleSideNetworkDisplay, navWrapperRef, onLongPress, onHideCountryList, countryRXS } =
-    useTopNavigation();
+  const {
+    onToggleSideNetworkDisplay,
+    navWrapperRef,
+    onLongPress,
+    onHideCountryList,
+    countryRXS,
+    onChangeCountry,
+  } = useTopNavigation();
 
   return (
     <S.Nav>
@@ -27,10 +33,10 @@ const Nav: React.FC<INavProps> = () => {
           </S.LogoContainer>
 
           <S.CountryItems className='country-list'>
-            <S.CountryItem>Australia</S.CountryItem>
-            <S.CountryItem>Great Britain</S.CountryItem>
-            <S.CountryItem>Canada</S.CountryItem>
-            <S.CountryItem>United States</S.CountryItem>
+            <S.CountryItem onClick={onChangeCountry('AU')}>Australia</S.CountryItem>
+            <S.CountryItem onClick={onChangeCountry('UK')}>United Kingdom</S.CountryItem>
+            <S.CountryItem onClick={onChangeCountry('CA')}>Canada</S.CountryItem>
+            <S.CountryItem onClick={onChangeCountry('US')}>United States</S.CountryItem>
           </S.CountryItems>
         </S.ListItem>
         <S.ListItem>{utils.translate('translateTopNavigation.tvShow')}</S.ListItem>

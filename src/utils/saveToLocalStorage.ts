@@ -1,6 +1,6 @@
-import { SelectedNetworkTypes } from '../typescriptGlobals/types';
+import { CountryFlagTypes, SelectedNetworkTypes } from '../typescriptGlobals/types';
 
-type ValueTypes = SelectedNetworkTypes;
+type ValueTypes = SelectedNetworkTypes | CountryFlagTypes;
 
 type LSParamTypes = {
   key: string;

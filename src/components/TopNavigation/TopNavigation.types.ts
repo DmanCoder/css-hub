@@ -1,5 +1,5 @@
 import React from 'react';
-import { CountryFlagTypes } from '../../typescriptGlobals/types';
+import { CountryAlpha2CodeTypes, CountryFlagTypes } from '../../typescriptGlobals/types';
 
 export interface INavProps {}
 
@@ -20,4 +20,5 @@ export type UseTopNavigationReturnType = {
   onLongPress: object;
   onHideCountryList: () => void;
   countryRXS: CountryFlagTypes;
+  onChangeCountry: (country: CountryAlpha2CodeTypes) => (event: React.MouseEvent) => void;
 };

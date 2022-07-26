@@ -58,3 +58,5 @@ export type CountryFlagTypes = {
   url: string;
   iso: string;
 };
+
+export type CountryAlpha2CodeTypes = 'AU' | 'US' | 'CA' | 'UK';
