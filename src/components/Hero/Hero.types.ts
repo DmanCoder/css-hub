@@ -28,6 +28,7 @@ export type UseHeroReturnType = {
   heroMediaDetails: MediaDetails;
   networkName: string;
   contentRating: string;
+  contentDuration: string;
 };
 
 export type ContentRatingsParams = {

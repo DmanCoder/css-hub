@@ -56,6 +56,26 @@ const returnContentRating = ({ heroMediaDetails }: ContentRatingsParams): string
   }
 };
 
+const returnContentDuration = ({ streams, heroMediaDetails }: any): string => {
+  if (utils.isEmpty(heroMediaDetails)) return '';
+
+  if (!utils.isMovie(streams) && !utils.isEmpty(heroMediaDetails)) {
+    if (heroMediaDetails?.episode_run_time[0] !== 0) {
+      const duration = utils.timeConverter(heroMediaDetails?.episode_run_time[0]);
+      const hours = `${duration[0]}`;
+      const minutes = duration[1] === 0 ? ` ${duration[1]}m` : '';
+
+      return `${hours}${minutes}`;
+    } else {
+      const duration = utils.timeConverter(heroMediaDetails?.episode_run_time[1]);
+      return `${duration[1]}h`;
+    }
+  } else {
+    const [hours, minutes] = utils.timeConverter(heroMediaDetails?.runtime);
+    return `${hours}h ${minutes}m`;
+  }
+};
+
 const useHero = (): UseHeroReturnType => {
   const dispatch = useAppDispatch();
 
@@ -90,6 +110,7 @@ const useHero = (): UseHeroReturnType => {
   });
 
   const contentRating = returnContentRating({ heroMediaDetails });
+  const contentDuration = returnContentDuration({ streams: streams[index], heroMediaDetails });
 
   return {
     networkId,
@@ -100,6 +121,7 @@ const useHero = (): UseHeroReturnType => {
     heroMediaDetails,
     networkName,
     contentRating,
+    contentDuration,
   };
 };
 

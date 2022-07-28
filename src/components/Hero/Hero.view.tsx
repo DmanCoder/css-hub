@@ -19,7 +19,10 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
     heroMediaDetails,
     networkName,
     contentRating,
+    contentDuration,
   } = useHero();
+
+  console.log(heroMediaDetails, 'heroMediaDetails');
 
   return (
     <S.HeroWrapper>
@@ -55,7 +58,11 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
           </S.InfoButton>
         </S.HeroActions>
 
-        {!utils.isEmpty(contentRating) && <S.ContentRating>{contentRating}</S.ContentRating>}
+        {!utils.isEmpty(contentRating) && (
+          <S.ContentRating>
+            {contentRating} | {contentDuration}
+          </S.ContentRating>
+        )}
       </S.HeroContent>
     </S.HeroWrapper>
   );

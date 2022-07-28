@@ -131,6 +131,7 @@ export type MediaDetails = {
   vote_count: number;
   content_ratings: ContentRatingsForTvShows;
   release_dates: ContentRatingsForMovies;
+  runtime: string;
 };
 
 export type VideoResults = {

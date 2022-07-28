@@ -8,6 +8,7 @@ import { changeLanguage, translate } from './translate';
 import instantScrollTo from './instantScrollTo';
 import saveToLocalStorage from './saveToLocalStorage';
 import networkIdToNetworkName from './networkIdToNetworkName';
+import timeConverter from './timeConverter';
 
 const utils = {
   isEmpty,
@@ -21,6 +22,7 @@ const utils = {
   instantScrollTo,
   saveToLocalStorage,
   networkIdToNetworkName,
+  timeConverter,
 };
 
 export default utils;
