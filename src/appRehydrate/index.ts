@@ -1,7 +1,7 @@
 import { rehydrateSelectedNetwork } from './rehydrateSelectedNetwork';
 
-const appRehydreate = () => {
+const appRehydrate = () => {
   rehydrateSelectedNetwork();
 };
 
-export default appRehydreate;
+export default appRehydrate;

@@ -6,14 +6,14 @@ import AppLoader from '../AppLoader';
 import StreamingServices from '../StreamingServices';
 import MomentumScrolling from '../MomentumScrolling';
 
-import appRehydreate from '../../appRehydrate';
+import appRehydrate from '../../appRehydrate';
 import routes from '../../routes';
 
 import { IAppProps } from './App.types';
 import useApp from './useApp';
 import * as S from './App.styled';
 
-appRehydreate();
+appRehydrate();
 
 const App: React.FC<IAppProps> = () => {
   const { appWrapper } = useApp();
