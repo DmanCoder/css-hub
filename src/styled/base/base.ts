@@ -51,7 +51,3 @@ export const base = css`
     height: auto;
   }
 `;
-
-// TODO: RESPONSIVE TEXT https://www.smashingmagazine.com/2016/05/fluid-typography/
-// TODO: RESPONSIVE TEXT https://css-tricks.com/snippets/css/fluid-typography/
-// TODO: LOADING ANIMATION https://codepen.io/chigggsy/pen/VwvLZRY

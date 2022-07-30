@@ -61,8 +61,24 @@ export const ContentRating = styled.div`
     padding: 0.5rem;
     border-left: 0.2rem solid ${({ theme }) => theme.colors.bgPrimaryInverse};
     background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimary, alpha: 0.3 })};
+    opacity: 0.75;
     backdrop-filter: blur(5px);
     right: 0;
+    ${immaFlex({ align: 'center' })}
+  }
+`;
+
+export const ContentRatingText = styled.span`
+  display: inline-block;
+
+  &:nth-child(2) {
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: ${({ theme }) => theme.colors.bgPrimaryInverse};
   }
 `;
 
