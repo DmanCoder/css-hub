@@ -59,10 +59,10 @@ const returnContentRating = ({ heroMediaDetails }: ContentRatingsParams): string
 const returnContentDuration = ({ streams, heroMediaDetails }: any): string => {
   if (utils.isEmpty(heroMediaDetails)) return '';
 
-  if (!utils.isMovie(streams) && !utils.isEmpty(heroMediaDetails)) {
+  if (!utils.isMovie(streams)) {
     if (heroMediaDetails?.episode_run_time[0] !== 0) {
       const duration = utils.timeConverter(heroMediaDetails?.episode_run_time[0]);
-      const hours = `${duration[0]}`;
+      const hours = duration[0] === 0 ? `${duration[1]}m` : `${duration[0]}h`;
       const minutes = duration[1] === 0 ? ` ${duration[1]}m` : '';
 
       return `${hours}${minutes}`;

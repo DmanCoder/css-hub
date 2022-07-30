@@ -47,7 +47,6 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
 
   const onChangeCountry = (country: CountryAlpha2CodeTypes) => {
     return () => {
-      console.log('OS TJOS ROWEM');
       dispatch(changeCountryAXN(country));
     };
   };

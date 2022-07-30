@@ -22,8 +22,6 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
     contentDuration,
   } = useHero();
 
-  console.log(heroMediaDetails, 'heroMediaDetails');
-
   return (
     <S.HeroWrapper>
       <S.BackgroundImage
