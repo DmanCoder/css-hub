@@ -1,17 +1,14 @@
-// import axios, { Method, AxiosResponse } from 'axios';
-// import { METHODS } from 'http';
 import axios from 'axios';
 
-// Check production
+// CHECK PRODUCTION
 const isProd: boolean = process.env.NODE_ENV === 'production' ? true : false;
-const isAttr: boolean | undefined = process.env.NODE_ENV === 'production' ? undefined : true;
 
-// Base URL string
+// BASE URL STRING
 const dbURL = !isProd ? 'http://localhost:5000' : process.env.REACT_APP_CSS_HUB_NODE_API;
 
-// Image URL
-const imgURL = 'https://image.tmdb.org/t/p';
-const imgFilterURL = `${imgURL}/w1920_and_h1080_multi_faces/`;
+// IMAGE URL
+const imgURL = 'https://image.tmdb.org/t/p'; // SMALL CANVAS
+const imgFilterURL = `${imgURL}/w1920_and_h1080_multi_faces/`; // LARGE CANVAS
 /*
   "backdrop_sizes": [
     "w300",
@@ -56,4 +53,4 @@ const dbAPI = axios.create({
   baseURL: dbURL,
 });
 
-export { dbAPI, dbURL, imgURL, imgFilterURL, isProd, isAttr };
+export { dbAPI, dbURL, imgURL, imgFilterURL, isProd };
