@@ -87,8 +87,8 @@ const useHero = (): UseHeroReturnType => {
 
   React.useEffect(() => {
     if (!utils.isEmpty(streams)) {
-      const { randomNumber } = onGenerateRandomNumber({ streams });
-      setIndex(randomNumber);
+      // const { randomNumber } = onGenerateRandomNumber({ streams });
+      setIndex(0);
     }
   }, [streams]);
 
