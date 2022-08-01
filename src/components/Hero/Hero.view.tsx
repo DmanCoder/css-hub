@@ -16,7 +16,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
     indexPosition,
     streams,
     onImageError,
-    heroMediaDetails,
+    mediaDetails,
     networkName,
     contentRating,
     contentDuration,
@@ -35,7 +35,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
 
       <S.HeroContent className='network-padding'>
         <S.Network>
-          <S.NetworkLink href={heroMediaDetails?.homepage} target='_blank' title={networkName}>
+          <S.NetworkLink href={mediaDetails?.homepage} target='_blank' title={networkName}>
             {networkName}
           </S.NetworkLink>
         </S.Network>

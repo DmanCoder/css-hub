@@ -25,12 +25,17 @@ export type UseHeroReturnType = {
   indexPosition: number;
   description: string;
   onImageError: (event: React.SyntheticEvent<HTMLImageElement, Event>) => void;
-  heroMediaDetails: MediaDetails;
+  mediaDetails: MediaDetails;
   networkName: string;
   contentRating: string;
   contentDuration: string;
 };
 
 export type ContentRatingsParams = {
-  heroMediaDetails: MediaDetails;
+  mediaDetails: MediaDetails;
+};
+
+export type ContentDurationParamTypes = {
+  media: PopularType;
+  mediaDetails: MediaDetails;
 };
