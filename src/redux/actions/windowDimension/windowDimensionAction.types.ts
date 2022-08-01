@@ -8,7 +8,7 @@ export type WindowDimensionType = {
 // INTERFACE
 export interface IWindowDimension {
   type: ActionTypes.UPDATE_WINDOW_DIMENSION;
-  payload: WindowDimensionType[];
+  payload: WindowDimensionType;
 }
 
 // ALL TV REDUCER DISPATCH TYPES
