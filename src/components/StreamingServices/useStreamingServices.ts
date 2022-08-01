@@ -1,7 +1,6 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { toggleLeftSideNavigationToShowAvailableStreamingServicesAXN } from '../../redux/actions/streamingServicesActions/streamingServicesActions';
-import { RootStore } from '../../redux/store';
+import { RootStore, useAppDispatch, useAppSelector } from '../../redux/store';
 import {
   APPLE_TV_NETWORK_ID,
   DISNEY_NETWORK_ID,
@@ -16,11 +15,11 @@ import { onToggleNetworkAnimation } from './StreamingServices.gsap';
 import { UseStreamingServicesReturnTypes } from './StreamingServices.types';
 
 const useStreamingServices = (): UseStreamingServicesReturnTypes => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const streamingServicesWrapper = React.useRef<HTMLDivElement>(null);
   const streamingServicesRef = React.useRef<HTMLDivElement[]>([]);
-  const { isShowLeftNavigation } = useSelector((state: RootStore) => state.networkRXS);
+  const { isShowLeftNavigation } = useAppSelector((state: RootStore) => state.networkRXS);
 
   React.useEffect(() => {
     onToggleNetworkAnimation({

@@ -1,7 +1,6 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { toggleLeftSideNavigationToShowAvailableStreamingServicesAXN } from '../../redux/actions/streamingServicesActions/streamingServicesActions';
-import { RootStore } from '../../redux/store';
+import { RootStore, useAppDispatch, useAppSelector } from '../../redux/store';
 import { UseTopNavigationReturnType } from './TopNavigation.types';
 import useLongPress from './useLongPress';
 import { gsap } from '../../gsap';
@@ -9,10 +8,10 @@ import { changeCountryAXN } from '../../redux/actions/countryActions/countryActi
 import { CountryAlpha2CodeTypes } from '../../typescriptGlobals/types';
 
 const useTopNavigation = (): UseTopNavigationReturnType => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const { isShowLeftNavigation } = useSelector((state: RootStore) => state.networkRXS);
-  const countryRXS = useSelector((state: RootStore) => state.countryRXS);
+  const { isShowLeftNavigation } = useAppSelector((state: RootStore) => state.networkRXS);
+  const countryRXS = useAppSelector((state: RootStore) => state.countryRXS);
   const navWrapperRef = React.useRef<HTMLUListElement>(null);
   const countryTL = React.useRef(gsap.timeline({ paused: true }));
 

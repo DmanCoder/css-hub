@@ -1,6 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { RootStore } from '../../redux/store';
+import { RootStore, useAppSelector } from '../../redux/store';
 import { UseHeroReturnType } from './Hero.types';
 
 import utils from '../../utils';
@@ -13,9 +12,9 @@ import {
 } from './Hero.helpers';
 
 const useHero = (): UseHeroReturnType => {
-  const { streams } = useSelector((state: RootStore) => state.popularRXS);
-  const { networkId } = useSelector((state: RootStore) => state.networkRXS);
-  const mediaDetails = useSelector((state: RootStore) => state.detailsRXS);
+  const { streams } = useAppSelector((state: RootStore) => state.popularRXS);
+  const { networkId } = useAppSelector((state: RootStore) => state.networkRXS);
+  const mediaDetails = useAppSelector((state: RootStore) => state.detailsRXS);
 
   const [indexPosition, setIndexPosition] = React.useState<number>(0);
 
