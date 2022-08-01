@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import OnErrorImage from '../../assets/imgs/onerror-image.jpg';
 import { getCurrentMediaDetails } from '../../redux/actions/mediaDetailsActions/mediaDetailsActions';
 import { PopularType } from '../../redux/actions/popularActions/popularActions.types';
 import { RootStore, useAppDispatch } from '../../redux/store';
@@ -12,11 +11,7 @@ import {
   UseHeroReturnType,
 } from './Hero.types';
 
-export const onImageError = (event: React.SyntheticEvent<HTMLImageElement, Event>): void => {
-  const { currentTarget } = event;
-  currentTarget.onerror = null;
-  currentTarget.src = OnErrorImage;
-};
+import { onImageError } from './Hero.helpers';
 
 export const onGenerateRandomNumber = ({ streams }: { streams: PopularType[] }) => {
   const length: number = streams.length;
