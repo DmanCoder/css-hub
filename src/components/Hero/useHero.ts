@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { getCurrentMediaDetails } from '../../redux/actions/mediaDetailsActions/mediaDetailsActions';
-import { RootStore, useAppDispatch } from '../../redux/store';
+import { RootStore } from '../../redux/store';
 import { UseHeroReturnType } from './Hero.types';
 
 import utils from '../../utils';
@@ -14,8 +13,6 @@ import {
 } from './Hero.helpers';
 
 const useHero = (): UseHeroReturnType => {
-  const dispatch = useAppDispatch();
-
   const { streams } = useSelector((state: RootStore) => state.popularRXS);
   const { networkId } = useSelector((state: RootStore) => state.networkRXS);
   const mediaDetails = useSelector((state: RootStore) => state.detailsRXS);
@@ -28,13 +25,6 @@ const useHero = (): UseHeroReturnType => {
       setIndexPosition(randomNumber);
     }
   }, [streams]);
-
-  React.useEffect(() => {
-    if (!utils.isEmpty(indexPosition) && !utils.isEmpty(streams)) {
-      const { id, appended_media_type } = streams[indexPosition];
-      dispatch(getCurrentMediaDetails({ id, appended_media_type }));
-    }
-  }, [indexPosition]);
 
   const placeholder =
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";

@@ -67,17 +67,18 @@ export const getPopularStreamsAndCurrentMediaDetails =
 
         const params = `media_id=${current?.id}&appended_media_type=${current.appended_media_type}&language=${language}&page=1`;
         const endPoint = `/api/details?${params}`;
+
         return dbAPI.get(endPoint);
       })
       .then((response) => {
         dispatch({
-          type: ActionTypes.GET_MEDIA_DETAILS,
-          payload: response.data.results,
+          type: ActionTypes.GET_POPULAR_STREAMS,
+          payload: popularStreams,
         });
 
         dispatch({
-          type: ActionTypes.GET_POPULAR_STREAMS,
-          payload: popularStreams,
+          type: ActionTypes.GET_MEDIA_DETAILS,
+          payload: response.data.results,
         });
       })
       .catch((err) => {

@@ -35,6 +35,9 @@ const useApp = (): UseAppReturnType => {
 
   React.useEffect(() => {
     dispatch(getPopularStreamsAndCurrentMediaDetails());
+  }, []);
+
+  React.useEffect(() => {
     dispatch(
       updateWindowDimensionAXN({
         height: window.innerHeight,
