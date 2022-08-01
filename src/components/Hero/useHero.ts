@@ -71,39 +71,42 @@ const useHero = (): UseHeroReturnType => {
   const { networkId } = useSelector((state: RootStore) => state.networkRXS);
   const heroMediaDetails = useSelector((state: RootStore) => state.detailsRXS);
 
-  const [index, setIndex] = React.useState<number>(0);
+  const [indexPosition, setIndexPosition] = React.useState<number>(0);
 
   React.useEffect(() => {
     if (!utils.isEmpty(streams)) {
       const randomNumber = utils.randomNumberGenerator({ max: streams.length });
-      setIndex(randomNumber);
+      setIndexPosition(randomNumber);
     }
   }, [streams]);
 
   React.useEffect(() => {
-    if (!utils.isEmpty(index) && !utils.isEmpty(streams)) {
-      const { id, appended_media_type } = streams[index];
+    if (!utils.isEmpty(indexPosition) && !utils.isEmpty(streams)) {
+      const { id, appended_media_type } = streams[indexPosition];
 
       dispatch(getCurrentMediaDetails({ id, appended_media_type }));
     }
-  }, [index]);
+  }, [indexPosition]);
 
   const placeholder = 'Lorem Ipsum is simply dumng industry. Lorem Ips';
-  const conditionalDescription: string = streams[index]?.overview || placeholder;
+  const conditionalDescription: string = streams[indexPosition]?.overview || placeholder;
 
   const networkName = returnNetworkName({
-    media: streams[index],
+    media: streams[indexPosition],
     mediaDetails: heroMediaDetails,
     networkId,
   });
 
   const contentRating = returnContentRating({ heroMediaDetails });
-  const contentDuration = returnContentDuration({ streams: streams[index], heroMediaDetails });
+  const contentDuration = returnContentDuration({
+    streams: streams[indexPosition],
+    heroMediaDetails,
+  });
 
   return {
     networkId,
     streams,
-    index,
+    indexPosition,
     description: conditionalDescription,
     onImageError,
     heroMediaDetails,

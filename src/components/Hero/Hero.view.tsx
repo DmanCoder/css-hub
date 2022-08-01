@@ -13,7 +13,7 @@ import * as S from './Hero.styled';
 const Hero: React.FC<IHeroProps> = (): JSX.Element => {
   const {
     description,
-    index,
+    indexPosition,
     streams,
     onImageError,
     heroMediaDetails,
@@ -25,8 +25,8 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
   return (
     <S.HeroWrapper>
       <S.BackgroundImage
-        src={`${imgFilterURL}/${streams[index]?.backdrop_path}`}
-        alt={streams[index]?.name}
+        src={`${imgFilterURL}/${streams[indexPosition]?.backdrop_path}`}
+        alt={streams[indexPosition]?.name}
         onError={onImageError}
         className='home-page-image'
       />
@@ -40,7 +40,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
           </S.NetworkLink>
         </S.Network>
 
-        <S.Title>{streams[index]?.name || streams[index]?.title}</S.Title>
+        <S.Title>{streams[indexPosition]?.name || streams[indexPosition]?.title}</S.Title>
 
         <S.Description>{description}</S.Description>
 
@@ -51,7 +51,9 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
           </S.PlayButton>
 
           <S.InfoButton
-            title={`More Information About ${streams[index]?.name || streams[index]?.title}`}>
+            title={`More Information About ${
+              streams[indexPosition]?.name || streams[indexPosition]?.title
+            }`}>
             <Assets.Icons.GraphicEQ />
           </S.InfoButton>
         </S.HeroActions>

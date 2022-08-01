@@ -22,7 +22,7 @@ export interface IHeroProps {}
 export type UseHeroReturnType = {
   networkId: NetworkIdTypes;
   streams: PopularType[];
-  index: number;
+  indexPosition: number;
   description: string;
   onImageError: (event: React.SyntheticEvent<HTMLImageElement, Event>) => void;
   heroMediaDetails: MediaDetails;
