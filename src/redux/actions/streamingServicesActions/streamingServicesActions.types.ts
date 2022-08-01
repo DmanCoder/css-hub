@@ -1,10 +1,10 @@
 import { ActionTypes } from '..';
+import { NetworkIdTypes } from '../../../typescriptGlobals/types';
 
-export interface INetworkMode {
+export type INetworkMode = {
   type: ActionTypes.SWITCH_BETWEEN_NETWORK_ID;
-  payload: number;
-}
-
+  payload: NetworkIdTypes;
+};
 export interface IToggleLeftNavigation {
   type: ActionTypes.TOGGLE_LEFT_NAVIGATION;
   payload: boolean;
