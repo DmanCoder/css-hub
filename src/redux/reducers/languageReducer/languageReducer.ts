@@ -3,7 +3,7 @@ import { ILanguageDispatchTypes } from '../../actions/languageActions/languageAc
 
 const defaultState = 'en-US';
 
-const loadingReducer = (state = defaultState, action: ILanguageDispatchTypes) => {
+const languageReducer = (state = defaultState, action: ILanguageDispatchTypes): string => {
   switch (action.type) {
     case ActionTypes.CHANGE_LANGUAGE:
       return action.payload;
@@ -12,4 +12,4 @@ const loadingReducer = (state = defaultState, action: ILanguageDispatchTypes) =>
   }
 };
 
-export default loadingReducer;
+export default languageReducer;

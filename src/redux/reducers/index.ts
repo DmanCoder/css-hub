@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import languageReducer from './languageReducer/loadingReducer';
+import languageReducer from './languageReducer/languageReducer';
 import popularReducer from './popularReducer';
 import mediaDetailReducer from './mediaDetailsReducer/mediaDetailReducer';
 import loadingReducer from './loadingReducer/loadingReducer';
