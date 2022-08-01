@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { getCurrentMediaDetails } from '../../redux/actions/mediaDetailsActions/mediaDetailsActions';
-import { PopularType } from '../../redux/actions/popularActions/popularActions.types';
 import { RootStore, useAppDispatch } from '../../redux/store';
 import { NetworkNameTypes } from '../../typescriptGlobals/types';
 import utils from '../../utils';
@@ -12,12 +11,6 @@ import {
 } from './Hero.types';
 
 import { onImageError } from './Hero.helpers';
-
-export const onGenerateRandomNumber = ({ streams }: { streams: PopularType[] }) => {
-  const length: number = streams.length;
-  const randomNumber: number = Math.floor(Math.random() * (length - 1));
-  return { randomNumber };
-};
 
 const returnNetworkName = ({
   media,
@@ -82,8 +75,8 @@ const useHero = (): UseHeroReturnType => {
 
   React.useEffect(() => {
     if (!utils.isEmpty(streams)) {
-      // const { randomNumber } = onGenerateRandomNumber({ streams });
-      setIndex(0);
+      const randomNumber = utils.randomNumberGenerator({ max: streams.length });
+      setIndex(randomNumber);
     }
   }, [streams]);
 

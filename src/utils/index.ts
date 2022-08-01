@@ -9,6 +9,7 @@ import instantScrollTo from './instantScrollTo';
 import saveToLocalStorage from './saveToLocalStorage';
 import networkIdToNetworkName from './networkIdToNetworkName';
 import timeConverter from './timeConverter';
+import randomNumberGenerator from './randomNumberGenerator';
 
 const utils = {
   isEmpty,
@@ -23,6 +24,7 @@ const utils = {
   saveToLocalStorage,
   networkIdToNetworkName,
   timeConverter,
+  randomNumberGenerator,
 };
 
 export default utils;
