@@ -1,10 +1,11 @@
 import { Dispatch } from 'redux';
 import { ActionTypes } from '..';
 import { dbAPI } from '../../../api/init';
+import utils from '../../../utils';
 import { store } from '../../store';
 import { IErrorFeedback } from '../errorsActions/errorsActions.types';
 import { IMediaDetails } from '../mediaDetailsActions/mediaDetailsActions.types';
-import { IPopularStreamsAction, PopularType } from './popularActions.types';
+import { IPopularStreamsAction, IRandomNumberAction, PopularType } from './popularActions.types';
 
 export const getPopularTvShowsAXN =
   () => (dispatch: Dispatch<IPopularStreamsAction | IErrorFeedback>) => {
@@ -27,9 +28,12 @@ export const getPopularTvShowsAXN =
   };
 
 export const getPopularStreamsAndCurrentMediaDetails =
-  () => (dispatch: Dispatch<IPopularStreamsAction | IErrorFeedback | IMediaDetails>) => {
-    // store.dispatch(loadingToggleAXN(true));
-
+  () =>
+  (
+    dispatch: Dispatch<
+      IPopularStreamsAction | IErrorFeedback | IMediaDetails | IRandomNumberAction
+    >,
+  ) => {
     const language: string = store.getState().languageRXS;
     const { networkId } = store.getState().networkRXS;
 
@@ -42,9 +46,16 @@ export const getPopularStreamsAndCurrentMediaDetails =
       .get(endpoint)
       .then((response) => {
         popularStreams = response.data.results;
-        const current = popularStreams[0] ?? {};
 
-        const params = `media_id=${current?.id}&appended_media_type=${current.appended_media_type}&language=${language}&page=1`;
+        const randomNumber = utils.randomNumberGenerator({ max: popularStreams.length - 1 });
+        dispatch({
+          type: ActionTypes.RANDOM_NUMBER,
+          payload: randomNumber,
+        });
+
+        const media = popularStreams[randomNumber] ?? {};
+
+        const params = `media_id=${media?.id}&appended_media_type=${media.appended_media_type}&language=${language}&page=1`;
         const endPoint = `/api/details?${params}`;
 
         return dbAPI.get(endPoint);
