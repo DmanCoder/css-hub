@@ -33,10 +33,34 @@ const Nav: React.FC<INavProps> = () => {
           </S.LogoContainer>
 
           <S.CountryItems className='country-list'>
-            <S.CountryItem onClick={onChangeCountry('AU')}>Australia</S.CountryItem>
-            <S.CountryItem onClick={onChangeCountry('UK')}>United Kingdom</S.CountryItem>
-            <S.CountryItem onClick={onChangeCountry('CA')}>Canada</S.CountryItem>
-            <S.CountryItem onClick={onChangeCountry('US')}>United States</S.CountryItem>
+            <S.CountryItem onClick={onChangeCountry('AU')}>
+              <S.CountryItemFlag
+                src={require(`../../assets/imgs/flags/${countryRXS?.url}`)}
+                title={countryRXS?.name}
+              />
+              <S.CountryItemText>Australia</S.CountryItemText>
+            </S.CountryItem>
+            <S.CountryItem onClick={onChangeCountry('UK')}>
+              <S.CountryItemFlag
+                src={require(`../../assets/imgs/flags/united-kingdom.png`)}
+                title={countryRXS?.name}
+              />
+              <S.CountryItemText>United kindom</S.CountryItemText>
+            </S.CountryItem>
+            <S.CountryItem onClick={onChangeCountry('CA')}>
+              <S.CountryItemFlag
+                src={require(`../../assets/imgs/flags/canada.png`)}
+                title={countryRXS?.name}
+              />
+              <S.CountryItemText>Canada</S.CountryItemText>
+            </S.CountryItem>
+            <S.CountryItem onClick={onChangeCountry('US')}>
+              <S.CountryItemFlag
+                src={require(`../../assets/imgs/flags/united-states.png`)}
+                title={countryRXS?.name}
+              />
+              <S.CountryItemText>United States</S.CountryItemText>
+            </S.CountryItem>
           </S.CountryItems>
         </S.ListItem>
         <S.ListItem>{utils.translate('translateTopNavigation.tvShow')}</S.ListItem>

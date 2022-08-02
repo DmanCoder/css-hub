@@ -1,5 +1,5 @@
 const translateTopNavigation = {
-  tvShow: 'Tv Show',
+  tvShow: 'TV Show',
   movie: 'Movie',
   people: 'People',
   myList: 'My List+',

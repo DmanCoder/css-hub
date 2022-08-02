@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { immaFlex } from '../../styled/abstract/mixins';
+import { immaFlex, hex2rgba } from '../../styled/abstract/mixins';
 
 export const Nav = styled.nav`
   background: transparent;
@@ -82,15 +82,38 @@ export const CountryItems = styled.ul`
 `;
 
 export const CountryItem = styled.li`
-  padding: 0.5rem;
-  background-color: pink;
+  padding: 0.5rem 1rem;
+  border-radius: 100rem;
   white-space: nowrap;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  color: ${(props) => props.theme.colors.textPrimary};
+  background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimary, alpha: 0.3 })};
+  ${immaFlex({ align: 'center' })}
+
+  &:hover {
+    background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.pimary, alpha: 0.3 })};
+  }
+`;
+
+export const CountryItemFlag = styled.img`
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+`;
+
+export const CountryItemText = styled.span`
+  font-size: 1rem;
+
+  @media ${({ theme }) => theme.mediaQ.tablet45} {
+    padding: unset;
+    font-size: 1.2rem;
+  }
 `;
 
 export const ListItem = styled.li`
   align-self: center;
   padding: 1rem;
+  cursor: pointer;
   font-weight: 500;
   text-transform: capitalize;
   position: relative;
@@ -98,7 +121,6 @@ export const ListItem = styled.li`
 
   @media ${({ theme }) => theme.mediaQ.tablet45} {
     padding: unset;
-    font-size: 1.2rem;
   }
 
   /* LOGO */
