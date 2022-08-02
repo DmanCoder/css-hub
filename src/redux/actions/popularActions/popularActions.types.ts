@@ -1,3 +1,4 @@
+import { ActionTypes } from '..';
 import { NetworkNameTypes } from '../../../typescriptGlobals/types';
 
 export type CreatedBy = {
@@ -173,11 +174,6 @@ export type PopularType = {
   first_air_date: string;
   genre_ids: number[];
   id: number;
-
-  media_details: MediaDetails;
-  media_recommendations: MediaRecommendations[];
-  media_videos: MediaVideos;
-
   name: string;
   appended_media_type: string;
   title: string; // Movies
@@ -192,9 +188,14 @@ export type PopularType = {
   vote_count: number;
 };
 
-export interface IPopularAction {
-  type: string;
+export interface IPopularStreamsAction {
+  type: ActionTypes.GET_POPULAR_STREAMS;
   payload: PopularType[];
 }
 
-export type PopularDispatchTypes = IPopularAction;
+export interface IRandomNumberAction {
+  type: ActionTypes.RANDOM_NUMBER;
+  payload: number;
+}
+
+export type PopularDispatchTypes = IPopularStreamsAction | IRandomNumberAction;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { RootStore, useAppDispatch, useAppSelector } from '../../redux/store';
+import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
 import { getPopularStreamsAndCurrentMediaDetails } from '../../redux/actions/popularActions/popularActions';
 import { updateWindowDimensionAXN } from '../../redux/actions/windowDimension/windowDimensionAction';
 
@@ -12,7 +12,7 @@ import { UseAppReturnType } from './App.types';
 const useApp = (): UseAppReturnType => {
   const dispatch = useAppDispatch();
 
-  const { isShowLeftNavigation } = useAppSelector((state: RootStore) => state.networkRXS);
+  const { isShowLeftNavigation } = useAppSelector((state: RootState) => state.networkRXS);
   const appWrapper = React.useRef<HTMLDivElement>(null);
   const sectionsTL = React.useRef(gsap.timeline({ paused: true }));
 

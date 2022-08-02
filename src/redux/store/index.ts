@@ -4,16 +4,15 @@ import { configureStore } from '@reduxjs/toolkit';
 import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk';
 
 import rootReducer from '../reducers';
-
 export const middleware = [thunk];
 
 export type AppDispatch = typeof store.dispatch;
-export type RootStore = ReturnType<typeof rootReducer>;
-export type TypedDispatch = ThunkDispatch<RootStore, unknown, AnyAction>;
-export type TypedThunk<ReturnType = void> = ThunkAction<ReturnType, RootStore, unknown, AnyAction>;
+export type RootState = ReturnType<typeof store.getState>;
+export type TypedDispatch = ThunkDispatch<RootState, unknown, AnyAction>;
+export type TypedThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, AnyAction>;
 
 export const useAppDispatch = () => useDispatch<TypedDispatch>();
-export const useAppSelector: TypedUseSelectorHook<RootStore> = useSelector;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export const store = configureStore({
   reducer: rootReducer,

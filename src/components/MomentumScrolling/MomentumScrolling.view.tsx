@@ -1,5 +1,5 @@
 import React from 'react';
-import { RootStore, useAppSelector } from '../../redux/store';
+import { RootState, useAppSelector } from '../../redux/store';
 
 import { IMomentumScrollingProps } from './MomentumScrolling.types';
 import * as S from './MomentumScrolling.styled';
@@ -7,7 +7,7 @@ import * as S from './MomentumScrolling.styled';
 // TODO: FOR REFERENCE => https://www.youtube.com/watch?v=x5yvDlH7X9A&ab_channel=CodeBucks
 // TODO: DOCUMENTATIONS => https://idiotwu.github.io/smooth-scrollbar/
 const MomentumScrolling: React.FC<IMomentumScrollingProps> = ({ children }) => {
-  const { height } = useAppSelector((state: RootStore) => state.windowDimensionRXS);
+  const { height } = useAppSelector((state: RootState) => state.windowDimensionRXS);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   const data = React.useMemo(

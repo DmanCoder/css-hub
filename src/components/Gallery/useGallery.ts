@@ -1,8 +1,8 @@
-import { RootStore, useAppSelector } from '../../redux/store';
+import { RootState, useAppSelector } from '../../redux/store';
 import { UseGalleryReturnType } from './Gallery.types';
 
 const useGallery = (): UseGalleryReturnType => {
-  const { streams } = useAppSelector((state: RootStore) => state.popularRXS);
+  const { streams } = useAppSelector((state: RootState) => state.popularRXS);
   return { streams };
 };
 

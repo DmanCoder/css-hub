@@ -1,8 +1,6 @@
 import { PopularType } from '../../actions/popularActions/popularActions.types';
 
-export interface IDefaultState {
-  tvShows: PopularType[];
+export interface IPopularDefaultState {
   streams: PopularType[];
-  rents: PopularType[];
-  movies: PopularType[];
+  indexPosition: number;
 }

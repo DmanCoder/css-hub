@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { RootStore, useAppSelector } from '../../redux/store';
+import { RootState, useAppSelector } from '../../redux/store';
 
 import {
   onChangeBackgroundOfDotsAndExitLoadingAnimation,
@@ -12,8 +12,8 @@ import { gsap } from '../../gsap';
 import utils from '../../utils';
 
 const useAppLoader = () => {
-  const { streams } = useAppSelector((state: RootStore) => state.popularRXS);
-  const mediaDetails = useAppSelector((state: RootStore) => state.detailsRXS);
+  const { streams } = useAppSelector((state: RootState) => state.popularRXS);
+  const mediaDetails = useAppSelector((state: RootState) => state.detailsRXS);
 
   const [appLoaderToggle, setAppLoaderToggle] = React.useState<boolean>(false);
   const [hasLoadedImages, setHasLoadedImages] = React.useState<boolean>(false);

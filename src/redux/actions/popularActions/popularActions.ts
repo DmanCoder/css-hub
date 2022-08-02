@@ -3,52 +3,31 @@ import { ActionTypes } from '..';
 import { dbAPI } from '../../../api/init';
 import { store } from '../../store';
 import { IErrorFeedback } from '../errorsActions/errorsActions.types';
-import { loadingToggleAXN } from '../loadingActions/loadingActions';
-import { ILoadingToggle } from '../loadingActions/loadingActions.types';
 import { IMediaDetails } from '../mediaDetailsActions/mediaDetailsActions.types';
-// import { loadingToggleAXN } from '../loadingActions/loadingActions';
-import { IPopularAction, PopularType } from './popularActions.types';
+import { IPopularStreamsAction, PopularType } from './popularActions.types';
 
-export const getPopularTvShowsAXN = () => (dispatch: Dispatch<IPopularAction | IErrorFeedback>) => {
-  // store.dispatch(loadingToggleAXN(true));
+export const getPopularTvShowsAXN =
+  () => (dispatch: Dispatch<IPopularStreamsAction | IErrorFeedback>) => {
+    const language: string = store.getState().languageRXS;
+    const { networkId } = store.getState().networkRXS;
+    const params = `network_id=${networkId}&language=${language}&page=1`;
+    const endPoint = `/api/popular/streams?${params}`;
 
-  const language: string = store.getState().languageRXS;
-  const { networkId } = store.getState().networkRXS;
-  const params = `network_id=${networkId}&language=${language}&page=1`;
-  const endPoint = `/api/popular/streams?${params}`;
-
-  return dbAPI
-    .get(endPoint)
-    .then((response) => {
-      dispatch({
-        type: ActionTypes.GET_POPULAR_STREAMS,
-        payload: response.data.results,
-      });
-
-      // store.dispatch(loadingToggleAXN(false));
-    })
-    .catch((err) => {
-      if (err.message === 'Network Error') {
+    return dbAPI
+      .get(endPoint)
+      .then((response) => {
         dispatch({
-          type: ActionTypes.ERROR_FEEDBACK,
-          payload: {
-            api: 'Could not connect to servers',
-          },
+          type: ActionTypes.GET_POPULAR_STREAMS,
+          payload: response.data.results,
         });
-      } else {
-        // const { errors } = err?.response?.data
-        // dispatch({
-        //   type: ActionTypes.ERROR_FEEDBACK,
-        //   payload: errors,
-        // })
-      }
-
-      // store.dispatch(loadingToggleAXN(false));
-    });
-};
+      })
+      .catch((err) => {
+        console.log(err, 'ERROR');
+      });
+  };
 
 export const getPopularStreamsAndCurrentMediaDetails =
-  () => (dispatch: Dispatch<IPopularAction | IErrorFeedback | IMediaDetails>) => {
+  () => (dispatch: Dispatch<IPopularStreamsAction | IErrorFeedback | IMediaDetails>) => {
     // store.dispatch(loadingToggleAXN(true));
 
     const language: string = store.getState().languageRXS;
