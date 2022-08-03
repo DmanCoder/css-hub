@@ -78,6 +78,7 @@ export const CountryItems = styled.ul`
   position: absolute;
   text-align: center;
   background: transparent;
+  z-index: 100;
   padding-top: 3rem;
 `;
 
@@ -85,6 +86,9 @@ export const CountryItem = styled.li`
   padding: 0.5rem 1rem;
   border-radius: 100rem;
   white-space: nowrap;
+  position: relative;
+  top: -10.8rem;
+  opacity: 0;
   margin-bottom: 0.5rem;
   backdrop-filter: blur(5px);
   color: ${(props) => props.theme.colors.textPrimary};

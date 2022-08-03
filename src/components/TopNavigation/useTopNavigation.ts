@@ -16,10 +16,36 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
   const countryTL = React.useRef(gsap.timeline({ paused: true }));
 
   React.useEffect(() => {
-    countryTL.current.to('.country-list', {
-      ease: 'power1.out',
-      css: { display: 'block' },
-    });
+    countryTL.current
+      .to('.country-list', {
+        ease: 'power1.out',
+        css: { display: 'block' },
+      })
+      .to(
+        '.country-list-item',
+        {
+          duration: 0.75,
+          ease: 'back.out',
+          stagger: { amount: 0.25, from: 'start' },
+          css: {
+            top: 0,
+          },
+        },
+        'drop',
+      )
+      .to(
+        '.country-list-item',
+        {
+          delay: 0.25,
+          duration: 0.75,
+          ease: 'back.out',
+          stagger: { amount: 0.25, from: 'start' },
+          css: {
+            opacity: 1,
+          },
+        },
+        'drop',
+      );
   }, []);
 
   const onToggleSideNetworkDisplay = () => {

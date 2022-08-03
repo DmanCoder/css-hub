@@ -33,28 +33,28 @@ const Nav: React.FC<INavProps> = () => {
           </S.LogoContainer>
 
           <S.CountryItems className='country-list' onMouseLeave={onHideCountryList}>
-            <S.CountryItem onClick={onChangeCountry('AU')}>
+            <S.CountryItem className='country-list-item' onClick={onChangeCountry('AU')}>
               <S.CountryItemFlag
                 src={require(`../../assets/imgs/flags/australia.png`)}
                 title='Australia Flag'
               />
               <S.CountryItemText>Australia</S.CountryItemText>
             </S.CountryItem>
-            <S.CountryItem onClick={onChangeCountry('GB')}>
+            <S.CountryItem className='country-list-item' onClick={onChangeCountry('GB')}>
               <S.CountryItemFlag
                 src={require(`../../assets/imgs/flags/united-kingdom.png`)}
                 title='United Kingdom Flag'
               />
               <S.CountryItemText>United kindom</S.CountryItemText>
             </S.CountryItem>
-            <S.CountryItem onClick={onChangeCountry('CA')}>
+            <S.CountryItem className='country-list-item' onClick={onChangeCountry('CA')}>
               <S.CountryItemFlag
                 src={require(`../../assets/imgs/flags/canada.png`)}
                 title='Canada Flag'
               />
               <S.CountryItemText>Canada</S.CountryItemText>
             </S.CountryItem>
-            <S.CountryItem onClick={onChangeCountry('US')}>
+            <S.CountryItem className='country-list-item' onClick={onChangeCountry('US')}>
               <S.CountryItemFlag
                 src={require(`../../assets/imgs/flags/united-states.png`)}
                 title='United State Flag'
