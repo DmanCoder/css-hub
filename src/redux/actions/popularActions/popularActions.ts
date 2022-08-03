@@ -34,10 +34,11 @@ export const getPopularStreamsAndCurrentMediaDetails =
       IPopularStreamsAction | IErrorFeedback | IMediaDetails | IRandomNumberAction
     >,
   ) => {
-    const language: string = store.getState().languageRXS;
+    const language = store.getState().languageRXS;
+    const country = store.getState().countryRXS;
     const { networkId } = store.getState().networkRXS;
 
-    const params = `network_id=${networkId}&language=${language}&page=1`;
+    const params = `selected_country=${country.iso}&network_id=${networkId}&language=${language}&page=1`;
     const endpoint = `/api/popular/streams?${params}`;
 
     let popularStreams: PopularType[] = [];

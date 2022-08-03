@@ -47,13 +47,13 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
   const onChangeCountry = (country: CountryAlpha2CodeTypes) => {
     return () => {
       switch (country) {
-        case 'UK':
+        case 'GB':
           utils.saveToLocalStorage({
             key: 'selectedCountry',
             value: {
               name: 'United Kingdom Flag',
               fileName: 'united-kingdom.png',
-              iso: 'UK',
+              iso: 'GB',
             },
           });
           break;

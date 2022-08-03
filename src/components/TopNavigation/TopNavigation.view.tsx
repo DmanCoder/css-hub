@@ -35,29 +35,29 @@ const Nav: React.FC<INavProps> = () => {
           <S.CountryItems className='country-list' onMouseLeave={onHideCountryList}>
             <S.CountryItem onClick={onChangeCountry('AU')}>
               <S.CountryItemFlag
-                src={require(`../../assets/imgs/flags/${countryRXS?.fileName}`)}
-                title={countryRXS?.name}
+                src={require(`../../assets/imgs/flags/australia.png`)}
+                title='Australia Flag'
               />
               <S.CountryItemText>Australia</S.CountryItemText>
             </S.CountryItem>
-            <S.CountryItem onClick={onChangeCountry('UK')}>
+            <S.CountryItem onClick={onChangeCountry('GB')}>
               <S.CountryItemFlag
                 src={require(`../../assets/imgs/flags/united-kingdom.png`)}
-                title={countryRXS?.name}
+                title='United Kingdom Flag'
               />
               <S.CountryItemText>United kindom</S.CountryItemText>
             </S.CountryItem>
             <S.CountryItem onClick={onChangeCountry('CA')}>
               <S.CountryItemFlag
                 src={require(`../../assets/imgs/flags/canada.png`)}
-                title={countryRXS?.name}
+                title='Canada Flag'
               />
               <S.CountryItemText>Canada</S.CountryItemText>
             </S.CountryItem>
             <S.CountryItem onClick={onChangeCountry('US')}>
               <S.CountryItemFlag
                 src={require(`../../assets/imgs/flags/united-states.png`)}
-                title={countryRXS?.name}
+                title='United State Flag'
               />
               <S.CountryItemText>United States</S.CountryItemText>
             </S.CountryItem>

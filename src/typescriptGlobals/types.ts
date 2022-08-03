@@ -59,4 +59,4 @@ export type CountryFlagTypes = {
   iso: CountryAlpha2CodeTypes;
 };
 
-export type CountryAlpha2CodeTypes = 'AU' | 'US' | 'CA' | 'UK';
+export type CountryAlpha2CodeTypes = 'AU' | 'US' | 'CA' | 'GB';
