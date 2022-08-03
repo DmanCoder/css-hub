@@ -20,7 +20,7 @@ const Nav: React.FC<INavProps> = () => {
   return (
     <S.Nav>
       <S.ListContainer ref={navWrapperRef} className='network-padding' id='king-denis'>
-        <S.ListItem {...onLongPress} onMouseLeave={onHideCountryList}>
+        <S.ListItem {...onLongPress}>
           <S.LogoContainer>
             <S.ListItemLogo>CSS</S.ListItemLogo>
             <S.ListItemLogo>
@@ -32,7 +32,7 @@ const Nav: React.FC<INavProps> = () => {
             </S.ListItemLogo>
           </S.LogoContainer>
 
-          <S.CountryItems className='country-list'>
+          <S.CountryItems className='country-list' onMouseLeave={onHideCountryList}>
             <S.CountryItem onClick={onChangeCountry('AU')}>
               <S.CountryItemFlag
                 src={require(`../../assets/imgs/flags/${countryRXS?.url}`)}

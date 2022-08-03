@@ -91,7 +91,8 @@ export const CountryItem = styled.li`
   ${immaFlex({ align: 'center' })}
 
   &:hover {
-    background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.pimary, alpha: 0.3 })};
+    transition: background-color 0.25s ease-in-out;
+    background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.primary, alpha: 0.3 })};
   }
 `;
 
