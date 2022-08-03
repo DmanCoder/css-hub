@@ -86,6 +86,7 @@ export const CountryItem = styled.li`
   border-radius: 100rem;
   white-space: nowrap;
   margin-bottom: 0.5rem;
+  backdrop-filter: blur(5px);
   color: ${(props) => props.theme.colors.textPrimary};
   background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimary, alpha: 0.3 })};
   ${immaFlex({ align: 'center' })}

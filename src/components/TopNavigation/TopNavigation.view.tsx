@@ -26,7 +26,7 @@ const Nav: React.FC<INavProps> = () => {
             <S.ListItemLogo>
               HUB
               <S.CountryFlag
-                src={require(`../../assets/imgs/flags/${countryRXS?.url}`)}
+                src={require(`../../assets/imgs/flags/${countryRXS?.fileName}`)}
                 title={countryRXS?.name}
               />
             </S.ListItemLogo>
@@ -35,7 +35,7 @@ const Nav: React.FC<INavProps> = () => {
           <S.CountryItems className='country-list' onMouseLeave={onHideCountryList}>
             <S.CountryItem onClick={onChangeCountry('AU')}>
               <S.CountryItemFlag
-                src={require(`../../assets/imgs/flags/${countryRXS?.url}`)}
+                src={require(`../../assets/imgs/flags/${countryRXS?.fileName}`)}
                 title={countryRXS?.name}
               />
               <S.CountryItemText>Australia</S.CountryItemText>

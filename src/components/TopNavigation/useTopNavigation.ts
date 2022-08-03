@@ -4,8 +4,8 @@ import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
 import { UseTopNavigationReturnType } from './TopNavigation.types';
 import useLongPress from './useLongPress';
 import { gsap } from '../../gsap';
-import { changeCountryAXN } from '../../redux/actions/countryActions/countryActions';
 import { CountryAlpha2CodeTypes } from '../../typescriptGlobals/types';
+import utils from '../../utils';
 
 const useTopNavigation = (): UseTopNavigationReturnType => {
   const dispatch = useAppDispatch();
@@ -46,7 +46,50 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
 
   const onChangeCountry = (country: CountryAlpha2CodeTypes) => {
     return () => {
-      dispatch(changeCountryAXN(country));
+      switch (country) {
+        case 'UK':
+          utils.saveToLocalStorage({
+            key: 'selectedCountry',
+            value: {
+              name: 'United Kingdom Flag',
+              fileName: 'united-kingdom.png',
+              iso: 'UK',
+            },
+          });
+          break;
+        case 'CA':
+          utils.saveToLocalStorage({
+            key: 'selectedCountry',
+            value: {
+              name: 'Canada Flag',
+              fileName: 'canada.png',
+              iso: 'CA',
+            },
+          });
+          break;
+        case 'US':
+          utils.saveToLocalStorage({
+            key: 'selectedCountry',
+            value: {
+              name: 'United States Flag',
+              fileName: 'united-states.png',
+              iso: 'US',
+            },
+          });
+          break;
+        case 'AU':
+          utils.saveToLocalStorage({
+            key: 'selectedCountry',
+            value: {
+              name: 'Australia Flag',
+              fileName: 'australia.png',
+              iso: 'AU',
+            },
+          });
+          break;
+        default:
+          break;
+      }
     };
   };
 

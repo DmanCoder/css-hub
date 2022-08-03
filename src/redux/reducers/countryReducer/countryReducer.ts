@@ -4,7 +4,7 @@ import { ICountryDispatchTypes } from '../../actions/countryActions/countryActio
 
 const defaultState: CountryFlagTypes = {
   name: 'Australia Flag',
-  url: 'australia.png',
+  fileName: 'australia.png',
   iso: 'AU',
 };
 

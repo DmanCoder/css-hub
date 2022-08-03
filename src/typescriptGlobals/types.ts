@@ -55,8 +55,8 @@ export type SelectedNetworkTypes = {
 
 export type CountryFlagTypes = {
   name: string;
-  url: string;
-  iso: string;
+  fileName: 'united-kingdom.png' | 'united-states.png' | 'canada.png' | 'australia.png';
+  iso: CountryAlpha2CodeTypes;
 };
 
 export type CountryAlpha2CodeTypes = 'AU' | 'US' | 'CA' | 'UK';
