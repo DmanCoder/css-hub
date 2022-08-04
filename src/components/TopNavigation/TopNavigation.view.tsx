@@ -36,28 +36,28 @@ const Nav: React.FC<INavProps> = () => {
             <S.CountryItem className='country-list-item' onClick={onChangeCountry('AU')}>
               <S.CountryItemFlag
                 src={require(`../../assets/imgs/flags/australia.png`)}
-                title='Australia Flag'
+                title={utils.translate('translateTopNavigation.auFlag')}
               />
               <S.CountryItemText>{utils.translate('translateTopNavigation.au')}</S.CountryItemText>
             </S.CountryItem>
             <S.CountryItem className='country-list-item' onClick={onChangeCountry('GB')}>
               <S.CountryItemFlag
                 src={require(`../../assets/imgs/flags/united-kingdom.png`)}
-                title='United Kingdom Flag'
+                title={utils.translate('translateTopNavigation.gb')}
               />
-              <S.CountryItemText>{utils.translate('translateTopNavigation.uk')}</S.CountryItemText>
+              <S.CountryItemText>{utils.translate('translateTopNavigation.gb')}</S.CountryItemText>
             </S.CountryItem>
             <S.CountryItem className='country-list-item' onClick={onChangeCountry('CA')}>
               <S.CountryItemFlag
                 src={require(`../../assets/imgs/flags/canada.png`)}
-                title='Canada Flag'
+                title={utils.translate('translateTopNavigation.caFlag')}
               />
               <S.CountryItemText>{utils.translate('translateTopNavigation.ca')}</S.CountryItemText>
             </S.CountryItem>
             <S.CountryItem className='country-list-item' onClick={onChangeCountry('US')}>
               <S.CountryItemFlag
                 src={require(`../../assets/imgs/flags/united-states.png`)}
-                title='United State Flag'
+                title={utils.translate('translateTopNavigation.usFlag')}
               />
               <S.CountryItemText>{utils.translate('translateTopNavigation.us')}</S.CountryItemText>
             </S.CountryItem>
