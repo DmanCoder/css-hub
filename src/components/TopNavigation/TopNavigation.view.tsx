@@ -74,9 +74,10 @@ const Nav: React.FC<INavProps> = () => {
             <Assets.Icons.ArrowDropdown />
           </S.LanguageContainer>
           <S.LanguageItems>
-            <S.LanguageItem>en</S.LanguageItem>
-            <S.LanguageItem>zh</S.LanguageItem>
-            <S.LanguageItem>es</S.LanguageItem>
+            <S.LanguageItem title='English (en-US)'>en</S.LanguageItem>
+            <S.LanguageItem title='Chinese (zh-TW)'>zh</S.LanguageItem>
+            <S.LanguageItem title='Spanish (es-ES)'>es</S.LanguageItem>
+            <S.LanguageItem title='Hindi (hi-IN)'>es</S.LanguageItem>
           </S.LanguageItems>
         </S.ListItem>
         <S.ListItem>

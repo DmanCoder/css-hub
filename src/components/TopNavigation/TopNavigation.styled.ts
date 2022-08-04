@@ -84,6 +84,8 @@ export const CountryItems = styled.ul`
 
 export const CountryItem = styled.li`
   padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 300;
   border-radius: 100rem;
   white-space: nowrap;
   position: relative;
@@ -255,8 +257,8 @@ export const LanguageItems = styled.ul`
   position: absolute;
   text-align: center;
   background: transparent;
+  top: 3rem;
   z-index: 100;
-  /* padding-top: 3rem; */
 `;
 
 export const LanguageItem = styled.li`
@@ -266,8 +268,9 @@ export const LanguageItem = styled.li`
   margin-bottom: 0.5rem;
   font-weight: 300;
   padding: 0.5rem;
+  z-index: 100;
   border-radius: 50%;
-  /* font-size: 1.1rem; */
+  font-size: 1.1rem;
 
   &:hover {
     transition: background-color 0.25s ease-in-out;
