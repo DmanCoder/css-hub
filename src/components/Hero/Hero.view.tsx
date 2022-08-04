@@ -9,7 +9,6 @@ import { IHeroProps } from './Hero.types';
 import useHero from './useHero';
 import * as S from './Hero.styled';
 
-// TODO: Add MEdia caption tagline to the right of the hero banner
 const Hero: React.FC<IHeroProps> = (): JSX.Element => {
   const {
     description,

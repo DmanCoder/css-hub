@@ -33,5 +33,6 @@ export const MediaTagline = styled.span`
   color: ${({ theme }) => theme.colors.textPrimary};
   font-size: 1.6rem;
   opacity: 0;
+  text-align: center;
   ${centerEle({})}
 `;

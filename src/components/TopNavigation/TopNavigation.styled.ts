@@ -204,20 +204,7 @@ export const ListItem = styled.li`
   }
 
   &:nth-child(6) {
-    @media ${({ theme }) => theme.mediaQ.laptop64} {
-      order: 12;
-      font-weight: 500;
-      position: relative;
-      top: -0.3rem;
-      cursor: pointer;
-      opacity: 0.75;
-      ${immaFlex({ align: 'center' })};
-
-      svg {
-        padding: 0;
-        width: 1.6rem;
-      }
-    }
+    order: 12;
   }
 
   &:nth-child(10) {
@@ -243,4 +230,22 @@ export const ListItem = styled.li`
 
 export const SteamingServices = styled.div`
   position: relative;
+`;
+
+export const LanguageContainer = styled.div`
+  background-color: red;
+  @media ${({ theme }) => theme.mediaQ.laptop64} {
+    font-weight: 500;
+    position: relative;
+    top: -0.3rem;
+    cursor: pointer;
+    opacity: 0.75;
+    background-color: red;
+    ${immaFlex({ align: 'center' })};
+
+    svg {
+      padding: 0;
+      width: 1.6rem;
+    }
+  }
 `;

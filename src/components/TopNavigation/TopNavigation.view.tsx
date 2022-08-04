@@ -69,8 +69,10 @@ const Nav: React.FC<INavProps> = () => {
         <S.ListItem>{utils.translate('translateTopNavigation.myList')}</S.ListItem>
 
         <S.ListItem>
-          EN
-          <Assets.Icons.ArrowDropdown />
+          <S.LanguageContainer>
+            EN
+            <Assets.Icons.ArrowDropdown />
+          </S.LanguageContainer>
         </S.ListItem>
         <S.ListItem>
           <Assets.Icons.Account />
