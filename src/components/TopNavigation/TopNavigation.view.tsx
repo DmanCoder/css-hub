@@ -15,6 +15,8 @@ const Nav: React.FC<INavProps> = () => {
     onHideCountryList,
     countryRXS,
     onChangeCountry,
+    onShowLanguageList,
+    onHideLanguageList,
   } = useTopNavigation();
 
   return (
@@ -69,15 +71,23 @@ const Nav: React.FC<INavProps> = () => {
         <S.ListItem>{utils.translate('translateTopNavigation.myList')}</S.ListItem>
 
         <S.ListItem>
-          <S.LanguageContainer>
+          <S.LanguageContainer onClick={onShowLanguageList}>
             EN
             <Assets.Icons.ArrowDropdown />
           </S.LanguageContainer>
-          <S.LanguageItems>
-            <S.LanguageItem title='English (en-US)'>en</S.LanguageItem>
-            <S.LanguageItem title='Chinese (zh-TW)'>zh</S.LanguageItem>
-            <S.LanguageItem title='Spanish (es-ES)'>es</S.LanguageItem>
-            <S.LanguageItem title='Hindi (hi-IN)'>es</S.LanguageItem>
+          <S.LanguageItems className='language-list'>
+            <S.LanguageItem className='language-list-item' title='English (en-US)'>
+              en
+            </S.LanguageItem>
+            <S.LanguageItem className='language-list-item' title='Chinese (zh-TW)'>
+              zh
+            </S.LanguageItem>
+            <S.LanguageItem className='language-list-item' title='Spanish (es-ES)'>
+              es
+            </S.LanguageItem>
+            <S.LanguageItem className='language-list-item' title='Hindi (hi-IN)'>
+              es
+            </S.LanguageItem>
           </S.LanguageItems>
         </S.ListItem>
         <S.ListItem>

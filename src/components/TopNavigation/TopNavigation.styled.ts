@@ -253,7 +253,7 @@ export const LanguageContainer = styled.div`
 
 export const LanguageItems = styled.ul`
   background: green;
-  /* display: none; */
+  display: none;
   position: absolute;
   text-align: center;
   background: transparent;
@@ -262,8 +262,6 @@ export const LanguageItems = styled.ul`
 `;
 
 export const LanguageItem = styled.li`
-  background: ${(props) => props.theme.colors.bg};
-  background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimary, alpha: 0.3 })};
   text-transform: uppercase;
   margin-bottom: 0.5rem;
   font-weight: 300;
@@ -271,6 +269,12 @@ export const LanguageItem = styled.li`
   z-index: 100;
   border-radius: 50%;
   font-size: 1.1rem;
+  opacity: 0;
+  position: relative;
+  backdrop-filter: blur(5px);
+  top: -10.8rem;
+  background: ${(props) => props.theme.colors.bg};
+  background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimary, alpha: 0.3 })};
 
   &:hover {
     transition: background-color 0.25s ease-in-out;

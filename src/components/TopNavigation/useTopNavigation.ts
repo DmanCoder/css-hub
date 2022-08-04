@@ -14,6 +14,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
   const countryRXS = useAppSelector((state: RootState) => state.countryRXS);
   const navWrapperRef = React.useRef<HTMLUListElement>(null);
   const countryTL = React.useRef(gsap.timeline({ paused: true }));
+  const languageTL = React.useRef(gsap.timeline({ paused: true }));
 
   React.useEffect(() => {
     countryTL.current
@@ -48,6 +49,39 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
       );
   }, []);
 
+  React.useEffect(() => {
+    languageTL.current
+      .to('.language-list', {
+        ease: 'power1.out',
+        css: { display: 'block' },
+      })
+      .to(
+        '.language-list-item',
+        {
+          duration: 0.75,
+          ease: 'back.out',
+          stagger: { amount: 0.25, from: 'start' },
+          css: {
+            top: 0,
+          },
+        },
+        'drop',
+      )
+      .to(
+        '.language-list-item',
+        {
+          delay: 0.25,
+          duration: 0.75,
+          ease: 'back.out',
+          stagger: { amount: 0.25, from: 'start' },
+          css: {
+            opacity: 1,
+          },
+        },
+        'drop',
+      );
+  }, []);
+
   const onToggleSideNetworkDisplay = () => {
     dispatch(
       toggleLeftSideNavigationToShowAvailableStreamingServicesAXN({
@@ -66,6 +100,15 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
 
   const onHideCountryList = () => {
     countryTL.current.reverse();
+  };
+
+  const onShowLanguageList = () => {
+    console.log('THIS IS RUNNIGN');
+    languageTL.current.play();
+  };
+
+  const onHideLanguageList = () => {
+    languageTL.current.reverse();
   };
 
   const onLongPress = useLongPress({ onPageReset, onShowCountryList });
@@ -126,6 +169,8 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
     onHideCountryList,
     countryRXS,
     onChangeCountry,
+    onShowLanguageList,
+    onHideLanguageList,
   };
 };
 
