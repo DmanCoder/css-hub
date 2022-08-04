@@ -234,14 +234,12 @@ export const SteamingServices = styled.div`
 `;
 
 export const LanguageContainer = styled.div`
-  background-color: red;
   @media ${({ theme }) => theme.mediaQ.laptop64} {
     font-weight: 500;
     position: relative;
     top: -0.3rem;
     cursor: pointer;
     opacity: 0.75;
-    background-color: red;
     ${immaFlex({ align: 'center' })};
 
     svg {
@@ -261,4 +259,18 @@ export const LanguageItems = styled.ul`
   /* padding-top: 3rem; */
 `;
 
-export const LanguageItem = styled.li``;
+export const LanguageItem = styled.li`
+  background: ${(props) => props.theme.colors.bg};
+  background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimary, alpha: 0.3 })};
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+  padding: 0.5rem;
+  border-radius: 50%;
+  /* font-size: 1.1rem; */
+
+  &:hover {
+    transition: background-color 0.25s ease-in-out;
+    background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.primary, alpha: 0.3 })};
+  }
+`;

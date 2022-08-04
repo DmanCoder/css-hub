@@ -60,3 +60,5 @@ export type CountryFlagTypes = {
 };
 
 export type CountryAlpha2CodeTypes = 'AU' | 'US' | 'CA' | 'GB';
+
+export type LanguageCodeTypes = 'en-US' | 'es-ES' | 'zh-TW' | '	hi-IN';

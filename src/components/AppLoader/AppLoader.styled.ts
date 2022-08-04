@@ -29,7 +29,6 @@ export const Dots = styled.div`
 
 export const MediaTagline = styled.span`
   display: inline-block;
-  color: red;
   color: ${({ theme }) => theme.colors.textPrimary};
   font-size: 1.6rem;
   opacity: 0;
