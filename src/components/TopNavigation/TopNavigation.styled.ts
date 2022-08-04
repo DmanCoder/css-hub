@@ -205,6 +205,7 @@ export const ListItem = styled.li`
 
   &:nth-child(6) {
     order: 12;
+    position: relative;
   }
 
   &:nth-child(10) {
@@ -249,3 +250,15 @@ export const LanguageContainer = styled.div`
     }
   }
 `;
+
+export const LanguageItems = styled.ul`
+  background: green;
+  /* display: none; */
+  position: absolute;
+  text-align: center;
+  background: transparent;
+  z-index: 100;
+  /* padding-top: 3rem; */
+`;
+
+export const LanguageItem = styled.li``;
