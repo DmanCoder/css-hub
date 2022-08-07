@@ -10,6 +10,7 @@ import saveToLocalStorage from './saveToLocalStorage';
 import networkIdToNetworkName from './networkIdToNetworkName';
 import timeConverter from './timeConverter';
 import randomNumberGenerator from './randomNumberGenerator';
+import returnCountryCodeBasedOnLanguageCode from './returnCountryCodeBasedOnLanguageCode';
 
 const utils = {
   isEmpty,
@@ -25,6 +26,7 @@ const utils = {
   networkIdToNetworkName,
   timeConverter,
   randomNumberGenerator,
+  returnCountryCodeBasedOnLanguageCode,
 };
 
 export default utils;
