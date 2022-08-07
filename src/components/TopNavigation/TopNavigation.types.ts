@@ -23,4 +23,6 @@ export type UseTopNavigationReturnType = {
   onChangeCountry: (country: CountryAlpha2CodeTypes) => (event: React.MouseEvent) => void;
   onShowLanguageList: () => void;
   onHideLanguageList: () => void;
+  // languageRef: React.RefObject<HTMLElement>;
+  languageRef: any;
 };

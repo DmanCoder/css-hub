@@ -6,13 +6,19 @@ import useLongPress from './useLongPress';
 import { gsap } from '../../gsap';
 import { CountryAlpha2CodeTypes } from '../../typescriptGlobals/types';
 import utils from '../../utils';
+import hooks from '../../hooks';
 
 const useTopNavigation = (): UseTopNavigationReturnType => {
   const dispatch = useAppDispatch();
 
   const { isShowLeftNavigation } = useAppSelector((state: RootState) => state.networkRXS);
   const countryRXS = useAppSelector((state: RootState) => state.countryRXS);
+
   const navWrapperRef = React.useRef<HTMLUListElement>(null);
+  const languageRef = hooks.useOnClickOutside(() => {
+    console.log('KING DENIS');
+  });
+
   const countryTL = React.useRef(gsap.timeline({ paused: true }));
   const languageTL = React.useRef(gsap.timeline({ paused: true }));
 
@@ -103,7 +109,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
   };
 
   const onShowLanguageList = () => {
-    console.log('THIS IS RUNNIGN');
+    console.log('onShowLanguageList');
     languageTL.current.play();
   };
 
@@ -171,6 +177,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
     onChangeCountry,
     onShowLanguageList,
     onHideLanguageList,
+    languageRef,
   };
 };
 

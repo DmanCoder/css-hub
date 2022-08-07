@@ -1,12 +1,13 @@
-import { useEffect, RefObject } from 'react';
+import React from 'react';
 
 type Event = MouseEvent | TouchEvent;
 
 const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
-  ref: RefObject<T>,
   handler: (event: Event) => void,
 ) => {
-  useEffect(() => {
+  const ref = React.useRef<T>(null);
+
+  React.useEffect(() => {
     const listener = (event: Event) => {
       const el = ref?.current;
       if (!el || el.contains((event?.target as Node) || null)) {
@@ -24,6 +25,8 @@ const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
       document.removeEventListener('touchstart', listener);
     };
   }, [ref, handler]); // Reload only if ref or handler changes
+
+  return ref;
 };
 
 export default useOnClickOutside;

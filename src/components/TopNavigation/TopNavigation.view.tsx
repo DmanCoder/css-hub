@@ -17,6 +17,7 @@ const Nav: React.FC<INavProps> = () => {
     onChangeCountry,
     onShowLanguageList,
     onHideLanguageList,
+    languageRef,
   } = useTopNavigation();
 
   return (
@@ -70,7 +71,7 @@ const Nav: React.FC<INavProps> = () => {
         <S.ListItem>{utils.translate('translateTopNavigation.people')}</S.ListItem>
         <S.ListItem>{utils.translate('translateTopNavigation.myList')}</S.ListItem>
 
-        <S.ListItem>
+        <S.ListItem ref={languageRef}>
           <S.LanguageContainer onClick={onShowLanguageList}>
             EN
             <Assets.Icons.ArrowDropdown />
