@@ -173,7 +173,6 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
     countryRXS,
     onChangeCountry,
     onShowLanguageList,
-    onHideLanguageList,
     languageRef,
   };
 };

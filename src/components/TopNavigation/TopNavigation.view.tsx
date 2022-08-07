@@ -16,7 +16,6 @@ const Nav: React.FC<INavProps> = () => {
     countryRXS,
     onChangeCountry,
     onShowLanguageList,
-    onHideLanguageList,
     languageRef,
   } = useTopNavigation();
 
