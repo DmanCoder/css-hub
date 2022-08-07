@@ -17,6 +17,7 @@ const Nav: React.FC<INavProps> = () => {
     onChangeCountry,
     onShowLanguageList,
     languageRef,
+    onChangeAppLanguage,
   } = useTopNavigation();
 
   return (
@@ -76,16 +77,28 @@ const Nav: React.FC<INavProps> = () => {
             <Assets.Icons.ArrowDropdown />
           </S.LanguageContainer>
           <S.LanguageItems className='language-list'>
-            <S.LanguageItem className='language-list-item' title='English (en-US)'>
+            <S.LanguageItem
+              onClick={onChangeAppLanguage('en-US')}
+              className='language-list-item'
+              title='English (en-US)'>
               en
             </S.LanguageItem>
-            <S.LanguageItem className='language-list-item' title='Chinese (zh-TW)'>
+            <S.LanguageItem
+              onClick={onChangeAppLanguage('zh-TW')}
+              className='language-list-item'
+              title='Chinese (zh-TW)'>
               zh
             </S.LanguageItem>
-            <S.LanguageItem className='language-list-item' title='Spanish (es-ES)'>
+            <S.LanguageItem
+              onClick={onChangeAppLanguage('es-ES')}
+              className='language-list-item'
+              title='Spanish (es-ES)'>
               es
             </S.LanguageItem>
-            <S.LanguageItem className='language-list-item' title='Hindi (hi-IN)'>
+            <S.LanguageItem
+              onClick={onChangeAppLanguage('hi-IN')}
+              className='language-list-item'
+              title='Hindi (hi-IN)'>
               es
             </S.LanguageItem>
           </S.LanguageItems>

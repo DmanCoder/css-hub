@@ -1,8 +1,9 @@
 import { ActionTypes } from '..';
+import { LanguageCodeTypes } from '../../../typescriptGlobals/types';
 
-export const languageActionsAXN = (isLoading: boolean) => {
+export const setLanguageAXN = (lang: LanguageCodeTypes) => {
   return {
     type: ActionTypes.CHANGE_LANGUAGE,
-    payload: isLoading,
+    payload: lang,
   };
 };
