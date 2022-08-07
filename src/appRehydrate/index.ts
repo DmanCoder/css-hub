@@ -3,9 +3,9 @@ import { rehydrateSelectedCountry } from './rehydrateSelectedCountry';
 import { rehydrateSelectedLanguage } from './rehydrateSelectedLanguage';
 
 const appRehydrate = () => {
+  rehydrateSelectedLanguage();
   rehydrateSelectedNetwork();
   rehydrateSelectedCountry();
-  rehydrateSelectedLanguage();
 };
 
 export default appRehydrate;
