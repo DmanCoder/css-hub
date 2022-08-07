@@ -1,6 +1,6 @@
 import { LanguageCodeTypes } from '../typescriptGlobals/types';
 
-const returnCountryCodeBasedOnLanguageCode = (lang: LanguageCodeTypes): string => {
+const returnLanguageCodeShortHand = (lang: LanguageCodeTypes): string => {
   switch (lang) {
     case 'en-US':
       return 'EN';
@@ -15,4 +15,4 @@ const returnCountryCodeBasedOnLanguageCode = (lang: LanguageCodeTypes): string =
   }
 };
 
-export default returnCountryCodeBasedOnLanguageCode;
+export default returnLanguageCodeShortHand;

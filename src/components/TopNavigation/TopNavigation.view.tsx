@@ -74,7 +74,7 @@ const Nav: React.FC<INavProps> = () => {
 
         <S.ListItem ref={languageRef}>
           <S.LanguageContainer onClick={onShowLanguageList}>
-            {utils.returnCountryCodeBasedOnLanguageCode(languageRXS)}
+            {utils.returnLanguageCodeShortHand(languageRXS)}
             <Assets.Icons.ArrowDropdown />
           </S.LanguageContainer>
           <S.LanguageItems className='language-list'>
