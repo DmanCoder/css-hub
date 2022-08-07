@@ -13,6 +13,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
 
   const { isShowLeftNavigation } = useAppSelector((state: RootState) => state.networkRXS);
   const countryRXS = useAppSelector((state: RootState) => state.countryRXS);
+  const languageRXS = useAppSelector((state: RootState) => state.languageRXS);
 
   const navWrapperRef = React.useRef<HTMLUListElement>(null);
   const languageRef = hooks.useOnClickOutside(() => {
@@ -96,7 +97,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
   const onChangeAppLanguage = (lang: LanguageCodeTypes) => {
     return () => {
       utils.saveToLocalStorage({
-        key: 'selectedNetwork',
+        key: 'selectedLanguage',
         value: lang,
       });
 
@@ -181,6 +182,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
     onLongPress,
     onHideCountryList,
     countryRXS,
+    languageRXS,
     onChangeCountry,
     onShowLanguageList,
     languageRef,

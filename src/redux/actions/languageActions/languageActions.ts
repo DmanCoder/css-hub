@@ -1,13 +1,8 @@
 import { ActionTypes } from '..';
 import { LanguageCodeTypes } from '../../../typescriptGlobals/types';
-import utils from '../../../utils';
+import { ILanguage } from './languageActions.types';
 
-export const setLanguageAXN = (lang: LanguageCodeTypes) => {
-  utils.saveToLocalStorage({
-    key: 'selectedNetwork',
-    value: lang,
-  });
-
+export const setLanguageAXN = (lang: LanguageCodeTypes): ILanguage => {
   return {
     type: ActionTypes.CHANGE_LANGUAGE,
     payload: lang,

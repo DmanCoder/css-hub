@@ -1,7 +1,8 @@
+import { LanguageCodeTypes } from '../../../typescriptGlobals/types';
 import { ActionTypes } from '../../actions';
 import { ILanguageDispatchTypes } from '../../actions/languageActions/languageActions.types';
 
-const defaultState = 'en-US';
+const defaultState: LanguageCodeTypes = 'en-US';
 
 const languageReducer = (state = defaultState, action: ILanguageDispatchTypes): string => {
   switch (action.type) {

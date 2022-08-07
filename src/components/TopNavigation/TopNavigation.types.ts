@@ -24,6 +24,7 @@ export type UseTopNavigationReturnType = {
   onLongPress: object;
   onHideCountryList: () => void;
   countryRXS: CountryFlagTypes;
+  languageRXS: LanguageCodeTypes;
   onChangeCountry: (country: CountryAlpha2CodeTypes) => (event: React.MouseEvent) => void;
   onShowLanguageList: () => void;
   languageRef: any; // TODO: FIX THIS
