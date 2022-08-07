@@ -7,7 +7,6 @@ import { gsap } from '../../gsap';
 import { CountryAlpha2CodeTypes, LanguageCodeTypes } from '../../typescriptGlobals/types';
 import utils from '../../utils';
 import hooks from '../../hooks';
-import { setLanguageAXN } from '../../redux/actions/languageActions/languageActions';
 
 const useTopNavigation = (): UseTopNavigationReturnType => {
   const dispatch = useAppDispatch();
@@ -96,7 +95,12 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
   };
   const onChangeAppLanguage = (lang: LanguageCodeTypes) => {
     return () => {
-      dispatch(setLanguageAXN(lang));
+      utils.saveToLocalStorage({
+        key: 'selectedNetwork',
+        value: lang,
+      });
+
+      window.location.reload();
     };
   };
 
