@@ -4,10 +4,11 @@ import { SelectedNetworkTypes } from '../typescriptGlobals/types';
 
 export const rehydrateSelectedNetwork = () => {
   const selectedNetwork: null | string = window.localStorage.getItem('selectedNetwork');
+  const selectedCountry = store.getState().countryRXS;
 
   if (typeof selectedNetwork === 'string') {
     const parsed: SelectedNetworkTypes = JSON.parse(selectedNetwork);
-    window.document.title = parsed.networkName;
+    window.document.title = `${parsed.networkName} (${selectedCountry?.iso})`;
     store.dispatch(switchBetweenPopularStreamingNetworksAXN(parsed.networkName));
 
     const favicon = window.document.getElementById('app-favicon');
