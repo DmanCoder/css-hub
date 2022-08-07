@@ -16,7 +16,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
 
   const navWrapperRef = React.useRef<HTMLUListElement>(null);
   const languageRef = hooks.useOnClickOutside(() => {
-    console.log('KING DENIS');
+    onHideLanguageList();
   });
 
   const countryTL = React.useRef(gsap.timeline({ paused: true }));
@@ -25,7 +25,6 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
   React.useEffect(() => {
     countryTL.current
       .to('.country-list', {
-        ease: 'power1.out',
         css: { display: 'block' },
       })
       .to(
@@ -58,7 +57,6 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
   React.useEffect(() => {
     languageTL.current
       .to('.language-list', {
-        ease: 'power1.out',
         css: { display: 'block' },
       })
       .to(
@@ -109,7 +107,6 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
   };
 
   const onShowLanguageList = () => {
-    console.log('onShowLanguageList');
     languageTL.current.play();
   };
 
