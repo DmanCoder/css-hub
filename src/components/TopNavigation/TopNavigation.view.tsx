@@ -97,9 +97,9 @@ const Nav: React.FC<INavProps> = () => {
               es
             </S.LanguageItem>
             <S.LanguageItem
-              onClick={onChangeAppLanguage('hi-IN')}
+              onClick={onChangeAppLanguage('hi')}
               className='language-list-item'
-              title='Hindi (hi-IN)'>
+              title='Hindi (hi)'>
               HI
             </S.LanguageItem>
             <S.LanguageItem
