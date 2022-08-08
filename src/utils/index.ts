@@ -11,6 +11,7 @@ import networkIdToNetworkName from './networkIdToNetworkName';
 import timeConverter from './timeConverter';
 import randomNumberGenerator from './randomNumberGenerator';
 import returnLanguageCodeShortHand from './returnLanguageCodeShortHand';
+import removeSpaceFromString from './removeSpaceFromString';
 
 const utils = {
   isEmpty,
@@ -27,6 +28,7 @@ const utils = {
   timeConverter,
   randomNumberGenerator,
   returnLanguageCodeShortHand,
+  removeSpaceFromString,
 };
 
 export default utils;

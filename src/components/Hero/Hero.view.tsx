@@ -35,7 +35,9 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
       <S.HeroContent className='network-padding'>
         <S.Network>
           <S.NetworkLink href={mediaDetails?.homepage} target='_blank' title={networkName}>
-            {networkName}
+            {utils.translate(
+              `translateHero.${utils.removeSpaceFromString(networkName)?.toLowerCase()}`,
+            )}
           </S.NetworkLink>
         </S.Network>
 

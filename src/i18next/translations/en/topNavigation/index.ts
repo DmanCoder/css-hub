@@ -11,7 +11,7 @@ const translateTopNavigation = {
   caFlag: 'Canada Flag',
   us: 'United States',
   usFlag: 'United States Flag',
-  enTitleAttr: 'English (en-US)',
+  esTitleAttr: 'English (en-US)',
   jaTitleAttr: 'Japanese (ja)',
   frTitleAttr: 'Spanish (Colombia)',
 };
