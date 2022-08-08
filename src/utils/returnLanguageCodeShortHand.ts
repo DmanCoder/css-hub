@@ -7,7 +7,9 @@ const returnLanguageCodeShortHand = (lang: LanguageCodeTypes): string => {
     case 'es-CO':
       return 'ES';
     case 'ja':
-      return 'ZH';
+      return 'JA';
+    case 'fr':
+      return 'FR';
     case 'hi':
       return 'HI';
     default:
