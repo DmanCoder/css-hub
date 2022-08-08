@@ -96,6 +96,12 @@ const Nav: React.FC<INavProps> = () => {
               title='French (Standard)'>
               FR
             </S.LanguageItem>
+            <S.LanguageItem
+              onClick={onChangeAppLanguage('es-CO')}
+              className='language-list-item'
+              title='Spanish (Colombia)'>
+              ES
+            </S.LanguageItem>
           </S.LanguageItems>
         </S.ListItem>
         <S.ListItem>
