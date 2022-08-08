@@ -85,22 +85,10 @@ const Nav: React.FC<INavProps> = () => {
               en
             </S.LanguageItem>
             <S.LanguageItem
-              onClick={onChangeAppLanguage('zh-TW')}
+              onClick={onChangeAppLanguage('ja')}
               className='language-list-item'
-              title='Chinese (zh-TW)'>
-              zh
-            </S.LanguageItem>
-            <S.LanguageItem
-              onClick={onChangeAppLanguage('es-CO')}
-              className='language-list-item'
-              title='Spanish (es-CO)'>
-              es
-            </S.LanguageItem>
-            <S.LanguageItem
-              onClick={onChangeAppLanguage('hi')}
-              className='language-list-item'
-              title='Hindi (hi)'>
-              HI
+              title='Japanese (ja)'>
+              JA
             </S.LanguageItem>
             <S.LanguageItem
               onClick={onChangeAppLanguage('fr')}

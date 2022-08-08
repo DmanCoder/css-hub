@@ -6,7 +6,7 @@ const returnLanguageCodeShortHand = (lang: LanguageCodeTypes): string => {
       return 'EN';
     case 'es-CO':
       return 'ES';
-    case 'zh-TW':
+    case 'ja':
       return 'ZH';
     case 'hi':
       return 'HI';
