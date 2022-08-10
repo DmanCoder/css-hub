@@ -25,9 +25,13 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
 
   React.useEffect(() => {
     countryTL.current
-      .to('.country-list', {
-        css: { display: 'block' },
-      })
+      .to(
+        '.country-list',
+        {
+          css: { display: 'block' },
+        },
+        'drop',
+      )
       .to(
         '.country-list-item',
         {
@@ -57,9 +61,13 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
 
   React.useEffect(() => {
     languageTL.current
-      .to('.language-list', {
-        css: { display: 'block' },
-      })
+      .to(
+        '.language-list',
+        {
+          css: { display: 'block' },
+        },
+        'drop',
+      )
       .to(
         '.language-list-item',
         {
