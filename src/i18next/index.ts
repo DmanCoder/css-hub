@@ -14,12 +14,24 @@ i18n
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     debug: process.env.NODE_ENV === 'development' ? true : false,
-    fallbackLng: 'en',
+    fallbackLng: 'en-US',
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
     resources: {
-      en: {
+      'en-US': {
+        translation: en,
+      },
+      'es-CO': {
+        translation: en,
+      },
+      ja: {
+        translation: en,
+      },
+      hi: {
+        translation: en,
+      },
+      fr: {
         translation: en,
       },
     },
