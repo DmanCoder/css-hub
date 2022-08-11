@@ -47,12 +47,12 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
 
         <S.HeroActions>
           {/* TODO: PLAY OR STOP/RESET TRAILER */}
-          <S.PlayButton title='Play Trailer'>
+          <S.PlayButton title={utils.translate('translateHero.playTrailer')}>
             {utils.translate('translateHero.playTrailer')}
           </S.PlayButton>
 
           <S.InfoButton
-            title={`More Information About ${
+            title={`${utils.translate('translateHero.moreInfo')} ${
               streams[indexPosition]?.name || streams[indexPosition]?.title
             }`}>
             <Assets.Icons.GraphicEQ />

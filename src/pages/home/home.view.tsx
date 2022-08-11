@@ -12,7 +12,7 @@ const Home: React.FC<IHomeProps> = (): JSX.Element => {
     <S.Wrapper>
       <Hero />
       <Gallery
-        title='Whats Popular'
+        title={utils.translate('translateGallery.tabHeaderTitle')}
         section='popular'
         tabs={[
           {

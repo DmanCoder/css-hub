@@ -6,6 +6,7 @@ const translateHero = {
   'appletv+': 'Apple TV+',
   primevideos: 'Prime Videos',
   'disney+': 'Disney+',
+  moreInfo: 'More infomation about - ',
 };
 
 export default translateHero;

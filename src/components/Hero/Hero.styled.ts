@@ -166,7 +166,7 @@ export const HeroActions = styled.div`
 
 export const PlayButton = styled(Button)`
   height: 4rem;
-  width: 12rem;
+  min-width: 12rem;
   border-radius: 100rem;
   display: inline-block;
   font-size: 1.3rem;

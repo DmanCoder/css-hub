@@ -3,6 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 import en from './locals/en';
+import ja from './locals/ja';
 
 i18n
   // detect user language
@@ -26,7 +27,7 @@ i18n
         translation: en,
       },
       ja: {
-        translation: en,
+        translation: ja,
       },
       hi: {
         translation: en,
