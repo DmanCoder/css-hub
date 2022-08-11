@@ -7,14 +7,14 @@ import {
   returnContentRating,
   returnNetworkName,
 } from './Hero.helpers';
+import utils from '../../utils';
 
 const useHero = (): UseHeroReturnType => {
   const { streams, indexPosition } = useAppSelector((state: RootState) => state.popularRXS);
   const { networkId } = useAppSelector((state: RootState) => state.networkRXS);
   const mediaDetails = useAppSelector((state: RootState) => state.detailsRXS);
 
-  const placeholder =
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+  const placeholder = utils.translate('translateLeftNavigation.placeholderDescription');
   const description: string = streams[indexPosition]?.overview || placeholder;
 
   const networkName = returnNetworkName({

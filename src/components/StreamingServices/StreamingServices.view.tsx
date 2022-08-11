@@ -5,6 +5,7 @@ import Assets from '../../assets';
 import { IStreamingServicesProps } from './StreamingServices.types';
 import useStreamingServices from './useStreamingServices';
 import * as S from './StreamingServices.styled';
+import utils from '../../utils';
 
 const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | null => {
   const {
@@ -19,55 +20,55 @@ const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | n
   return (
     <S.Wrapper ref={streamingServicesWrapper}>
       <S.Network
-        title='Netflix'
+        title={utils.translate('translateLeftNavigation.netflix')}
         onClick={onChangeSiteToSelectedNetwork('Netflix')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
         <Assets.Logos.Netflix />
       </S.Network>
 
       <S.Network
-        title='Apple Tv+'
+        title={utils.translate('translateLeftNavigation.appletv+')}
         onClick={onChangeSiteToSelectedNetwork('Apple Tv+')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
         <Assets.Logos.AppleTV />
       </S.Network>
 
       <S.Network
-        title='Prime Videos'
+        title={utils.translate('translateLeftNavigation.primevideos')}
         onClick={onChangeSiteToSelectedNetwork('Prime Videos')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
         <Assets.Logos.PrimeVideos />
       </S.Network>
 
       <S.Network
-        title='Disney+'
+        title={utils.translate('translateLeftNavigation.disney+')}
         onClick={onChangeSiteToSelectedNetwork('Disney+')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
         <Assets.Logos.Disney />
       </S.Network>
 
       <S.Network
-        title='HBO Max'
+        title={utils.translate('translateLeftNavigation.hbomax')}
         onClick={onChangeSiteToSelectedNetwork('HBO MAX')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
         <Assets.Logos.HBOMax />
       </S.Network>
 
       <S.Network
-        title='Shuffle Mode'
+        title={utils.translate('translateLeftNavigation.shuffleMode')}
         onClick={onChangeSiteToSelectedNetwork('Shuffle')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
         <Assets.Icons.Shuffle />
       </S.Network>
 
       <S.Network
-        title='Add New Network'
+        title={utils.translate('translateLeftNavigation.addNewNetwork')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
         <S.AddNewNetwork>+</S.AddNewNetwork>
       </S.Network>
 
       <S.Network
-        title='Exit'
+        title={utils.translate('translateLeftNavigation.exit')}
         onClick={onToggleSideNetworkDisplay}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
         <S.Exit>
