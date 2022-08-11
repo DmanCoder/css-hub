@@ -15,6 +15,10 @@ const translateTopNavigation = {
   esTitleAttr: 'スペイン語（es-co）',
   jaTitleAttr: '日本語（および）',
   frTitleAttr: 'フランス語（標準）',
+  searchIcon: '映画、テレビ番組、人を探す...',
+  profileIcon: '私のプロフィールを表示します',
+  notificationIcon: '通知を表示します',
+  dots: '新しいネットワークを選択します',
 };
 
 export default translateTopNavigation;

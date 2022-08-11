@@ -104,16 +104,18 @@ const Nav: React.FC<INavProps> = () => {
             </S.LanguageItem>
           </S.LanguageItems>
         </S.ListItem>
-        <S.ListItem>
+        <S.ListItem title={utils.translate('translateTopNavigation.profileIcon')}>
           <Assets.Icons.Account />
         </S.ListItem>
-        <S.ListItem>
+        <S.ListItem title={utils.translate('translateTopNavigation.notificationIcon')}>
           <Assets.Icons.Notification />
         </S.ListItem>
-        <S.ListItem onClick={onToggleSideNetworkDisplay}>
+        <S.ListItem
+          title={utils.translate('translateTopNavigation.dots')}
+          onClick={onToggleSideNetworkDisplay}>
           <Assets.Icons.MoreHoriz />
         </S.ListItem>
-        <S.ListItem>
+        <S.ListItem title={utils.translate('translateTopNavigation.searchIcon')}>
           <Assets.Icons.Search />
         </S.ListItem>
       </S.ListContainer>
