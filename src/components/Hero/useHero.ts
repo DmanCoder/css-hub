@@ -14,7 +14,7 @@ const useHero = (): UseHeroReturnType => {
   const { networkId } = useAppSelector((state: RootState) => state.networkRXS);
   const mediaDetails = useAppSelector((state: RootState) => state.detailsRXS);
 
-  const placeholder = utils.translate('translateLeftNavigation.placeholderDescription');
+  const placeholder = utils.translate('translateHero.placeholderDescription');
   const description: string = streams[indexPosition]?.overview || placeholder;
 
   const networkName = returnNetworkName({
