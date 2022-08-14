@@ -5,6 +5,7 @@ import { immaFlex, hex2rgba } from '../../styled/abstract/mixins';
 export const Nav = styled.nav`
   background: transparent;
   font-size: 1.3rem;
+  backdrop-filter: blur(3px);
   height: 6.5rem;
   font-weight: 400;
   position: fixed;
