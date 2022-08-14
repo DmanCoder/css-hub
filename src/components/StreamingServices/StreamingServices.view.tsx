@@ -6,6 +6,14 @@ import { IStreamingServicesProps } from './StreamingServices.types';
 import useStreamingServices from './useStreamingServices';
 import * as S from './StreamingServices.styled';
 import utils from '../../utils';
+import {
+  APPLE_TV_NETWORK_ID,
+  DISNEY_NETWORK_ID,
+  HBO_MAX_NETWORK_ID,
+  NETFLIX_NETWORK_ID,
+  PRIME_VIDEOS_NETWORK_ID,
+  SHUFFLE_NETWORK_ID,
+} from '../../typescriptGlobals/constants';
 
 const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | null => {
   const {
@@ -21,7 +29,7 @@ const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | n
   return (
     <S.Wrapper ref={streamingServicesWrapper}>
       <S.Network
-        className={networkId === 213 ? 'active' : ''}
+        className={networkId === NETFLIX_NETWORK_ID ? 'active' : ''}
         title={utils.translate('translateLeftNavigation.netflix')}
         onClick={onChangeSiteToSelectedNetwork('Netflix')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
@@ -29,7 +37,7 @@ const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | n
       </S.Network>
 
       <S.Network
-        className={networkId === 2552 ? 'active' : ''}
+        className={networkId === APPLE_TV_NETWORK_ID ? 'active' : ''}
         title={utils.translate('translateLeftNavigation.appletv+')}
         onClick={onChangeSiteToSelectedNetwork('Apple Tv+')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
@@ -37,7 +45,7 @@ const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | n
       </S.Network>
 
       <S.Network
-        className={networkId === 1024 ? 'active' : ''}
+        className={networkId === PRIME_VIDEOS_NETWORK_ID ? 'active' : ''}
         title={utils.translate('translateLeftNavigation.primevideos')}
         onClick={onChangeSiteToSelectedNetwork('Prime Videos')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
@@ -45,7 +53,7 @@ const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | n
       </S.Network>
 
       <S.Network
-        className={networkId === 2739 ? 'active' : ''}
+        className={networkId === DISNEY_NETWORK_ID ? 'active' : ''}
         title={utils.translate('translateLeftNavigation.disney+')}
         onClick={onChangeSiteToSelectedNetwork('Disney+')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
@@ -53,7 +61,7 @@ const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | n
       </S.Network>
 
       <S.Network
-        className={networkId === 49 ? 'active' : ''}
+        className={networkId === HBO_MAX_NETWORK_ID ? 'active' : ''}
         title={utils.translate('translateLeftNavigation.hbomax')}
         onClick={onChangeSiteToSelectedNetwork('HBO MAX')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
@@ -61,7 +69,7 @@ const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | n
       </S.Network>
 
       <S.Network
-        className={networkId === -1 ? 'active' : ''}
+        className={networkId === SHUFFLE_NETWORK_ID ? 'active' : ''}
         title={utils.translate('translateLeftNavigation.shuffleMode')}
         onClick={onChangeSiteToSelectedNetwork('Shuffle')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
