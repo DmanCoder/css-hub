@@ -19,7 +19,9 @@ const useStreamingServices = (): UseStreamingServicesReturnTypes => {
 
   const streamingServicesWrapper = React.useRef<HTMLDivElement>(null);
   const streamingServicesRef = React.useRef<HTMLDivElement[]>([]);
-  const { isShowLeftNavigation } = useAppSelector((state: RootState) => state.networkRXS);
+  const { isShowLeftNavigation, networkId } = useAppSelector(
+    (state: RootState) => state.networkRXS,
+  );
 
   React.useEffect(() => {
     onToggleNetworkAnimation({
@@ -119,6 +121,7 @@ const useStreamingServices = (): UseStreamingServicesReturnTypes => {
     streamingServicesWrapper,
     onToggleSideNetworkDisplay,
     onChangeSiteToSelectedNetwork,
+    networkId,
   };
 };
 

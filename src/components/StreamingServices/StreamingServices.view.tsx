@@ -13,6 +13,7 @@ const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | n
     streamingServicesWrapper,
     onToggleSideNetworkDisplay,
     onChangeSiteToSelectedNetwork,
+    networkId,
   } = useStreamingServices();
 
   // TODO: Implement this - https://stackoverflow.com/questions/260857/changing-website-favicon-dynamically
@@ -20,6 +21,7 @@ const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | n
   return (
     <S.Wrapper ref={streamingServicesWrapper}>
       <S.Network
+        className={networkId === 213 ? 'active' : ''}
         title={utils.translate('translateLeftNavigation.netflix')}
         onClick={onChangeSiteToSelectedNetwork('Netflix')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
@@ -27,6 +29,7 @@ const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | n
       </S.Network>
 
       <S.Network
+        className={networkId === 2552 ? 'active' : ''}
         title={utils.translate('translateLeftNavigation.appletv+')}
         onClick={onChangeSiteToSelectedNetwork('Apple Tv+')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
@@ -34,6 +37,7 @@ const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | n
       </S.Network>
 
       <S.Network
+        className={networkId === 1024 ? 'active' : ''}
         title={utils.translate('translateLeftNavigation.primevideos')}
         onClick={onChangeSiteToSelectedNetwork('Prime Videos')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
@@ -41,6 +45,7 @@ const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | n
       </S.Network>
 
       <S.Network
+        className={networkId === 2739 ? 'active' : ''}
         title={utils.translate('translateLeftNavigation.disney+')}
         onClick={onChangeSiteToSelectedNetwork('Disney+')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
@@ -48,6 +53,7 @@ const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | n
       </S.Network>
 
       <S.Network
+        className={networkId === 49 ? 'active' : ''}
         title={utils.translate('translateLeftNavigation.hbomax')}
         onClick={onChangeSiteToSelectedNetwork('HBO MAX')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>
@@ -55,6 +61,7 @@ const StreamingServices: React.FC<IStreamingServicesProps> = (): JSX.Element | n
       </S.Network>
 
       <S.Network
+        className={networkId === -1 ? 'active' : ''}
         title={utils.translate('translateLeftNavigation.shuffleMode')}
         onClick={onChangeSiteToSelectedNetwork('Shuffle')}
         ref={(el: HTMLDivElement) => streamingServicesRef.current.push(el)}>

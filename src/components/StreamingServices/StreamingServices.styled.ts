@@ -64,6 +64,10 @@ export const Network = styled.div`
       height: 0.2rem;
     }
   }
+
+  &.active {
+    border: 0.2rem solid ${({ theme }) => theme.colors.bgPrimaryInverse};
+  }
 `;
 
 export const AddNewNetwork = styled.div`

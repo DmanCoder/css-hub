@@ -1,5 +1,5 @@
 import React from 'react';
-import { NetworkNameTypes } from '../../typescriptGlobals/types';
+import { NetworkIdTypes, NetworkNameTypes } from '../../typescriptGlobals/types';
 
 export interface IStreamingServicesProps {}
 
@@ -10,6 +10,7 @@ export type UseStreamingServicesReturnTypes = {
   streamingServicesWrapper: React.MutableRefObject<HTMLDivElement | null>;
   onToggleSideNetworkDisplay: () => void;
   onChangeSiteToSelectedNetwork: (network: NetworkNameTypes) => (event: React.MouseEvent) => void;
+  networkId: NetworkIdTypes;
 };
 
 export type StreamingServiceAnimationParamTypes = {
