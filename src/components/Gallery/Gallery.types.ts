@@ -11,7 +11,7 @@ export type OnSwitchBottomTabSliderAnimationParamType = {
 };
 
 export type UseGalleryReturnType = {
-  streams: PopularType[];
+  media: PopularType[];
 };
 
 export interface IGalleryProps {

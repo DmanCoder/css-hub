@@ -11,7 +11,7 @@ import useGallery from './useGallery';
 import * as S from './Gallery.styled';
 
 const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
-  const { streams } = useGallery();
+  const { media } = useGallery();
 
   return (
     <S.Wrapper id={section}>
@@ -37,7 +37,7 @@ const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
       <S.GallerySlider>
         <S.GallerySliderInner>
           <S.GallerySliderContent>
-            {streams.map((media: PopularType) => {
+            {media.map((media: PopularType) => {
               const width = 'w500';
               const url = `${imgURL}/${width}/${media.poster_path}`;
 
