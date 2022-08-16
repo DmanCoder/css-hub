@@ -5,17 +5,45 @@ import utils from '../../../utils';
 import { store } from '../../store';
 import { IErrorFeedback } from '../errorsActions/errorsActions.types';
 import { IMediaDetails } from '../mediaDetailsActions/mediaDetailsActions.types';
-import { IPopularStreamsAction, IRandomNumberAction, PopularType } from './popularActions.types';
+import {
+  IPopularStreamsAction,
+  IPopularTvShowsAction,
+  IRandomNumberAction,
+  PopularType,
+} from './popularActions.types';
 
-export const getPopularTvShowsAXN =
-  () => (dispatch: Dispatch<IPopularStreamsAction | IErrorFeedback>) => {
+export const fetchPopularTvShowsAXN =
+  () => (dispatch: Dispatch<IPopularTvShowsAction | IErrorFeedback>) => {
     const language: string = store.getState().languageRXS;
     const { networkId } = store.getState().networkRXS;
-    const params = `network_id=${networkId}&language=${language}&page=1`;
-    const endPoint = `/api/popular/streams?${params}`;
+    const country = store.getState().countryRXS;
+    const params = `selected_country=${country.iso}&network_id=${networkId}&language=${language}&page=1`;
+    const endPoint = `/api/popular/tv?${params}`;
 
     return dbAPI
       .get(endPoint)
+      .then((response) => {
+        dispatch({
+          type: ActionTypes.GET_POPULAR_TV_SHOWS,
+          payload: response.data.results,
+        });
+      })
+      .catch((err) => {
+        console.log(err, 'ERROR');
+      });
+  };
+
+export const fetchPopularStreamsAXN =
+  () => (dispatch: Dispatch<IPopularStreamsAction | IErrorFeedback>) => {
+    const language = store.getState().languageRXS;
+    const country = store.getState().countryRXS;
+    const { networkId } = store.getState().networkRXS;
+
+    const params = `selected_country=${country.iso}&network_id=${networkId}&language=${language}&page=1`;
+    const endpoint = `/api/popular/streams?${params}`;
+
+    return dbAPI
+      .get(endpoint)
       .then((response) => {
         dispatch({
           type: ActionTypes.GET_POPULAR_STREAMS,
@@ -27,7 +55,7 @@ export const getPopularTvShowsAXN =
       });
   };
 
-export const getPopularStreamsAndCurrentMediaDetails =
+export const fetchPopularStreamsAndCurrentMediaDetails =
   () =>
   (
     dispatch: Dispatch<

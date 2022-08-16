@@ -4,6 +4,7 @@ import { IPopularDefaultState } from './popularReducer.types';
 
 const defaultState: IPopularDefaultState = {
   streams: [],
+  tvShows: [],
   indexPosition: 0,
 };
 

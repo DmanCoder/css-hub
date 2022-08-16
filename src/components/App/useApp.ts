@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
-import { getPopularStreamsAndCurrentMediaDetails } from '../../redux/actions/popularActions/popularActions';
+import { fetchPopularStreamsAndCurrentMediaDetails } from '../../redux/actions/popularActions/popularActions';
 import { updateWindowDimensionAXN } from '../../redux/actions/windowDimension/windowDimensionAction';
 
 import { gsap } from '../../gsap';
@@ -34,7 +34,7 @@ const useApp = (): UseAppReturnType => {
   }, [isShowLeftNavigation]);
 
   React.useEffect(() => {
-    dispatch(getPopularStreamsAndCurrentMediaDetails());
+    dispatch(fetchPopularStreamsAndCurrentMediaDetails());
   }, []);
 
   React.useEffect(() => {
