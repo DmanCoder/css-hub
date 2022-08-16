@@ -1,17 +1,15 @@
 import React from 'react';
 
-import { ButtonMouseEvent } from '../../typescriptGlobals/types';
+import { GalleryTypes } from '../../typescriptGlobals/types';
 import { PopularType } from '../../redux/actions/popularActions/popularActions.types';
 import { imgURL } from '../../api/init';
 
-import { onSwitchBottomTabSliderAnimation } from './Gallery.gsap';
-
-import { IGalleryProps, Tab } from './Gallery.types';
+import { IGalleryProps } from './Gallery.types';
 import useGallery from './useGallery';
 import * as S from './Gallery.styled';
 
 const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
-  const { media } = useGallery();
+  const { media, onTabClick } = useGallery();
 
   return (
     <S.Wrapper id={section}>
@@ -19,16 +17,9 @@ const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
         <S.Title className='network-padding'>{title}</S.Title>
         <S.Tabs>
           <S.TabActive id={`${section}-active`} />
-          {tabs.map((tab: Tab) => (
-            <S.TabButton
-              key={tab.key}
-              onClick={(event: ButtonMouseEvent) =>
-                onSwitchBottomTabSliderAnimation({
-                  event,
-                  section,
-                })
-              }>
-              <S.BtnText>{tab.name}</S.BtnText>
+          {tabs.map((tab: GalleryTypes) => (
+            <S.TabButton key={tab} onClick={onTabClick({ tab, section })}>
+              <S.BtnText>{tab}</S.BtnText>
             </S.TabButton>
           ))}
         </S.Tabs>

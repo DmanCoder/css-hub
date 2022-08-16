@@ -62,3 +62,7 @@ export type CountryFlagTypes = {
 export type CountryAlpha2CodeTypes = 'AU' | 'US' | 'CA' | 'GB';
 
 export type LanguageCodeTypes = 'en-US' | 'es-CO' | 'ja' | 'hi' | 'fr';
+
+export type GalleryTypes = 'Streaming' | 'On Tv' | 'For Rent' | 'In Theaters';
+
+export type GallerySectionTypes = 'Popular';

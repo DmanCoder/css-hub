@@ -6,32 +6,18 @@ import Gallery from '../../components/Gallery';
 import { IHomeProps } from './home.types';
 import * as S from './home.styled';
 import utils from '../../utils';
+import useHome from './useHome';
 
 const Home: React.FC<IHomeProps> = (): JSX.Element => {
+  const { tabs } = useHome();
+
   return (
     <S.Wrapper>
       <Hero />
       <Gallery
         title={utils.translate('translateGallery.tabHeaderTitle')}
-        section='popular'
-        tabs={[
-          {
-            key: 'streaming',
-            name: utils.translate('translateGallery.streaming'),
-          },
-          {
-            key: 'tv',
-            name: utils.translate('translateGallery.tv'),
-          },
-          {
-            key: 'rent',
-            name: utils.translate('translateGallery.rent'),
-          },
-          {
-            key: 'theaters',
-            name: utils.translate('translateGallery.theaters'),
-          },
-        ]}
+        section='Popular'
+        tabs={tabs}
       />
 
       <div style={{ height: '100vh', backgroundColor: 'black' }}></div>

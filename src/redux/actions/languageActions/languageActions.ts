@@ -4,7 +4,6 @@ import utils from '../../../utils';
 import { ILanguage } from './languageActions.types';
 
 export const setLanguageAXN = (lang: LanguageCodeTypes): ILanguage => {
-  console.log(lang, 'langlanglanglang');
   utils.changeLanguage(lang);
 
   return {
