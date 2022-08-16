@@ -8,8 +8,8 @@ export const Wrapper = styled.div`
   left: -5.2rem;
   top: 0;
   height: 100vh;
-  background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimary, alpha: 0.8 })};
   z-index: 1001;
+  background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimary, alpha: 0.8 })};
   ${immaFlex({ align: 'center', dir: 'column' })};
 `;
 
@@ -30,8 +30,6 @@ export const Network = styled.div`
     }
     svg {
       padding: 0.8rem;
-      /* width: 2rem;
-      height: 2rem; */
     }
   }
 

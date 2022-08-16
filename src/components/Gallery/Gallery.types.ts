@@ -1,5 +1,10 @@
 import { PopularType } from '../../redux/actions/popularActions/popularActions.types';
-import { ButtonMouseEvent, GallerySectionTypes, GalleryTypes } from '../../typescriptGlobals/types';
+import {
+  ButtonMouseEvent,
+  GallerySectionTypes,
+  GalleryTypes,
+  NetworkIdTypes,
+} from '../../typescriptGlobals/types';
 
 export type OnSwitchBottomTabSliderAnimationParamType = {
   event: ButtonMouseEvent;
@@ -7,6 +12,7 @@ export type OnSwitchBottomTabSliderAnimationParamType = {
 };
 
 export type UseGalleryReturnType = {
+  networkId: NetworkIdTypes;
   media: PopularType[];
   onTabClick: ({ tab, section }: TabParamTypes) => (event: ButtonMouseEvent) => void;
 };

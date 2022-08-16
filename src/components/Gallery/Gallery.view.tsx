@@ -7,22 +7,25 @@ import { imgURL } from '../../api/init';
 import { IGalleryProps } from './Gallery.types';
 import useGallery from './useGallery';
 import * as S from './Gallery.styled';
+import { SHUFFLE_NETWORK_ID } from '../../typescriptGlobals/constants';
 
 const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
-  const { media, onTabClick } = useGallery();
+  const { networkId, media, onTabClick } = useGallery();
 
   return (
     <S.Wrapper id={section}>
       <S.TabHeader>
         <S.Title className='network-padding'>{title}</S.Title>
-        <S.Tabs>
-          <S.TabActive id={`${section}-active`} />
-          {tabs.map((tab: GalleryTypes) => (
-            <S.TabButton key={tab} onClick={onTabClick({ tab, section })}>
-              <S.BtnText>{tab}</S.BtnText>
-            </S.TabButton>
-          ))}
-        </S.Tabs>
+        {networkId === SHUFFLE_NETWORK_ID && (
+          <S.Tabs>
+            <S.TabActive id={`${section}-active`} />
+            {tabs.map((tab: GalleryTypes) => (
+              <S.TabButton key={tab} onClick={onTabClick({ tab, section })}>
+                <S.BtnText>{tab}</S.BtnText>
+              </S.TabButton>
+            ))}
+          </S.Tabs>
+        )}
       </S.TabHeader>
 
       <S.GallerySlider>
