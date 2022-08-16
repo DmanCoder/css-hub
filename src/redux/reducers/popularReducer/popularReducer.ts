@@ -14,6 +14,11 @@ const popularReducer = (state = defaultState, action: PopularDispatchTypes) => {
         ...state,
         streams: action.payload,
       };
+    case ActionTypes.GET_POPULAR_TV_SHOWS:
+      return {
+        ...state,
+        tvShows: action.payload,
+      };
     case ActionTypes.RANDOM_NUMBER:
       return {
         ...state,

@@ -193,9 +193,17 @@ export interface IPopularStreamsAction {
   payload: PopularType[];
 }
 
+export interface IPopularTvShowsAction {
+  type: ActionTypes.GET_POPULAR_TV_SHOWS;
+  payload: PopularType[];
+}
+
 export interface IRandomNumberAction {
   type: ActionTypes.RANDOM_NUMBER;
   payload: number;
 }
 
-export type PopularDispatchTypes = IPopularStreamsAction | IRandomNumberAction;
+export type PopularDispatchTypes =
+  | IPopularStreamsAction
+  | IPopularTvShowsAction
+  | IRandomNumberAction;
