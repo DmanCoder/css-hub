@@ -16,7 +16,7 @@ const Home: React.FC<IHomeProps> = (): JSX.Element => {
       <Hero />
       <Gallery
         title={utils.translate('translateGallery.tabHeaderTitle')}
-        section='Popular'
+        section='Whats Popular'
         tabs={tabs}
       />
 

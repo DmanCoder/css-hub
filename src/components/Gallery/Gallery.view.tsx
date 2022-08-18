@@ -10,7 +10,7 @@ import * as S from './Gallery.styled';
 import { SHUFFLE_NETWORK_ID } from '../../typescriptGlobals/constants';
 
 const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
-  const { networkId, media, onTabClick } = useGallery();
+  const { networkId, media, onTabClick } = useGallery({ section });
 
   return (
     <S.Wrapper id={section}>

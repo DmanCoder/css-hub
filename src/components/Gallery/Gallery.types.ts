@@ -1,14 +1,13 @@
 import { PopularType } from '../../redux/actions/popularActions/popularActions.types';
-import {
-  ButtonMouseEvent,
-  GallerySectionTypes,
-  GalleryTypes,
-  NetworkIdTypes,
-} from '../../typescriptGlobals/types';
+import { ButtonMouseEvent, GalleryTypes, NetworkIdTypes } from '../../typescriptGlobals/types';
 
 export type OnSwitchBottomTabSliderAnimationParamType = {
   event: ButtonMouseEvent;
-  section: GallerySectionTypes;
+  section: GalleryTypes;
+};
+
+export type UseGalleryParamTypes = {
+  section: GalleryTypes;
 };
 
 export type UseGalleryReturnType = {
@@ -19,10 +18,10 @@ export type UseGalleryReturnType = {
 
 export interface TabParamTypes {
   tab: GalleryTypes;
-  section: GallerySectionTypes;
+  section: GalleryTypes;
 }
 export interface IGalleryProps {
   title: string;
-  section: GallerySectionTypes;
+  section: GalleryTypes;
   tabs: GalleryTypes[];
 }

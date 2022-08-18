@@ -4,7 +4,7 @@ import { immaFlex } from '../../styled/abstract/mixins';
 export const Wrapper = styled.div`
   position: relative;
   z-index: 1;
-  margin-bottom: 7rem;
+  margin-bottom: 9rem;
 `;
 
 export const TabHeader = styled.header`
