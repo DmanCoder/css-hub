@@ -5,6 +5,7 @@ const translateGallery = {
   theaters: 'Dans les théâtres',
   tabHeaderTitle: 'Ce qui est populaire',
   trending: 'Tendance',
+  upcoming: 'Upcoming',
 };
 
 export default translateGallery;

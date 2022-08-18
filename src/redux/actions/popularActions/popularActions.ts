@@ -6,6 +6,7 @@ import { store } from '../../store';
 import { IErrorFeedback } from '../errorsActions/errorsActions.types';
 import { IMediaDetails } from '../mediaDetailsActions/mediaDetailsActions.types';
 import {
+  IMediaUpcomingAction,
   IPopularStreamsAction,
   IPopularTvShowsAction,
   IRandomNumberAction,
@@ -70,6 +71,28 @@ export const fetchTrendingMediaAXN =
       .then((response) => {
         dispatch({
           type: ActionTypes.GET_TRENDING,
+          payload: response.data.results,
+        });
+      })
+      .catch((err) => {
+        console.log(err, 'ERROR');
+      });
+  };
+
+export const fetchUpcomingMediaAXN =
+  () => (dispatch: Dispatch<IMediaUpcomingAction | IErrorFeedback>) => {
+    const language = store.getState().languageRXS;
+    const country = store.getState().countryRXS;
+    const { networkId } = store.getState().networkRXS;
+
+    const params = `selected_country=${country.iso}&network_id=${networkId}&language=${language}&page=1`;
+    const endpoint = `/api/upcoming?${params}`;
+
+    return dbAPI
+      .get(endpoint)
+      .then((response) => {
+        dispatch({
+          type: ActionTypes.GET_MEDIA_UPCOMING,
           payload: response.data.results,
         });
       })

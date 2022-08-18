@@ -203,6 +203,11 @@ export interface ITrendingAction {
   payload: PopularType[];
 }
 
+export interface IMediaUpcomingAction {
+  type: ActionTypes.GET_MEDIA_UPCOMING;
+  payload: PopularType[];
+}
+
 export interface IRandomNumberAction {
   type: ActionTypes.RANDOM_NUMBER;
   payload: number;
@@ -212,4 +217,5 @@ export type PopularDispatchTypes =
   | IPopularStreamsAction
   | IPopularTvShowsAction
   | ITrendingAction
+  | IMediaUpcomingAction
   | IRandomNumberAction;

@@ -4,6 +4,7 @@ import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
 import {
   fetchPopularStreamsAndCurrentMediaDetails,
   fetchTrendingMediaAXN,
+  fetchUpcomingMediaAXN,
 } from '../../redux/actions/popularActions/popularActions';
 import { updateWindowDimensionAXN } from '../../redux/actions/windowDimension/windowDimensionAction';
 
@@ -39,6 +40,7 @@ const useApp = (): UseAppReturnType => {
   React.useEffect(() => {
     dispatch(fetchPopularStreamsAndCurrentMediaDetails());
     dispatch(fetchTrendingMediaAXN());
+    dispatch(fetchUpcomingMediaAXN());
   }, []);
 
   React.useEffect(() => {

@@ -13,7 +13,9 @@ import { TabParamTypes, UseGalleryParamTypes, UseGalleryReturnType } from './Gal
 const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => {
   const dispatch = useAppDispatch();
 
-  const { streams, tvShows, trending } = useAppSelector((state: RootState) => state.popularRXS);
+  const { streams, tvShows, trending, upcoming } = useAppSelector(
+    (state: RootState) => state.popularRXS,
+  );
   const { networkId } = useAppSelector((state: RootState) => state.networkRXS);
   const [media, setMedia] = React.useState<PopularType[]>(streams);
 
@@ -24,7 +26,6 @@ const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => 
         setMedia(streams);
         break;
       case 'Trending':
-        console.log(trending, 'trendingtrendingtrendingtrending');
         setMedia(trending);
         break;
       case 'For Rent':
@@ -35,6 +36,9 @@ const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => 
         break;
       case 'In Theaters':
         setMedia(streams);
+        break;
+      case 'Upcoming':
+        setMedia(upcoming);
         break;
       default:
         break;

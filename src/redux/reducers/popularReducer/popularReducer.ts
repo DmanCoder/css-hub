@@ -6,6 +6,7 @@ const defaultState: IPopularDefaultState = {
   streams: [],
   tvShows: [],
   trending: [],
+  upcoming: [],
   indexPosition: 0,
 };
 
@@ -25,6 +26,11 @@ const popularReducer = (state = defaultState, action: PopularDispatchTypes) => {
       return {
         ...state,
         trending: action.payload,
+      };
+    case ActionTypes.GET_MEDIA_UPCOMING:
+      return {
+        ...state,
+        upcoming: action.payload,
       };
     case ActionTypes.RANDOM_NUMBER:
       return {

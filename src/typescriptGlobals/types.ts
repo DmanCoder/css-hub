@@ -69,4 +69,5 @@ export type GalleryTypes =
   | 'For Rent'
   | 'In Theaters'
   | 'Whats Popular'
+  | 'Upcoming'
   | 'Trending';
