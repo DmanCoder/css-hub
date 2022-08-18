@@ -198,6 +198,11 @@ export interface IPopularTvShowsAction {
   payload: PopularType[];
 }
 
+export interface ITrendingAction {
+  type: ActionTypes.GET_TRENDING;
+  payload: PopularType[];
+}
+
 export interface IRandomNumberAction {
   type: ActionTypes.RANDOM_NUMBER;
   payload: number;

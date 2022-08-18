@@ -9,6 +9,7 @@ import {
   IPopularStreamsAction,
   IPopularTvShowsAction,
   IRandomNumberAction,
+  ITrendingAction,
   PopularType,
 } from './popularActions.types';
 
@@ -54,6 +55,27 @@ export const fetchPopularStreamsAXN =
         console.log(err, 'ERROR');
       });
   };
+
+export const fetchTrendingAXN = () => (dispatch: Dispatch<ITrendingAction | IErrorFeedback>) => {
+  const language = store.getState().languageRXS;
+  const country = store.getState().countryRXS;
+  const { networkId } = store.getState().networkRXS;
+
+  const params = `time_window=week&selected_country=${country.iso}&network_id=${networkId}&language=${language}&page=1`;
+  const endpoint = `/api/trending?${params}`;
+
+  return dbAPI
+    .get(endpoint)
+    .then((response) => {
+      dispatch({
+        type: ActionTypes.GET_TRENDING,
+        payload: response.data.results,
+      });
+    })
+    .catch((err) => {
+      console.log(err, 'ERROR');
+    });
+};
 
 export const fetchPopularStreamsAndCurrentMediaDetails =
   () =>

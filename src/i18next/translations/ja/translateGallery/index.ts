@@ -4,6 +4,7 @@ const translateGallery = {
   rent: '賃貸用',
   theaters: '劇場で',
   tabHeaderTitle: '人気があります',
+  trending: '趋势',
 };
 
 export default translateGallery;

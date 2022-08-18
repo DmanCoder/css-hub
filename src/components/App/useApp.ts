@@ -1,7 +1,10 @@
 import React from 'react';
 
 import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
-import { fetchPopularStreamsAndCurrentMediaDetails } from '../../redux/actions/popularActions/popularActions';
+import {
+  fetchPopularStreamsAndCurrentMediaDetails,
+  fetchTrendingAXN,
+} from '../../redux/actions/popularActions/popularActions';
 import { updateWindowDimensionAXN } from '../../redux/actions/windowDimension/windowDimensionAction';
 
 import { gsap } from '../../gsap';
@@ -35,6 +38,7 @@ const useApp = (): UseAppReturnType => {
 
   React.useEffect(() => {
     dispatch(fetchPopularStreamsAndCurrentMediaDetails());
+    dispatch(fetchTrendingAXN());
   }, []);
 
   React.useEffect(() => {
