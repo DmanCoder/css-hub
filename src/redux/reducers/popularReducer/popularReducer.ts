@@ -5,6 +5,7 @@ import { IPopularDefaultState } from './popularReducer.types';
 const defaultState: IPopularDefaultState = {
   streams: [],
   tvShows: [],
+  trending: [],
   indexPosition: 0,
 };
 
@@ -19,6 +20,11 @@ const popularReducer = (state = defaultState, action: PopularDispatchTypes) => {
       return {
         ...state,
         tvShows: action.payload,
+      };
+    case ActionTypes.GET_TRENDING:
+      return {
+        ...state,
+        trending: action.payload,
       };
     case ActionTypes.RANDOM_NUMBER:
       return {

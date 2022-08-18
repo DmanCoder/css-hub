@@ -211,4 +211,5 @@ export interface IRandomNumberAction {
 export type PopularDispatchTypes =
   | IPopularStreamsAction
   | IPopularTvShowsAction
+  | ITrendingAction
   | IRandomNumberAction;
