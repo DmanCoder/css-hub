@@ -118,12 +118,12 @@ export const GalleryThumbnail = styled.figure`
   margin-right: 1rem;
   border-radius: 1rem;
   overflow: hidden;
-  width: 13rem;
-  height: 20.5rem;
+  width: 15rem;
+  height: 22.5rem;
 
   @media ${({ theme }) => theme.mediaQ.tablet45} {
-    width: 15rem;
-    height: 22.5rem;
+    width: 13rem;
+    height: 20.5rem;
   }
 `;
 
