@@ -6,6 +6,7 @@ const translateGallery = {
   tabHeaderTitle: '人気があります',
   trending: '趋势',
   upcoming: '即将到来',
+  myList: '私のリスト',
 };
 
 export default translateGallery;

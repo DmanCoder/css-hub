@@ -6,6 +6,7 @@ const translateGallery = {
   tabHeaderTitle: 'Ce qui est populaire',
   trending: 'Tendance',
   upcoming: 'Upcoming',
+  myList: 'Ma liste',
 };
 
 export default translateGallery;

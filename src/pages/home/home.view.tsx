@@ -14,6 +14,9 @@ const Home: React.FC<IHomeProps> = (): JSX.Element => {
   return (
     <S.Wrapper>
       <Hero />
+
+      <Gallery title={utils.translate('translateGallery.myList')} section='My List+' tabs={tabs} />
+
       <Gallery
         title={utils.translate('translateGallery.tabHeaderTitle')}
         section='Whats Popular'

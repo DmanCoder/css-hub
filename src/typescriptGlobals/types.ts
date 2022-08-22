@@ -70,4 +70,5 @@ export type GalleryTypes =
   | 'In Theaters'
   | 'Whats Popular'
   | 'Upcoming'
+  | 'My List+'
   | 'Trending';
