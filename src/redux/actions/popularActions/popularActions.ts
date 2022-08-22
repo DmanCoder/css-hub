@@ -14,6 +14,8 @@ import {
   PopularType,
 } from './popularActions.types';
 
+// TODO: https://www.themoviedb.org/talk/593b23a1925141059b001b81 (FOR MULTIPLE NETWORK ID PASSED)
+
 export const fetchPopularTvShowsAXN =
   () => (dispatch: Dispatch<IPopularTvShowsAction | IErrorFeedback>) => {
     const language: string = store.getState().languageRXS;
