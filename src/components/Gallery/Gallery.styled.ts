@@ -25,6 +25,16 @@ export const Title = styled.h3`
   margin: 0;
   margin-right: 4rem;
   color: ${({ theme }) => theme.colors.textPrimary};
+
+  &::after {
+    content: '';
+    display: block;
+    width: 20%;
+    margin-top: 0.2rem;
+    height: 0.25rem;
+    border-radius: 1rem;
+    background-color: ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 export const Tabs = styled.div`
@@ -122,8 +132,8 @@ export const GalleryThumbnail = styled.figure`
   height: 22.5rem;
 
   @media ${({ theme }) => theme.mediaQ.tablet45} {
-    width: 13rem;
-    height: 20.5rem;
+    width: 13.5rem;
+    height: 21rem;
   }
 `;
 
