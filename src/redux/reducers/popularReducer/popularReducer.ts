@@ -253,6 +253,11 @@ const popularReducer = (state = defaultState, action: PopularDispatchTypes) => {
         ...state,
         myList: action.payload,
       };
+    case ActionTypes.GET_MEDIA_GENRE:
+      return {
+        ...state,
+        anime: action.payload,
+      };
     case ActionTypes.RANDOM_NUMBER:
       return {
         ...state,

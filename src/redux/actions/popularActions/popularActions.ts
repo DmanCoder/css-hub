@@ -6,6 +6,7 @@ import { store } from '../../store';
 import { IErrorFeedback } from '../errorsActions/errorsActions.types';
 import { IMediaDetails } from '../mediaDetailsActions/mediaDetailsActions.types';
 import {
+  IGenreAction,
   IMediaUpcomingAction,
   IPopularStreamsAction,
   IPopularTvShowsAction,
@@ -152,3 +153,24 @@ export const fetchPopularStreamsAndCurrentMediaDetails =
         console.log(err, 'ERROR');
       });
   };
+
+export const fetchNewGenreAXN = () => (dispatch: Dispatch<IGenreAction | IErrorFeedback>) => {
+  const language = store.getState().languageRXS;
+  const country = store.getState().countryRXS;
+  const { networkId } = store.getState().networkRXS;
+
+  const params = `selected_country=${country.iso}&network_id=${networkId}&language=${language}&page=1`;
+  const endpoint = `/api/genre?${params}`;
+
+  return dbAPI
+    .get(endpoint)
+    .then((response) => {
+      dispatch({
+        type: ActionTypes.GET_MEDIA_GENRE,
+        payload: response.data.results,
+      });
+    })
+    .catch((err) => {
+      console.log(err, 'ERROR');
+    });
+};

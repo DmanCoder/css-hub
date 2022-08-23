@@ -2,6 +2,7 @@ import React from 'react';
 
 import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
 import {
+  fetchNewGenreAXN,
   fetchPopularStreamsAndCurrentMediaDetails,
   fetchTrendingMediaAXN,
   fetchUpcomingMediaAXN,
@@ -41,6 +42,7 @@ const useApp = (): UseAppReturnType => {
     dispatch(fetchPopularStreamsAndCurrentMediaDetails());
     dispatch(fetchTrendingMediaAXN());
     dispatch(fetchUpcomingMediaAXN());
+    dispatch(fetchNewGenreAXN());
   }, []);
 
   React.useEffect(() => {
