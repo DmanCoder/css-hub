@@ -18,3 +18,7 @@ export const COUNTRY_ALPHA_CODES_2 = {
   UNITED_STATES: 'US',
   UNITED_KINGDOM: 'GB',
 };
+
+export const GENRE_CODES = {
+  ANIME: 16,
+};
