@@ -10,10 +10,10 @@ import { ILoadingToggle } from '../loadingActions/loadingActions.types';
 import { ContentRatingsForTvShows, MediaDetails } from '../popularActions/popularActions.types';
 
 export const getCurrentMediaDetails =
-  ({ id, appended_media_type }: { id: number; appended_media_type: string }) =>
+  ({ id, media_type }: { id: number; media_type: string }) =>
   (dispatch: Dispatch<IMediaDetails | IErrorFeedback | ILoadingToggle>) => {
     const language: string = store.getState().languageRXS;
-    const params = `media_id=${id}&appended_media_type=${appended_media_type}&language=${language}&page=1`;
+    const params = `media_id=${id}&media_type=${media_type}&language=${language}&page=1`;
     const endPoint = `/api/details?${params}`;
 
     return dbAPI
@@ -38,10 +38,10 @@ export const getCurrentMediaDetails =
   };
 
 export const getCurrentContentRatingsForTvShows =
-  ({ id, appended_media_type }: { id: number; appended_media_type: string }) =>
+  ({ id, media_type }: { id: number; media_type: string }) =>
   (dispatch: Dispatch<IContentRatingsForTvShows | IErrorFeedback | ILoadingToggle>) => {
     const language: string = store.getState().languageRXS;
-    const params = `media_id=${id}&appended_media_type=${appended_media_type}&language=${language}&page=1`;
+    const params = `media_id=${id}&media_type=${media_type}&language=${language}&page=1`;
 
     const endPoint = `/api/details/media_ratings?${params}`;
 

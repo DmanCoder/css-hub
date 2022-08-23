@@ -5,5 +5,6 @@ export interface IPopularDefaultState {
   tvShows: PopularType[];
   trending: PopularType[];
   upcoming: PopularType[];
+  myList: PopularType[];
   indexPosition: number;
 }

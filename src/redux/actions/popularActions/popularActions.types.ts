@@ -170,22 +170,25 @@ export type MediaRecommendations = {
 };
 
 export type PopularType = {
-  backdrop_path: string;
-  first_air_date: string;
-  genre_ids: number[];
-  id: number;
-  name: string;
-  appended_media_type: string;
-  title: string; // Movies
-  original_title: string; // Movies
-  origin_country: string[];
-  original_language: string;
-  original_name: string;
-  overview: string;
-  popularity: number;
-  poster_path: string;
-  vote_average: number;
-  vote_count: number;
+  adult?: boolean;
+  backdrop_path?: string;
+  first_air_date?: string;
+  genre_ids?: number[];
+  id?: number;
+  name?: string;
+  media_type?: string;
+  title?: string; // Movies
+  original_title?: string; // Movies
+  origin_country?: string[];
+  original_language?: string;
+  original_name?: string;
+  overview?: string;
+  popularity?: number;
+  poster_path?: string;
+  vote_average?: number;
+  vote_count?: number;
+  release_date?: string;
+  video?: boolean;
 };
 
 export interface IPopularStreamsAction {
@@ -208,6 +211,11 @@ export interface IMediaUpcomingAction {
   payload: PopularType[];
 }
 
+export interface IMyMediaListAction {
+  type: ActionTypes.GET_MY_MEDIA_LIST;
+  payload: PopularType[];
+}
+
 export interface IRandomNumberAction {
   type: ActionTypes.RANDOM_NUMBER;
   payload: number;
@@ -218,4 +226,5 @@ export type PopularDispatchTypes =
   | IPopularTvShowsAction
   | ITrendingAction
   | IMediaUpcomingAction
+  | IMyMediaListAction
   | IRandomNumberAction;

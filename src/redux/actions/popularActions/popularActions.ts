@@ -132,7 +132,7 @@ export const fetchPopularStreamsAndCurrentMediaDetails =
 
         const media = popularStreams[randomNumber] ?? {};
 
-        const params = `media_id=${media?.id}&appended_media_type=${media.appended_media_type}&language=${language}&page=1`;
+        const params = `media_id=${media?.id}&media_type=${media.media_type}&language=${language}&page=1`;
         const endPoint = `/api/details?${params}`;
 
         return dbAPI.get(endPoint);
