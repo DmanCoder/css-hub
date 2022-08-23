@@ -69,6 +69,7 @@ export type GalleryTypes =
   | 'For Rent'
   | 'In Theaters'
   | 'Whats Popular'
+  | 'Anime'
   | 'Upcoming'
   | 'My List+'
   | 'Trending';

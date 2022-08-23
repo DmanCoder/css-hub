@@ -7,6 +7,7 @@ const defaultState: IPopularDefaultState = {
   tvShows: [],
   trending: [],
   upcoming: [],
+  anime: [],
   myList: [
     {
       adult: false,
