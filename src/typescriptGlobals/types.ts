@@ -64,6 +64,7 @@ export type CountryAlpha2CodeTypes = 'AU' | 'US' | 'CA' | 'GB';
 export type LanguageCodeTypes = 'en-US' | 'es-CO' | 'ja' | 'hi' | 'fr';
 
 export type GalleryTypes =
+  | 'Kids'
   | 'Streaming'
   | 'On Tv'
   | 'For Rent'

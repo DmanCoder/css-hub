@@ -3,6 +3,7 @@ import { PopularDispatchTypes } from '../../actions/popularActions/popularAction
 import { IPopularDefaultState } from './popularReducer.types';
 
 const defaultState: IPopularDefaultState = {
+  kids: [],
   streams: [],
   tvShows: [],
   trending: [],
@@ -15,6 +16,11 @@ const defaultState: IPopularDefaultState = {
 
 const popularReducer = (state = defaultState, action: PopularDispatchTypes) => {
   switch (action.type) {
+    case ActionTypes.GET_KIDS_MEDIA:
+      return {
+        ...state,
+        kids: action.payload,
+      };
     case ActionTypes.GET_POPULAR_STREAMS:
       return {
         ...state,

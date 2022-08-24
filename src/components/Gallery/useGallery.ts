@@ -13,7 +13,7 @@ import { TabParamTypes, UseGalleryParamTypes, UseGalleryReturnType } from './Gal
 const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => {
   const dispatch = useAppDispatch();
 
-  const { streams, tvShows, trending, upcoming, myList, anime, animations } = useAppSelector(
+  const { streams, tvShows, trending, upcoming, myList, anime, animations, kids } = useAppSelector(
     (state: RootState) => state.popularRXS,
   );
   const { networkId } = useAppSelector((state: RootState) => state.networkRXS);
@@ -48,6 +48,9 @@ const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => 
         break;
       case 'My List+':
         setMedia(myList);
+        break;
+      case 'Kids':
+        setMedia(kids);
         break;
       default:
         break;

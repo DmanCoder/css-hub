@@ -7,6 +7,7 @@ import { store } from '../../store';
 import { IErrorFeedback } from '../errorsActions/errorsActions.types';
 import { IMediaDetails } from '../mediaDetailsActions/mediaDetailsActions.types';
 import {
+  IKidsMediaActions,
   IMediaUpcomingAction,
   IPopularStreamsAction,
   IPopularTvShowsAction,
@@ -176,7 +177,7 @@ export const fetchPopularStreamsAXN = () => (dispatch: Dispatch<any>) => {
     });
 };
 
-export const fetchAnimeAXN = () => (dispatch: Dispatch<any>) => {
+export const fetchAnimeMediaAXN = () => (dispatch: Dispatch<any>) => {
   const language = store.getState().languageRXS;
 
   const params = `?with_genres=${GENRE_CODES.tv.Animations}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=JP&with_origin_country=JP&language=${language}&page=1`;
@@ -195,7 +196,7 @@ export const fetchAnimeAXN = () => (dispatch: Dispatch<any>) => {
     });
 };
 
-export const fetchAnimationsAXN = () => (dispatch: Dispatch<any>) => {
+export const fetchAnimationsMediaAXN = () => (dispatch: Dispatch<any>) => {
   const language = store.getState().languageRXS;
   const country = store.getState().countryRXS;
   const { networkId } = store.getState().networkRXS;
@@ -208,6 +209,27 @@ export const fetchAnimationsAXN = () => (dispatch: Dispatch<any>) => {
     .then((response) => {
       dispatch({
         type: ActionTypes.GET_MEDIA_ANIMATIONS,
+        payload: response.data.results,
+      });
+    })
+    .catch((err) => {
+      console.log(err, 'ERROR');
+    });
+};
+
+export const fetchKidsMediaAXN = () => (dispatch: Dispatch<IKidsMediaActions>) => {
+  const language = store.getState().languageRXS;
+  const country = store.getState().countryRXS;
+  const { networkId } = store.getState().networkRXS;
+
+  const params = `?with_genres=${GENRE_CODES.tv.Animations}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
+  const endpoint = `/api/discover${params}`;
+
+  return dbAPI
+    .get(endpoint)
+    .then((response) => {
+      dispatch({
+        type: ActionTypes.GET_KIDS_MEDIA,
         payload: response.data.results,
       });
     })

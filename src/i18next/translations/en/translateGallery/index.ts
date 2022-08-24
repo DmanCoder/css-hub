@@ -1,4 +1,5 @@
 const translateGallery = {
+  kids: 'Kids',
   streaming: 'Streaming',
   tv: 'On Tv',
   rent: 'For Rent',

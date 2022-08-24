@@ -4,8 +4,9 @@ import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
 import {
   fetchPopularStreamsAXN,
   fetchPopularStreamsAndCurrentMediaDetails,
-  fetchAnimeAXN,
-  fetchAnimationsAXN,
+  fetchAnimeMediaAXN,
+  fetchAnimationsMediaAXN,
+  fetchKidsMediaAXN,
   // fetchNewGenreAXN,
   // fetchTrendingMediaAXN,
   // fetchUpcomingMediaAXN,
@@ -46,8 +47,9 @@ const useApp = (): UseAppReturnType => {
   React.useEffect(() => {
     dispatch(fetchPopularStreamsAndCurrentMediaDetails());
     dispatch(fetchPopularStreamsAXN());
-    dispatch(fetchAnimationsAXN());
-    dispatch(fetchAnimeAXN());
+    dispatch(fetchAnimationsMediaAXN());
+    dispatch(fetchAnimeMediaAXN());
+    dispatch(fetchKidsMediaAXN());
     // dispatch(fetchTrendingMediaAXN());
     // dispatch(fetchUpcomingMediaAXN());
     // dispatch(fetchNewGenreAXN());

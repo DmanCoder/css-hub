@@ -191,6 +191,11 @@ export type PopularType = {
   video?: boolean;
 };
 
+export interface IKidsMediaActions {
+  type: ActionTypes.GET_KIDS_MEDIA;
+  payload: PopularType[];
+}
+
 export interface IPopularStreamsAction {
   type: ActionTypes.GET_POPULAR_STREAMS;
   payload: PopularType[];
@@ -232,6 +237,7 @@ export interface IRandomNumberAction {
 }
 
 export type PopularDispatchTypes =
+  | IKidsMediaActions
   | IPopularStreamsAction
   | IPopularTvShowsAction
   | ITrendingAction
