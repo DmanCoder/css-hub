@@ -7,5 +7,6 @@ export interface IPopularDefaultState {
   upcoming: PopularType[];
   myList: PopularType[];
   anime: PopularType[];
+  animations: PopularType[];
   indexPosition: number;
 }

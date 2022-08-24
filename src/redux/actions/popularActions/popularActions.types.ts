@@ -216,8 +216,13 @@ export interface IMyMediaListAction {
   payload: PopularType[];
 }
 
-export interface IGenreAction {
-  type: ActionTypes.GET_MEDIA_GENRE;
+export interface IMediaAnimeAction {
+  type: ActionTypes.GET_MEDIA_ANIME;
+  payload: PopularType[];
+}
+
+export interface IMediaAnimationsAction {
+  type: ActionTypes.GET_MEDIA_ANIMATIONS;
   payload: PopularType[];
 }
 
@@ -231,6 +236,7 @@ export type PopularDispatchTypes =
   | IPopularTvShowsAction
   | ITrendingAction
   | IMediaUpcomingAction
-  | IGenreAction
+  | IMediaAnimationsAction
+  | IMediaAnimeAction
   | IMyMediaListAction
   | IRandomNumberAction;

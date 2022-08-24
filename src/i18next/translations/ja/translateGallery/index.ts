@@ -7,6 +7,7 @@ const translateGallery = {
   trending: '趋势',
   upcoming: '即将到来',
   myList: '私のリスト',
+  animation: 'アニメーション',
   anime: 'アニメ',
 };
 

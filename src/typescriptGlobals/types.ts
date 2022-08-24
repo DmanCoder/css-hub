@@ -70,6 +70,7 @@ export type GalleryTypes =
   | 'In Theaters'
   | 'Whats Popular'
   | 'Anime'
+  | 'Animations'
   | 'Upcoming'
   | 'My List+'
   | 'Trending';

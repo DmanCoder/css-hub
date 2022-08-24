@@ -9,13 +9,19 @@ import utils from '../../utils';
 import useHome from './useHome';
 
 const Home: React.FC<IHomeProps> = (): JSX.Element => {
-  const { tabs } = useHome();
+  const { tabs, myList } = useHome();
 
   return (
     <S.Wrapper>
       <Hero />
 
-      <Gallery title={utils.translate('translateGallery.myList')} section='My List+' tabs={tabs} />
+      {!utils.isEmpty(myList) && (
+        <Gallery
+          title={utils.translate('translateGallery.myList')}
+          section='My List+'
+          tabs={tabs}
+        />
+      )}
 
       <Gallery
         title={utils.translate('translateGallery.tabHeaderTitle')}
@@ -23,19 +29,13 @@ const Home: React.FC<IHomeProps> = (): JSX.Element => {
         tabs={tabs}
       />
 
-      <Gallery
-        title={utils.translate('translateGallery.trending')}
-        section='Trending'
-        tabs={tabs}
-      />
-
-      <Gallery
-        title={utils.translate('translateGallery.upcoming')}
-        section='Upcoming'
-        tabs={tabs}
-      />
-
       <Gallery title={utils.translate('translateGallery.anime')} section='Anime' tabs={tabs} />
+
+      <Gallery
+        title={utils.translate('translateGallery.animation')}
+        section='Animations'
+        tabs={tabs}
+      />
 
       <div style={{ height: '100vh', backgroundColor: 'black' }}></div>
       <div style={{ height: '100vh', backgroundColor: 'black' }}></div>

@@ -7,6 +7,7 @@ const translateGallery = {
   trending: 'Tendance',
   upcoming: 'Upcoming',
   myList: 'Ma liste',
+  animation: 'Animations',
   anime: 'Anime',
 };
 

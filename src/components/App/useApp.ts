@@ -2,10 +2,13 @@ import React from 'react';
 
 import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
 import {
-  fetchNewGenreAXN,
+  fetchPopularStreamsAXN,
   fetchPopularStreamsAndCurrentMediaDetails,
-  fetchTrendingMediaAXN,
-  fetchUpcomingMediaAXN,
+  fetchAnimeAXN,
+  fetchAnimationsAXN,
+  // fetchNewGenreAXN,
+  // fetchTrendingMediaAXN,
+  // fetchUpcomingMediaAXN,
 } from '../../redux/actions/popularActions/popularActions';
 import { updateWindowDimensionAXN } from '../../redux/actions/windowDimension/windowDimensionAction';
 
@@ -13,6 +16,8 @@ import { gsap } from '../../gsap';
 import utils from '../../utils';
 
 import { UseAppReturnType } from './App.types';
+
+// TODO: MY LIST+ SHUFFLE MODE SHOULD HAVE ALL MEDIA FROM ALL NETWORKS | BUT IF NOT ON SHUFFLE MODE THEN... ONLY SHOW THE MY LIST FOR ONLY THE SELECTED NETWORK
 
 const useApp = (): UseAppReturnType => {
   const dispatch = useAppDispatch();
@@ -40,9 +45,12 @@ const useApp = (): UseAppReturnType => {
 
   React.useEffect(() => {
     dispatch(fetchPopularStreamsAndCurrentMediaDetails());
-    dispatch(fetchTrendingMediaAXN());
-    dispatch(fetchUpcomingMediaAXN());
-    dispatch(fetchNewGenreAXN());
+    dispatch(fetchPopularStreamsAXN());
+    dispatch(fetchAnimationsAXN());
+    dispatch(fetchAnimeAXN());
+    // dispatch(fetchTrendingMediaAXN());
+    // dispatch(fetchUpcomingMediaAXN());
+    // dispatch(fetchNewGenreAXN());
   }, []);
 
   React.useEffect(() => {
