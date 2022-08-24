@@ -222,7 +222,7 @@ export const fetchKidsMediaAXN = () => (dispatch: Dispatch<IKidsMediaActions>) =
   const country = store.getState().countryRXS;
   const { networkId } = store.getState().networkRXS;
 
-  const params = `?with_genres=${GENRE_CODES.tv.Animations}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
+  const params = `?with_genres=${GENRE_CODES.tv.Kids}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
   const endpoint = `/api/discover${params}`;
 
   return dbAPI
