@@ -78,6 +78,7 @@ export type LanguageCodeTypes = 'en-US' | 'es-CO' | 'ja' | 'hi' | 'fr';
 export type GalleryTypes =
   | 'Animations'
   | 'Comedy'
+  | 'Action & Adventure'
   | 'Kids'
   | 'Streaming'
   | 'On Tv'

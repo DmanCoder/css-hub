@@ -12,6 +12,7 @@ import {
   // fetchUpcomingMediaAXN,
 } from '../../redux/actions/popularActions/popularActions';
 import {
+  fetchActionAndAdventureMediaAXN,
   fetchAnimationsMediaAXN,
   fetchComedyMediaAXN,
 } from '../../redux/actions/mediaActions/mediaActions';
@@ -55,6 +56,7 @@ const useApp = (): UseAppReturnType => {
     // NEW MEDIA FETCH
     dispatch(fetchAnimationsMediaAXN());
     dispatch(fetchComedyMediaAXN());
+    dispatch(fetchActionAndAdventureMediaAXN());
     // dispatch(fetchPopularStreamsAXN());
     // dispatch(fetchAnimationsMediaAXN());
     // dispatch(fetchAnimeMediaAXN());

@@ -13,7 +13,9 @@ import { TabParamTypes, UseGalleryParamTypes, UseGalleryReturnType } from './Gal
 const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => {
   const dispatch = useAppDispatch();
 
-  const { streams, animations, comedy } = useAppSelector((state: RootState) => state.mediaRXS);
+  const { streams, animations, comedy, action } = useAppSelector(
+    (state: RootState) => state.mediaRXS,
+  );
   const { networkId } = useAppSelector((state: RootState) => state.networkRXS);
   const [media, setMedia] = React.useState<PopularType[]>(streams);
 
@@ -28,6 +30,9 @@ const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => 
         break;
       case 'Comedy':
         setMedia(comedy);
+        break;
+      case 'Action & Adventure':
+        setMedia(action);
         break;
       // case 'Trending':
       //   setMedia(trending);
@@ -57,7 +62,7 @@ const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => 
       default:
         break;
     }
-  }, [streams, animations, comedy]);
+  }, [streams, animations, comedy, action]);
 
   const onChangeSelectTab = (tab: GalleryTypes) => {
     // switch (tab) {

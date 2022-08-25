@@ -23,13 +23,13 @@ const Home: React.FC<IHomeProps> = (): JSX.Element => {
         />
       )}
 
-      <Gallery
+      {/* <Gallery
         title={utils.translate('translateGallery.tabHeaderTitle')}
         section='Whats Popular'
         tabs={tabs}
-      />
+      /> */}
 
-      <Gallery title={utils.translate('translateGallery.anime')} section='Anime' tabs={tabs} />
+      {/* <Gallery title={utils.translate('translateGallery.anime')} section='Anime' tabs={tabs} /> */}
 
       <Gallery title={utils.translate('translateGallery.comedy')} section='Comedy' tabs={tabs} />
 
@@ -39,7 +39,13 @@ const Home: React.FC<IHomeProps> = (): JSX.Element => {
         tabs={tabs}
       />
 
-      <Gallery title={utils.translate('translateGallery.kids')} section='Kids' tabs={tabs} />
+      <Gallery
+        title={utils.translate('translateGallery.actionAdventure')}
+        section='Action & Adventure'
+        tabs={tabs}
+      />
+
+      {/* <Gallery title={utils.translate('translateGallery.kids')} section='Kids' tabs={tabs} /> */}
 
       <div style={{ height: '100vh', backgroundColor: 'black' }}></div>
       <div style={{ height: '100vh', backgroundColor: 'black' }}></div>

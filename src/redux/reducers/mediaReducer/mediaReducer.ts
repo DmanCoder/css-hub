@@ -6,6 +6,7 @@ const defaultState: IMediaDefaultState = {
   streams: [],
   animations: [],
   comedy: [],
+  action: [],
 };
 
 const mediaReducer = (state = defaultState, action: MediaDispatchTypes) => {
@@ -24,6 +25,11 @@ const mediaReducer = (state = defaultState, action: MediaDispatchTypes) => {
       return {
         ...state,
         comedy: action.payload,
+      };
+    case ActionTypes.GET_MEDIA_ACTION_AND_ADVENTURE:
+      return {
+        ...state,
+        action: action.payload,
       };
     default:
       return state;

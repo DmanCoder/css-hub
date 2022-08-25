@@ -11,6 +11,7 @@ const translateGallery = {
   animation: 'Animations',
   anime: 'Anime',
   comedy: 'Comedy',
+  actionAdventure: 'Action & Adventure',
 };
 
 export default translateGallery;

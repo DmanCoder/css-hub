@@ -15,4 +15,13 @@ export interface IMediaComedyAction {
   payload: MediaMovieTypes[] | MediaTvTypes[];
 }
 
-export type MediaDispatchTypes = IMediaStreamsAction | IMediaAnimationsAction | IMediaComedyAction;
+export interface IMediaActionAndAdventureAction {
+  type: ActionTypes.GET_MEDIA_ACTION_AND_ADVENTURE;
+  payload: MediaMovieTypes[] | MediaTvTypes[];
+}
+
+export type MediaDispatchTypes =
+  | IMediaStreamsAction
+  | IMediaAnimationsAction
+  | IMediaComedyAction
+  | IMediaActionAndAdventureAction;
