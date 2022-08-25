@@ -9,6 +9,7 @@ import {
   IMediaActionAndAdventureAction,
   IMediaAnimationsAction,
   IMediaComedyAction,
+  IMediaRomanceAction,
   IMediaScifiAndFantasyAction,
 } from './mediaActions.types';
 
@@ -37,7 +38,7 @@ export const fetchAnimationsMediaAXN = () => (dispatch: Dispatch<IMediaAnimation
 };
 
 /**
- * @description Fetch genre - Comedy (tv/movies)
+ * @description Fetch genre - Action & Adventrue (tv/movies)
  */
 export const fetchActionAndAdventureMediaAXN =
   () => (dispatch: Dispatch<IMediaActionAndAdventureAction>) => {
@@ -86,7 +87,7 @@ export const fetchComedyMediaAXN = () => (dispatch: Dispatch<IMediaComedyAction>
 };
 
 /**
- * @description Fetch genre - Comedy (tv/movies)
+ * @description Fetch genre - Scifi & Fantasy (tv/movies)
  */
 export const fetchScifiAndFantasyMediaAXN =
   () => (dispatch: Dispatch<IMediaScifiAndFantasyAction>) => {
@@ -109,3 +110,27 @@ export const fetchScifiAndFantasyMediaAXN =
         console.log(err, 'ERROR');
       });
   };
+
+/**
+ * @description Fetch genre - Romance (tv/movies)
+ */
+export const fetchRomanceMediaAXN = () => (dispatch: Dispatch<IMediaRomanceAction>) => {
+  const language = store.getState().languageRXS;
+  const country = store.getState().countryRXS;
+  const { networkId } = store.getState().networkRXS;
+
+  const params = `?with_genres=${GENRE_CODES.Romance}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
+  const endpoint = `/api/discover${params}`;
+
+  return dbAPI
+    .get(endpoint)
+    .then((response) => {
+      dispatch({
+        type: ActionTypes.GET_MEDIA_ROMANCE,
+        payload: response.data.results,
+      });
+    })
+    .catch((err) => {
+      console.log(err, 'ERROR');
+    });
+};

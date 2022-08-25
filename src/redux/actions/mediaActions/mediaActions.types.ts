@@ -25,9 +25,15 @@ export interface IMediaScifiAndFantasyAction {
   payload: MediaMovieTypes[] | MediaTvTypes[];
 }
 
+export interface IMediaRomanceAction {
+  type: ActionTypes.GET_MEDIA_ROMANCE;
+  payload: MediaMovieTypes[] | MediaTvTypes[];
+}
+
 export type MediaDispatchTypes =
   | IMediaStreamsAction
   | IMediaAnimationsAction
   | IMediaComedyAction
   | IMediaActionAndAdventureAction
-  | IMediaScifiAndFantasyAction;
+  | IMediaScifiAndFantasyAction
+  | IMediaRomanceAction;

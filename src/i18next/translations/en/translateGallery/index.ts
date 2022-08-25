@@ -13,6 +13,7 @@ const translateGallery = {
   comedy: 'Comedy',
   actionAdventure: 'Action & Adventure',
   scfiAndFantasy: 'Sci-Fi & Fantasy',
+  romance: 'Romance',
 };
 
 export default translateGallery;

@@ -6,4 +6,5 @@ export interface IMediaDefaultState {
   comedy: MediaTvTypes[] | MediaMovieTypes[];
   action: MediaTvTypes[] | MediaMovieTypes[];
   scifi: MediaTvTypes[] | MediaMovieTypes[];
+  romance: MediaTvTypes[] | MediaMovieTypes[];
 }

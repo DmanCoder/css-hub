@@ -15,6 +15,7 @@ import {
   fetchActionAndAdventureMediaAXN,
   fetchAnimationsMediaAXN,
   fetchComedyMediaAXN,
+  fetchRomanceMediaAXN,
   fetchScifiAndFantasyMediaAXN,
 } from '../../redux/actions/mediaActions/mediaActions';
 
@@ -59,6 +60,7 @@ const useApp = (): UseAppReturnType => {
     dispatch(fetchComedyMediaAXN());
     dispatch(fetchActionAndAdventureMediaAXN());
     dispatch(fetchScifiAndFantasyMediaAXN());
+    dispatch(fetchRomanceMediaAXN());
     // dispatch(fetchPopularStreamsAXN());
     // dispatch(fetchAnimationsMediaAXN());
     // dispatch(fetchAnimeMediaAXN());
