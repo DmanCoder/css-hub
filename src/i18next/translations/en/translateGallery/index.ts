@@ -10,6 +10,7 @@ const translateGallery = {
   myList: 'My List+',
   animation: 'Animations',
   anime: 'Anime',
+  comedy: 'Comedy',
 };
 
 export default translateGallery;

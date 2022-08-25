@@ -11,7 +11,10 @@ import {
   // fetchTrendingMediaAXN,
   // fetchUpcomingMediaAXN,
 } from '../../redux/actions/popularActions/popularActions';
-import { fetchAnimationsMediaAXN } from '../../redux/actions/mediaActions/mediaActions';
+import {
+  fetchAnimationsMediaAXN,
+  fetchComedyMediaAXN,
+} from '../../redux/actions/mediaActions/mediaActions';
 
 import { updateWindowDimensionAXN } from '../../redux/actions/windowDimension/windowDimensionAction';
 
@@ -48,7 +51,10 @@ const useApp = (): UseAppReturnType => {
 
   React.useEffect(() => {
     dispatch(fetchPopularStreamsAndCurrentMediaDetails());
+
+    // NEW MEDIA FETCH
     dispatch(fetchAnimationsMediaAXN());
+    dispatch(fetchComedyMediaAXN());
     // dispatch(fetchPopularStreamsAXN());
     // dispatch(fetchAnimationsMediaAXN());
     // dispatch(fetchAnimeMediaAXN());

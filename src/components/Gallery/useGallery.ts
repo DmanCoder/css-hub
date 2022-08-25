@@ -13,9 +13,7 @@ import { TabParamTypes, UseGalleryParamTypes, UseGalleryReturnType } from './Gal
 const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => {
   const dispatch = useAppDispatch();
 
-  const { streams, tvShows, trending, upcoming, myList, anime, animations, kids } = useAppSelector(
-    (state: RootState) => state.popularRXS,
-  );
+  const { streams, animations, comedy } = useAppSelector((state: RootState) => state.mediaRXS);
   const { networkId } = useAppSelector((state: RootState) => state.networkRXS);
   const [media, setMedia] = React.useState<PopularType[]>(streams);
 
@@ -25,59 +23,63 @@ const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => 
       case 'Whats Popular':
         setMedia(streams);
         break;
-      case 'Trending':
-        setMedia(trending);
-        break;
-      case 'For Rent':
-        setMedia(streams);
-        break;
-      case 'On Tv':
-        setMedia(tvShows);
-        break;
-      case 'In Theaters':
-        setMedia(streams);
-        break;
-      case 'Upcoming':
-        setMedia(upcoming);
-        break;
       case 'Animations':
         setMedia(animations);
         break;
-      case 'Anime':
-        setMedia(anime);
+      case 'Comedy':
+        setMedia(comedy);
         break;
-      case 'My List+':
-        setMedia(myList);
-        break;
-      case 'Kids':
-        setMedia(kids);
-        break;
+      // case 'Trending':
+      //   setMedia(trending);
+      //   break;
+      // case 'For Rent':
+      //   setMedia(streams);
+      //   break;
+      // case 'On Tv':
+      //   setMedia(tvShows);
+      //   break;
+      // case 'In Theaters':
+      //   setMedia(streams);
+      //   break;
+      // case 'Upcoming':
+      //   setMedia(upcoming);
+      //   break;
+
+      // case 'Anime':
+      //   setMedia(anime);
+      //   break;
+      // case 'My List+':
+      //   setMedia(myList);
+      //   break;
+      // case 'Kids':
+      //   setMedia(kids);
+      //   break;
       default:
         break;
     }
-  }, [streams, tvShows, trending]);
+  }, [streams, animations, comedy]);
 
   const onChangeSelectTab = (tab: GalleryTypes) => {
-    switch (tab) {
-      case 'For Rent':
-        if (!utils.isEmpty(streams)) return;
-        dispatch(fetchPopularStreamsAXN());
-        break;
-      case 'On Tv':
-        if (!utils.isEmpty(tvShows)) return;
-        dispatch(fetchPopularTvShowsAXN());
-        break;
-      case 'In Theaters':
-        if (!utils.isEmpty(streams)) return;
-        dispatch(fetchPopularStreamsAXN());
-        break;
-      case 'Streaming':
-        if (!utils.isEmpty(streams)) return;
-        dispatch(fetchPopularStreamsAXN());
-        break;
-      default:
-        break;
-    }
+    // switch (tab) {
+    //   case 'For Rent':
+    //     if (!utils.isEmpty(streams)) return;
+    //     dispatch(fetchPopularStreamsAXN());
+    //     break;
+    //   case 'On Tv':
+    //     if (!utils.isEmpty(tvShows)) return;
+    //     dispatch(fetchPopularTvShowsAXN());
+    //     break;
+    //   case 'In Theaters':
+    //     if (!utils.isEmpty(streams)) return;
+    //     dispatch(fetchPopularStreamsAXN());
+    //     break;
+    //   case 'Streaming':
+    //     if (!utils.isEmpty(streams)) return;
+    //     dispatch(fetchPopularStreamsAXN());
+    //     break;
+    //   default:
+    //     break;
+    // }
   };
 
   const onTabClick = ({ tab, section }: TabParamTypes) => {

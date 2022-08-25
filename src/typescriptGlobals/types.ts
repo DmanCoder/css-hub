@@ -76,6 +76,8 @@ export type LanguageCodeTypes = 'en-US' | 'es-CO' | 'ja' | 'hi' | 'fr';
                    GALLERY TYPES
    ==================================================  */
 export type GalleryTypes =
+  | 'Animations'
+  | 'Comedy'
   | 'Kids'
   | 'Streaming'
   | 'On Tv'
@@ -83,7 +85,6 @@ export type GalleryTypes =
   | 'In Theaters'
   | 'Whats Popular'
   | 'Anime'
-  | 'Animations'
   | 'Upcoming'
   | 'My List+'
   | 'Trending';

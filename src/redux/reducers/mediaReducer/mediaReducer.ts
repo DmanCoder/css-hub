@@ -3,15 +3,27 @@ import { MediaDispatchTypes } from '../../actions/mediaActions/mediaActions.type
 import { IMediaDefaultState } from './mediaReducer.types';
 
 const defaultState: IMediaDefaultState = {
+  streams: [],
   animations: [],
+  comedy: [],
 };
 
 const mediaReducer = (state = defaultState, action: MediaDispatchTypes) => {
   switch (action.type) {
+    case ActionTypes.GET_MEDIA_STREAMS:
+      return {
+        ...state,
+        streams: action.payload,
+      };
     case ActionTypes.GET_MEDIA_ANIMATIONS:
       return {
         ...state,
         animations: action.payload,
+      };
+    case ActionTypes.GET_MEDIA_COMEDY:
+      return {
+        ...state,
+        comedy: action.payload,
       };
     default:
       return state;

@@ -31,6 +31,8 @@ const Home: React.FC<IHomeProps> = (): JSX.Element => {
 
       <Gallery title={utils.translate('translateGallery.anime')} section='Anime' tabs={tabs} />
 
+      <Gallery title={utils.translate('translateGallery.comedy')} section='Comedy' tabs={tabs} />
+
       <Gallery
         title={utils.translate('translateGallery.animation')}
         section='Animations'
