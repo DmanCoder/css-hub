@@ -2,15 +2,17 @@ import React from 'react';
 
 import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
 import {
-  fetchPopularStreamsAXN,
   fetchPopularStreamsAndCurrentMediaDetails,
-  fetchAnimeMediaAXN,
-  fetchAnimationsMediaAXN,
-  fetchKidsMediaAXN,
+  // fetchAnimationsMediaAXN,
+  // fetchPopularStreamsAXN,
+  // fetchAnimeMediaAXN,
+  // fetchKidsMediaAXN,
   // fetchNewGenreAXN,
   // fetchTrendingMediaAXN,
   // fetchUpcomingMediaAXN,
 } from '../../redux/actions/popularActions/popularActions';
+import { fetchAnimationsMediaAXN } from '../../redux/actions/mediaActions/mediaActions';
+
 import { updateWindowDimensionAXN } from '../../redux/actions/windowDimension/windowDimensionAction';
 
 import { gsap } from '../../gsap';
@@ -46,10 +48,11 @@ const useApp = (): UseAppReturnType => {
 
   React.useEffect(() => {
     dispatch(fetchPopularStreamsAndCurrentMediaDetails());
-    dispatch(fetchPopularStreamsAXN());
     dispatch(fetchAnimationsMediaAXN());
-    dispatch(fetchAnimeMediaAXN());
-    dispatch(fetchKidsMediaAXN());
+    // dispatch(fetchPopularStreamsAXN());
+    // dispatch(fetchAnimationsMediaAXN());
+    // dispatch(fetchAnimeMediaAXN());
+    // dispatch(fetchKidsMediaAXN());
     // dispatch(fetchTrendingMediaAXN());
     // dispatch(fetchUpcomingMediaAXN());
     // dispatch(fetchNewGenreAXN());
