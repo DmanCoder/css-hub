@@ -20,8 +20,14 @@ export interface IMediaActionAndAdventureAction {
   payload: MediaMovieTypes[] | MediaTvTypes[];
 }
 
+export interface IMediaScifiAndFantasyAction {
+  type: ActionTypes.GET_MEDIA_SCIFI_AND_FANTASY;
+  payload: MediaMovieTypes[] | MediaTvTypes[];
+}
+
 export type MediaDispatchTypes =
   | IMediaStreamsAction
   | IMediaAnimationsAction
   | IMediaComedyAction
-  | IMediaActionAndAdventureAction;
+  | IMediaActionAndAdventureAction
+  | IMediaScifiAndFantasyAction;

@@ -79,6 +79,7 @@ export type GalleryTypes =
   | 'Animations'
   | 'Comedy'
   | 'Action & Adventure'
+  | 'Sci-Fi & Fantasy'
   | 'Kids'
   | 'Streaming'
   | 'On Tv'

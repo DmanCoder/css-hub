@@ -9,6 +9,7 @@ import {
   IMediaActionAndAdventureAction,
   IMediaAnimationsAction,
   IMediaComedyAction,
+  IMediaScifiAndFantasyAction,
 } from './mediaActions.types';
 
 /**
@@ -83,3 +84,28 @@ export const fetchComedyMediaAXN = () => (dispatch: Dispatch<IMediaComedyAction>
       console.log(err, 'ERROR');
     });
 };
+
+/**
+ * @description Fetch genre - Comedy (tv/movies)
+ */
+export const fetchScifiAndFantasyMediaAXN =
+  () => (dispatch: Dispatch<IMediaScifiAndFantasyAction>) => {
+    const language = store.getState().languageRXS;
+    const country = store.getState().countryRXS;
+    const { networkId } = store.getState().networkRXS;
+
+    const params = `?with_genres=${GENRE_CODES['Sci-Fi & Fantasy']}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
+    const endpoint = `/api/discover${params}`;
+
+    return dbAPI
+      .get(endpoint)
+      .then((response) => {
+        dispatch({
+          type: ActionTypes.GET_MEDIA_SCIFI_AND_FANTASY,
+          payload: response.data.results,
+        });
+      })
+      .catch((err) => {
+        console.log(err, 'ERROR');
+      });
+  };

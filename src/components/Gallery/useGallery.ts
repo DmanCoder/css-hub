@@ -13,7 +13,7 @@ import { TabParamTypes, UseGalleryParamTypes, UseGalleryReturnType } from './Gal
 const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => {
   const dispatch = useAppDispatch();
 
-  const { streams, animations, comedy, action } = useAppSelector(
+  const { streams, animations, comedy, action, scifi } = useAppSelector(
     (state: RootState) => state.mediaRXS,
   );
   const { networkId } = useAppSelector((state: RootState) => state.networkRXS);
@@ -33,6 +33,9 @@ const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => 
         break;
       case 'Action & Adventure':
         setMedia(action);
+        break;
+      case 'Sci-Fi & Fantasy':
+        setMedia(scifi);
         break;
       // case 'Trending':
       //   setMedia(trending);
@@ -62,7 +65,7 @@ const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => 
       default:
         break;
     }
-  }, [streams, animations, comedy, action]);
+  }, [streams, animations, comedy, action, scifi]);
 
   const onChangeSelectTab = (tab: GalleryTypes) => {
     // switch (tab) {

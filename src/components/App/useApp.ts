@@ -15,6 +15,7 @@ import {
   fetchActionAndAdventureMediaAXN,
   fetchAnimationsMediaAXN,
   fetchComedyMediaAXN,
+  fetchScifiAndFantasyMediaAXN,
 } from '../../redux/actions/mediaActions/mediaActions';
 
 import { updateWindowDimensionAXN } from '../../redux/actions/windowDimension/windowDimensionAction';
@@ -57,6 +58,7 @@ const useApp = (): UseAppReturnType => {
     dispatch(fetchAnimationsMediaAXN());
     dispatch(fetchComedyMediaAXN());
     dispatch(fetchActionAndAdventureMediaAXN());
+    dispatch(fetchScifiAndFantasyMediaAXN());
     // dispatch(fetchPopularStreamsAXN());
     // dispatch(fetchAnimationsMediaAXN());
     // dispatch(fetchAnimeMediaAXN());

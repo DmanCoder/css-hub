@@ -7,6 +7,7 @@ const defaultState: IMediaDefaultState = {
   animations: [],
   comedy: [],
   action: [],
+  scifi: [],
 };
 
 const mediaReducer = (state = defaultState, action: MediaDispatchTypes) => {
@@ -30,6 +31,11 @@ const mediaReducer = (state = defaultState, action: MediaDispatchTypes) => {
       return {
         ...state,
         action: action.payload,
+      };
+    case ActionTypes.GET_MEDIA_SCIFI_AND_FANTASY:
+      return {
+        ...state,
+        scifi: action.payload,
       };
     default:
       return state;
