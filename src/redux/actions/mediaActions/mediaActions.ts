@@ -15,7 +15,7 @@ export const fetchAnimationsMediaAXN = () => (dispatch: Dispatch<IMediaAnimation
   const country = store.getState().countryRXS;
   const { networkId } = store.getState().networkRXS;
 
-  const params = `?with_genres=${GENRE_CODES.tv.Animations}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
+  const params = `?with_genres=${GENRE_CODES.Animations}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
   const endpoint = `/api/discover${params}`;
 
   return dbAPI
@@ -39,7 +39,7 @@ export const fetchComedyMediaAXN = () => (dispatch: Dispatch<IMediaComedyAction>
   const country = store.getState().countryRXS;
   const { networkId } = store.getState().networkRXS;
 
-  const params = `?with_genres=${GENRE_CODES.tv.Comedy}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
+  const params = `?with_genres=${GENRE_CODES.Comedy}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
   const endpoint = `/api/discover${params}`;
 
   return dbAPI
