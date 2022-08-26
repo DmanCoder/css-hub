@@ -55,6 +55,8 @@ const Home: React.FC<IHomeProps> = (): JSX.Element => {
 
       <Gallery title={utils.translate('translateGallery.crime')} section='Crime' tabs={tabs} />
 
+      <Gallery title={utils.translate('translateGallery.horror')} section='Horror' tabs={tabs} />
+
       <div style={{ height: '100vh', backgroundColor: 'black' }}></div>
       <div style={{ height: '100vh', backgroundColor: 'black' }}></div>
       <div style={{ height: '100vh', backgroundColor: 'black' }}></div>

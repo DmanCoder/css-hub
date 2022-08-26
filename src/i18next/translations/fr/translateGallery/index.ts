@@ -15,6 +15,7 @@ const translateGallery = {
   scfiAndFantasy: 'Sci-Fi & Fantasy',
   romance: 'Romance',
   crime: 'Crime',
+  horror: 'Horror',
 };
 
 export default translateGallery;

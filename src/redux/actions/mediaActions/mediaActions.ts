@@ -10,6 +10,7 @@ import {
   IMediaAnimationsAction,
   IMediaComedyAction,
   IMediaCrimeAction,
+  IMediaHorrorAction,
   IMediaRomanceAction,
   IMediaScifiAndFantasyAction,
   IMediaStreamsAction,
@@ -165,7 +166,7 @@ export const fetchRomanceMediaAXN = () => (dispatch: Dispatch<IMediaRomanceActio
 };
 
 /**
- * @description Fetch genre - Romance (tv/movies)
+ * @description Fetch genre - Crime (tv/movies)
  */
 export const fetchCrimeMediaAXN = () => (dispatch: Dispatch<IMediaCrimeAction>) => {
   const language = store.getState().languageRXS;
@@ -180,6 +181,30 @@ export const fetchCrimeMediaAXN = () => (dispatch: Dispatch<IMediaCrimeAction>) 
     .then((response) => {
       dispatch({
         type: ActionTypes.GET_MEDIA_CRIME,
+        payload: response.data.results,
+      });
+    })
+    .catch((err) => {
+      console.log(err, 'ERROR');
+    });
+};
+
+/**
+ * @description Fetch genre - Horror (tv/movies)
+ */
+export const fetchHorrorMediaAXN = () => (dispatch: Dispatch<IMediaHorrorAction>) => {
+  const language = store.getState().languageRXS;
+  const country = store.getState().countryRXS;
+  const { networkId } = store.getState().networkRXS;
+
+  const params = `?with_genres=${GENRE_CODES.Horror}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
+  const endpoint = `/api/discover${params}`;
+
+  return dbAPI
+    .get(endpoint)
+    .then((response) => {
+      dispatch({
+        type: ActionTypes.GET_MEDIA_HORROR,
         payload: response.data.results,
       });
     })

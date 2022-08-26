@@ -16,6 +16,7 @@ import {
   fetchAnimationsMediaAXN,
   fetchComedyMediaAXN,
   fetchCrimeMediaAXN,
+  fetchHorrorMediaAXN,
   fetchRomanceMediaAXN,
   fetchScifiAndFantasyMediaAXN,
   fetchStreamsAXN,
@@ -65,6 +66,7 @@ const useApp = (): UseAppReturnType => {
     dispatch(fetchScifiAndFantasyMediaAXN());
     dispatch(fetchRomanceMediaAXN());
     dispatch(fetchCrimeMediaAXN());
+    dispatch(fetchHorrorMediaAXN());
     // dispatch(fetchPopularStreamsAXN());
     // dispatch(fetchAnimationsMediaAXN());
     // dispatch(fetchAnimeMediaAXN());

@@ -82,6 +82,7 @@ export type GalleryTypes =
   | 'Sci-Fi & Fantasy'
   | 'Romance'
   | 'Crime'
+  | 'Horror'
   | 'Kids'
   | 'Streaming'
   | 'On Tv'

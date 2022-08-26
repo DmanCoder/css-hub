@@ -8,4 +8,5 @@ export interface IMediaDefaultState {
   scifi: MediaTvTypes[] | MediaMovieTypes[];
   romance: MediaTvTypes[] | MediaMovieTypes[];
   crime: MediaTvTypes[] | MediaMovieTypes[];
+  horror: MediaTvTypes[] | MediaMovieTypes[];
 }

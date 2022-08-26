@@ -35,6 +35,11 @@ export interface IMediaCrimeAction {
   payload: MediaMovieTypes[] | MediaTvTypes[];
 }
 
+export interface IMediaHorrorAction {
+  type: ActionTypes.GET_MEDIA_HORROR;
+  payload: MediaMovieTypes[] | MediaTvTypes[];
+}
+
 export type MediaDispatchTypes =
   | IMediaStreamsAction
   | IMediaAnimationsAction
@@ -42,4 +47,5 @@ export type MediaDispatchTypes =
   | IMediaActionAndAdventureAction
   | IMediaScifiAndFantasyAction
   | IMediaRomanceAction
-  | IMediaCrimeAction;
+  | IMediaCrimeAction
+  | IMediaHorrorAction;
