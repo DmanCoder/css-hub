@@ -9,9 +9,38 @@ import {
   IMediaActionAndAdventureAction,
   IMediaAnimationsAction,
   IMediaComedyAction,
+  IMediaCrimeAction,
   IMediaRomanceAction,
   IMediaScifiAndFantasyAction,
+  IMediaStreamsAction,
 } from './mediaActions.types';
+
+/**
+ * @description Fetch genre - Popular/Tremding Steams (tv/movies)
+ */
+export const fetchStreamsAXN = () => (dispatch: Dispatch<IMediaStreamsAction>) => {
+  const language = store.getState().languageRXS;
+  const country = store.getState().countryRXS;
+  const { networkId } = store.getState().networkRXS;
+
+  let networkIdParam = `&with_networks=${networkId}`;
+  if (networkId === -1) networkIdParam = '';
+
+  const params = `?&watch_region=${country.iso}&with_watch_monetization_types=flatrate&with_origin_country=${country.iso}${networkIdParam}&language=${language}&page=1`;
+  const endpoint = `/api/discover${params}`;
+
+  return dbAPI
+    .get(endpoint)
+    .then((response) => {
+      dispatch({
+        type: ActionTypes.GET_MEDIA_STREAMS,
+        payload: response.data.results,
+      });
+    })
+    .catch((err) => {
+      console.log(err, 'ERROR');
+    });
+};
 
 /**
  * @description Fetch genre - Animations (tv/movies)
@@ -127,6 +156,30 @@ export const fetchRomanceMediaAXN = () => (dispatch: Dispatch<IMediaRomanceActio
     .then((response) => {
       dispatch({
         type: ActionTypes.GET_MEDIA_ROMANCE,
+        payload: response.data.results,
+      });
+    })
+    .catch((err) => {
+      console.log(err, 'ERROR');
+    });
+};
+
+/**
+ * @description Fetch genre - Romance (tv/movies)
+ */
+export const fetchCrimeMediaAXN = () => (dispatch: Dispatch<IMediaCrimeAction>) => {
+  const language = store.getState().languageRXS;
+  const country = store.getState().countryRXS;
+  const { networkId } = store.getState().networkRXS;
+
+  const params = `?with_genres=${GENRE_CODES.Crime}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
+  const endpoint = `/api/discover${params}`;
+
+  return dbAPI
+    .get(endpoint)
+    .then((response) => {
+      dispatch({
+        type: ActionTypes.GET_MEDIA_CRIME,
         payload: response.data.results,
       });
     })

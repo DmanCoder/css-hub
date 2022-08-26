@@ -30,10 +30,16 @@ export interface IMediaRomanceAction {
   payload: MediaMovieTypes[] | MediaTvTypes[];
 }
 
+export interface IMediaCrimeAction {
+  type: ActionTypes.GET_MEDIA_CRIME;
+  payload: MediaMovieTypes[] | MediaTvTypes[];
+}
+
 export type MediaDispatchTypes =
   | IMediaStreamsAction
   | IMediaAnimationsAction
   | IMediaComedyAction
   | IMediaActionAndAdventureAction
   | IMediaScifiAndFantasyAction
-  | IMediaRomanceAction;
+  | IMediaRomanceAction
+  | IMediaCrimeAction;

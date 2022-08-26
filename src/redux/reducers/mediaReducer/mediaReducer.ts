@@ -9,6 +9,7 @@ const defaultState: IMediaDefaultState = {
   action: [],
   scifi: [],
   romance: [],
+  crime: [],
 };
 
 const mediaReducer = (state = defaultState, action: MediaDispatchTypes) => {
@@ -42,6 +43,11 @@ const mediaReducer = (state = defaultState, action: MediaDispatchTypes) => {
       return {
         ...state,
         romance: action.payload,
+      };
+    case ActionTypes.GET_MEDIA_CRIME:
+      return {
+        ...state,
+        crime: action.payload,
       };
     default:
       return state;
