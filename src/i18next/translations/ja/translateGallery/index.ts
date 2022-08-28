@@ -13,9 +13,9 @@ const translateGallery = {
   comedy: 'Comedy',
   actionAdventure: 'Action & Adventure',
   scfiAndFantasy: 'Sci-Fi & Fantasy',
-  romance: 'Romance',
-  crime: 'Crime',
-  horror: 'Horror',
+  romance: 'ロマンス',
+  crime: '犯罪',
+  horror: 'ホラー',
 };
 
 export default translateGallery;
