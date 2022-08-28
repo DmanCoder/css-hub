@@ -9,6 +9,8 @@ import useGallery from './useGallery';
 import * as S from './Gallery.styled';
 import { SHUFFLE_NETWORK_ID } from '../../typescriptGlobals/constants';
 
+import utils from '../../utils';
+
 const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
   const { networkId, media, onTabClick } = useGallery({ section });
 
@@ -40,6 +42,7 @@ const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
                   <S.GalleryThumbnail>
                     <S.GalleryImage
                       src={url}
+                      onError={utils.imageError}
                       alt={media.name || media.title || media.original_title}></S.GalleryImage>
                   </S.GalleryThumbnail>
                 </S.GalleryItem>

@@ -24,7 +24,7 @@ export type UseHeroReturnType = {
   streams: PopularType[];
   indexPosition: number;
   description: string;
-  onImageError: (event: React.SyntheticEvent<HTMLImageElement, Event>) => void;
+  // onImageError: (event: React.SyntheticEvent<HTMLImageElement, Event>) => void;
   mediaDetails: MediaDetails;
   networkName: string;
   contentRating: string;

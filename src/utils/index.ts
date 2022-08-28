@@ -12,6 +12,7 @@ import timeConverter from './timeConverter';
 import randomNumberGenerator from './randomNumberGenerator';
 import returnLanguageCodeShortHand from './returnLanguageCodeShortHand';
 import removeSpaceFromString from './removeSpaceFromString';
+import imageError from './imageError';
 
 const utils = {
   isEmpty,
@@ -29,6 +30,7 @@ const utils = {
   randomNumberGenerator,
   returnLanguageCodeShortHand,
   removeSpaceFromString,
+  imageError,
 };
 
 export default utils;

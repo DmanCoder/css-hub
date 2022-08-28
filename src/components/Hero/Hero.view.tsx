@@ -14,7 +14,6 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
     description,
     indexPosition,
     streams,
-    onImageError,
     mediaDetails,
     networkName,
     contentRating,
@@ -26,7 +25,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
       <S.BackgroundImage
         src={`${imgFilterURL}/${streams[indexPosition]?.backdrop_path}`}
         alt={streams[indexPosition]?.name}
-        onError={onImageError}
+        onError={utils.imageError}
         className='home-page-image'
       />
 

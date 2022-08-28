@@ -1,4 +1,3 @@
-import OnErrorImage from '../../assets/imgs/onerror-image.jpg';
 import { NetworkNameTypes } from '../../typescriptGlobals/types';
 import utils from '../../utils';
 import {
@@ -6,12 +5,6 @@ import {
   ContentRatingsParams,
   ReturnNetworkNamesParamsTypes,
 } from './Hero.types';
-
-export const onImageError = (event: React.SyntheticEvent<HTMLImageElement, Event>): void => {
-  const { currentTarget } = event;
-  currentTarget.onerror = null;
-  currentTarget.src = OnErrorImage;
-};
 
 const getDuration = (totalMinutes: number) => {
   const minutesIn1Hour = 60;

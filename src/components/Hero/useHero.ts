@@ -1,12 +1,7 @@
 import { RootState, useAppSelector } from '../../redux/store';
 import { UseHeroReturnType } from './Hero.types';
 
-import {
-  onImageError,
-  returnContentDuration,
-  returnContentRating,
-  returnNetworkName,
-} from './Hero.helpers';
+import { returnContentDuration, returnContentRating, returnNetworkName } from './Hero.helpers';
 import utils from '../../utils';
 
 const useHero = (): UseHeroReturnType => {
@@ -35,7 +30,6 @@ const useHero = (): UseHeroReturnType => {
     streams,
     indexPosition,
     description,
-    onImageError,
     mediaDetails,
     networkName,
     contentRating,
