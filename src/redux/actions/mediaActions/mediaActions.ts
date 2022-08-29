@@ -15,6 +15,8 @@ import {
   IMediaScifiAndFantasyAction,
   IMediaStreamsAction,
 } from './mediaActions.types';
+import { CombindMediaTypes, MediaTvTypes } from '../../../typescriptGlobals/types';
+import utils from '../../../utils';
 
 /**
  * @description Fetch genre - Popular/Tremding Steams (tv/movies)

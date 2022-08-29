@@ -29,13 +29,13 @@ export const onStartStaggeredDotsAnimation = ({
 };
 
 export const onChangeBackgroundOfDotsAndExitLoadingAnimation = ({
-  mediaDetails,
+  current,
   exitLoaderTL,
   dotsRef,
   loaderRef,
   taglineRef,
 }: ExitLoadingTypes) => {
-  if (!utils.isEmpty(mediaDetails?.tagline)) {
+  if (!utils.isEmpty(current?.tagline)) {
     exitLoaderTL.current
       .to(dotsRef, {
         backgroundColor: '#4a4a4a',

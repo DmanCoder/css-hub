@@ -2,16 +2,6 @@ import React from 'react';
 
 import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
 import {
-  fetchPopularStreamsAndCurrentMediaDetails,
-  // fetchAnimationsMediaAXN,
-  // fetchPopularStreamsAXN,
-  // fetchAnimeMediaAXN,
-  // fetchKidsMediaAXN,
-  // fetchNewGenreAXN,
-  // fetchTrendingMediaAXN,
-  // fetchUpcomingMediaAXN,
-} from '../../redux/actions/popularActions/popularActions';
-import {
   fetchActionAndAdventureMediaAXN,
   fetchAnimationsMediaAXN,
   fetchComedyMediaAXN,
@@ -28,6 +18,10 @@ import { gsap } from '../../gsap';
 import utils from '../../utils';
 
 import { UseAppReturnType } from './App.types';
+import {
+  fetchDetailsMediaAXN,
+  generateRandomNumberAXN,
+} from '../../redux/actions/mediaDetailsActions/mediaDetailsActions';
 
 // TODO: MY LIST+ SHUFFLE MODE SHOULD HAVE ALL MEDIA FROM ALL NETWORKS | BUT IF NOT ON SHUFFLE MODE THEN... ONLY SHOW THE MY LIST FOR ONLY THE SELECTED NETWORK
 
@@ -35,6 +29,7 @@ const useApp = (): UseAppReturnType => {
   const dispatch = useAppDispatch();
 
   const { isShowLeftNavigation } = useAppSelector((state: RootState) => state.networkRXS);
+  const { streams } = useAppSelector((state: RootState) => state.mediaRXS);
   const appWrapper = React.useRef<HTMLDivElement>(null);
   const sectionsTL = React.useRef(gsap.timeline({ paused: true }));
 
@@ -56,25 +51,22 @@ const useApp = (): UseAppReturnType => {
   }, [isShowLeftNavigation]);
 
   React.useEffect(() => {
-    dispatch(fetchPopularStreamsAndCurrentMediaDetails());
-
-    // NEW MEDIA FETCH
     dispatch(fetchStreamsAXN());
-    dispatch(fetchAnimationsMediaAXN());
-    dispatch(fetchComedyMediaAXN());
-    dispatch(fetchActionAndAdventureMediaAXN());
-    dispatch(fetchScifiAndFantasyMediaAXN());
-    dispatch(fetchRomanceMediaAXN());
-    dispatch(fetchCrimeMediaAXN());
-    dispatch(fetchHorrorMediaAXN());
-    // dispatch(fetchPopularStreamsAXN());
     // dispatch(fetchAnimationsMediaAXN());
-    // dispatch(fetchAnimeMediaAXN());
-    // dispatch(fetchKidsMediaAXN());
-    // dispatch(fetchTrendingMediaAXN());
-    // dispatch(fetchUpcomingMediaAXN());
-    // dispatch(fetchNewGenreAXN());
+    // dispatch(fetchComedyMediaAXN());
+    // dispatch(fetchActionAndAdventureMediaAXN());
+    // dispatch(fetchScifiAndFantasyMediaAXN());
+    // dispatch(fetchRomanceMediaAXN());
+    // dispatch(fetchCrimeMediaAXN());
+    // dispatch(fetchHorrorMediaAXN());
   }, []);
+
+  React.useEffect(() => {
+    if (!utils.isEmpty(streams)) {
+      dispatch(generateRandomNumberAXN(streams));
+      dispatch(fetchDetailsMediaAXN(streams));
+    }
+  }, [streams]);
 
   React.useEffect(() => {
     dispatch(

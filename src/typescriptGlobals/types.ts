@@ -133,3 +133,5 @@ export type MediaMovieTypes = {
   vote_average: number;
   vote_count: number;
 };
+
+export type CombindMediaTypes = MediaMovieTypes | MediaTvTypes;
