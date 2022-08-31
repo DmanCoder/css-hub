@@ -64,6 +64,7 @@ const useApp = (): UseAppReturnType => {
   React.useEffect(() => {
     if (!utils.isEmpty(streams)) {
       dispatch(generateRandomNumberAXN(streams));
+      console.log(streams, 'streamsstreams');
       dispatch(fetchDetailsMediaAXN(streams));
     }
   }, [streams]);

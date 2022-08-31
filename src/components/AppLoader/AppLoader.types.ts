@@ -1,4 +1,4 @@
-import { MediaDetails } from '../../redux/actions/popularActions/popularActions.types';
+import { MediaDetailsTypes } from '../../typescriptGlobals/types';
 
 export interface IAppLoaderProps {}
 
@@ -16,7 +16,7 @@ export type LoadAllImagesTypes = {
 };
 
 export type ExitLoadingTypes = {
-  currentMedia: MediaDetails;
+  currentMedia: MediaDetailsTypes;
   exitLoaderTL: React.MutableRefObject<gsap.core.Timeline>;
   dotsRef: HTMLDivElement[];
   loaderRef: HTMLDivElement | null;

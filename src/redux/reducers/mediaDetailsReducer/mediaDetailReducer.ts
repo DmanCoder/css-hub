@@ -1,10 +1,10 @@
-import { CombinedMediaDetailsTypes } from '../../../typescriptGlobals/types';
+import { MediaDetailsTypes } from '../../../typescriptGlobals/types';
 import { ActionTypes } from '../../actions';
 import { IMediaDetailDispatchTypes } from '../../actions/mediaDetailsActions/mediaDetailsActions.types';
 import { IMediaDetailsDefaultState } from './mediaDetailReducer.types';
 
 const defaultState: IMediaDetailsDefaultState = {
-  currentMedia: {} as CombinedMediaDetailsTypes,
+  currentMedia: {} as MediaDetailsTypes,
   indexPosition: 0,
   images: [],
 };

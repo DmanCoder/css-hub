@@ -41,33 +41,33 @@ export const returnContentDuration = ({
   }
 };
 
-// export const returnContentRating = ({ currentMedia }: ContentRatingsParams): string => {
-//   if (!utils.isEmpty(currentMedia?.release_dates)) {
-//     const rating = currentMedia?.release_dates?.results.find((movie) => {
-//       return movie?.iso_3166_1 === 'US';
-//     });
+export const returnContentRating = ({ currentMedia }: ContentRatingsParams): string => {
+  if (!utils.isEmpty(currentMedia?.release_dates)) {
+    const rating = currentMedia?.release_dates?.results.find((movie) => {
+      return movie?.iso_3166_1 === 'US';
+    });
 
-//     return rating?.release_dates[0]?.certification ?? '';
-//   } else if (!utils.isEmpty(currentMedia?.content_ratings)) {
-//     return currentMedia?.content_ratings?.results[0]?.rating;
-//   } else {
-//     return '';
-//   }
-// };
+    return rating?.release_dates[0]?.certification ?? '';
+  } else if (!utils.isEmpty(currentMedia?.content_ratings)) {
+    return currentMedia?.content_ratings?.results[0]?.rating;
+  } else {
+    return '';
+  }
+};
 
-// export const returnNetworkName = ({
-//   media,
-//   currentMedia,
-//   networkId,
-// }: ReturnNetworkNamesParamsTypes): NetworkNameTypes | string => {
-//   const networkName = utils.networkIdToNetworkName(networkId);
-//   if (networkName === 'Shuffle' && !utils.isEmpty(media) && !utils.isEmpty(currentMedia)) {
-//     if (utils.isMovie(media)) {
-//       return currentMedia?.production_companies[0]?.name;
-//     } else {
-//       return currentMedia?.networks[0]?.name;
-//     }
-//   }
+export const returnNetworkName = ({
+  media,
+  currentMedia,
+  networkId,
+}: ReturnNetworkNamesParamsTypes): NetworkNameTypes | string => {
+  const networkName = utils.networkIdToNetworkName(networkId);
+  if (networkName === 'Shuffle' && !utils.isEmpty(media) && !utils.isEmpty(currentMedia)) {
+    if (utils.isMovie(media)) {
+      return currentMedia?.production_companies[0]?.name;
+    } else {
+      return currentMedia?.networks[0]?.name;
+    }
+  }
 
-//   return networkName;
-// };
+  return networkName;
+};

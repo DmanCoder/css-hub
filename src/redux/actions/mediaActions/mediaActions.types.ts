@@ -1,43 +1,43 @@
 import { ActionTypes } from '..';
-import { MediaMovieTypes, MediaTvTypes } from '../../../typescriptGlobals/types';
+import { MediaTypes } from '../../../typescriptGlobals/types';
 
 export interface IMediaStreamsAction {
   type: ActionTypes.GET_MEDIA_STREAMS;
-  payload: MediaMovieTypes[] | MediaTvTypes[];
+  payload: MediaTypes[];
 }
 export interface IMediaAnimationsAction {
   type: ActionTypes.GET_MEDIA_ANIMATIONS;
-  payload: MediaMovieTypes[] | MediaTvTypes[];
+  payload: MediaTypes[];
 }
 
 export interface IMediaComedyAction {
   type: ActionTypes.GET_MEDIA_COMEDY;
-  payload: MediaMovieTypes[] | MediaTvTypes[];
+  payload: MediaTypes[];
 }
 
 export interface IMediaActionAndAdventureAction {
   type: ActionTypes.GET_MEDIA_ACTION_AND_ADVENTURE;
-  payload: MediaMovieTypes[] | MediaTvTypes[];
+  payload: MediaTypes[];
 }
 
 export interface IMediaScifiAndFantasyAction {
   type: ActionTypes.GET_MEDIA_SCIFI_AND_FANTASY;
-  payload: MediaMovieTypes[] | MediaTvTypes[];
+  payload: MediaTypes[];
 }
 
 export interface IMediaRomanceAction {
   type: ActionTypes.GET_MEDIA_ROMANCE;
-  payload: MediaMovieTypes[] | MediaTvTypes[];
+  payload: MediaTypes[];
 }
 
 export interface IMediaCrimeAction {
   type: ActionTypes.GET_MEDIA_CRIME;
-  payload: MediaMovieTypes[] | MediaTvTypes[];
+  payload: MediaTypes[];
 }
 
 export interface IMediaHorrorAction {
   type: ActionTypes.GET_MEDIA_HORROR;
-  payload: MediaMovieTypes[] | MediaTvTypes[];
+  payload: MediaTypes[];
 }
 
 export type MediaDispatchTypes =

@@ -1,5 +1,5 @@
 import { PopularType } from '../../redux/actions/popularActions/popularActions.types';
-import { CombinedMediaDetailsTypes, NetworkIdTypes } from '../../typescriptGlobals/types';
+import { MediaDetailsTypes, NetworkIdTypes } from '../../typescriptGlobals/types';
 
 export type CalculateDescriptionParamsTypes = {
   description: string;
@@ -12,7 +12,7 @@ export type CalculateDescriptionReturnTypes = {
 
 export type ReturnNetworkNamesParamsTypes = {
   media: PopularType;
-  currentMedia: any;
+  currentMedia: MediaDetailsTypes;
   networkId: NetworkIdTypes;
 };
 
@@ -23,17 +23,17 @@ export type UseHeroReturnType = {
   streams: PopularType[];
   indexPosition: number;
   description: string;
-  currentMedia: any;
+  currentMedia: MediaDetailsTypes;
   networkName: string;
   contentRating: string;
   contentDuration: string;
 };
 
 export type ContentRatingsParams = {
-  currentMedia: any;
+  currentMedia: MediaDetailsTypes;
 };
 
 export type ContentDurationParamTypes = {
   media: PopularType;
-  currentMedia: CombinedMediaDetailsTypes;
+  currentMedia: MediaDetailsTypes;
 };

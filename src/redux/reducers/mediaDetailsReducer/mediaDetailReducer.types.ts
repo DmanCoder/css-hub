@@ -1,7 +1,7 @@
-import { CombinedMediaDetailsTypes } from '../../../typescriptGlobals/types';
+import { MediaDetailsTypes } from '../../../typescriptGlobals/types';
 
 export interface IMediaDetailsDefaultState {
-  currentMedia: CombinedMediaDetailsTypes;
+  currentMedia: MediaDetailsTypes;
   indexPosition: number;
   images: string[]; // TODO COME BACK TO THIS
 }
