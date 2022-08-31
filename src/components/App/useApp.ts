@@ -52,19 +52,18 @@ const useApp = (): UseAppReturnType => {
 
   React.useEffect(() => {
     dispatch(fetchStreamsAXN());
-    // dispatch(fetchAnimationsMediaAXN());
-    // dispatch(fetchComedyMediaAXN());
-    // dispatch(fetchActionAndAdventureMediaAXN());
-    // dispatch(fetchScifiAndFantasyMediaAXN());
-    // dispatch(fetchRomanceMediaAXN());
-    // dispatch(fetchCrimeMediaAXN());
-    // dispatch(fetchHorrorMediaAXN());
+    dispatch(fetchAnimationsMediaAXN());
+    dispatch(fetchComedyMediaAXN());
+    dispatch(fetchActionAndAdventureMediaAXN());
+    dispatch(fetchScifiAndFantasyMediaAXN());
+    dispatch(fetchRomanceMediaAXN());
+    dispatch(fetchCrimeMediaAXN());
+    dispatch(fetchHorrorMediaAXN());
   }, []);
 
   React.useEffect(() => {
     if (!utils.isEmpty(streams)) {
       dispatch(generateRandomNumberAXN(streams));
-      console.log(streams, 'streamsstreams');
       dispatch(fetchDetailsMediaAXN(streams));
     }
   }, [streams]);
