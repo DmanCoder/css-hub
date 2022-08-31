@@ -12,7 +12,11 @@ import {
 import { IErrorFeedback } from '../errorsActions/errorsActions.types';
 import { ILoadingToggle } from '../loadingActions/loadingActions.types';
 import { ContentRatingsForTvShows, MediaDetails } from '../popularActions/popularActions.types';
-import { CombindMediaTypes, MediaMovieTypes, MediaTvTypes } from '../../../typescriptGlobals/types';
+import {
+  CombinedMediaTypes,
+  MediaMovieTypes,
+  MediaTvTypes,
+} from '../../../typescriptGlobals/types';
 import utils from '../../../utils';
 import { IMediaStreamsAction } from '../mediaActions/mediaActions.types';
 
@@ -20,7 +24,7 @@ import { IMediaStreamsAction } from '../mediaActions/mediaActions.types';
  * @description Generate random number
  */
 export const generateRandomNumberAXN =
-  (media: CombindMediaTypes[]) => (dispatch: Dispatch<IMediaDetailsRandomNumberAction>) => {
+  (media: CombinedMediaTypes[]) => (dispatch: Dispatch<IMediaDetailsRandomNumberAction>) => {
     const randomNumber = utils.randomNumberGenerator({ max: media.length - 1 });
     dispatch({
       type: ActionTypes.MEDIA_DETAILS_RANDOM_NUMBER,
@@ -32,7 +36,7 @@ export const generateRandomNumberAXN =
  * @description Fetch details
  */
 export const fetchDetailsMediaAXN =
-  (media: CombindMediaTypes[]) =>
+  (media: CombinedMediaTypes[]) =>
   (dispatch: Dispatch<IMediaStreamsAction | IMediaDetailsRandomNumberAction>) => {
     const language = store.getState().languageRXS;
     const { indexPosition } = store.getState().detailsRXS;

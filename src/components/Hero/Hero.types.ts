@@ -1,5 +1,5 @@
 import { PopularType } from '../../redux/actions/popularActions/popularActions.types';
-import { CombindMediaDetailsTypes, NetworkIdTypes } from '../../typescriptGlobals/types';
+import { CombinedMediaDetailsTypes, NetworkIdTypes } from '../../typescriptGlobals/types';
 
 export type CalculateDescriptionParamsTypes = {
   description: string;
@@ -35,5 +35,5 @@ export type ContentRatingsParams = {
 
 export type ContentDurationParamTypes = {
   media: PopularType;
-  currentMedia: CombindMediaDetailsTypes;
+  currentMedia: CombinedMediaDetailsTypes;
 };

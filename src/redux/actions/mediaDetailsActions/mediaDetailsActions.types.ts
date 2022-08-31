@@ -1,10 +1,10 @@
 import { ActionTypes } from '..';
-import { CombindMediaDetailsTypes } from '../../../typescriptGlobals/types';
+import { CombinedMediaDetailsTypes } from '../../../typescriptGlobals/types';
 import { ContentRatingsForTvShows } from '../popularActions/popularActions.types';
 
 export interface IMediaDetails {
   type: ActionTypes.GET_CURRENT_MEDIA_DETAILS;
-  payload: CombindMediaDetailsTypes;
+  payload: CombinedMediaDetailsTypes;
 }
 export interface IContentRatingsForTvShows {
   type: ActionTypes.GET_MEDIA_CONTENT_RATINGS;

@@ -216,6 +216,6 @@ export type MediaDetailsMovieTypes = {
   vote_count: number;
 };
 
-export type CombindMediaTypes = MediaMovieTypes | MediaTvTypes;
+export type CombinedMediaTypes = MediaMovieTypes | MediaTvTypes;
 
-export type CombindMediaDetailsTypes = MediaDetailsTvTypes | MediaDetailsMovieTypes;
+export type CombinedMediaDetailsTypes = MediaDetailsTvTypes | MediaDetailsMovieTypes;

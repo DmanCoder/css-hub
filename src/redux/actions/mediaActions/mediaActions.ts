@@ -15,7 +15,7 @@ import {
   IMediaScifiAndFantasyAction,
   IMediaStreamsAction,
 } from './mediaActions.types';
-import { CombindMediaTypes, MediaTvTypes } from '../../../typescriptGlobals/types';
+import { CombinedMediaTypes, MediaTvTypes } from '../../../typescriptGlobals/types';
 import utils from '../../../utils';
 
 /**
