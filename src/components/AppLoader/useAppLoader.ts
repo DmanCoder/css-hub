@@ -13,7 +13,7 @@ import utils from '../../utils';
 
 const useAppLoader = () => {
   const { streams } = useAppSelector((state: RootState) => state.popularRXS);
-  const { current } = useAppSelector((state: RootState) => state.detailsRXS);
+  const { currentMedia } = useAppSelector((state: RootState) => state.detailsRXS);
 
   const [appLoaderToggle, setAppLoaderToggle] = React.useState<boolean>(false);
   const [hasLoadedImages, setHasLoadedImages] = React.useState<boolean>(false);
@@ -46,7 +46,7 @@ const useAppLoader = () => {
       initialLoaderTL.current.kill();
 
       onChangeBackgroundOfDotsAndExitLoadingAnimation({
-        current,
+        currentMedia,
         exitLoaderTL,
         dotsRef: dotsRef.current,
         loaderRef: loaderRef.current,
@@ -55,7 +55,7 @@ const useAppLoader = () => {
     }
   }, [hasLoadedImages, appLoaderToggle]);
 
-  return { loaderRef, dotsRef, taglineRef, current };
+  return { loaderRef, dotsRef, taglineRef, currentMedia };
 };
 
 export default useAppLoader;

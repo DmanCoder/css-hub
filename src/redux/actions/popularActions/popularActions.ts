@@ -147,7 +147,7 @@ export const fetchPopularStreamsAndCurrentMediaDetails =
         });
 
         dispatch({
-          type: ActionTypes.GET_MEDIA_DETAILS,
+          type: ActionTypes.GET_CURRENT_MEDIA_DETAILS,
           payload: response.data.results,
         });
       })

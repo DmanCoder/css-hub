@@ -13,7 +13,7 @@ const defaultState: IMediaDefaultState = {
   horror: [],
 };
 
-const mediaReducer = (state = defaultState, action: MediaDispatchTypes) => {
+const mediaReducer = (state = defaultState, action: MediaDispatchTypes): IMediaDefaultState => {
   switch (action.type) {
     case ActionTypes.GET_MEDIA_STREAMS:
       return {

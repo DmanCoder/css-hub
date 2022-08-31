@@ -5,7 +5,7 @@ import useAppLoader from './useAppLoader';
 import * as S from './AppLoader.styled';
 
 const AppLoader: React.FC<IAppLoaderProps> = () => {
-  const { loaderRef, dotsRef, taglineRef, current } = useAppLoader();
+  const { loaderRef, dotsRef, taglineRef, currentMedia } = useAppLoader();
 
   return (
     <S.AppLoaderWrapper ref={loaderRef}>
@@ -14,7 +14,7 @@ const AppLoader: React.FC<IAppLoaderProps> = () => {
       <S.Dots ref={(el: HTMLDivElement) => dotsRef.current.push(el)}></S.Dots>
       <S.Dots ref={(el: HTMLDivElement) => dotsRef.current.push(el)}></S.Dots>
 
-      {/* <S.MediaTagline ref={taglineRef}>{current?.tagline}</S.MediaTagline> */}
+      <S.MediaTagline ref={taglineRef}>{currentMedia?.tagline}</S.MediaTagline>
     </S.AppLoaderWrapper>
   );
 };

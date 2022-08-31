@@ -14,7 +14,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
     description,
     indexPosition,
     streams,
-    mediaDetails,
+    currentMedia,
     networkName,
     contentRating,
     contentDuration,
@@ -33,7 +33,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
 
       <S.HeroContent className='network-padding'>
         <S.Network>
-          <S.NetworkLink href={mediaDetails?.homepage} target='_blank' title={networkName}>
+          <S.NetworkLink href={currentMedia?.homepage} target='_blank' title={networkName}>
             {utils.translate(
               `translateHero.${utils.removeSpaceFromString(networkName)?.toLowerCase()}`,
             )}

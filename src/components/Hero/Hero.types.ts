@@ -1,6 +1,5 @@
-import React from 'react';
-import { MediaDetails, PopularType } from '../../redux/actions/popularActions/popularActions.types';
-import { NetworkIdTypes } from '../../typescriptGlobals/types';
+import { PopularType } from '../../redux/actions/popularActions/popularActions.types';
+import { CombindMediaDetailsTypes, NetworkIdTypes } from '../../typescriptGlobals/types';
 
 export type CalculateDescriptionParamsTypes = {
   description: string;
@@ -13,7 +12,7 @@ export type CalculateDescriptionReturnTypes = {
 
 export type ReturnNetworkNamesParamsTypes = {
   media: PopularType;
-  mediaDetails: MediaDetails;
+  currentMedia: any;
   networkId: NetworkIdTypes;
 };
 
@@ -24,18 +23,17 @@ export type UseHeroReturnType = {
   streams: PopularType[];
   indexPosition: number;
   description: string;
-  // onImageError: (event: React.SyntheticEvent<HTMLImageElement, Event>) => void;
-  mediaDetails: MediaDetails;
+  currentMedia: any;
   networkName: string;
   contentRating: string;
   contentDuration: string;
 };
 
 export type ContentRatingsParams = {
-  mediaDetails: MediaDetails;
+  currentMedia: any;
 };
 
 export type ContentDurationParamTypes = {
   media: PopularType;
-  mediaDetails: MediaDetails;
+  currentMedia: CombindMediaDetailsTypes;
 };

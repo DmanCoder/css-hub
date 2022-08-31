@@ -7,22 +7,22 @@ import utils from '../../utils';
 const useHero = (): UseHeroReturnType => {
   const { streams, indexPosition } = useAppSelector((state: RootState) => state.popularRXS);
   const { networkId } = useAppSelector((state: RootState) => state.networkRXS);
-  const mediaDetails = useAppSelector((state: RootState) => state.detailsRXS);
+  const { currentMedia } = useAppSelector((state: RootState) => state.detailsRXS);
 
   const placeholder = utils.translate('translateHero.placeholderDescription');
   const description: string = streams[indexPosition]?.overview || placeholder;
 
   const networkName = returnNetworkName({
     media: streams[indexPosition],
-    mediaDetails: mediaDetails,
+    currentMedia,
     networkId,
   });
 
-  const contentRating = returnContentRating({ mediaDetails });
+  const contentRating = returnContentRating({ currentMedia });
 
   const contentDuration = returnContentDuration({
     media: streams[indexPosition],
-    mediaDetails,
+    currentMedia,
   });
 
   return {
@@ -30,7 +30,7 @@ const useHero = (): UseHeroReturnType => {
     streams,
     indexPosition,
     description,
-    mediaDetails,
+    currentMedia,
     networkName,
     contentRating,
     contentDuration,

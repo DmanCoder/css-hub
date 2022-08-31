@@ -56,59 +56,59 @@ export const fetchDetailsMediaAXN =
       });
   };
 
-export const getCurrentMediaDetails =
-  ({ id, media_type }: { id: number; media_type: string }) =>
-  (dispatch: Dispatch<IMediaDetails | IErrorFeedback | ILoadingToggle>) => {
-    const language: string = store.getState().languageRXS;
-    const params = `media_id=${id}&media_type=${media_type}&language=${language}&page=1`;
-    const endPoint = `/api/details?${params}`;
+// export const getCurrentMediaDetails =
+//   ({ id, media_type }: { id: number; media_type: string }) =>
+//   (dispatch: Dispatch<IMediaDetails | IErrorFeedback | ILoadingToggle>) => {
+//     const language: string = store.getState().languageRXS;
+//     const params = `media_id=${id}&media_type=${media_type}&language=${language}&page=1`;
+//     const endPoint = `/api/details?${params}`;
 
-    return dbAPI
-      .get(endPoint)
-      .then((res) => {
-        const results: MediaDetails = res?.data?.results;
+//     return dbAPI
+//       .get(endPoint)
+//       .then((res) => {
+//         const results: MediaDetails = res?.data?.results;
 
-        dispatch({
-          type: ActionTypes.GET_MEDIA_DETAILS,
-          payload: results,
-        });
-      })
-      .catch((err) => {
-        dispatch({
-          type: ActionTypes.ERROR_FEEDBACK,
-          payload: {
-            api: 'Could not connect to servers',
-            err,
-          },
-        });
-      });
-  };
+//         dispatch({
+//           type: ActionTypes.GET_CURRENT_MEDIA_DETAILS,
+//           payload: results,
+//         });
+//       })
+//       .catch((err) => {
+//         dispatch({
+//           type: ActionTypes.ERROR_FEEDBACK,
+//           payload: {
+//             api: 'Could not connect to servers',
+//             err,
+//           },
+//         });
+//       });
+//   };
 
-export const getCurrentContentRatingsForTvShows =
-  ({ id, media_type }: { id: number; media_type: string }) =>
-  (dispatch: Dispatch<IContentRatingsForTvShows | IErrorFeedback | ILoadingToggle>) => {
-    const language: string = store.getState().languageRXS;
-    const params = `media_id=${id}&media_type=${media_type}&language=${language}&page=1`;
+// export const getCurrentContentRatingsForTvShows =
+//   ({ id, media_type }: { id: number; media_type: string }) =>
+//   (dispatch: Dispatch<IContentRatingsForTvShows | IErrorFeedback | ILoadingToggle>) => {
+//     const language: string = store.getState().languageRXS;
+//     const params = `media_id=${id}&media_type=${media_type}&language=${language}&page=1`;
 
-    const endPoint = `/api/details/media_ratings?${params}`;
+//     const endPoint = `/api/details/media_ratings?${params}`;
 
-    return dbAPI
-      .get(endPoint)
-      .then((res) => {
-        const results: ContentRatingsForTvShows[] = res?.data?.results;
+//     return dbAPI
+//       .get(endPoint)
+//       .then((res) => {
+//         const results: ContentRatingsForTvShows[] = res?.data?.results;
 
-        dispatch({
-          type: ActionTypes.GET_MEDIA_CONTENT_RATINGS,
-          payload: results,
-        });
-      })
-      .catch((err) => {
-        dispatch({
-          type: ActionTypes.ERROR_FEEDBACK,
-          payload: {
-            api: 'Could not connect to servers',
-            err,
-          },
-        });
-      });
-  };
+//         dispatch({
+//           type: ActionTypes.GET_MEDIA_CONTENT_RATINGS,
+//           payload: results,
+//         });
+//       })
+//       .catch((err) => {
+//         dispatch({
+//           type: ActionTypes.ERROR_FEEDBACK,
+//           payload: {
+//             api: 'Could not connect to servers',
+//             err,
+//           },
+//         });
+//       });
+//   };

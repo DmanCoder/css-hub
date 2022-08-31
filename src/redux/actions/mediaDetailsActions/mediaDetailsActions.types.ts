@@ -1,9 +1,10 @@
 import { ActionTypes } from '..';
-import { ContentRatingsForTvShows, MediaDetails } from '../popularActions/popularActions.types';
+import { CombindMediaDetailsTypes } from '../../../typescriptGlobals/types';
+import { ContentRatingsForTvShows } from '../popularActions/popularActions.types';
 
 export interface IMediaDetails {
-  type: ActionTypes.GET_MEDIA_DETAILS;
-  payload: MediaDetails;
+  type: ActionTypes.GET_CURRENT_MEDIA_DETAILS;
+  payload: CombindMediaDetailsTypes;
 }
 export interface IContentRatingsForTvShows {
   type: ActionTypes.GET_MEDIA_CONTENT_RATINGS;
@@ -15,7 +16,7 @@ export interface IMediaDetailsRandomNumberAction {
 }
 export interface IMediaDetailsImagesAction {
   type: ActionTypes.MEDIA_DETAILS_IMAGES;
-  payload: number;
+  payload: string[]; // TODO: FIX TYPE LATER
 }
 export type IMediaDetailDispatchTypes =
   | IMediaDetails

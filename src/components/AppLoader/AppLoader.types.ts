@@ -16,7 +16,7 @@ export type LoadAllImagesTypes = {
 };
 
 export type ExitLoadingTypes = {
-  current: MediaDetails;
+  currentMedia: MediaDetails;
   exitLoaderTL: React.MutableRefObject<gsap.core.Timeline>;
   dotsRef: HTMLDivElement[];
   loaderRef: HTMLDivElement | null;

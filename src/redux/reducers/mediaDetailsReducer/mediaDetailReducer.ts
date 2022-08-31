@@ -1,19 +1,23 @@
+import { CombindMediaDetailsTypes } from '../../../typescriptGlobals/types';
 import { ActionTypes } from '../../actions';
 import { IMediaDetailDispatchTypes } from '../../actions/mediaDetailsActions/mediaDetailsActions.types';
 import { IMediaDetailsDefaultState } from './mediaDetailReducer.types';
 
 const defaultState: IMediaDetailsDefaultState = {
-  current: [],
+  currentMedia: {} as CombindMediaDetailsTypes,
   indexPosition: 0,
   images: [],
 };
 
-const mediaDetailReducer = (state = defaultState, action: IMediaDetailDispatchTypes) => {
+const mediaDetailReducer = (
+  state = defaultState,
+  action: IMediaDetailDispatchTypes,
+): IMediaDetailsDefaultState => {
   switch (action.type) {
-    case ActionTypes.GET_MEDIA_DETAILS:
+    case ActionTypes.GET_CURRENT_MEDIA_DETAILS:
       return {
         ...state,
-        current: action.payload,
+        currentMedia: action.payload,
       };
     case ActionTypes.MEDIA_DETAILS_RANDOM_NUMBER:
       return {
