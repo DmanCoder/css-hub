@@ -16,6 +16,7 @@ import * as S from './App.styled';
 appRehydrate();
 
 // TODO: https://www.themoviedb.org/talk/630441bb21118f007d33178f (Instead of static purple show Dominant colors)
+// TODO: https://stackoverflow.com/questions/2541481/get-average-color-of-image-via-javascript (Instead of static purple show Dominant colors)
 
 const App: React.FC<IAppProps> = () => {
   const { appWrapper } = useApp();
