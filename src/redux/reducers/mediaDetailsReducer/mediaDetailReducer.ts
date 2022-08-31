@@ -14,7 +14,7 @@ const mediaDetailReducer = (
   action: IMediaDetailDispatchTypes,
 ): IMediaDetailsDefaultState => {
   switch (action.type) {
-    case ActionTypes.GET_CURRENT_MEDIA_DETAILS:
+    case ActionTypes.GET_MEDIA_DETAILS:
       return {
         ...state,
         currentMedia: action.payload,
@@ -25,6 +25,11 @@ const mediaDetailReducer = (
         indexPosition: action.payload,
       };
     case ActionTypes.MEDIA_DETAILS_IMAGES:
+      return {
+        ...state,
+        images: action.payload,
+      };
+    case ActionTypes.GET_MEDIA_CONTENT_RATINGS:
       return {
         ...state,
         images: action.payload,

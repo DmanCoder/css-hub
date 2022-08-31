@@ -20,6 +20,7 @@ import utils from '../../utils';
 import { UseAppReturnType } from './App.types';
 import {
   fetchDetailsMediaAXN,
+  fetchMediaDetailsContentRatings,
   generateRandomNumberAXN,
 } from '../../redux/actions/mediaDetailsActions/mediaDetailsActions';
 
@@ -65,6 +66,7 @@ const useApp = (): UseAppReturnType => {
     if (!utils.isEmpty(streams)) {
       dispatch(generateRandomNumberAXN(streams));
       dispatch(fetchDetailsMediaAXN(streams));
+      dispatch(fetchMediaDetailsContentRatings());
     }
   }, [streams]);
 

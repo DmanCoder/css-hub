@@ -18,8 +18,6 @@ const useHero = (): UseHeroReturnType => {
     networkId,
   });
 
-  console.log(indexPosition, 'indexPositionindexPositionindexPosition');
-
   const contentRating = returnContentRating({ currentMedia });
 
   const contentDuration = returnContentDuration({
