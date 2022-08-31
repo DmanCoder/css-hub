@@ -5,9 +5,9 @@ import { returnContentDuration, returnContentRating, returnNetworkName } from '.
 import utils from '../../utils';
 
 const useHero = (): UseHeroReturnType => {
-  const { streams, indexPosition } = useAppSelector((state: RootState) => state.popularRXS);
+  const { streams } = useAppSelector((state: RootState) => state.mediaRXS);
   const { networkId } = useAppSelector((state: RootState) => state.networkRXS);
-  const { currentMedia } = useAppSelector((state: RootState) => state.detailsRXS);
+  const { currentMedia, indexPosition } = useAppSelector((state: RootState) => state.detailsRXS);
 
   const placeholder = utils.translate('translateHero.placeholderDescription');
   const description: string = streams[indexPosition]?.overview || placeholder;
@@ -17,6 +17,8 @@ const useHero = (): UseHeroReturnType => {
     currentMedia,
     networkId,
   });
+
+  console.log(indexPosition, 'indexPositionindexPositionindexPosition');
 
   const contentRating = returnContentRating({ currentMedia });
 

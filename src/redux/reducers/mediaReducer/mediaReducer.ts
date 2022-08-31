@@ -11,6 +11,7 @@ const defaultState: IMediaDefaultState = {
   romance: [],
   crime: [],
   horror: [],
+  myList: [],
 };
 
 const mediaReducer = (state = defaultState, action: MediaDispatchTypes): IMediaDefaultState => {

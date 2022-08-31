@@ -12,7 +12,7 @@ import { gsap } from '../../gsap';
 import utils from '../../utils';
 
 const useAppLoader = () => {
-  const { streams } = useAppSelector((state: RootState) => state.popularRXS);
+  const { streams } = useAppSelector((state: RootState) => state.mediaRXS);
   const { currentMedia } = useAppSelector((state: RootState) => state.detailsRXS);
 
   const [appLoaderToggle, setAppLoaderToggle] = React.useState<boolean>(false);

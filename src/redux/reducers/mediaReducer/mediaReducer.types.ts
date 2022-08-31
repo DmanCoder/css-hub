@@ -9,4 +9,5 @@ export interface IMediaDefaultState {
   romance: MediaTypes[];
   crime: MediaTypes[];
   horror: MediaTypes[];
+  myList: MediaTypes[];
 }
