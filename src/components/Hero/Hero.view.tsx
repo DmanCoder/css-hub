@@ -7,6 +7,7 @@ import { IHeroProps } from './Hero.types';
 import useHero from './useHero';
 import * as S from './Hero.styled';
 
+// TODO: Change color of LOGO base on selected network id | Gallery title bottom border
 const Hero: React.FC<IHeroProps> = (): JSX.Element => {
   const {
     description,
