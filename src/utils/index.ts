@@ -13,6 +13,7 @@ import randomNumberGenerator from './randomNumberGenerator';
 import returnLanguageCodeShortHand from './returnLanguageCodeShortHand';
 import removeSpaceFromString from './removeSpaceFromString';
 import imageError from './imageError';
+import getAverageColor from './getAverageColor';
 
 const utils = {
   isEmpty,
@@ -31,6 +32,7 @@ const utils = {
   returnLanguageCodeShortHand,
   removeSpaceFromString,
   imageError,
+  getAverageColor,
 };
 
 export default utils;

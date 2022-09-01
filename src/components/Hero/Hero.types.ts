@@ -27,6 +27,7 @@ export type UseHeroReturnType = {
   networkName: string;
   contentRating: string;
   contentDuration: string;
+  imgURL: string;
 };
 
 export type ContentRatingsParams = {

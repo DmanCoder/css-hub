@@ -3,6 +3,7 @@ import { UseHeroReturnType } from './Hero.types';
 
 import { returnContentDuration, returnContentRating, returnNetworkName } from './Hero.helpers';
 import utils from '../../utils';
+import { imgFilterURL } from '../../api/init';
 
 const useHero = (): UseHeroReturnType => {
   const { streams } = useAppSelector((state: RootState) => state.mediaRXS);
@@ -25,6 +26,10 @@ const useHero = (): UseHeroReturnType => {
     currentMedia,
   });
 
+  const imgURL = `${imgFilterURL}/${streams[indexPosition]?.backdrop_path}`;
+
+  utils.getAverageColor(imgURL);
+
   return {
     networkId,
     streams,
@@ -34,6 +39,7 @@ const useHero = (): UseHeroReturnType => {
     networkName,
     contentRating,
     contentDuration,
+    imgURL,
   };
 };
 

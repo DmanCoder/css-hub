@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { imgFilterURL } from '../../api/init';
-
 import Assets from '../../assets';
 import utils from '../../utils';
 
@@ -18,12 +16,13 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
     networkName,
     contentRating,
     contentDuration,
+    imgURL,
   } = useHero();
 
   return (
-    <S.HeroWrapper>
+    <S.HeroWrapper id='hero'>
       <S.BackgroundImage
-        src={`${imgFilterURL}/${streams[indexPosition]?.backdrop_path}`}
+        src={imgURL}
         alt={streams[indexPosition]?.name}
         onError={utils.imageError}
         className='home-page-image'
