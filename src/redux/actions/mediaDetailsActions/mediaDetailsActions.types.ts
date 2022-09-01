@@ -1,6 +1,11 @@
 import { ActionTypes } from '..';
 import { MediaDetailsTypes } from '../../../typescriptGlobals/types';
 
+export interface ISetBackdropImageAction {
+  type: ActionTypes.SET_BACKDROP_IMAGE;
+  payload: string;
+}
+
 export interface IMediaDetailsAction {
   type: ActionTypes.GET_MEDIA_DETAILS;
   payload: MediaDetailsTypes;
@@ -26,6 +31,7 @@ export interface IMediaDetailsAction {
   payload: MediaDetailsTypes;
 }
 export type IMediaDetailDispatchTypes =
+  | ISetBackdropImageAction
   | IMediaDetailsAction
   | IMediaContentRatingAction
   | IMediaDetailsRandomNumberAction

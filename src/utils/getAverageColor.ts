@@ -1,20 +1,13 @@
-import { FastAverageColor } from 'fast-average-color';
+import { FastAverageColor, FastAverageColorResult } from 'fast-average-color';
 
-const getAverageColor = (imgURL: string): any => {
+const getAverageColor = (imgURL: string): Promise<FastAverageColorResult> => {
   const fac = new FastAverageColor();
 
-  const downloadedImg = new Image();
-  downloadedImg.crossOrigin = 'Anonymous';
-  downloadedImg.src = imgURL;
+  const image = new Image();
 
-  fac
-    .getColorAsync(downloadedImg)
-    .then((color) => {
-      // do somthing
-      console.log(color);
-    })
-    .catch((e) => {
-      console.log(e);
-    });
+  image.crossOrigin = 'Anonymous';
+  image.src = imgURL;
+
+  return fac.getColorAsync(image);
 };
 export default getAverageColor;

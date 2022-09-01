@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux';
-import { dbAPI } from '../../../api/init';
+import { dbAPI, imgFilterURL } from '../../../api/init';
 import { store } from '../../store';
 import { ActionTypes } from '..';
 
@@ -7,9 +7,20 @@ import {
   IMediaContentRatingAction,
   IMediaDetailsAction,
   IMediaDetailsRandomNumberAction,
+  ISetBackdropImageAction,
 } from './mediaDetailsActions.types';
 import { MediaTypes } from '../../../typescriptGlobals/types';
 import utils from '../../../utils';
+
+/**
+ * @description Set backdrop image
+ */
+export const setBackdropImageAXN = (imgURL: string) => {
+  return {
+    type: ActionTypes.SET_BACKDROP_IMAGE,
+    payload: imgURL,
+  };
+};
 
 /**
  * @description Generate random number

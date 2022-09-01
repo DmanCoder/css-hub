@@ -4,6 +4,7 @@ import { IMediaDetailDispatchTypes } from '../../actions/mediaDetailsActions/med
 import { IMediaDetailsDefaultState } from './mediaDetailReducer.types';
 
 const defaultState: IMediaDetailsDefaultState = {
+  backdropImage: '',
   currentMedia: {} as MediaDetailsTypes,
   indexPosition: 0,
   images: [],
@@ -14,6 +15,11 @@ const mediaDetailReducer = (
   action: IMediaDetailDispatchTypes,
 ): IMediaDetailsDefaultState => {
   switch (action.type) {
+    case ActionTypes.SET_BACKDROP_IMAGE:
+      return {
+        ...state,
+        backdropImage: action.payload,
+      };
     case ActionTypes.GET_MEDIA_DETAILS:
       return {
         ...state,

@@ -16,13 +16,13 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
     networkName,
     contentRating,
     contentDuration,
-    imgURL,
+    backdropImage,
   } = useHero();
 
   return (
     <S.HeroWrapper id='hero'>
       <S.BackgroundImage
-        src={imgURL}
+        src={backdropImage}
         alt={streams[indexPosition]?.name}
         onError={utils.imageError}
         className='home-page-image'

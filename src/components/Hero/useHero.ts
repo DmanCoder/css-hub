@@ -1,14 +1,20 @@
-import { RootState, useAppSelector } from '../../redux/store';
+import { RootState, useAppSelector, useAppDispatch } from '../../redux/store';
 import { UseHeroReturnType } from './Hero.types';
 
 import { returnContentDuration, returnContentRating, returnNetworkName } from './Hero.helpers';
 import utils from '../../utils';
 import { imgFilterURL } from '../../api/init';
+import React from 'react';
+import { setBackdropImageAXN } from '../../redux/actions/mediaDetailsActions/mediaDetailsActions';
 
 const useHero = (): UseHeroReturnType => {
+  const dispatch = useAppDispatch();
+
   const { streams } = useAppSelector((state: RootState) => state.mediaRXS);
   const { networkId } = useAppSelector((state: RootState) => state.networkRXS);
-  const { currentMedia, indexPosition } = useAppSelector((state: RootState) => state.detailsRXS);
+  const { currentMedia, indexPosition, backdropImage } = useAppSelector(
+    (state: RootState) => state.detailsRXS,
+  );
 
   const placeholder = utils.translate('translateHero.placeholderDescription');
   const description: string = streams[indexPosition]?.overview || placeholder;
@@ -26,9 +32,23 @@ const useHero = (): UseHeroReturnType => {
     currentMedia,
   });
 
-  const imgURL = `${imgFilterURL}/${streams[indexPosition]?.backdrop_path}`;
+  React.useEffect(() => {
+    if (!utils.isEmpty(streams)) {
+      const imgURL = `${imgFilterURL}/${streams[indexPosition]?.backdrop_path}`;
 
-  utils.getAverageColor(imgURL);
+      dispatch(setBackdropImageAXN(imgURL));
+
+      utils
+        .getAverageColor(imgURL)
+        .then((color) => {
+          // Do something
+          console.log(color);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }
+  }, [streams]);
 
   return {
     networkId,
@@ -39,7 +59,7 @@ const useHero = (): UseHeroReturnType => {
     networkName,
     contentRating,
     contentDuration,
-    imgURL,
+    backdropImage,
   };
 };
 
