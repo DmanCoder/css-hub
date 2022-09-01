@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux';
-import { dbAPI, imgFilterURL } from '../../../api/init';
+import { dbAPI } from '../../../api/init';
 import { store } from '../../store';
 import { ActionTypes } from '..';
 
@@ -7,10 +7,22 @@ import {
   IMediaContentRatingAction,
   IMediaDetailsAction,
   IMediaDetailsRandomNumberAction,
-  ISetBackdropImageAction,
+  ISetMediaAverageColorAction,
 } from './mediaDetailsActions.types';
-import { MediaTypes } from '../../../typescriptGlobals/types';
+import { MediaAverageColorTypes, MediaTypes } from '../../../typescriptGlobals/types';
 import utils from '../../../utils';
+
+/**
+ * @description Set backdrop average background color
+ */
+export const setAverageBackgroundColorAXN = (
+  averageColor: MediaAverageColorTypes,
+): ISetMediaAverageColorAction => {
+  return {
+    type: ActionTypes.SET_MEDIA_DETAILS_AVERAGE_COLOR,
+    payload: averageColor,
+  };
+};
 
 /**
  * @description Set backdrop image

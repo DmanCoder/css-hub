@@ -99,6 +99,16 @@ export type GalleryTypes =
    ==================================================  */
 export type MediaProductionType = 'movie' | 'tv';
 
+export type MediaAverageColorTypes = {
+  hex: string;
+  hexa: string;
+  isDark: boolean;
+  isLight: boolean;
+  rgb: string;
+  rgba: string;
+  value: number[];
+};
+
 export type MediaTypes = {
   appended_media_type: MediaProductionType;
   backdrop_path: string;

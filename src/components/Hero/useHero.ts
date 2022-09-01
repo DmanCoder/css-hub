@@ -5,7 +5,10 @@ import { returnContentDuration, returnContentRating, returnNetworkName } from '.
 import utils from '../../utils';
 import { imgFilterURL } from '../../api/init';
 import React from 'react';
-import { setBackdropImageAXN } from '../../redux/actions/mediaDetailsActions/mediaDetailsActions';
+import {
+  setAverageBackgroundColorAXN,
+  setBackdropImageAXN,
+} from '../../redux/actions/mediaDetailsActions/mediaDetailsActions';
 
 const useHero = (): UseHeroReturnType => {
   const dispatch = useAppDispatch();
@@ -41,6 +44,7 @@ const useHero = (): UseHeroReturnType => {
       utils
         .getAverageColor(imgURL)
         .then((color) => {
+          dispatch(setAverageBackgroundColorAXN(color));
           // Do something
           console.log(color);
         })

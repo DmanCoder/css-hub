@@ -1,10 +1,11 @@
-import { MediaDetailsTypes } from '../../../typescriptGlobals/types';
+import { MediaAverageColorTypes, MediaDetailsTypes } from '../../../typescriptGlobals/types';
 import { ActionTypes } from '../../actions';
 import { IMediaDetailDispatchTypes } from '../../actions/mediaDetailsActions/mediaDetailsActions.types';
 import { IMediaDetailsDefaultState } from './mediaDetailReducer.types';
 
 const defaultState: IMediaDetailsDefaultState = {
   backdropImage: '',
+  averageColor: {} as MediaAverageColorTypes,
   currentMedia: {} as MediaDetailsTypes,
   indexPosition: 0,
   images: [],
@@ -15,6 +16,11 @@ const mediaDetailReducer = (
   action: IMediaDetailDispatchTypes,
 ): IMediaDetailsDefaultState => {
   switch (action.type) {
+    case ActionTypes.SET_MEDIA_DETAILS_AVERAGE_COLOR:
+      return {
+        ...state,
+        averageColor: action.payload,
+      };
     case ActionTypes.SET_BACKDROP_IMAGE:
       return {
         ...state,
