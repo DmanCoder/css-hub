@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { GalleryTypes } from '../../typescriptGlobals/types';
-import { PopularType } from '../../redux/actions/popularActions/popularActions.types';
+import { GalleryTypes, MediaTypes } from '../../typescriptGlobals/types';
 import { imgURL } from '../../api/init';
 
 import { IGalleryProps } from './Gallery.types';
@@ -33,7 +32,7 @@ const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
       <S.GallerySlider>
         <S.GallerySliderInner>
           <S.GallerySliderContent>
-            {media.map((media: PopularType) => {
+            {media.map((media: MediaTypes) => {
               const width = 'w500';
               const url = `${imgURL}/${width}/${media.poster_path}`;
 

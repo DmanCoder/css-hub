@@ -2,7 +2,6 @@ import { combineReducers } from 'redux';
 
 import mediaDetailsReducer from './mediaReducer';
 import languageReducer from './languageReducer/languageReducer';
-import popularReducer from './popularReducer';
 import mediaDetailReducer from './mediaDetailsReducer/mediaDetailReducer';
 import loadingReducer from './loadingReducer/loadingReducer';
 import countryReducer from './countryReducer/countryReducer';
@@ -17,7 +16,6 @@ const rootReducer = combineReducers({
   countryRXS: countryReducer,
   errorsRXS: errorsFeedbackAXN,
   windowDimensionRXS: windowDimensionReducer,
-  popularRXS: popularReducer,
   detailsRXS: mediaDetailReducer,
   networkRXS: streamingServicesReducer,
 });

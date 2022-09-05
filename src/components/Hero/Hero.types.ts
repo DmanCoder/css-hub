@@ -1,5 +1,4 @@
-import { PopularType } from '../../redux/actions/popularActions/popularActions.types';
-import { MediaDetailsTypes, NetworkIdTypes } from '../../typescriptGlobals/types';
+import { MediaDetailsTypes, MediaTypes, NetworkIdTypes } from '../../typescriptGlobals/types';
 
 export type CalculateDescriptionParamsTypes = {
   description: string;
@@ -11,7 +10,7 @@ export type CalculateDescriptionReturnTypes = {
 };
 
 export type ReturnNetworkNamesParamsTypes = {
-  media: PopularType;
+  media: MediaTypes;
   currentMedia: MediaDetailsTypes;
   networkId: NetworkIdTypes;
 };
@@ -20,7 +19,7 @@ export interface IHeroProps {}
 
 export type UseHeroReturnType = {
   networkId: NetworkIdTypes;
-  streams: PopularType[];
+  streams: MediaTypes[];
   indexPosition: number;
   description: string;
   currentMedia: MediaDetailsTypes;
@@ -35,6 +34,6 @@ export type ContentRatingsParams = {
 };
 
 export type ContentDurationParamTypes = {
-  media: PopularType;
+  media: MediaTypes;
   currentMedia: MediaDetailsTypes;
 };

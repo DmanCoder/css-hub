@@ -1,7 +1,6 @@
 import React from 'react';
-import { PopularType } from '../../redux/actions/popularActions/popularActions.types';
 import { RootState, useAppSelector } from '../../redux/store';
-import { ButtonMouseEvent, GalleryTypes } from '../../typescriptGlobals/types';
+import { ButtonMouseEvent, GalleryTypes, MediaTypes } from '../../typescriptGlobals/types';
 import { onSwitchBottomTabSliderAnimation } from './Gallery.gsap';
 import { TabParamTypes, UseGalleryParamTypes, UseGalleryReturnType } from './Gallery.types';
 
@@ -10,7 +9,7 @@ const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => 
     (state: RootState) => state.mediaRXS,
   );
   const { networkId } = useAppSelector((state: RootState) => state.networkRXS);
-  const [media, setMedia] = React.useState<PopularType[]>(streams);
+  const [media, setMedia] = React.useState<MediaTypes[]>(streams);
 
   React.useEffect(() => {
     switch (section) {

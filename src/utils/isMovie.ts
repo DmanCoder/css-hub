@@ -1,5 +1,5 @@
-import { PopularType } from '../redux/actions/popularActions/popularActions.types';
+import { MediaTypes } from '../typescriptGlobals/types';
 
-const isMovie = (value: PopularType): boolean => value?.media_type === 'movie';
+const isMovie = (value: MediaTypes): boolean => value?.appended_media_type === 'movie';
 
 export default isMovie;
