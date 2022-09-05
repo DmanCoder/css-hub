@@ -4,6 +4,7 @@ import { RootState, useAppSelector } from '../../redux/store';
 
 import { IMomentumScrollingProps } from './MomentumScrolling.types';
 import * as S from './MomentumScrolling.styled';
+import { RouteLocationTypes, RoutePathNamestypes } from '../../routes/routes.types';
 
 // TODO: FOR REFERENCE => https://www.youtube.com/watch?v=x5yvDlH7X9A&ab_channel=CodeBucks
 // TODO: DOCUMENTATIONS => https://idiotwu.github.io/smooth-scrollbar/
@@ -48,8 +49,16 @@ const MomentumScrolling: React.FC<IMomentumScrollingProps> = ({ children }) => {
   }, [height]);
 
   React.useEffect(() => {
-    console.log('Location change...');
-  }, [location]);
+    const pathname: RoutePathNamestypes = location.pathname as RoutePathNamestypes;
+
+    switch (pathname) {
+      case '/':
+        console.log('Home path');
+        break;
+      default:
+        break;
+    }
+  }, [location.pathname]);
 
   return (
     <S.MomentumWrapper id='momentum' ref={containerRef}>
