@@ -31,6 +31,7 @@ const useApp = (): UseAppReturnType => {
 
   const { isShowLeftNavigation } = useAppSelector((state: RootState) => state.networkRXS);
   const { streams } = useAppSelector((state: RootState) => state.mediaRXS);
+  const { indexPosition } = useAppSelector((state: RootState) => state.detailsRXS);
   const appWrapper = React.useRef<HTMLDivElement>(null);
   const sectionsTL = React.useRef(gsap.timeline({ paused: true }));
 
@@ -68,7 +69,7 @@ const useApp = (): UseAppReturnType => {
       dispatch(fetchDetailsMediaAXN(streams));
       dispatch(fetchMediaDetailsContentRatings());
     }
-  }, [streams]);
+  }, [indexPosition]);
 
   React.useEffect(() => {
     dispatch(
