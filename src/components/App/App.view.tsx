@@ -27,15 +27,15 @@ const App: React.FC<IAppProps> = () => {
       <StreamingServices />
       <AppLoader />
 
-      <MomentumScrolling>
-        <Router>
+      <Router>
+        <MomentumScrolling>
           <Routes>
             {routes.map(({ path, Component }, index) => (
               <Route key={`${path}-${index}`} path={path} element={<Component />}></Route>
             ))}
           </Routes>
-        </Router>
-      </MomentumScrolling>
+        </MomentumScrolling>
+      </Router>
     </S.AppWrapper>
   );
 };
