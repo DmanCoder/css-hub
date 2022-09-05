@@ -4,18 +4,18 @@ import { IHomeProps } from '../pages/home/home.types';
 
 export type ComponentTypes = IHomeProps;
 
-export type RoutePathNamestypes = '/' | '/tv' | 'movie';
+export type RoutePathNamesTypes = '/' | '/tv' | 'movie';
 
 export type RouteLocationTypes = {
   hash: string;
   key: string;
-  pathname: RoutePathNamestypes;
+  pathname: RoutePathNamesTypes;
   search: string;
   state: null | string;
 };
 
 export interface IRoutes {
-  path: RoutePathNamestypes;
+  path: RoutePathNamesTypes;
   name: string;
   Component: React.FC<ComponentTypes>;
 }
