@@ -47,6 +47,15 @@ const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
                 </S.GalleryItem>
               );
             })}
+
+            {/* TEST */}
+            {utils.isEmpty(media) && (
+              <S.GalleryItem>
+                <S.GalleryThumbnail>
+                  <S.GalleryImage></S.GalleryImage>
+                </S.GalleryThumbnail>
+              </S.GalleryItem>
+            )}
           </S.GallerySliderContent>
         </S.GallerySliderInner>
       </S.GallerySlider>
