@@ -90,9 +90,11 @@ export const BtnText = styled.span`
 
 export const GallerySlider = styled.div`
   padding-left: 2rem;
+  height: 24.5rem;
 
   @media ${({ theme }) => theme.mediaQ.tablet45} {
     padding-left: 2.2vw;
+    height: 23rem;
   }
 `;
 
@@ -101,14 +103,7 @@ export const GallerySliderInner = styled.div`
   width: 100rem;
 `;
 
-export const GallerySliderContent = styled.div`
-  /* display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  padding-top: 35px; */
-`;
+export const GallerySliderContent = styled.div``;
 
 export const GalleryItem = styled.div`
   display: inline-block;
@@ -125,15 +120,16 @@ export const Proxy = styled.div`
 `;
 
 export const GalleryThumbnail = styled.figure`
-  margin-right: 1rem;
+  margin-right: 1.5rem;
   border-radius: 1rem;
   overflow: hidden;
-  width: 15rem;
-  height: 22.5rem;
+  height: 100%;
+  width: 17rem;
+  height: 24.5rem;
 
   @media ${({ theme }) => theme.mediaQ.tablet45} {
-    width: 13.5rem;
-    height: 21rem;
+    width: 15.5rem;
+    height: 23rem;
   }
 `;
 
