@@ -25,6 +25,7 @@ import {
 } from '../../redux/actions/mediaDetailsActions/mediaDetailsActions';
 
 // TODO: MY LIST+ SHUFFLE MODE SHOULD HAVE ALL MEDIA FROM ALL NETWORKS | BUT IF NOT ON SHUFFLE MODE THEN... ONLY SHOW THE MY LIST FOR ONLY THE SELECTED NETWORK
+// TODO: Rety to fetch images again - https://issuecloser.com/blog/how-to-retry-image-when-error-occurs-in-react
 
 const useApp = (): UseAppReturnType => {
   const dispatch = useAppDispatch();
