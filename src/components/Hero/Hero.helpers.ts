@@ -21,13 +21,10 @@ const getDuration = (totalMinutes: number) => {
   }
 };
 
-export const returnContentDuration = ({
-  media,
-  currentMedia,
-}: ContentDurationParamTypes): string => {
+export const returnContentDuration = ({ currentMedia }: ContentDurationParamTypes): string => {
   if (utils.isEmpty(currentMedia)) return '';
 
-  if (utils.isMovie(media)) {
+  if (utils.isMovie(currentMedia)) {
     const movieRuntimeInMinutes = currentMedia?.runtime;
     return getDuration(movieRuntimeInMinutes);
   } else {
@@ -56,13 +53,12 @@ export const returnContentRating = ({ currentMedia }: ContentRatingsParams): str
 };
 
 export const returnNetworkName = ({
-  media,
   currentMedia,
   networkId,
 }: ReturnNetworkNamesParamsTypes): NetworkNameTypes | string => {
   const networkName = utils.networkIdToNetworkName(networkId);
-  if (networkName === 'Shuffle' && !utils.isEmpty(media) && !utils.isEmpty(currentMedia)) {
-    if (utils.isMovie(media)) {
+  if (networkName === 'Shuffle' && !utils.isEmpty(currentMedia)) {
+    if (utils.isMovie(currentMedia)) {
       return currentMedia?.production_companies[0]?.name;
     } else {
       return currentMedia?.networks[0]?.name;

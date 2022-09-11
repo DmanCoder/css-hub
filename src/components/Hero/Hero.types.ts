@@ -10,7 +10,6 @@ export type CalculateDescriptionReturnTypes = {
 };
 
 export type ReturnNetworkNamesParamsTypes = {
-  media: MediaTypes;
   currentMedia: MediaDetailsTypes;
   networkId: NetworkIdTypes;
 };
@@ -34,6 +33,5 @@ export type ContentRatingsParams = {
 };
 
 export type ContentDurationParamTypes = {
-  media: MediaTypes;
   currentMedia: MediaDetailsTypes;
 };

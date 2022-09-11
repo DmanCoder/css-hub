@@ -9,22 +9,14 @@ import * as S from './Hero.styled';
 
 // TODO: Change color of LOGO base on selected network id | Gallery title bottom border
 const Hero: React.FC<IHeroProps> = (): JSX.Element => {
-  const {
-    description,
-    indexPosition,
-    streams,
-    currentMedia,
-    networkName,
-    contentRating,
-    contentDuration,
-    backdropImage,
-  } = useHero();
+  const { description, currentMedia, networkName, contentRating, contentDuration, backdropImage } =
+    useHero();
 
   return (
     <S.HeroWrapper id='hero'>
       <S.BackgroundImage
         src={backdropImage}
-        alt={streams[indexPosition]?.name}
+        alt={currentMedia?.name}
         onError={utils.imageError}
         className='home-page-image'
       />
@@ -40,7 +32,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
           </S.NetworkLink>
         </S.Network>
 
-        <S.Title>{streams[indexPosition]?.name || streams[indexPosition]?.title}</S.Title>
+        <S.Title>{currentMedia?.name || currentMedia?.title}</S.Title>
 
         <S.Description>{description}</S.Description>
 
@@ -52,7 +44,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
 
           <S.InfoButton
             title={`${utils.translate('translateHero.moreInfo')} ${
-              streams[indexPosition]?.name || streams[indexPosition]?.title
+              currentMedia?.name || currentMedia?.title
             }`}>
             <Assets.Icons.GraphicEQ />
           </S.InfoButton>

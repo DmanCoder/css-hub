@@ -20,10 +20,9 @@ const useHero = (): UseHeroReturnType => {
   );
 
   const placeholder = utils.translate('translateHero.placeholderDescription');
-  const description: string = streams[indexPosition]?.overview || placeholder;
+  const description: string = currentMedia?.overview || placeholder;
 
   const networkName = returnNetworkName({
-    media: streams[indexPosition],
     currentMedia,
     networkId,
   });
@@ -31,13 +30,12 @@ const useHero = (): UseHeroReturnType => {
   const contentRating = returnContentRating({ currentMedia });
 
   const contentDuration = returnContentDuration({
-    media: streams[indexPosition],
     currentMedia,
   });
 
   React.useEffect(() => {
-    if (!utils.isEmpty(streams)) {
-      const imgURL = `${imgFilterURL}/${streams[indexPosition]?.backdrop_path}`;
+    if (!utils.isEmpty(currentMedia)) {
+      const imgURL = `${imgFilterURL}/${currentMedia?.backdrop_path}`;
 
       dispatch(setBackdropImageAXN(imgURL));
 
@@ -52,7 +50,7 @@ const useHero = (): UseHeroReturnType => {
           console.log(e);
         });
     }
-  }, [streams]);
+  }, [currentMedia]);
 
   return {
     networkId,

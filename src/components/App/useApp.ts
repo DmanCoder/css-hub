@@ -70,7 +70,7 @@ const useApp = (): UseAppReturnType => {
       dispatch(fetchDetailsMediaAXN(streams));
       dispatch(fetchMediaDetailsContentRatings());
     }
-  }, [indexPosition]);
+  }, [streams]);
 
   React.useEffect(() => {
     dispatch(
