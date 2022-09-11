@@ -1,3 +1,4 @@
+import { store } from '../../redux/store';
 import { NetworkNameTypes } from '../../typescriptGlobals/types';
 import utils from '../../utils';
 import {
@@ -39,10 +40,18 @@ export const returnContentDuration = ({ currentMedia }: ContentDurationParamType
 };
 
 export const returnContentRating = ({ currentMedia }: ContentRatingsParams): string => {
+  const { iso } = store.getState().countryRXS;
+
   if (!utils.isEmpty(currentMedia?.release_dates)) {
-    const rating = currentMedia?.release_dates?.results.find((movie) => {
-      return movie?.iso_3166_1 === 'US';
+    let rating = currentMedia?.release_dates?.results.find((movie) => {
+      return movie?.iso_3166_1 === iso;
     });
+
+    if (utils.isEmpty(rating)) {
+      rating = currentMedia?.release_dates?.results.find((movie) => {
+        return movie?.iso_3166_1 === 'US';
+      });
+    }
 
     return rating?.release_dates[0]?.certification ?? '';
   } else if (!utils.isEmpty(currentMedia?.content_ratings)) {
