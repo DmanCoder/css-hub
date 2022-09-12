@@ -108,7 +108,7 @@ export const GallerySliderContent = styled.div``;
 export const GalleryItem = styled.div`
   display: inline-block;
   position: relative;
-  cursor: pointer;
+  /* cursor: pointer; */
 `;
 
 export const Proxy = styled.div`
@@ -126,6 +126,7 @@ export const GalleryThumbnail = styled.figure`
   height: 100%;
   width: 17rem;
   height: 24.5rem;
+  cursor: pointer;
 
   @media ${({ theme }) => theme.mediaQ.tablet45} {
     width: 15.5rem;

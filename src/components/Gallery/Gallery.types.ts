@@ -18,6 +18,7 @@ export type UseGalleryReturnType = {
   networkId: NetworkIdTypes;
   media: MediaTypes[];
   onTabClick: ({ tab, section }: TabParamTypes) => (event: ButtonMouseEvent) => void;
+  onViewMedia: ({ media }: any) => (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => void;
 };
 
 export interface TabParamTypes {

@@ -14,7 +14,7 @@ import utils from '../../utils';
 // TODO: https://qodeinteractive.com/magazine/horizontal-scrolling-websites/
 
 const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
-  const { networkId, media, onTabClick } = useGallery({ section });
+  const { networkId, media, onTabClick, onViewMedia } = useGallery({ section });
 
   return (
     <S.Wrapper id={section}>
@@ -45,7 +45,8 @@ const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
                     <S.GalleryImage
                       src={url}
                       onError={utils.imageError}
-                      alt={media.name || media.title || media.original_title}></S.GalleryImage>
+                      alt={media.name || media.title || media.original_title}
+                      onClick={onViewMedia({ media })}></S.GalleryImage>
                   </S.GalleryThumbnail>
                 </S.GalleryItem>
               );

@@ -58,7 +58,13 @@ const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => 
     };
   };
 
-  return { networkId, media, onTabClick };
+  const onViewMedia = ({ media }: any) => {
+    return () => {
+      console.log(media);
+    };
+  };
+
+  return { networkId, media, onTabClick, onViewMedia };
 };
 
 export default useGallery;
