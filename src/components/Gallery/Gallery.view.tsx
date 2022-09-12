@@ -10,6 +10,9 @@ import { SHUFFLE_NETWORK_ID } from '../../typescriptGlobals/constants';
 
 import utils from '../../utils';
 
+// TODO: https://codepen.io/GreenSock/pen/JjKzZqK
+// TODO: https://qodeinteractive.com/magazine/horizontal-scrolling-websites/
+
 const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
   const { networkId, media, onTabClick } = useGallery({ section });
 
