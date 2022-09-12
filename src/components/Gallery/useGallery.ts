@@ -2,7 +2,12 @@ import React from 'react';
 import { RootState, useAppSelector } from '../../redux/store';
 import { ButtonMouseEvent, GalleryTypes, MediaTypes } from '../../typescriptGlobals/types';
 import { onSwitchBottomTabSliderAnimation } from './Gallery.gsap';
-import { TabParamTypes, UseGalleryParamTypes, UseGalleryReturnType } from './Gallery.types';
+import {
+  OnViewMediaParams,
+  TabParamTypes,
+  UseGalleryParamTypes,
+  UseGalleryReturnType,
+} from './Gallery.types';
 
 const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => {
   const { streams, animations, comedy, action, scifi, romance, crime, horror } = useAppSelector(
@@ -58,7 +63,7 @@ const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => 
     };
   };
 
-  const onViewMedia = ({ media }: any) => {
+  const onViewMedia = ({ media }: OnViewMediaParams) => {
     return () => {
       console.log(media);
     };

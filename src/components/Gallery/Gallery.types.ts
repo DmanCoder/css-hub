@@ -14,11 +14,17 @@ export type UseGalleryParamTypes = {
   section: GalleryTypes;
 };
 
+export type OnViewMediaParams = {
+  media: MediaTypes;
+};
+
 export type UseGalleryReturnType = {
   networkId: NetworkIdTypes;
   media: MediaTypes[];
   onTabClick: ({ tab, section }: TabParamTypes) => (event: ButtonMouseEvent) => void;
-  onViewMedia: ({ media }: any) => (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => void;
+  onViewMedia: ({
+    media,
+  }: OnViewMediaParams) => (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => void;
 };
 
 export interface TabParamTypes {
