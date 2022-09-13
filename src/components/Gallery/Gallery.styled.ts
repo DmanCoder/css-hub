@@ -92,6 +92,12 @@ export const GallerySlider = styled.div`
   padding-left: 2rem;
   height: 24.5rem;
 
+  /* overflow: hidden;
+  width: 1500px;
+  max-width: 95%;
+  border: 2px solid #000;
+  margin: 10px; */
+
   @media ${({ theme }) => theme.mediaQ.tablet45} {
     padding-left: 2.2vw;
     height: 23rem;
