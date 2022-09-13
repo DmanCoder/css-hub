@@ -3,9 +3,9 @@ import { ActionTypes } from '../../actions';
 import { ICountryDispatchTypes } from '../../actions/countryActions/countryActions.types';
 
 const defaultState: CountryFlagTypes = {
-  name: 'Australia Flag',
-  fileName: 'australia.png',
-  iso: 'AU',
+  name: 'United States Flag',
+  fileName: 'united-states.png',
+  iso: 'US',
 };
 
 const countryReducer = (state = defaultState, action: ICountryDispatchTypes) => {
