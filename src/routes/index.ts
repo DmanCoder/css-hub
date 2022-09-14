@@ -1,6 +1,6 @@
 import { IRoutes } from './routes.types';
 
-import Home from '../pages/HomeTest';
+import Home from '../pages/Home';
 import TVShows from '../pages/TVShows';
 import Movies from '../pages/Movies';
 

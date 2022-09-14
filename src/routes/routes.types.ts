@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IHomeProps } from '../pages/HomeTest/Home.types';
+import { IHomeProps } from '../pages/Home/Home.types';
 
 export type ComponentTypes = IHomeProps;
 
