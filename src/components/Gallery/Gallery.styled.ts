@@ -91,6 +91,8 @@ export const BtnText = styled.span`
 export const GallerySlider = styled.div`
   padding-left: 2rem;
   height: 24.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   /* overflow: hidden;
   width: 1500px;
