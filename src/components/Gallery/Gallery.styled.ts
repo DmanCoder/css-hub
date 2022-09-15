@@ -91,6 +91,14 @@ export const BtnText = styled.span`
 export const GallerySlider = styled.div`
   padding-left: 2rem;
   height: 24.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  /* overflow: hidden;
+  width: 1500px;
+  max-width: 95%;
+  border: 2px solid #000;
+  margin: 10px; */
 
   @media ${({ theme }) => theme.mediaQ.tablet45} {
     padding-left: 2.2vw;

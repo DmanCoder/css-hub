@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import useTopNavigation from './useTopNavigation';
 
@@ -67,8 +68,12 @@ const Nav: React.FC<INavProps> = () => {
             </S.CountryItem>
           </S.CountryItems>
         </S.ListItem>
-        <S.ListItem>{utils.translate('translateTopNavigation.tvShow')}</S.ListItem>
-        <S.ListItem>{utils.translate('translateTopNavigation.movie')}</S.ListItem>
+        <S.ListItem>
+          <Link to='/tv-shows'>{utils.translate('translateTopNavigation.tvShow')}</Link>
+        </S.ListItem>
+        <S.ListItem>
+          <Link to='/movies'>{utils.translate('translateTopNavigation.movie')}</Link>
+        </S.ListItem>
         <S.ListItem>{utils.translate('translateTopNavigation.people')}</S.ListItem>
         <S.ListItem>{utils.translate('translateTopNavigation.myList')}</S.ListItem>
 

@@ -3,8 +3,8 @@ import React from 'react';
 import Hero from '../../components/Hero';
 import Gallery from '../../components/Gallery';
 
-import { IHomeProps } from './home.types';
-import * as S from './home.styled';
+import { IHomeProps } from './Home.types';
+import * as S from './Home.styled';
 import utils from '../../utils';
 import useHome from './useHome';
 

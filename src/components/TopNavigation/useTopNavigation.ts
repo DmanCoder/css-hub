@@ -114,7 +114,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
   };
 
   const onPageReset = () => {
-    window.location.reload();
+    location.href = '/';
   };
 
   const onShowCountryList = () => {

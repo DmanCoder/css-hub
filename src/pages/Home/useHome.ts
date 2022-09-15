@@ -1,6 +1,6 @@
 import { RootState, useAppSelector } from '../../redux/store';
 import { GalleryTypes } from '../../typescriptGlobals/types';
-import { UseHomeReturnTypes } from './home.types';
+import { UseHomeReturnTypes } from './Home.types';
 
 const useHome = (): UseHomeReturnTypes => {
   const { myList } = useAppSelector((state: RootState) => state.mediaRXS);
