@@ -23,11 +23,11 @@ const App: React.FC<IAppProps> = () => {
 
   return (
     <S.AppWrapper ref={appWrapper}>
-      <TopNavigation />
-      <StreamingServices />
       <AppLoader />
 
       <Router>
+        <TopNavigation />
+        <StreamingServices />
         <MomentumScrolling>
           <Routes>
             {routes.map(({ path, Component }, index) => (

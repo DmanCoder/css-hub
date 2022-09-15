@@ -33,7 +33,6 @@ export const ListContainer = styled.ul`
   ${immaFlex({ just: 'space-between' })};
 
   svg {
-    cursor: pointer;
     width: 2.8rem;
     height: 2.8rem;
 
@@ -60,7 +59,6 @@ export const CountryFlag = styled.img`
 export const ListItemLogo = styled.span`
   font-size: 2.4rem;
   font-weight: 800;
-  cursor: pointer;
   position: relative;
 
   @media ${({ theme }) => theme.mediaQ.tablet45} {
@@ -169,7 +167,6 @@ export const ListItem = styled.li`
   &:nth-child(5) // PEOPLE
   {
     opacity: 0.75;
-    cursor: pointer;
 
     @media ${({ theme }) => theme.mediaQ.laptop64} {
     }
@@ -185,6 +182,33 @@ export const ListItem = styled.li`
     @media ${({ theme }) => theme.mediaQ.laptop64} {
       margin-right: 3rem;
     }
+  }
+
+  /* 
+    nth-child(1) - LOGO
+    nth-child(2) - TV SHOW
+    nth-child(3) - MOVIE
+    nth-child(4) - PEOPLE
+    nth-child(5) - MY LIST
+    nth-child(6) - LANGUAGE SELECTION
+    nth-child(7) - PROFILE
+    nth-child(8) - NOTIFICATION
+    nth-child(9) - THREE DOTS
+    nth-child(10) - SEARCH ICON
+  */
+  &:nth-child(2), // TV SHOW
+  &:nth-child(3), // MOVIE
+  &:nth-child(4), // PEOPLE
+  &:nth-child(5), // MY LIST
+  &:nth-child(10), // SEARCH ICON
+  &:nth-child(7), // PROFILE
+  &:nth-child(8) {
+    // NOTIFICATION
+    cursor: not-allowed !important;
+  }
+
+  &:nth-child(11) {
+    background-color: red;
   }
 
   &:nth-child(10), // SEARCH
@@ -228,6 +252,13 @@ export const ListItem = styled.li`
     @media ${({ theme }) => theme.mediaQ.laptop64} {
       order: 0;
       order: 11;
+    }
+  }
+
+  a {
+    &:link,
+    &:visited {
+      color: ${(props) => props.theme.colors.textPrimary};
     }
   }
 `;
