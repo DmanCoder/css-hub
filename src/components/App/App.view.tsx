@@ -5,6 +5,7 @@ import TopNavigation from '../TopNavigation/TopNavigation.view';
 import AppLoader from '../AppLoader';
 import StreamingServices from '../StreamingServices';
 import MomentumScrolling from '../MomentumScrolling';
+import Container from '../Container';
 
 import appRehydrate from '../../appRehydrate';
 import routes from '../../routes';
@@ -12,7 +13,6 @@ import routes from '../../routes';
 import { IAppProps } from './App.types';
 import useApp from './useApp';
 import * as S from './App.styled';
-import hooks from '../../hooks';
 
 appRehydrate();
 
@@ -21,22 +21,23 @@ appRehydrate();
 
 const App: React.FC<IAppProps> = () => {
   const { appWrapper } = useApp();
-  hooks.useOnLocationChange();
 
   return (
     <S.AppWrapper ref={appWrapper}>
       <AppLoader />
 
       <Router>
-        <TopNavigation />
-        <StreamingServices />
-        <MomentumScrolling>
-          <Routes>
-            {routes.map(({ path, Component }, index) => (
-              <Route key={`${path}-${index}`} path={path} element={<Component />}></Route>
-            ))}
-          </Routes>
-        </MomentumScrolling>
+        <Container>
+          <TopNavigation />
+          <StreamingServices />
+          <MomentumScrolling>
+            <Routes>
+              {routes.map(({ path, Component }, index) => (
+                <Route key={`${path}-${index}`} path={path} element={<Component />}></Route>
+              ))}
+            </Routes>
+          </MomentumScrolling>
+        </Container>
       </Router>
     </S.AppWrapper>
   );
