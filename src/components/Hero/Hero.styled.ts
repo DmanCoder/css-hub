@@ -18,8 +18,8 @@ export const HeroWrapper = styled.figure`
   @media ${({ theme }) => theme.mediaQ.tablet45} {
     padding-left: 2.2vw;
     padding-right: 2.2vw;
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
+    height: 95vh;
+    height: calc(var(--vh, 1vh) * 95);
     padding-right: 0;
   }
 
