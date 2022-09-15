@@ -12,6 +12,7 @@ import routes from '../../routes';
 import { IAppProps } from './App.types';
 import useApp from './useApp';
 import * as S from './App.styled';
+import hooks from '../../hooks';
 
 appRehydrate();
 
@@ -20,6 +21,7 @@ appRehydrate();
 
 const App: React.FC<IAppProps> = () => {
   const { appWrapper } = useApp();
+  hooks.useOnLocationChange();
 
   return (
     <S.AppWrapper ref={appWrapper}>
