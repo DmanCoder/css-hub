@@ -9,7 +9,7 @@ const routes: IRoutes[] = [
   { path: '/', name: 'Home', Component: Home },
   { path: '/tv-shows', name: 'TV Shows', Component: TVShows },
   { path: '/movies', name: 'Movies', Component: Movies },
-  { path: '*', name: 'Movies', Component: NotFound },
+  { path: '*', name: 'Page Not Found', Component: NotFound },
 ];
 
 export default routes;
