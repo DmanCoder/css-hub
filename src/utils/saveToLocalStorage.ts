@@ -1,10 +1,11 @@
+import { RoutePathNamesTypes } from '../routes/routes.types';
 import {
   CountryFlagTypes,
   LanguageCodeTypes,
   SelectedNetworkTypes,
 } from '../typescriptGlobals/types';
 
-type ValueTypes = SelectedNetworkTypes | CountryFlagTypes | LanguageCodeTypes;
+type ValueTypes = SelectedNetworkTypes | CountryFlagTypes | LanguageCodeTypes | RoutePathNamesTypes;
 
 type LSParamTypes = {
   key: string;

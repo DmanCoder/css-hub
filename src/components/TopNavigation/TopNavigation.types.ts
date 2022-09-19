@@ -1,4 +1,5 @@
 import React from 'react';
+import { RoutePathNamesTypes } from '../../routes/routes.types';
 import {
   CountryAlpha2CodeTypes,
   CountryFlagTypes,
@@ -26,6 +27,7 @@ export type UseTopNavigationReturnType = {
   countryRXS: CountryFlagTypes;
   languageRXS: LanguageCodeTypes;
   onChangeCountry: (country: CountryAlpha2CodeTypes) => (event: React.MouseEvent) => void;
+  onNavigateToPath: (path: RoutePathNamesTypes) => (event: React.MouseEvent) => void;
   onShowLanguageList: () => void;
   languageRef: any; // TODO: FIX THIS
   onChangeAppLanguage: (lang: LanguageCodeTypes) => (event: React.MouseEvent) => void;

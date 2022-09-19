@@ -50,7 +50,7 @@ const useStreamingServices = (): UseStreamingServicesReturnTypes => {
               networkName: 'Netflix',
             },
           });
-          location.reload();
+          location.href = '/';
           break;
         case 'Disney+':
           utils.saveToLocalStorage({
@@ -60,7 +60,7 @@ const useStreamingServices = (): UseStreamingServicesReturnTypes => {
               networkName: 'Disney+',
             },
           });
-          location.reload();
+          location.href = '/';
           break;
         case 'Prime Videos':
           utils.saveToLocalStorage({
@@ -70,7 +70,7 @@ const useStreamingServices = (): UseStreamingServicesReturnTypes => {
               networkName: 'Prime Videos',
             },
           });
-          location.reload();
+          location.href = '/';
           break;
         case 'Apple Tv+':
           utils.saveToLocalStorage({
@@ -80,7 +80,7 @@ const useStreamingServices = (): UseStreamingServicesReturnTypes => {
               networkName: 'Apple Tv+',
             },
           });
-          location.reload();
+          location.href = '/';
           break;
         case 'HBO MAX':
           utils.saveToLocalStorage({
@@ -90,7 +90,7 @@ const useStreamingServices = (): UseStreamingServicesReturnTypes => {
               networkName: 'HBO MAX',
             },
           });
-          location.reload();
+          location.href = '/';
           break;
         case 'Shuffle':
           utils.saveToLocalStorage({
@@ -100,7 +100,7 @@ const useStreamingServices = (): UseStreamingServicesReturnTypes => {
               networkName: 'Shuffle',
             },
           });
-          location.reload();
+          location.href = '/';
           break;
         default:
           utils.saveToLocalStorage({
@@ -110,7 +110,7 @@ const useStreamingServices = (): UseStreamingServicesReturnTypes => {
               networkName: 'Netflix',
             },
           });
-          location.reload();
+          location.href = '/';
           break;
       }
     };

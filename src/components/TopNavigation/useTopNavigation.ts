@@ -7,6 +7,7 @@ import { gsap } from '../../gsap';
 import { CountryAlpha2CodeTypes, LanguageCodeTypes } from '../../typescriptGlobals/types';
 import utils from '../../utils';
 import hooks from '../../hooks';
+import { RoutePathNamesTypes } from '../../routes/routes.types';
 
 const useTopNavigation = (): UseTopNavigationReturnType => {
   const dispatch = useAppDispatch();
@@ -102,6 +103,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
       }),
     );
   };
+
   const onChangeAppLanguage = (lang: LanguageCodeTypes) => {
     return () => {
       utils.saveToLocalStorage({
@@ -110,6 +112,16 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
       });
 
       window.location.reload();
+    };
+  };
+
+  const onNavigateToPath = (path: RoutePathNamesTypes) => {
+    return () => {
+      utils.saveToLocalStorage({
+        key: 'routePath',
+        value: path,
+      });
+      window.location.href = path;
     };
   };
 
@@ -195,6 +207,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
     onShowLanguageList,
     languageRef,
     onChangeAppLanguage,
+    onNavigateToPath,
   };
 };
 

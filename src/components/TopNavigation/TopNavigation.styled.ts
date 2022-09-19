@@ -196,8 +196,6 @@ export const ListItem = styled.li`
     nth-child(9) - THREE DOTS
     nth-child(10) - SEARCH ICON
   */
-  &:nth-child(2), // TV SHOW
-  &:nth-child(3), // MOVIE
   &:nth-child(4), // PEOPLE
   &:nth-child(5), // MY LIST
   &:nth-child(10), // SEARCH ICON
