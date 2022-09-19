@@ -5,11 +5,17 @@ import {
   SelectedNetworkTypes,
 } from '../typescriptGlobals/types';
 
-type ValueTypes = SelectedNetworkTypes | CountryFlagTypes | LanguageCodeTypes | RoutePathNamesTypes;
+type LSValueTypes =
+  | SelectedNetworkTypes
+  | CountryFlagTypes
+  | LanguageCodeTypes
+  | RoutePathNamesTypes;
+
+type LSKeyTypes = 'selectedNetwork' | 'selectedLanguage' | 'routePath' | 'selectedCountry';
 
 type LSParamTypes = {
-  key: string;
-  value: ValueTypes;
+  key: LSKeyTypes;
+  value: LSValueTypes;
 };
 
 const saveToLocalStorage = ({ key, value }: LSParamTypes): void =>
