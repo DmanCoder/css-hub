@@ -5,7 +5,6 @@ import TopNavigation from '../TopNavigation/TopNavigation.view';
 import AppLoader from '../AppLoader';
 import StreamingServices from '../StreamingServices';
 import MomentumScrolling from '../MomentumScrolling';
-import Container from '../Container';
 
 import appRehydrate from '../../appRehydrate';
 import routes from '../../routes';
@@ -27,17 +26,15 @@ const App: React.FC<IAppProps> = () => {
       <AppLoader />
 
       <Router>
-        <Container>
-          <TopNavigation />
-          <StreamingServices />
-          <MomentumScrolling>
-            <Routes>
-              {routes.map(({ path, Component }, index) => (
-                <Route key={`${path}-${index}`} path={path} element={<Component />}></Route>
-              ))}
-            </Routes>
-          </MomentumScrolling>
-        </Container>
+        <TopNavigation />
+        <StreamingServices />
+        <MomentumScrolling>
+          <Routes>
+            {routes.map(({ path, Component }, index) => (
+              <Route key={`${path}-${index}`} path={path} element={<Component />}></Route>
+            ))}
+          </Routes>
+        </MomentumScrolling>
       </Router>
     </S.AppWrapper>
   );
