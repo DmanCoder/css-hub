@@ -11,6 +11,7 @@ import { RoutePathNamesTypes } from '../../routes/routes.types';
 const MomentumScrolling: React.FC<IMomentumScrollingProps> = ({ children }) => {
   const location = useLocation();
 
+  const mediaRXS = useAppSelector((state: RootState) => state.mediaRXS);
   const { height } = useAppSelector((state: RootState) => state.windowDimensionRXS);
   const containerRef = React.useRef<HTMLDivElement>(null);
 
@@ -45,20 +46,9 @@ const MomentumScrolling: React.FC<IMomentumScrollingProps> = ({ children }) => {
   }, [smoothScroll]);
 
   React.useEffect(() => {
+    // TODO: THIS IS A TEMPORARY SOLUTION
     setBodyHeight();
-  }, [height]);
-
-  React.useEffect(() => {
-    const pathname = location.pathname as RoutePathNamesTypes;
-
-    switch (pathname) {
-      case '/':
-        console.log('Home path');
-        break;
-      default:
-        break;
-    }
-  }, [location.pathname]);
+  }, [mediaRXS]);
 
   return (
     <S.MomentumWrapper id='momentum' ref={containerRef}>
