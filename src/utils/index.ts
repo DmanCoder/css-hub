@@ -14,6 +14,7 @@ import returnLanguageCodeShortHand from './returnLanguageCodeShortHand';
 import removeSpaceFromString from './removeSpaceFromString';
 import imageError from './imageError';
 import getAverageColor from './getAverageColor';
+import getMediaTypeFromUrlPath from './getMediaTypeFromUrlPath';
 
 const utils = {
   isEmpty,
@@ -33,6 +34,7 @@ const utils = {
   removeSpaceFromString,
   imageError,
   getAverageColor,
+  getMediaTypeFromUrlPath,
 };
 
 export default utils;

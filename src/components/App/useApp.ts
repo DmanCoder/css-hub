@@ -55,8 +55,8 @@ const useApp = (): UseAppReturnType => {
 
   React.useEffect(() => {
     dispatch(fetchStreamsAXN());
-    dispatch(fetchAnimationsMediaAXN());
     dispatch(fetchComedyMediaAXN());
+    dispatch(fetchAnimationsMediaAXN());
     dispatch(fetchActionAndAdventureMediaAXN());
     dispatch(fetchScifiAndFantasyMediaAXN());
     dispatch(fetchRomanceMediaAXN());

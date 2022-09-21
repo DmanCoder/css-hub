@@ -15,6 +15,7 @@ import {
   IMediaScifiAndFantasyAction,
   IMediaStreamsAction,
 } from './mediaActions.types';
+import utils from '../../../utils';
 
 /**
  * @description Fetch genre - Popular/Tremding Steams (tv/movies)
@@ -24,10 +25,12 @@ export const fetchStreamsAXN = () => (dispatch: Dispatch<IMediaStreamsAction>) =
   const country = store.getState().countryRXS;
   const { networkId } = store.getState().networkRXS;
 
+  const mediaType = utils.getMediaTypeFromUrlPath();
+
   let networkIdParam = `&with_networks=${networkId}`;
   if (networkId === -1) networkIdParam = '';
 
-  const params = `?&watch_region=${country.iso}&with_watch_monetization_types=flatrate&with_origin_country=${country.iso}${networkIdParam}&language=${language}&page=1`;
+  const params = `?&watch_region=${country.iso}&with_watch_monetization_types=flatrate&with_origin_country=${country.iso}${networkIdParam}&media_type=${mediaType}&language=${language}&page=1`;
   const endpoint = `/api/discover${params}`;
 
   return dbAPI
@@ -51,7 +54,8 @@ export const fetchAnimationsMediaAXN = () => (dispatch: Dispatch<IMediaAnimation
   const country = store.getState().countryRXS;
   const { networkId } = store.getState().networkRXS;
 
-  const params = `?with_genres=${GENRE_CODES.Animations}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
+  const mediaType = utils.getMediaTypeFromUrlPath();
+  const params = `?with_genres=${GENRE_CODES.Animations}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
   const endpoint = `/api/discover${params}`;
 
   return dbAPI
@@ -76,7 +80,8 @@ export const fetchActionAndAdventureMediaAXN =
     const country = store.getState().countryRXS;
     const { networkId } = store.getState().networkRXS;
 
-    const params = `?with_genres=${GENRE_CODES.Comedy}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
+    const mediaType = utils.getMediaTypeFromUrlPath();
+    const params = `?with_genres=${GENRE_CODES.Comedy}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
     const endpoint = `/api/discover${params}`;
 
     return dbAPI
@@ -100,7 +105,8 @@ export const fetchComedyMediaAXN = () => (dispatch: Dispatch<IMediaComedyAction>
   const country = store.getState().countryRXS;
   const { networkId } = store.getState().networkRXS;
 
-  const params = `?with_genres=${GENRE_CODES.Comedy}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
+  const mediaType = utils.getMediaTypeFromUrlPath();
+  const params = `?with_genres=${GENRE_CODES.Comedy}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
   const endpoint = `/api/discover${params}`;
 
   return dbAPI
@@ -125,7 +131,8 @@ export const fetchScifiAndFantasyMediaAXN =
     const country = store.getState().countryRXS;
     const { networkId } = store.getState().networkRXS;
 
-    const params = `?with_genres=${GENRE_CODES['Sci-Fi & Fantasy']}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
+    const mediaType = utils.getMediaTypeFromUrlPath();
+    const params = `?with_genres=${GENRE_CODES['Sci-Fi & Fantasy']}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
     const endpoint = `/api/discover${params}`;
 
     return dbAPI
@@ -149,7 +156,8 @@ export const fetchRomanceMediaAXN = () => (dispatch: Dispatch<IMediaRomanceActio
   const country = store.getState().countryRXS;
   const { networkId } = store.getState().networkRXS;
 
-  const params = `?with_genres=${GENRE_CODES.Romance}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
+  const mediaType = utils.getMediaTypeFromUrlPath();
+  const params = `?with_genres=${GENRE_CODES.Romance}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
   const endpoint = `/api/discover${params}`;
 
   return dbAPI
@@ -173,7 +181,8 @@ export const fetchCrimeMediaAXN = () => (dispatch: Dispatch<IMediaCrimeAction>) 
   const country = store.getState().countryRXS;
   const { networkId } = store.getState().networkRXS;
 
-  const params = `?with_genres=${GENRE_CODES.Crime}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
+  const mediaType = utils.getMediaTypeFromUrlPath();
+  const params = `?with_genres=${GENRE_CODES.Crime}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
   const endpoint = `/api/discover${params}`;
 
   return dbAPI
@@ -197,7 +206,8 @@ export const fetchHorrorMediaAXN = () => (dispatch: Dispatch<IMediaHorrorAction>
   const country = store.getState().countryRXS;
   const { networkId } = store.getState().networkRXS;
 
-  const params = `?with_genres=${GENRE_CODES.Horror}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&language=${language}&page=1`;
+  const mediaType = utils.getMediaTypeFromUrlPath();
+  const params = `?with_genres=${GENRE_CODES.Horror}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
   const endpoint = `/api/discover${params}`;
 
   return dbAPI
