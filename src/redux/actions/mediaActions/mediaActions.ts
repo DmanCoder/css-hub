@@ -16,66 +16,84 @@ import {
   IMediaStreamsAction,
 } from './mediaActions.types';
 import utils from '../../../utils';
+import { loadingToggleAXN } from '../loadingActions/loadingActions';
+import { ILoadingToggleAction } from '../loadingActions/loadingActions.types';
 
 /**
  * @description Fetch genre - Popular/Tremding Steams (tv/movies)
  */
-export const fetchStreamsAXN = () => (dispatch: Dispatch<IMediaStreamsAction>) => {
-  const language = store.getState().languageRXS;
-  const country = store.getState().countryRXS;
-  const { networkId } = store.getState().networkRXS;
+export const fetchStreamsAXN =
+  () => (dispatch: Dispatch<IMediaStreamsAction | ILoadingToggleAction>) => {
+    dispatch(loadingToggleAXN(true));
 
-  const mediaType = utils.getMediaTypeFromUrlPath();
+    const language = store.getState().languageRXS;
+    const country = store.getState().countryRXS;
+    const { networkId } = store.getState().networkRXS;
 
-  let networkIdParam = `&with_networks=${networkId}`;
-  if (networkId === -1) networkIdParam = '';
+    const mediaType = utils.getMediaTypeFromUrlPath();
 
-  const params = `?&watch_region=${country.iso}&with_watch_monetization_types=flatrate&with_origin_country=${country.iso}${networkIdParam}&media_type=${mediaType}&language=${language}&page=1`;
-  const endpoint = `/api/discover${params}`;
+    let networkIdParam = `&with_networks=${networkId}`;
+    if (networkId === -1) networkIdParam = '';
 
-  return dbAPI
-    .get(endpoint)
-    .then((response) => {
-      dispatch({
-        type: ActionTypes.GET_MEDIA_STREAMS,
-        payload: response.data.results,
+    const params = `?&watch_region=${country.iso}&with_watch_monetization_types=flatrate&with_origin_country=${country.iso}${networkIdParam}&media_type=${mediaType}&language=${language}&page=1`;
+    const endpoint = `/api/discover${params}`;
+
+    return dbAPI
+      .get(endpoint)
+      .then((response) => {
+        dispatch(loadingToggleAXN(false));
+
+        dispatch({
+          type: ActionTypes.GET_MEDIA_STREAMS,
+          payload: response.data.results,
+        });
+      })
+      .catch((err) => {
+        dispatch(loadingToggleAXN(false));
+
+        console.log(err, 'ERROR');
       });
-    })
-    .catch((err) => {
-      console.log(err, 'ERROR');
-    });
-};
+  };
 
 /**
  * @description Fetch genre - Animations (tv/movies)
  */
-export const fetchAnimationsMediaAXN = () => (dispatch: Dispatch<IMediaAnimationsAction>) => {
-  const language = store.getState().languageRXS;
-  const country = store.getState().countryRXS;
-  const { networkId } = store.getState().networkRXS;
+export const fetchAnimationsMediaAXN =
+  () => (dispatch: Dispatch<IMediaAnimationsAction | ILoadingToggleAction>) => {
+    dispatch(loadingToggleAXN(true));
 
-  const mediaType = utils.getMediaTypeFromUrlPath();
-  const params = `?with_genres=${GENRE_CODES.Animations}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
-  const endpoint = `/api/discover${params}`;
+    const language = store.getState().languageRXS;
+    const country = store.getState().countryRXS;
+    const { networkId } = store.getState().networkRXS;
 
-  return dbAPI
-    .get(endpoint)
-    .then((response) => {
-      dispatch({
-        type: ActionTypes.GET_MEDIA_ANIMATIONS,
-        payload: response.data.results,
+    const mediaType = utils.getMediaTypeFromUrlPath();
+    const params = `?with_genres=${GENRE_CODES.Animations}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
+    const endpoint = `/api/discover${params}`;
+
+    return dbAPI
+      .get(endpoint)
+      .then((response) => {
+        dispatch(loadingToggleAXN(false));
+
+        dispatch({
+          type: ActionTypes.GET_MEDIA_ANIMATIONS,
+          payload: response.data.results,
+        });
+      })
+      .catch((err) => {
+        dispatch(loadingToggleAXN(false));
+
+        console.log(err, 'ERROR');
       });
-    })
-    .catch((err) => {
-      console.log(err, 'ERROR');
-    });
-};
+  };
 
 /**
  * @description Fetch genre - Action & Adventrue (tv/movies)
  */
 export const fetchActionAndAdventureMediaAXN =
-  () => (dispatch: Dispatch<IMediaActionAndAdventureAction>) => {
+  () => (dispatch: Dispatch<IMediaActionAndAdventureAction | ILoadingToggleAction>) => {
+    dispatch(loadingToggleAXN(true));
+
     const language = store.getState().languageRXS;
     const country = store.getState().countryRXS;
     const { networkId } = store.getState().networkRXS;
@@ -87,12 +105,16 @@ export const fetchActionAndAdventureMediaAXN =
     return dbAPI
       .get(endpoint)
       .then((response) => {
+        dispatch(loadingToggleAXN(false));
+
         dispatch({
           type: ActionTypes.GET_MEDIA_ACTION_AND_ADVENTURE,
           payload: response.data.results,
         });
       })
       .catch((err) => {
+        dispatch(loadingToggleAXN(false));
+
         console.log(err, 'ERROR');
       });
   };
@@ -100,33 +122,41 @@ export const fetchActionAndAdventureMediaAXN =
 /**
  * @description Fetch genre - Comedy (tv/movies)
  */
-export const fetchComedyMediaAXN = () => (dispatch: Dispatch<IMediaComedyAction>) => {
-  const language = store.getState().languageRXS;
-  const country = store.getState().countryRXS;
-  const { networkId } = store.getState().networkRXS;
+export const fetchComedyMediaAXN =
+  () => (dispatch: Dispatch<IMediaComedyAction | ILoadingToggleAction>) => {
+    dispatch(loadingToggleAXN(true));
 
-  const mediaType = utils.getMediaTypeFromUrlPath();
-  const params = `?with_genres=${GENRE_CODES.Comedy}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
-  const endpoint = `/api/discover${params}`;
+    const language = store.getState().languageRXS;
+    const country = store.getState().countryRXS;
+    const { networkId } = store.getState().networkRXS;
 
-  return dbAPI
-    .get(endpoint)
-    .then((response) => {
-      dispatch({
-        type: ActionTypes.GET_MEDIA_COMEDY,
-        payload: response.data.results,
+    const mediaType = utils.getMediaTypeFromUrlPath();
+    const params = `?with_genres=${GENRE_CODES.Comedy}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
+    const endpoint = `/api/discover${params}`;
+
+    return dbAPI
+      .get(endpoint)
+      .then((response) => {
+        dispatch(loadingToggleAXN(false));
+
+        dispatch({
+          type: ActionTypes.GET_MEDIA_COMEDY,
+          payload: response.data.results,
+        });
+      })
+      .catch((err) => {
+        dispatch(loadingToggleAXN(false));
+        console.log(err, 'ERROR');
       });
-    })
-    .catch((err) => {
-      console.log(err, 'ERROR');
-    });
-};
+  };
 
 /**
  * @description Fetch genre - Scifi & Fantasy (tv/movies)
  */
 export const fetchScifiAndFantasyMediaAXN =
-  () => (dispatch: Dispatch<IMediaScifiAndFantasyAction>) => {
+  () => (dispatch: Dispatch<IMediaScifiAndFantasyAction | ILoadingToggleAction>) => {
+    dispatch(loadingToggleAXN(true));
+
     const language = store.getState().languageRXS;
     const country = store.getState().countryRXS;
     const { networkId } = store.getState().networkRXS;
@@ -138,12 +168,16 @@ export const fetchScifiAndFantasyMediaAXN =
     return dbAPI
       .get(endpoint)
       .then((response) => {
+        dispatch(loadingToggleAXN(false));
+
         dispatch({
           type: ActionTypes.GET_MEDIA_SCIFI_AND_FANTASY,
           payload: response.data.results,
         });
       })
       .catch((err) => {
+        dispatch(loadingToggleAXN(false));
+
         console.log(err, 'ERROR');
       });
   };
@@ -151,74 +185,94 @@ export const fetchScifiAndFantasyMediaAXN =
 /**
  * @description Fetch genre - Romance (tv/movies)
  */
-export const fetchRomanceMediaAXN = () => (dispatch: Dispatch<IMediaRomanceAction>) => {
-  const language = store.getState().languageRXS;
-  const country = store.getState().countryRXS;
-  const { networkId } = store.getState().networkRXS;
+export const fetchRomanceMediaAXN =
+  () => (dispatch: Dispatch<IMediaRomanceAction | ILoadingToggleAction>) => {
+    dispatch(loadingToggleAXN(true));
 
-  const mediaType = utils.getMediaTypeFromUrlPath();
-  const params = `?with_genres=${GENRE_CODES.Romance}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
-  const endpoint = `/api/discover${params}`;
+    const language = store.getState().languageRXS;
+    const country = store.getState().countryRXS;
+    const { networkId } = store.getState().networkRXS;
 
-  return dbAPI
-    .get(endpoint)
-    .then((response) => {
-      dispatch({
-        type: ActionTypes.GET_MEDIA_ROMANCE,
-        payload: response.data.results,
+    const mediaType = utils.getMediaTypeFromUrlPath();
+    const params = `?with_genres=${GENRE_CODES.Romance}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
+    const endpoint = `/api/discover${params}`;
+
+    return dbAPI
+      .get(endpoint)
+      .then((response) => {
+        dispatch(loadingToggleAXN(false));
+
+        dispatch({
+          type: ActionTypes.GET_MEDIA_ROMANCE,
+          payload: response.data.results,
+        });
+      })
+      .catch((err) => {
+        dispatch(loadingToggleAXN(false));
+        console.log(err, 'ERROR');
       });
-    })
-    .catch((err) => {
-      console.log(err, 'ERROR');
-    });
-};
+  };
 
 /**
  * @description Fetch genre - Crime (tv/movies)
  */
-export const fetchCrimeMediaAXN = () => (dispatch: Dispatch<IMediaCrimeAction>) => {
-  const language = store.getState().languageRXS;
-  const country = store.getState().countryRXS;
-  const { networkId } = store.getState().networkRXS;
+export const fetchCrimeMediaAXN =
+  () => (dispatch: Dispatch<IMediaCrimeAction | ILoadingToggleAction>) => {
+    dispatch(loadingToggleAXN(true));
 
-  const mediaType = utils.getMediaTypeFromUrlPath();
-  const params = `?with_genres=${GENRE_CODES.Crime}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
-  const endpoint = `/api/discover${params}`;
+    const language = store.getState().languageRXS;
+    const country = store.getState().countryRXS;
+    const { networkId } = store.getState().networkRXS;
 
-  return dbAPI
-    .get(endpoint)
-    .then((response) => {
-      dispatch({
-        type: ActionTypes.GET_MEDIA_CRIME,
-        payload: response.data.results,
+    const mediaType = utils.getMediaTypeFromUrlPath();
+    const params = `?with_genres=${GENRE_CODES.Crime}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
+    const endpoint = `/api/discover${params}`;
+
+    return dbAPI
+      .get(endpoint)
+      .then((response) => {
+        dispatch(loadingToggleAXN(false));
+
+        dispatch({
+          type: ActionTypes.GET_MEDIA_CRIME,
+          payload: response.data.results,
+        });
+      })
+      .catch((err) => {
+        dispatch(loadingToggleAXN(false));
+
+        console.log(err, 'ERROR');
       });
-    })
-    .catch((err) => {
-      console.log(err, 'ERROR');
-    });
-};
+  };
 
 /**
  * @description Fetch genre - Horror (tv/movies)
  */
-export const fetchHorrorMediaAXN = () => (dispatch: Dispatch<IMediaHorrorAction>) => {
-  const language = store.getState().languageRXS;
-  const country = store.getState().countryRXS;
-  const { networkId } = store.getState().networkRXS;
+export const fetchHorrorMediaAXN =
+  () => (dispatch: Dispatch<IMediaHorrorAction | ILoadingToggleAction>) => {
+    dispatch(loadingToggleAXN(true));
 
-  const mediaType = utils.getMediaTypeFromUrlPath();
-  const params = `?with_genres=${GENRE_CODES.Horror}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
-  const endpoint = `/api/discover${params}`;
+    const language = store.getState().languageRXS;
+    const country = store.getState().countryRXS;
+    const { networkId } = store.getState().networkRXS;
 
-  return dbAPI
-    .get(endpoint)
-    .then((response) => {
-      dispatch({
-        type: ActionTypes.GET_MEDIA_HORROR,
-        payload: response.data.results,
+    const mediaType = utils.getMediaTypeFromUrlPath();
+    const params = `?with_genres=${GENRE_CODES.Horror}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
+    const endpoint = `/api/discover${params}`;
+
+    return dbAPI
+      .get(endpoint)
+      .then((response) => {
+        dispatch(loadingToggleAXN(false));
+
+        dispatch({
+          type: ActionTypes.GET_MEDIA_HORROR,
+          payload: response.data.results,
+        });
+      })
+      .catch((err) => {
+        dispatch(loadingToggleAXN(false));
+
+        console.log(err, 'ERROR');
       });
-    })
-    .catch((err) => {
-      console.log(err, 'ERROR');
-    });
-};
+  };

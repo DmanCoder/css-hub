@@ -1,8 +1,8 @@
 import { ActionTypes } from '..';
 
-export interface ILoadingToggle {
+export interface ILoadingToggleAction {
   type: ActionTypes.LOADING_TOGGLE;
   payload: boolean;
 }
 
-export type ILoadingDispatchTypes = ILoadingToggle;
+export type ILoadingDispatchTypes = ILoadingToggleAction;
