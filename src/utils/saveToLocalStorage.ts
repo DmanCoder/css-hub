@@ -11,7 +11,7 @@ type LSValueTypes =
   | LanguageCodeTypes
   | RoutePathNamesTypes;
 
-type LSKeyTypes = 'selectedNetwork' | 'selectedLanguage' | 'routePath' | 'selectedCountry';
+type LSKeyTypes = 'selectedNetwork' | 'selectedLanguage' | 'selectedCountry';
 
 type LSParamTypes = {
   key: LSKeyTypes;

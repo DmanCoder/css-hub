@@ -116,13 +116,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
   };
 
   const onNavigateToPath = (path: RoutePathNamesTypes) => {
-    return () => {
-      utils.saveToLocalStorage({
-        key: 'routePath',
-        value: path,
-      });
-      window.location.href = path;
-    };
+    return () => (window.location.href = path);
   };
 
   const onPageReset = () => {
