@@ -11,7 +11,7 @@ export const TabHeader = styled.header`
   padding-left: 2rem;
   padding-right: 2rem;
   margin-bottom: 2rem;
-  ${immaFlex({ align: 'center' })}
+  ${immaFlex({ align: 'center', just: 'space-between' })}
 
   @media ${({ theme }) => theme.mediaQ.tablet45} {
     padding-left: 2.2vw;
@@ -34,6 +34,32 @@ export const Title = styled.h3`
     height: 0.25rem;
     border-radius: 1rem;
     background-color: ${({ theme }) => theme.colors.primary};
+  }
+`;
+
+export const ExploreAll = styled.button`
+  font-weight: 600;
+  font-size: 1.3rem;
+  border: none;
+  opacity: 0.2;
+  cursor: pointer;
+  margin: 0;
+  color: ${({ theme }) => theme.colors.textPrimary};
+  background: transparent;
+  transition: opacity 0.45s ease-in-out;
+  padding: 1rem;
+  position: relative;
+  margin-right: -1rem;
+
+  ${immaFlex({ align: 'center' })}
+
+  &:hover {
+    opacity: 1;
+  }
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 `;
 

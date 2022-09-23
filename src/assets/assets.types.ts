@@ -1,6 +1,7 @@
 import React from 'react';
 import { IAccountProps } from './icons/Account';
 import { IArrowDropdownProps } from './icons/ArrowDropdown';
+import { IDoubleArrowProps } from './icons/DoubleArrow';
 import { IExitProps } from './icons/Exit';
 import { IGraphEQProps } from './icons/GraphicEQ';
 import { IHorizDropdownProps } from './icons/MoreHoriz';
@@ -32,6 +33,7 @@ export type IconsTypes = {
   Exit: React.FC<IExitProps>;
   Play: React.FC<IPlayProps>;
   Shuffle: React.FC<IShuffleProps>;
+  DoubleArrow: React.FC<IDoubleArrowProps>;
 };
 
 export type ImgsTypes = {

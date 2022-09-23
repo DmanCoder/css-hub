@@ -9,6 +9,7 @@ import * as S from './Gallery.styled';
 import { SHUFFLE_NETWORK_ID } from '../../typescriptGlobals/constants';
 
 import utils from '../../utils';
+import Assets from '../../assets';
 
 // TODO: https://codepen.io/GreenSock/pen/JjKzZqK
 // TODO: https://qodeinteractive.com/magazine/horizontal-scrolling-websites/
@@ -22,7 +23,7 @@ const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
     <S.Wrapper id={section}>
       <S.TabHeader>
         <S.Title className='network-padding'>{title}</S.Title>
-        {networkId === SHUFFLE_NETWORK_ID && (
+        {/* {networkId === SHUFFLE_NETWORK_ID && (
           <S.Tabs>
             <S.TabActive id={`${section}-active`} />
             {tabs.map((tab: GalleryTypes) => (
@@ -31,7 +32,10 @@ const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
               </S.TabButton>
             ))}
           </S.Tabs>
-        )}
+        )} */}
+        <S.ExploreAll>
+          Explore All <Assets.Icons.DoubleArrow />
+        </S.ExploreAll>
       </S.TabHeader>
 
       <S.GallerySlider>

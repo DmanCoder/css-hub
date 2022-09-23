@@ -7,6 +7,7 @@ import Notification from './icons/Notification';
 import Exit from './icons/Exit';
 import Play from './icons/Play';
 import Shuffle from './icons/Shuffle';
+import DoubleArrow from './icons/DoubleArrow';
 
 import Disney from './logos/DisneyPlus';
 import PrimeVideos from './logos/PrimeVideos';
@@ -39,6 +40,7 @@ const Assets: AssetsTypes = {
     Exit,
     Play,
     Shuffle,
+    DoubleArrow,
   },
   imgs: {
     AustraliaFlag,
