@@ -1,12 +1,9 @@
 import React from 'react';
 
-export interface IAppProps {}
+export interface IModalProps {
+  children: React.ReactNode;
+}
 
-export type UseAppReturnType = {
-  isShowLeftNavigation: boolean;
-  appWrapper: React.RefObject<HTMLDivElement>;
-};
-
-export type AdjustAppWrapperPaddingReturnType = {
-  isShowLeftNavigation: boolean;
+export type UseModalReturnType = {
+  test: any;
 };

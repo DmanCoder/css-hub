@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { centerEle, immaFlex } from '../../styled/abstract/mixins';
+import { centerElement, immaFlex } from '../../styled/abstract/mixins';
 
 export const AppLoaderWrapper = styled.div`
   height: 100vh;
@@ -33,5 +33,5 @@ export const MediaTagline = styled.span`
   font-size: 1.6rem;
   opacity: 0;
   text-align: center;
-  ${centerEle({})}
+  ${centerElement({})}
 `;

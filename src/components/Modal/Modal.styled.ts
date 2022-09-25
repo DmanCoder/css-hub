@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { centerElement } from '../../styled/abstract/mixins';
 
-export const AppWrapper = styled.div`
-  position: relative;
-  min-height: 100vh;
-  min-height: calc(var(--vh, 1vh) * 100);
+export const ModalWrapper = styled.div`
+  background-color: red;
+  z-index: 10000;
+  ${centerElement({})}
 `;

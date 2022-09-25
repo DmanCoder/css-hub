@@ -6,7 +6,7 @@ export type HEX2rgbaTypes = { hex: string; alpha: number };
 
 export type HexRgb = { r: number; g: number; b: number };
 
-export type CenterElementTypes = {
+export type centerElementmentParamTypes = {
   pos?: string | null;
   top?: string | null;
   left?: string | null;

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Modal from '../Modal';
+
 import Assets from '../../assets';
 import utils from '../../utils';
 
@@ -22,6 +24,14 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
       />
 
       <S.Overlay />
+
+      <Modal>
+        <h2>CHILDRENCHILDRENCHILDRENCHILDREN</h2>
+        <h2>CHILDRENCHILDRENCHILDRENCHILDREN</h2>
+        <h2>CHILDRENCHILDRENCHILDRENCHILDREN</h2>
+        <h2>CHILDRENCHILDRENCHILDRENCHILDREN</h2>
+        <h2>CHILDRENCHILDRENCHILDRENCHILDREN</h2>
+      </Modal>
 
       <S.HeroContent className='network-padding'>
         <S.Network>

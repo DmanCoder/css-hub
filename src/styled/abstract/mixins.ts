@@ -1,5 +1,5 @@
 import {
-  CenterElementTypes,
+  centerElementmentParamTypes,
   CssTypes,
   EllipsisTypes,
   HEX2rgbaTypes,
@@ -17,11 +17,11 @@ export const immaFlex = (props: ImmaFlexTypes): CssTypes => `
     flex: ${props.flex || null};
 `;
 
-export const centerEle = (props: CenterElementTypes): CssTypes => `
-    position: ${props.pos || 'absolute'};
-    top: ${props.top || null};
-    left: ${props.left || null};
-    transform: ${`translate(${props.topX}, ${props.topY})` || null};
+export const centerElement = ({ pos, top, left, topX, topY }: centerElementmentParamTypes) => `
+  position: ${pos ?? 'absolute'};
+  top: ${top ?? '50%'};
+  left: ${left ?? '50%'};
+  transform: ${`translate(${topX ?? '-50%'}, ${topY ?? '-50%'})`};
 `;
 
 const hexToRgb = (hex: HexTypes): HexRgb => {
