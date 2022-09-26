@@ -26,6 +26,7 @@ export type UseHeroReturnType = {
   contentRating: string;
   contentDuration: string;
   backdropImage: string;
+  isModal: boolean;
 };
 
 export type ContentRatingsParams = {

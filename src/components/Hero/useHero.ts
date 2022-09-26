@@ -4,7 +4,7 @@ import { UseHeroReturnType } from './Hero.types';
 import { returnContentDuration, returnContentRating, returnNetworkName } from './Hero.helpers';
 import utils from '../../utils';
 import { imgFilterURL } from '../../api/init';
-import React from 'react';
+import React, { useState } from 'react';
 import {
   setAverageBackgroundColorAXN,
   setBackdropImageAXN,
@@ -18,6 +18,7 @@ const useHero = (): UseHeroReturnType => {
   const { currentMedia, indexPosition, backdropImage } = useAppSelector(
     (state: RootState) => state.detailsRXS,
   );
+  const [isModal, setIsModal] = React.useState<boolean>(true);
 
   const placeholder = utils.translate('translateHero.placeholderDescription');
   const description: string = currentMedia?.overview || placeholder;
@@ -62,6 +63,7 @@ const useHero = (): UseHeroReturnType => {
     contentRating,
     contentDuration,
     backdropImage,
+    isModal,
   };
 };
 

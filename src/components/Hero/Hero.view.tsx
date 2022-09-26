@@ -11,8 +11,15 @@ import * as S from './Hero.styled';
 
 // TODO: Change color of LOGO base on selected network id | Gallery title bottom border
 const Hero: React.FC<IHeroProps> = (): JSX.Element => {
-  const { description, currentMedia, networkName, contentRating, contentDuration, backdropImage } =
-    useHero();
+  const {
+    description,
+    currentMedia,
+    networkName,
+    contentRating,
+    contentDuration,
+    backdropImage,
+    isModal,
+  } = useHero();
 
   return (
     <S.HeroWrapper id='hero'>
@@ -25,13 +32,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
 
       <S.Overlay />
 
-      <Modal>
-        <h2>CHILDRENCHILDRENCHILDRENCHILDREN</h2>
-        <h2>CHILDRENCHILDRENCHILDRENCHILDREN</h2>
-        <h2>CHILDRENCHILDRENCHILDRENCHILDREN</h2>
-        <h2>CHILDRENCHILDRENCHILDRENCHILDREN</h2>
-        <h2>CHILDRENCHILDRENCHILDRENCHILDREN</h2>
-      </Modal>
+      {isModal && <Modal>ELEMEMNT</Modal>}
 
       <S.HeroContent className='network-padding'>
         <S.Network>
