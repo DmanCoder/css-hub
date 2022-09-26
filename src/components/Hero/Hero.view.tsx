@@ -32,7 +32,11 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
 
       <S.Overlay />
 
-      {isModal && <Modal>ELEMEMNT</Modal>}
+      {isModal && (
+        <Modal>
+          <h3>{currentMedia?.name}</h3>
+        </Modal>
+      )}
 
       <S.HeroContent className='network-padding'>
         <S.Network>

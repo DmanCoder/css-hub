@@ -1,13 +1,11 @@
 import React from 'react';
 
 import { IModalProps } from './Modal.types';
-import useApp from './useModal';
+// import useModal from './useModal';
 import * as S from './Modal.styled';
 
-const App: React.FC<IModalProps> = ({ children }) => {
-  const { test } = useApp();
-
+const Modal: React.FC<IModalProps> = ({ children }) => {
   return <S.ModalWrapper>{children}</S.ModalWrapper>;
 };
 
-export default App;
+export default Modal;

@@ -4,10 +4,11 @@ import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
 
 import { UseModalReturnType } from './Modal.types';
 
-const useApp = (): UseModalReturnType => {
+const useModal = (): UseModalReturnType => {
   const dispatch = useAppDispatch();
+  const { currentMedia } = useAppSelector((state: RootState) => state.detailsRXS);
 
-  return { test: 'asdfasdf' };
+  return { currentMedia };
 };
 
-export default useApp;
+export default useModal;
