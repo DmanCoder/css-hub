@@ -1,10 +1,15 @@
 import { RootState, useAppSelector, useAppDispatch } from '../../redux/store';
 import { UseHeroReturnType } from './Hero.types';
 
-import { returnContentDuration, returnContentRating, returnNetworkName } from './Hero.helpers';
+import {
+  returnContentDuration,
+  returnContentRating,
+  returnNetworkName,
+  onNavigateTo,
+} from './Hero.helpers';
 import utils from '../../utils';
 import { imgFilterURL } from '../../api/init';
-import React, { useState } from 'react';
+import React from 'react';
 import {
   setAverageBackgroundColorAXN,
   setBackdropImageAXN,
@@ -64,6 +69,7 @@ const useHero = (): UseHeroReturnType => {
     contentDuration,
     backdropImage,
     isModal,
+    onNavigateTo,
   };
 };
 

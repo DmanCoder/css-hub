@@ -1,3 +1,4 @@
+import { RoutePathNamesTypes } from '../../routes/routes.types';
 import { MediaDetailsTypes, MediaTypes, NetworkIdTypes } from '../../typescriptGlobals/types';
 
 export type CalculateDescriptionParamsTypes = {
@@ -27,6 +28,7 @@ export type UseHeroReturnType = {
   contentDuration: string;
   backdropImage: string;
   isModal: boolean;
+  onNavigateTo: ({ pathTo }: NavigateParamsTypes) => () => void;
 };
 
 export type ContentRatingsParams = {
@@ -35,4 +37,8 @@ export type ContentRatingsParams = {
 
 export type ContentDurationParamTypes = {
   currentMedia: MediaDetailsTypes;
+};
+
+export type NavigateParamsTypes = {
+  pathTo: RoutePathNamesTypes;
 };

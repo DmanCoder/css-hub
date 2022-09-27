@@ -4,6 +4,7 @@ import utils from '../../utils';
 import {
   ContentDurationParamTypes,
   ContentRatingsParams,
+  NavigateParamsTypes,
   ReturnNetworkNamesParamsTypes,
 } from './Hero.types';
 
@@ -75,4 +76,10 @@ export const returnNetworkName = ({
   }
 
   return networkName;
+};
+
+export const onNavigateTo = ({ pathTo }: NavigateParamsTypes) => {
+  return () => {
+    window.location.href = pathTo;
+  };
 };

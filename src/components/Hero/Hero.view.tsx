@@ -19,6 +19,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
     contentDuration,
     backdropImage,
     isModal,
+    onNavigateTo,
   } = useHero();
 
   return (
@@ -32,11 +33,11 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
 
       <S.Overlay />
 
-      {isModal && (
+      {/* {isModal && (
         <Modal>
           <h3>{currentMedia?.name}</h3>
         </Modal>
-      )}
+      )} */}
 
       <S.HeroContent className='network-padding'>
         <S.Network>
@@ -58,6 +59,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
           </S.PlayButton>
 
           <S.InfoButton
+            onClick={onNavigateTo({ pathTo: '/media-details' })}
             title={`${utils.translate('translateHero.moreInfo')} ${
               currentMedia?.name || currentMedia?.title
             }`}>
