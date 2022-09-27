@@ -34,5 +34,4 @@ export interface TabParamTypes {
 export interface IGalleryProps {
   title: string;
   section: GalleryTypes;
-  tabs: GalleryTypes[];
 }

@@ -1,28 +1,12 @@
 import React from 'react';
 
 import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
-import {
-  fetchActionAndAdventureMediaAXN,
-  fetchAnimationsMediaAXN,
-  fetchComedyMediaAXN,
-  fetchCrimeMediaAXN,
-  fetchHorrorMediaAXN,
-  fetchRomanceMediaAXN,
-  fetchScifiAndFantasyMediaAXN,
-  fetchStreamsAXN,
-} from '../../redux/actions/mediaActions/mediaActions';
-
 import { updateWindowDimensionAXN } from '../../redux/actions/windowDimension/windowDimensionAction';
 
 import { gsap } from '../../gsap';
 import utils from '../../utils';
 
 import { UseAppReturnType } from './App.types';
-import {
-  fetchDetailsMediaAXN,
-  fetchMediaDetailsContentRatings,
-  generateRandomNumberAXN,
-} from '../../redux/actions/mediaDetailsActions/mediaDetailsActions';
 
 // TODO: MY LIST+ SHUFFLE MODE SHOULD HAVE ALL MEDIA FROM ALL NETWORKS | BUT IF NOT ON SHUFFLE MODE THEN... ONLY SHOW THE MY LIST FOR ONLY THE SELECTED NETWORK
 // TODO: Rety to fetch images again - https://issuecloser.com/blog/how-to-retry-image-when-error-occurs-in-react
@@ -31,8 +15,6 @@ const useApp = (): UseAppReturnType => {
   const dispatch = useAppDispatch();
 
   const { isShowLeftNavigation } = useAppSelector((state: RootState) => state.networkRXS);
-  const { streams } = useAppSelector((state: RootState) => state.mediaRXS);
-  const { indexPosition } = useAppSelector((state: RootState) => state.detailsRXS);
   const appWrapper = React.useRef<HTMLDivElement>(null);
   const sectionsTL = React.useRef(gsap.timeline({ paused: true }));
 
@@ -52,25 +34,6 @@ const useApp = (): UseAppReturnType => {
       sectionsTL.current.reverse();
     }
   }, [isShowLeftNavigation]);
-
-  React.useEffect(() => {
-    dispatch(fetchStreamsAXN());
-    dispatch(fetchComedyMediaAXN());
-    dispatch(fetchAnimationsMediaAXN());
-    dispatch(fetchActionAndAdventureMediaAXN());
-    dispatch(fetchScifiAndFantasyMediaAXN());
-    dispatch(fetchRomanceMediaAXN());
-    dispatch(fetchCrimeMediaAXN());
-    dispatch(fetchHorrorMediaAXN());
-  }, []);
-
-  React.useEffect(() => {
-    if (!utils.isEmpty(streams)) {
-      dispatch(generateRandomNumberAXN(streams));
-      dispatch(fetchDetailsMediaAXN(streams));
-      dispatch(fetchMediaDetailsContentRatings());
-    }
-  }, [streams]);
 
   React.useEffect(() => {
     dispatch(
@@ -108,7 +71,6 @@ const useApp = (): UseAppReturnType => {
    * POPULAR TITLES FOR REND: https://api.themoviedb.org/3/discover/movie?api_key=###&watch_region=US&with_watch_monetization_types=rent
    * POPULAR MOVIES IN THEATERS: https://api.themoviedb.org/3/discover/movie?api_key=###&region=US&with_release_type=3|2
    */
-
   return { isShowLeftNavigation, appWrapper };
 };
 

@@ -16,7 +16,7 @@ import Assets from '../../assets';
 // TODO: https://codepen.io/ReGGae/pen/EEwrRp (MAIN)
 // TODO: https://raddy.dev/blog/netflix-carousel-using-css/
 
-const Gallery: React.FC<IGalleryProps> = ({ section, title, tabs }) => {
+const Gallery: React.FC<IGalleryProps> = ({ section, title }) => {
   const { networkId, media, onTabClick, onViewMedia } = useGallery({ section });
 
   return (

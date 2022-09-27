@@ -9,46 +9,35 @@ import utils from '../../utils';
 import useHome from './useHome';
 
 const Home: React.FC<IHomeProps> = (): JSX.Element => {
-  const { tabs, myList, horror, romance, crime, streams, animations, comedy, action, scifi } =
-    useHome();
+  const { myList, horror, romance, crime, streams, animations, comedy, action, scifi } = useHome();
 
   return (
     <S.Wrapper>
       <Hero />
 
       {!utils.isEmpty(myList) && (
-        <Gallery
-          title={utils.translate('translateGallery.myList')}
-          section='My List+'
-          tabs={tabs}
-        />
+        <Gallery title={utils.translate('translateGallery.myList')} section='My List+' />
       )}
 
       {!utils.isEmpty(streams) && (
         <Gallery
           title={utils.translate('translateGallery.tabHeaderTitle')}
           section='Whats Popular'
-          tabs={tabs}
         />
       )}
 
       {!utils.isEmpty(comedy) && (
-        <Gallery title={utils.translate('translateGallery.comedy')} section='Comedy' tabs={tabs} />
+        <Gallery title={utils.translate('translateGallery.comedy')} section='Comedy' />
       )}
 
       {!utils.isEmpty(animations) && (
-        <Gallery
-          title={utils.translate('translateGallery.animation')}
-          section='Animations'
-          tabs={tabs}
-        />
+        <Gallery title={utils.translate('translateGallery.animation')} section='Animations' />
       )}
 
       {!utils.isEmpty(action) && (
         <Gallery
           title={utils.translate('translateGallery.actionAdventure')}
           section='Action & Adventure'
-          tabs={tabs}
         />
       )}
 
@@ -56,24 +45,19 @@ const Home: React.FC<IHomeProps> = (): JSX.Element => {
         <Gallery
           title={utils.translate('translateGallery.scfiAndFantasy')}
           section='Sci-Fi & Fantasy'
-          tabs={tabs}
         />
       )}
 
       {!utils.isEmpty(romance) && (
-        <Gallery
-          title={utils.translate('translateGallery.romance')}
-          section='Romance'
-          tabs={tabs}
-        />
+        <Gallery title={utils.translate('translateGallery.romance')} section='Romance' />
       )}
 
       {!utils.isEmpty(crime) && (
-        <Gallery title={utils.translate('translateGallery.crime')} section='Crime' tabs={tabs} />
+        <Gallery title={utils.translate('translateGallery.crime')} section='Crime' />
       )}
 
       {!utils.isEmpty(horror) && (
-        <Gallery title={utils.translate('translateGallery.horror')} section='Horror' tabs={tabs} />
+        <Gallery title={utils.translate('translateGallery.horror')} section='Horror' />
       )}
     </S.Wrapper>
   );
