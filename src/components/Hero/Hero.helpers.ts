@@ -34,8 +34,7 @@ export const returnContentDuration = ({ currentMedia }: ContentDurationParamType
       const tvShowRuntimeInMinutes = currentMedia?.episode_run_time[0];
       return getDuration(tvShowRuntimeInMinutes);
     } else {
-      const tvShowRuntimeInMinutes = currentMedia?.runtime;
-      return getDuration(tvShowRuntimeInMinutes);
+      return 'Unavailable';
     }
   }
 };
