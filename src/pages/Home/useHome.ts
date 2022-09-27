@@ -23,6 +23,7 @@ const useHome = (): UseHomeReturnTypes => {
 
   const { myList, horror, romance, crime, streams, animations, action, scifi, comedy } =
     useAppSelector((state: RootState) => state.mediaRXS);
+  const { indexPosition } = useAppSelector((state: RootState) => state.detailsRXS);
 
   React.useEffect(() => {
     dispatch(fetchStreamsAXN());
@@ -38,7 +39,7 @@ const useHome = (): UseHomeReturnTypes => {
   React.useEffect(() => {
     if (!utils.isEmpty(streams)) {
       dispatch(generateRandomNumberAXN(streams));
-      dispatch(fetchDetailsMediaAXN(streams));
+      dispatch(fetchDetailsMediaAXN(streams[indexPosition]));
       dispatch(fetchMediaDetailsContentRatings());
     }
   }, [streams]);

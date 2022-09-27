@@ -50,11 +50,8 @@ export const generateRandomNumberAXN =
  * @description Fetch details
  */
 export const fetchDetailsMediaAXN =
-  (media: MediaTypes[]) => (dispatch: Dispatch<IMediaDetailsAction>) => {
+  (currentMedia: MediaTypes) => (dispatch: Dispatch<IMediaDetailsAction>) => {
     const language = store.getState().languageRXS;
-    const { indexPosition } = store.getState().detailsRXS;
-
-    const currentMedia: MediaTypes = media[indexPosition] ?? {};
 
     const params = `media_id=${currentMedia?.id}&media_type=${currentMedia?.appended_media_type}&language=${language}&page=1`;
     const endPoint = `/api/details?${params}`;
