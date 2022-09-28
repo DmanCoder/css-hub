@@ -59,7 +59,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
           </S.PlayButton>
 
           <S.InfoButton
-            onClick={onNavigateTo({ pathTo: '/media-details' })}
+            onClick={onNavigateTo({ pathTo: '/media-details', currentMedia })}
             title={`${utils.translate('translateHero.moreInfo')} ${
               currentMedia?.name || currentMedia?.title
             }`}>

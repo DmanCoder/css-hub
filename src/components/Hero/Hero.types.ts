@@ -28,7 +28,7 @@ export type UseHeroReturnType = {
   contentDuration: string;
   backdropImage: string;
   isModal: boolean;
-  onNavigateTo: ({ pathTo }: NavigateParamsTypes) => () => void;
+  onNavigateTo: ({ pathTo, currentMedia }: NavigateParamsTypes) => () => void;
 };
 
 export type ContentRatingsParams = {
@@ -41,4 +41,5 @@ export type ContentDurationParamTypes = {
 
 export type NavigateParamsTypes = {
   pathTo: RoutePathNamesTypes;
+  currentMedia: MediaDetailsTypes;
 };
