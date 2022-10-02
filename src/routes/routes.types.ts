@@ -4,7 +4,12 @@ import { IHomeProps } from '../pages/Home/Home.types';
 
 export type ComponentTypes = IHomeProps;
 
-export type RoutePathNamesTypes = '/' | '/tv-shows' | '/movies' | '*' | '/media-details';
+export type RoutePathNamesTypes =
+  | '/'
+  | '/tv-shows'
+  | '/movies'
+  | '*'
+  | '/media-details/:media_type/:media_id';
 
 export type RouteLocationTypes = {
   hash: string;

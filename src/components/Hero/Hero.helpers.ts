@@ -77,8 +77,8 @@ export const returnNetworkName = ({
   return networkName;
 };
 
-export const onNavigateTo = ({ pathTo, currentMedia }: NavigateParamsTypes) => {
+export const onNavigateTo = ({ pathTo }: NavigateParamsTypes) => {
   return () => {
-    window.location.href = `${pathTo}?media_id=${currentMedia?.id}&media_type=${currentMedia?.appended_media_type}`;
+    window.location.href = pathTo;
   };
 };

@@ -1,8 +1,9 @@
-import { GalleryTypes, MediaTypes } from '../../typescriptGlobals/types';
+import { MediaProductionType } from '../../typescriptGlobals/types';
 
 export interface IMediaDetailsProps {}
 
+export type ParamsTypes = { media_type: MediaProductionType; media_id: number };
+
 export type UseMediaDetailsReturnTypes = {
-  myList: MediaTypes[];
-  tabs: GalleryTypes[];
+  params: ParamsTypes;
 };
