@@ -72,8 +72,10 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
         {!utils.isEmpty(contentRating) && (
           <S.ContentRating>
             <S.ContentRatingText>{contentRating}</S.ContentRatingText>
-            <S.ContentRatingText></S.ContentRatingText>
-            <S.ContentRatingText>{contentDuration}</S.ContentRatingText>
+            {/* <S.ContentRatingText></S.ContentRatingText> */}
+            {!utils.isEmpty(contentDuration) && (
+              <S.ContentRatingText primary>{contentDuration}</S.ContentRatingText>
+            )}
           </S.ContentRating>
         )}
       </S.HeroContent>

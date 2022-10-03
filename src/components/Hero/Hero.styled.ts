@@ -68,18 +68,24 @@ export const ContentRating = styled.div`
   }
 `;
 
-export const ContentRatingText = styled.span`
+
+export const ContentRatingText = styled.span<{ primary?: boolean; theme: any }>`
   display: inline-block;
 
-  &:nth-child(2) {
-    margin-right: 0.75rem;
-    margin-left: 0.75rem;
-    display: inline-block;
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background-color: ${({ theme }) => theme.colors.bgPrimaryInverse};
-  }
+  ${({ primary }) =>
+    primary &&
+    `
+    &:last-child::before {
+      content: '';
+      margin-right: 0.75rem;
+      margin-left: 0.75rem;
+      display: inline-block;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background-color: 0.2rem solid ${({ theme }) => theme.colors.bgPrimaryInverse};
+    }
+  `}
 `;
 
 export const HeroContent = styled.div`

@@ -158,13 +158,13 @@ export const GalleryThumbnail = styled.figure`
   border-radius: 1rem;
   overflow: hidden;
   height: 100%;
-  width: 17rem;
-  height: 24.5rem;
+  width: 15rem;
+  height: 22.5rem;
   cursor: pointer;
 
   @media ${({ theme }) => theme.mediaQ.tablet45} {
-    width: 15.5rem;
-    height: 23rem;
+    width: 13.5rem;
+    height: 21rem;
   }
 `;
 
