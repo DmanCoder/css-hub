@@ -1,5 +1,14 @@
 import { ActionTypes } from '..';
-import { MediaAverageColorTypes, MediaDetailsTypes } from '../../../typescriptGlobals/types';
+import {
+  MediaAverageColorTypes,
+  MediaDetailsTypes,
+  MediaProductionType,
+} from '../../../typescriptGlobals/types';
+
+export type FetchDetailsParamsTypes = {
+  mediaId: number;
+  mediaType: MediaProductionType;
+};
 
 export interface ISetMediaBackdropImageAction {
   type: ActionTypes.SET_BACKDROP_IMAGE;

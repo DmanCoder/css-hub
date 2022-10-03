@@ -17,7 +17,7 @@ import Assets from '../../assets';
 // TODO: https://raddy.dev/blog/netflix-carousel-using-css/
 
 const Gallery: React.FC<IGalleryProps> = ({ section, title }) => {
-  const { networkId, media, onTabClick, onViewMedia } = useGallery({ section });
+  const { networkId, media, onTabClick, onViewMedia, onNavigateTo } = useGallery({ section });
 
   return (
     <S.Wrapper id={section}>
@@ -47,7 +47,10 @@ const Gallery: React.FC<IGalleryProps> = ({ section, title }) => {
 
               return (
                 <S.GalleryItem key={media.id}>
-                  <S.GalleryThumbnail>
+                  <S.GalleryThumbnail
+                    onClick={onNavigateTo({
+                      pathTo: `/media-details/${media?.appended_media_type}/${media?.id}`,
+                    })}>
                     <S.GalleryImage
                       src={url}
                       onError={utils.imageError}

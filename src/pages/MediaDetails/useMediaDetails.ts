@@ -1,15 +1,22 @@
 import React from 'react';
 import { Routes, Route, useParams } from 'react-router-dom';
-import { RootState, useAppSelector } from '../../redux/store';
+import {
+  fetchDetailsMediaAXN,
+  fetchMediaDetailsContentRatings,
+} from '../../redux/actions/mediaDetailsActions/mediaDetailsActions';
+import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
 import { MediaProductionType } from '../../typescriptGlobals/types';
 import { ParamsTypes, UseMediaDetailsReturnTypes } from './MediaDetails.types';
 
 const useMediaDetails = (): UseMediaDetailsReturnTypes => {
-  // const { myList } = useAppSelector((state: RootState) => state.mediaRXS);
-  const params = useParams<ParamsTypes>();
+  const dispatch = useAppDispatch();
+  const params = useParams();
 
   React.useEffect(() => {
-    console.log(params, 'paramsparamsparams');
+    const mediaId: number = Number(params?.media_id) ?? 0;
+    const mediaType = params?.media_type as MediaProductionType;
+    dispatch(fetchDetailsMediaAXN({ mediaId, mediaType }));
+    dispatch(fetchMediaDetailsContentRatings({ mediaId, mediaType }));
   }, []);
 
   return { params };

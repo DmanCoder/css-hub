@@ -25,6 +25,7 @@ export type UseGalleryReturnType = {
   onViewMedia: ({
     media,
   }: OnViewMediaParams) => (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => void;
+  onNavigateTo: ({ pathTo }: NavigateParamsTypes) => () => void;
 };
 
 export interface TabParamTypes {
@@ -35,3 +36,7 @@ export interface IGalleryProps {
   title: string;
   section: GalleryTypes;
 }
+
+export type NavigateParamsTypes = {
+  pathTo: string; // TODO: FIX TYPE - ROUTE TYPE
+};

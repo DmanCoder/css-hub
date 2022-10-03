@@ -4,6 +4,7 @@ import { store } from '../../store';
 import { ActionTypes } from '..';
 
 import {
+  FetchDetailsParamsTypes,
   IMediaContentRatingAction,
   IMediaDetailsAction,
   IMediaDetailsRandomNumberAction,
@@ -50,10 +51,10 @@ export const generateRandomNumberAXN =
  * @description Fetch details
  */
 export const fetchDetailsMediaAXN =
-  (currentMedia: MediaTypes) => (dispatch: Dispatch<IMediaDetailsAction>) => {
+  (currentMedia: FetchDetailsParamsTypes) => (dispatch: Dispatch<IMediaDetailsAction>) => {
     const language = store.getState().languageRXS;
 
-    const params = `media_id=${currentMedia?.id}&media_type=${currentMedia?.appended_media_type}&language=${language}&page=1`;
+    const params = `media_id=${currentMedia?.mediaId}&media_type=${currentMedia?.mediaType}&language=${language}&page=1`;
     const endPoint = `/api/details?${params}`;
 
     return dbAPI
@@ -73,11 +74,9 @@ export const fetchDetailsMediaAXN =
  * @description Fetch media content rating for both tv/movie media
  */
 export const fetchMediaDetailsContentRatings =
-  () => (dispatch: Dispatch<IMediaContentRatingAction>) => {
+  (currentMedia: FetchDetailsParamsTypes) => (dispatch: Dispatch<IMediaContentRatingAction>) => {
     const language: string = store.getState().languageRXS;
-    const { streams } = store.getState().mediaRXS;
-    const { indexPosition } = store.getState().detailsRXS;
-    const params = `media_id=${streams[indexPosition].id}&media_type=${streams[indexPosition].appended_media_type}&language=${language}&page=1`;
+    const params = `media_id=${currentMedia?.mediaId}&media_type=${currentMedia?.mediaType}&language=${language}&page=1`;
 
     const endPoint = `/api/details/media_ratings?${params}`;
 

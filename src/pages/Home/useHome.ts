@@ -39,8 +39,18 @@ const useHome = (): UseHomeReturnTypes => {
   React.useEffect(() => {
     if (!utils.isEmpty(streams)) {
       dispatch(generateRandomNumberAXN(streams));
-      dispatch(fetchDetailsMediaAXN(streams[indexPosition]));
-      dispatch(fetchMediaDetailsContentRatings());
+      dispatch(
+        fetchDetailsMediaAXN({
+          mediaId: streams[indexPosition]?.id,
+          mediaType: streams[indexPosition]?.appended_media_type,
+        }),
+      );
+      dispatch(
+        fetchMediaDetailsContentRatings({
+          mediaId: streams[indexPosition]?.id,
+          mediaType: streams[indexPosition]?.appended_media_type,
+        }),
+      );
     }
   }, [streams]);
 

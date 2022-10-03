@@ -3,6 +3,7 @@ import { RootState, useAppSelector } from '../../redux/store';
 import { ButtonMouseEvent, GalleryTypes, MediaTypes } from '../../typescriptGlobals/types';
 import { onSwitchBottomTabSliderAnimation } from './Gallery.gsap';
 import {
+  NavigateParamsTypes,
   OnViewMediaParams,
   TabParamTypes,
   UseGalleryParamTypes,
@@ -69,7 +70,13 @@ const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => 
     };
   };
 
-  return { networkId, media, onTabClick, onViewMedia };
+  const onNavigateTo = ({ pathTo }: NavigateParamsTypes) => {
+    return () => {
+      window.location.href = pathTo;
+    };
+  };
+
+  return { networkId, media, onTabClick, onViewMedia, onNavigateTo };
 };
 
 export default useGallery;
