@@ -68,8 +68,7 @@ export const ContentRating = styled.div`
   }
 `;
 
-
-export const ContentRatingText = styled.span<{ primary?: boolean; theme: any }>`
+export const ContentRatingText = styled.span<{ primary?: boolean }>`
   display: inline-block;
 
   ${({ primary }) =>
@@ -83,7 +82,8 @@ export const ContentRatingText = styled.span<{ primary?: boolean; theme: any }>`
       width: 0.5rem;
       height: 0.5rem;
       border-radius: 50%;
-      background-color: 0.2rem solid ${({ theme }) => theme.colors.bgPrimaryInverse};
+      background-color: 0.2rem solid ${({ theme }: { theme: any }) =>
+        theme.colors.bgPrimaryInverse};
     }
   `}
 `;

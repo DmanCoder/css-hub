@@ -11,6 +11,7 @@ import { ParamsTypes, UseMediaDetailsReturnTypes } from './MediaDetails.types';
 const useMediaDetails = (): UseMediaDetailsReturnTypes => {
   const dispatch = useAppDispatch();
   const params = useParams();
+  console.log(params, 'paramsparamsparamsparams');
 
   React.useEffect(() => {
     const mediaId: number = Number(params?.media_id) ?? 0;
