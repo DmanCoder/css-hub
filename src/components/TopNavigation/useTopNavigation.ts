@@ -115,7 +115,7 @@ const useTopNavigation = (): UseTopNavigationReturnType => {
     };
   };
 
-  const onNavigateToPath = (path: RoutePathNamesTypes) => {
+  const onNavigateToPath = (path: any) => {
     return () => (window.location.href = path);
   };
 

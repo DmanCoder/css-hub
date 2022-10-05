@@ -194,6 +194,7 @@ export const fetchRomanceMediaAXN =
     const { networkId } = store.getState().networkRXS;
 
     const mediaType = utils.getMediaTypeFromUrlPath();
+    console.log(mediaType, 'mediaTypemediaTypemediaType');
     const params = `?with_genres=${GENRE_CODES.Romance}&with_networks=${networkId}&with_watch_monetization_types=${MONETIZATION_CODES.FLATRATE}&watch_region=${country.iso}&with_origin_country=${country.iso}&media_type=${mediaType}&language=${language}&page=1`;
     const endpoint = `/api/discover${params}`;
 

@@ -49,7 +49,7 @@ const Gallery: React.FC<IGalleryProps> = ({ section, title }) => {
                 <S.GalleryItem key={media.id}>
                   <S.GalleryThumbnail
                     onClick={onNavigateTo({
-                      pathTo: `/media-details/${media?.appended_media_type}/${media?.id}`,
+                      pathTo: `media_details/${media?.appended_media_type}/${media?.id}`,
                     })}>
                     <S.GalleryImage
                       src={url}

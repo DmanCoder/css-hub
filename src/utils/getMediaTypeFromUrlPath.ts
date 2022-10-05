@@ -4,7 +4,7 @@ const getMediaTypeFromUrlPath = () => {
   switch (pathNames) {
     case '/':
       return 'both';
-    case '/tv-shows':
+    case '/tv':
       return 'tv';
     case '/movies':
       return 'movie';

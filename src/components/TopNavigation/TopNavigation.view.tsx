@@ -68,7 +68,7 @@ const Nav: React.FC<INavProps> = () => {
             </S.CountryItem>
           </S.CountryItems>
         </S.ListItem>
-        <S.ListItem onClick={onNavigateToPath('/tv-shows')}>
+        <S.ListItem onClick={onNavigateToPath('/tv')}>
           {utils.translate('translateTopNavigation.tvShow')}
         </S.ListItem>
         <S.ListItem onClick={onNavigateToPath('/movies')}>

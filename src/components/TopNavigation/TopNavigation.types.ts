@@ -27,7 +27,7 @@ export type UseTopNavigationReturnType = {
   countryRXS: CountryFlagTypes;
   languageRXS: LanguageCodeTypes;
   onChangeCountry: (country: CountryAlpha2CodeTypes) => (event: React.MouseEvent) => void;
-  onNavigateToPath: (path: RoutePathNamesTypes) => (event: React.MouseEvent) => void;
+  onNavigateToPath: (path: any) => (event: React.MouseEvent) => void; // TODO: FIX TYPE
   onShowLanguageList: () => void;
   languageRef: any; // TODO: FIX THIS
   onChangeAppLanguage: (lang: LanguageCodeTypes) => (event: React.MouseEvent) => void;
