@@ -1,15 +1,14 @@
 import React from 'react';
 import Hero from '../../components/Hero';
+import { fetchDetailsMediaAXN } from '../../redux/actions/mediaDetailsActions/mediaDetailsActions';
 
 import { IMediaDetailsProps } from './MediaDetails.types';
-import useMediaDetails from './useMediaDetails';
 
 const MediaDetails: React.FC<IMediaDetailsProps> = (): JSX.Element => {
-  const { params } = useMediaDetails();
+  // dispatch(fetchDetailsMediaAXN(streams[indexPosition]));
 
   return (
     <div>
-      <h2>{params?.media_type}</h2>
       <Hero />
     </div>
   );
