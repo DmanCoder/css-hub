@@ -68,7 +68,7 @@ export const ContentRating = styled.div`
   }
 `;
 
-export const ContentRatingText = styled.span<{ primary?: boolean }>`
+export const ContentRatingText = styled.div<{ primary?: boolean }>`
   display: inline-block;
 
   ${({ primary }) =>
@@ -79,11 +79,12 @@ export const ContentRatingText = styled.span<{ primary?: boolean }>`
       margin-right: 0.75rem;
       margin-left: 0.75rem;
       display: inline-block;
-      width: 0.5rem;
-      height: 0.5rem;
+      position: relative;
+      bottom: .1rem;
+      width: 0.75rem;
+      height: 0.75rem;
       border-radius: 50%;
-      background-color: 0.2rem solid ${({ theme }: { theme: any }) =>
-        theme.colors.bgPrimaryInverse};
+      background-color: white !important;
     }
   `}
 `;
