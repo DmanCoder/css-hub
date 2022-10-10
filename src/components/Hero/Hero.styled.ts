@@ -79,10 +79,9 @@ export const ContentRatingText = styled.div<{ primary?: boolean }>`
       margin-right: 0.75rem;
       margin-left: 0.75rem;
       display: inline-block;
-      position: relative;
       bottom: .1rem;
-      width: 0.75rem;
-      height: 0.75rem;
+      width: 0.5rem;
+      height: 0.5rem;
       border-radius: 50%;
       background-color: white !important;
     }
