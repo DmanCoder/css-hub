@@ -76,10 +76,10 @@ export const ContentRatingText = styled.div<{ primary?: boolean }>`
     `
     &:last-child::before {
       content: '';
-      margin-right: 0.75rem;
-      margin-left: 0.75rem;
+      margin-right: 0.5rem;
+      margin-left: 0.85rem;
       display: inline-block;
-      bottom: .1rem;
+      transform: translate(-50%, -0.2rem);
       width: 0.5rem;
       height: 0.5rem;
       border-radius: 50%;
