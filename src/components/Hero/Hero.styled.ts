@@ -76,7 +76,7 @@ export const ContentRatingText = styled.div<{ primary?: boolean }>`
     `
     &:last-child::before {
       content: '';
-      margin-right: 0.5rem;
+      margin-right: 0.3rem;
       margin-left: 0.85rem;
       display: inline-block;
       transform: translate(-50%, -0.2rem);
