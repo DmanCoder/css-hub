@@ -6,8 +6,8 @@ export type ComponentTypes = IHomeProps;
 
 export type RoutePathNamesTypes =
   | '/'
-  | '/:media_type'
-  | '/movies'
+  | '/media-type/tv'
+  | 'media-type/movies'
   | '*'
   | '/media-details/:media_type/:media_id';
 
@@ -22,5 +22,6 @@ export type RouteLocationTypes = {
 export interface IRoutes {
   path: RoutePathNamesTypes;
   name: string;
+  containParam?: boolean;
   Component: React.FC<ComponentTypes>;
 }
