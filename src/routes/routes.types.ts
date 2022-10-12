@@ -6,8 +6,7 @@ export type ComponentTypes = IHomeProps;
 
 export type RoutePathNamesTypes =
   | '/'
-  | '/media-type/tv'
-  | 'media-type/movies'
+  | '/:media_type'
   | '*'
   | '/media-details/:media_type/:media_id';
 
