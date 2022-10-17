@@ -72,8 +72,7 @@ const useGallery = ({ section }: UseGalleryParamTypes): UseGalleryReturnType => 
 
   const onNavigateTo = ({ pathTo }: NavigateParamsTypes) => {
     return () => {
-      console.log(pathTo, 'pathTopathTo');
-      // window.location.href = pathTo;
+      window.location.href = pathTo;
     };
   };
 
