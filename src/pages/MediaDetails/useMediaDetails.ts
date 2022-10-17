@@ -1,17 +1,16 @@
 import React from 'react';
-import { Routes, Route, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import {
   fetchDetailsMediaAXN,
   fetchMediaDetailsContentRatings,
 } from '../../redux/actions/mediaDetailsActions/mediaDetailsActions';
-import { RootState, useAppDispatch, useAppSelector } from '../../redux/store';
+import { useAppDispatch } from '../../redux/store';
 import { MediaProductionType } from '../../typescriptGlobals/types';
-import { ParamsTypes, UseMediaDetailsReturnTypes } from './MediaDetails.types';
+import { UseMediaDetailsReturnTypes } from './MediaDetails.types';
 
 const useMediaDetails = (): UseMediaDetailsReturnTypes => {
   const dispatch = useAppDispatch();
   const params = useParams();
-  console.log(params, 'paramsparamsparamsparams');
 
   React.useEffect(() => {
     const mediaId: number = Number(params?.media_id) ?? 0;
