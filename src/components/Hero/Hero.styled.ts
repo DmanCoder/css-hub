@@ -93,6 +93,24 @@ export const HeroContent = styled.div`
   width: 100%;
 `;
 
+export const HeroImages = styled.figure`
+  background-color: red;
+  position: relative;
+  white-space: nowrap;
+  z-index: 10;
+`;
+
+export const Thmubnails = styled.img`
+  width: 15rem;
+  height: 22.5rem;
+  cursor: pointer;
+
+  @media ${({ theme }) => theme.mediaQ.tablet45} {
+    width: 13.5rem;
+    height: 21rem;
+  }
+`;
+
 export const Network = styled.p`
   font-weight: 600;
   font-size: 1.2rem;

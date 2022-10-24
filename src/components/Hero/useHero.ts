@@ -1,3 +1,5 @@
+import { useParams } from 'react-router-dom';
+
 import { RootState, useAppSelector, useAppDispatch } from '../../redux/store';
 import { UseHeroReturnType } from './Hero.types';
 
@@ -17,6 +19,8 @@ import {
 
 const useHero = (): UseHeroReturnType => {
   const dispatch = useAppDispatch();
+  const params = useParams();
+  console.log(params, 'paramsparams');
 
   const { streams } = useAppSelector((state: RootState) => state.mediaRXS);
   const { networkId } = useAppSelector((state: RootState) => state.networkRXS);
@@ -70,6 +74,7 @@ const useHero = (): UseHeroReturnType => {
     backdropImage,
     isModal,
     onNavigateTo,
+    params,
   };
 };
 

@@ -1,3 +1,4 @@
+import { Params } from 'react-router-dom';
 import { RoutePathNamesTypes } from '../../routes/routes.types';
 import { MediaDetailsTypes, MediaTypes, NetworkIdTypes } from '../../typescriptGlobals/types';
 
@@ -29,6 +30,7 @@ export type UseHeroReturnType = {
   backdropImage: string;
   isModal: boolean;
   onNavigateTo: ({ pathTo }: NavigateParamsTypes) => () => void;
+  params: Readonly<Params<string>>;
 };
 
 export type ContentRatingsParams = {
