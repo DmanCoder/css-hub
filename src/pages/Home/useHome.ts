@@ -37,22 +37,25 @@ const useHome = (): UseHomeReturnTypes => {
   }, []);
 
   React.useEffect(() => {
-    if (!utils.isEmpty(streams)) {
+    if (!utils.isEmpty(streams) && utils.isEmpty(indexPosition)) {
       dispatch(generateRandomNumberAXN(streams));
+    }
+
+    if (!utils.isEmpty(streams) && !utils.isEmpty(indexPosition)) {
       dispatch(
         fetchDetailsMediaAXN({
-          mediaId: streams[indexPosition]?.id,
-          mediaType: streams[indexPosition]?.appended_media_type,
+          mediaId: streams[indexPosition ?? 0]?.id,
+          mediaType: streams[indexPosition ?? 0]?.appended_media_type,
         }),
       );
       dispatch(
         fetchMediaDetailsContentRatings({
-          mediaId: streams[indexPosition]?.id,
-          mediaType: streams[indexPosition]?.appended_media_type,
+          mediaId: streams[indexPosition ?? 0]?.id,
+          mediaType: streams[indexPosition ?? 0]?.appended_media_type,
         }),
       );
     }
-  }, [streams]);
+  }, [streams, indexPosition]);
 
   return { myList, horror, romance, crime, streams, animations, action, scifi, comedy };
 };

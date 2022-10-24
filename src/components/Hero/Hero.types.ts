@@ -20,7 +20,7 @@ export interface IHeroProps {}
 export type UseHeroReturnType = {
   networkId: NetworkIdTypes;
   streams: MediaTypes[];
-  indexPosition: number;
+  indexPosition: null | number;
   description: string;
   currentMedia: MediaDetailsTypes;
   networkName: string;

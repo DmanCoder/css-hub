@@ -4,6 +4,6 @@ export interface IMediaDetailsDefaultState {
   backdropImage: string;
   averageColor: MediaAverageColorTypes;
   currentMedia: MediaDetailsTypes;
-  indexPosition: number;
+  indexPosition: null | number;
   images: string[]; // TODO COME BACK TO THIS
 }

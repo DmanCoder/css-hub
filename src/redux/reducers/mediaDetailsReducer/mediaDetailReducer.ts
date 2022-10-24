@@ -7,7 +7,7 @@ const defaultState: IMediaDetailsDefaultState = {
   backdropImage: '',
   averageColor: {} as MediaAverageColorTypes,
   currentMedia: {} as MediaDetailsTypes,
-  indexPosition: 0,
+  indexPosition: null,
   images: [],
 };
 
