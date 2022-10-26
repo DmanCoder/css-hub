@@ -71,7 +71,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
           </S.InfoButton>
         </S.HeroActions>
 
-        {!utils.isEmpty(contentRating) && (
+        {!utils.isEmpty(contentRating) && utils.isEmpty(params) && (
           <S.ContentRating>
             <S.ContentRatingText>{contentRating}</S.ContentRatingText>
             {!utils.isEmpty(contentDuration) && (
