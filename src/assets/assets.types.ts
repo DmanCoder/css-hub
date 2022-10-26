@@ -9,6 +9,7 @@ import { INotificationProps } from './icons/Notification';
 import { IPlayProps } from './icons/Play';
 import { ISearchProps } from './icons/Search';
 import { IShuffleProps } from './icons/Shuffle';
+import { IStarProps } from './icons/Star';
 import { IAppleTVPlusProps } from './logos/AppleTV';
 import { IDisneyPlusProps } from './logos/DisneyPlus';
 import { IHBOMaxProps } from './logos/HBOMax';
@@ -34,6 +35,7 @@ export type IconsTypes = {
   Play: React.FC<IPlayProps>;
   Shuffle: React.FC<IShuffleProps>;
   DoubleArrow: React.FC<IDoubleArrowProps>;
+  Star: React.FC<IStarProps>;
 };
 
 export type ImgsTypes = {

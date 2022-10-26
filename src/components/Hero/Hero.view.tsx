@@ -52,6 +52,18 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
 
         <S.Title>{currentMedia?.name || currentMedia?.title}</S.Title>
 
+        {!utils.isEmpty(params) && (
+          <div>
+            <h3>Date: {currentMedia?.release_date || currentMedia?.last_air_date}</h3>
+            <h3>
+              Raging:
+              <Assets.Icons.Star />
+            </h3>
+            <h3>DETAILS</h3>
+            <h3>DETAILS</h3>
+          </div>
+        )}
+
         <S.Description>{description}</S.Description>
 
         <S.HeroActions>
