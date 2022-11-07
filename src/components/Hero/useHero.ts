@@ -8,6 +8,7 @@ import {
   returnContentRating,
   returnNetworkName,
   onNavigateTo,
+  returnMediaDate,
 } from './Hero.helpers';
 import utils from '../../utils';
 import { imgFilterURL } from '../../api/init';
@@ -43,6 +44,10 @@ const useHero = (): UseHeroReturnType => {
     currentMedia,
   });
 
+  const yearOfMedia = returnMediaDate({
+    currentMedia,
+  });
+
   React.useEffect(() => {
     if (!utils.isEmpty(currentMedia)) {
       const imgURL = `${imgFilterURL}/${currentMedia?.backdrop_path}`;
@@ -75,6 +80,7 @@ const useHero = (): UseHeroReturnType => {
     isModal,
     onNavigateTo,
     params,
+    yearOfMedia,
   };
 };
 

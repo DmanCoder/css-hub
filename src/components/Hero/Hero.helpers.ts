@@ -1,10 +1,11 @@
 import { store } from '../../redux/store';
-import { NetworkNameTypes } from '../../typescriptGlobals/types';
+import { MediaDetailsTypes, NetworkNameTypes } from '../../typescriptGlobals/types';
 import utils from '../../utils';
 import {
   ContentDurationParamTypes,
   ContentRatingsParams,
   NavigateParamsTypes,
+  ContentDateParamTypes,
   ReturnNetworkNamesParamsTypes,
 } from './Hero.types';
 
@@ -81,4 +82,16 @@ export const onNavigateTo = ({ pathTo }: NavigateParamsTypes) => {
   return () => {
     window.location.href = pathTo;
   };
+};
+
+export const returnMediaDate = ({ currentMedia }: ContentDateParamTypes) => {
+  if (utils.isMovie(currentMedia)) {
+    return new Date(currentMedia?.release_date).getFullYear();
+  } else if (!utils.isMovie(currentMedia)) {
+    return new Date(currentMedia?.last_air_date).getFullYear();
+  } else return null;
+};
+
+export const returnVoteAverage = ({ currentMedia }: ContentDateParamTypes): number => {
+  return 1;
 };

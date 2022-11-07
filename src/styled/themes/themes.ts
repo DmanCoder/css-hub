@@ -37,6 +37,7 @@ const theme = {
       textSecondary: '#16191C',
 
       iconPrimary: '#FFFFFF',
+      iconSecondary: '#FFE234',
     },
 
     fontSizes,
@@ -57,6 +58,7 @@ const theme = {
       textSecondary: '#16191C',
 
       iconPrimary: '#FFFFFF',
+      iconSecondary: '#FFE234',
     },
 
     fontSizes,

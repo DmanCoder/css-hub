@@ -31,6 +31,7 @@ export type UseHeroReturnType = {
   isModal: boolean;
   onNavigateTo: ({ pathTo }: NavigateParamsTypes) => () => void;
   params: Readonly<Params<string>>;
+  yearOfMedia: number | null;
 };
 
 export type ContentRatingsParams = {
@@ -38,6 +39,10 @@ export type ContentRatingsParams = {
 };
 
 export type ContentDurationParamTypes = {
+  currentMedia: MediaDetailsTypes;
+};
+
+export type ContentDateParamTypes = {
   currentMedia: MediaDetailsTypes;
 };
 

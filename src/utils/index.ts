@@ -15,6 +15,8 @@ import removeSpaceFromString from './removeSpaceFromString';
 import imageError from './imageError';
 import getAverageColor from './getAverageColor';
 import getMediaTypeFromUrlPath from './getMediaTypeFromUrlPath';
+import getMediaGenres from './getMediaGenres';
+import getMediaDuration from './getMediaDuration';
 
 const utils = {
   isEmpty,
@@ -35,6 +37,8 @@ const utils = {
   imageError,
   getAverageColor,
   getMediaTypeFromUrlPath,
+  getMediaGenres,
+  getMediaDuration,
 };
 
 export default utils;

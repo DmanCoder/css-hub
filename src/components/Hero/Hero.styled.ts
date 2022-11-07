@@ -166,6 +166,29 @@ export const Title = styled.h2`
   }
 `;
 
+export const MediaDetail = styled.div`
+  margin-bottom: 2rem;
+
+  ${immaFlex({ align: 'center' })}
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    fill: ${({ theme }) => theme.colors.primary};
+
+    @media ${({ theme }) => theme.mediaQ.tablet45} {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+`;
+
+export const MediaDetailData = styled.span`
+  font-size: 1.3rem;
+  margin-right: 1rem;
+`;
+
 export const Description = styled.p`
   max-width: 42rem;
   margin-bottom: 2.5rem;

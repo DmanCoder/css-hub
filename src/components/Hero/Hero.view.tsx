@@ -22,7 +22,10 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
     isModal,
     onNavigateTo,
     params,
+    yearOfMedia,
   } = useHero();
+
+  console.log(currentMedia, 'currentMediacurrentMediacurrentMedia');
 
   return (
     <S.HeroWrapper id='hero'>
@@ -53,15 +56,17 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
         <S.Title>{currentMedia?.name || currentMedia?.title}</S.Title>
 
         {!utils.isEmpty(params) && (
-          <div>
-            <h3>Date: {currentMedia?.release_date || currentMedia?.last_air_date}</h3>
-            <h3>
-              Raging:
+          <S.MediaDetail>
+            <S.MediaDetailData>
               <Assets.Icons.Star />
-            </h3>
-            <h3>DETAILS</h3>
-            <h3>DETAILS</h3>
-          </div>
+              <Assets.Icons.Star />
+              <Assets.Icons.Star />
+              <Assets.Icons.Star />
+            </S.MediaDetailData>
+            <S.MediaDetailData>{yearOfMedia}</S.MediaDetailData>
+            <S.MediaDetailData>{utils.getMediaGenres(currentMedia?.genres)}</S.MediaDetailData>
+            <S.MediaDetailData>{utils.getMediaDuration(currentMedia)}</S.MediaDetailData>
+          </S.MediaDetail>
         )}
 
         <S.Description>{description}</S.Description>
@@ -93,7 +98,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
         )}
       </S.HeroContent>
 
-      {!isEmpty(params) && (
+      {/* {!isEmpty(params) && (
         <S.HeroImages>
           <S.Thmubnails src='https://image.tmdb.org/t/p/w500//dc9IY0ZT2T3gw0RfjmQdsoWp992.jpg'></S.Thmubnails>
           <S.Thmubnails src='https://image.tmdb.org/t/p/w500//dc9IY0ZT2T3gw0RfjmQdsoWp992.jpg'></S.Thmubnails>
@@ -101,7 +106,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
           <S.Thmubnails src='https://image.tmdb.org/t/p/w500//dc9IY0ZT2T3gw0RfjmQdsoWp992.jpg'></S.Thmubnails>
           <S.Thmubnails src='https://image.tmdb.org/t/p/w500//dc9IY0ZT2T3gw0RfjmQdsoWp992.jpg'></S.Thmubnails>
         </S.HeroImages>
-      )}
+      )} */}
     </S.HeroWrapper>
   );
 };

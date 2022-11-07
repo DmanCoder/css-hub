@@ -131,6 +131,11 @@ export type MediaTypes = {
   video: boolean;
 };
 
+export type MediaGenres = {
+  id: number;
+  name: string;
+};
+
 export type MediaDetailsTypes = {
   // Movie Detail types
   adult: boolean;
@@ -138,7 +143,7 @@ export type MediaDetailsTypes = {
   backdrop_path: string;
   belongs_to_collection: null;
   budget: number;
-  genres: { id: number; name: string }[];
+  genres: MediaGenres[];
   homepage: string;
   id: number;
   imdb_id: string;
