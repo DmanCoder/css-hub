@@ -3,13 +3,7 @@ import { useParams } from 'react-router-dom';
 import { RootState, useAppSelector, useAppDispatch } from '../../redux/store';
 import { UseHeroReturnType } from './Hero.types';
 
-import {
-  returnContentDuration,
-  returnContentRating,
-  returnNetworkName,
-  onNavigateTo,
-  returnMediaDate,
-} from './Hero.helpers';
+import { returnContentRating, returnNetworkName, onNavigateTo } from './Hero.helpers';
 import utils from '../../utils';
 import { imgFilterURL } from '../../api/init';
 import React from 'react';
@@ -28,7 +22,6 @@ const useHero = (): UseHeroReturnType => {
   const { currentMedia, indexPosition, backdropImage } = useAppSelector(
     (state: RootState) => state.detailsRXS,
   );
-  const [isModal, setIsModal] = React.useState<boolean>(true);
 
   const placeholder = utils.translate('translateHero.placeholderDescription');
   const description: string = currentMedia?.overview || placeholder;
@@ -39,14 +32,6 @@ const useHero = (): UseHeroReturnType => {
   });
 
   const contentRating = returnContentRating({ currentMedia });
-
-  const contentDuration = returnContentDuration({
-    currentMedia,
-  });
-
-  const yearOfMedia = returnMediaDate({
-    currentMedia,
-  });
 
   React.useEffect(() => {
     if (!utils.isEmpty(currentMedia)) {
@@ -75,12 +60,9 @@ const useHero = (): UseHeroReturnType => {
     currentMedia,
     networkName,
     contentRating,
-    contentDuration,
     backdropImage,
-    isModal,
     onNavigateTo,
     params,
-    yearOfMedia,
   };
 };
 

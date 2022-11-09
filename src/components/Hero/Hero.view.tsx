@@ -17,15 +17,10 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
     currentMedia,
     networkName,
     contentRating,
-    contentDuration,
     backdropImage,
-    isModal,
     onNavigateTo,
     params,
-    yearOfMedia,
   } = useHero();
-
-  console.log(currentMedia, 'currentMediacurrentMediacurrentMedia');
 
   return (
     <S.HeroWrapper id='hero'>
@@ -37,12 +32,6 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
       />
 
       <S.Overlay />
-
-      {/* {isModal && (
-        <Modal>
-          <h3>{currentMedia?.name}</h3>
-        </Modal>
-      )} */}
 
       <S.HeroContent className='network-padding'>
         <S.Network>
@@ -63,7 +52,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
               <Assets.Icons.Star />
               <Assets.Icons.Star />
             </S.MediaDetailData>
-            <S.MediaDetailData>{yearOfMedia}</S.MediaDetailData>
+            <S.MediaDetailData>{utils.getMediaDate(currentMedia)}</S.MediaDetailData>
             <S.MediaDetailData>{utils.getMediaGenres(currentMedia?.genres)}</S.MediaDetailData>
             <S.MediaDetailData>{utils.getMediaDuration(currentMedia)}</S.MediaDetailData>
           </S.MediaDetail>
@@ -91,8 +80,10 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
         {!utils.isEmpty(contentRating) && utils.isEmpty(params) && (
           <S.ContentRating>
             <S.ContentRatingText>{contentRating}</S.ContentRatingText>
-            {!utils.isEmpty(contentDuration) && (
-              <S.ContentRatingText primary>{contentDuration}</S.ContentRatingText>
+            {!utils.isEmpty(utils.getMediaDuration(currentMedia)) && (
+              <S.ContentRatingText primary>
+                {utils.getMediaDuration(currentMedia)}
+              </S.ContentRatingText>
             )}
           </S.ContentRating>
         )}

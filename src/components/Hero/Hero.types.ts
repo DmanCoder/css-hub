@@ -26,12 +26,9 @@ export type UseHeroReturnType = {
   currentMedia: MediaDetailsTypes;
   networkName: string;
   contentRating: string;
-  contentDuration: string;
   backdropImage: string;
-  isModal: boolean;
   onNavigateTo: ({ pathTo }: NavigateParamsTypes) => () => void;
   params: Readonly<Params<string>>;
-  yearOfMedia: number | null;
 };
 
 export type ContentRatingsParams = {

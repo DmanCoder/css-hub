@@ -17,6 +17,7 @@ import getAverageColor from './getAverageColor';
 import getMediaTypeFromUrlPath from './getMediaTypeFromUrlPath';
 import getMediaGenres from './getMediaGenres';
 import getMediaDuration from './getMediaDuration';
+import getMediaDate from './getMediaDate';
 
 const utils = {
   isEmpty,
@@ -39,6 +40,7 @@ const utils = {
   getMediaTypeFromUrlPath,
   getMediaGenres,
   getMediaDuration,
+  getMediaDate,
 };
 
 export default utils;

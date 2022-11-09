@@ -1,44 +1,12 @@
 import { store } from '../../redux/store';
-import { MediaDetailsTypes, NetworkNameTypes } from '../../typescriptGlobals/types';
+import { NetworkNameTypes } from '../../typescriptGlobals/types';
 import utils from '../../utils';
 import {
-  ContentDurationParamTypes,
   ContentRatingsParams,
   NavigateParamsTypes,
   ContentDateParamTypes,
   ReturnNetworkNamesParamsTypes,
 } from './Hero.types';
-
-const getDuration = (totalMinutes: number) => {
-  const minutesIn1Hour = 60;
-
-  if (totalMinutes >= minutesIn1Hour) {
-    const duration = utils.timeConverter(totalMinutes);
-    const hours = duration[0];
-    const minutes = duration[1] === 0 ? '' : ` ${duration[1]}m`;
-    return `${hours}h${minutes}`;
-  } else {
-    const duration = utils.timeConverter(totalMinutes);
-    const minutes = duration[1];
-    return `${minutes}m`;
-  }
-};
-
-export const returnContentDuration = ({ currentMedia }: ContentDurationParamTypes): string => {
-  if (utils.isEmpty(currentMedia)) return '';
-
-  if (utils.isMovie(currentMedia)) {
-    const movieRuntimeInMinutes = currentMedia?.runtime;
-    return getDuration(movieRuntimeInMinutes);
-  } else {
-    if (!utils.isEmpty(currentMedia?.episode_run_time)) {
-      const tvShowRuntimeInMinutes = currentMedia?.episode_run_time[0];
-      return getDuration(tvShowRuntimeInMinutes);
-    } else {
-      return '';
-    }
-  }
-};
 
 export const returnContentRating = ({ currentMedia }: ContentRatingsParams): string => {
   const { iso } = store.getState().countryRXS;
@@ -82,14 +50,6 @@ export const onNavigateTo = ({ pathTo }: NavigateParamsTypes) => {
   return () => {
     window.location.href = pathTo;
   };
-};
-
-export const returnMediaDate = ({ currentMedia }: ContentDateParamTypes) => {
-  if (utils.isMovie(currentMedia)) {
-    return new Date(currentMedia?.release_date).getFullYear();
-  } else if (!utils.isMovie(currentMedia)) {
-    return new Date(currentMedia?.last_air_date).getFullYear();
-  } else return null;
 };
 
 export const returnVoteAverage = ({ currentMedia }: ContentDateParamTypes): number => {
