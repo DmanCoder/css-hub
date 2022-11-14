@@ -25,7 +25,6 @@ export type UseHeroReturnType = {
   description: string;
   currentMedia: MediaDetailsTypes;
   networkName: string;
-  contentRating: string;
   backdropImage: string;
   onNavigateTo: ({ pathTo }: NavigateParamsTypes) => () => void;
   params: Readonly<Params<string>>;

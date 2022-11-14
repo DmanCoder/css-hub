@@ -1,7 +1,7 @@
 import { MediaDetailsTypes } from '../typescriptGlobals/types';
 import isMovie from './isMovie';
 
-const getMediaDate = (currentMedia: MediaDetailsTypes) => {
+const getMediaRatings = (currentMedia: MediaDetailsTypes) => {
   if (isMovie(currentMedia)) {
     return new Date(currentMedia?.release_date).getFullYear();
   } else if (!isMovie(currentMedia)) {
@@ -9,4 +9,4 @@ const getMediaDate = (currentMedia: MediaDetailsTypes) => {
   } else return null;
 };
 
-export default getMediaDate;
+export default getMediaRatings;

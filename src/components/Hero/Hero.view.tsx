@@ -8,19 +8,10 @@ import utils from '../../utils';
 import { IHeroProps } from './Hero.types';
 import useHero from './useHero';
 import * as S from './Hero.styled';
-import isEmpty from '../../utils/isEmpty';
 
 // TODO: Change color of LOGO base on selected network id | Gallery title bottom border
 const Hero: React.FC<IHeroProps> = (): JSX.Element => {
-  const {
-    description,
-    currentMedia,
-    networkName,
-    contentRating,
-    backdropImage,
-    onNavigateTo,
-    params,
-  } = useHero();
+  const { description, currentMedia, networkName, backdropImage, onNavigateTo, params } = useHero();
 
   return (
     <S.HeroWrapper id='hero'>
@@ -52,9 +43,9 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
               <Assets.Icons.Star />
               <Assets.Icons.Star />
             </S.MediaDetailData>
-            <S.MediaDetailData>{utils.getMediaDate(currentMedia)}</S.MediaDetailData>
-            <S.MediaDetailData>{utils.getMediaGenres(currentMedia?.genres)}</S.MediaDetailData>
-            <S.MediaDetailData>{utils.getMediaDuration(currentMedia)}</S.MediaDetailData>
+            <S.MediaDetailData>{utils.getMediaDatails?.date(currentMedia)}</S.MediaDetailData>
+            <S.MediaDetailData>{utils.getMediaDatails?.geners(currentMedia)}</S.MediaDetailData>
+            <S.MediaDetailData>{utils.getMediaDatails?.duration(currentMedia)}</S.MediaDetailData>
           </S.MediaDetail>
         )}
 
@@ -77,12 +68,14 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
           </S.InfoButton>
         </S.HeroActions>
 
-        {!utils.isEmpty(contentRating) && utils.isEmpty(params) && (
+        {!utils.getMediaDatails?.certification(currentMedia) && utils.isEmpty(params) && (
           <S.ContentRating>
-            <S.ContentRatingText>{contentRating}</S.ContentRatingText>
-            {!utils.isEmpty(utils.getMediaDuration(currentMedia)) && (
+            <S.ContentRatingText>
+              {utils.getMediaDatails?.certification(currentMedia)}
+            </S.ContentRatingText>
+            {!utils.isEmpty(utils.getMediaDatails?.duration(currentMedia)) && (
               <S.ContentRatingText primary>
-                {utils.getMediaDuration(currentMedia)}
+                {utils.getMediaDatails?.duration(currentMedia)}
               </S.ContentRatingText>
             )}
           </S.ContentRating>
