@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Modal from '../Modal';
-
 import Assets from '../../assets';
 import utils from '../../utils';
 
@@ -68,18 +66,19 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
           </S.InfoButton>
         </S.HeroActions>
 
-        {!utils.getMediaDatails?.certification(currentMedia) && utils.isEmpty(params) && (
-          <S.ContentRating>
-            <S.ContentRatingText>
-              {utils.getMediaDatails?.certification(currentMedia)}
-            </S.ContentRatingText>
-            {!utils.isEmpty(utils.getMediaDatails?.duration(currentMedia)) && (
-              <S.ContentRatingText primary>
-                {utils.getMediaDatails?.duration(currentMedia)}
+        {!utils.isEmpty(utils.getMediaDatails?.certification(currentMedia)) &&
+          utils.isEmpty(params) && (
+            <S.ContentRating>
+              <S.ContentRatingText>
+                {utils.getMediaDatails?.certification(currentMedia)}
               </S.ContentRatingText>
-            )}
-          </S.ContentRating>
-        )}
+              {!utils.isEmpty(utils.getMediaDatails?.duration(currentMedia)) && (
+                <S.ContentRatingText primary>
+                  {utils.getMediaDatails?.duration(currentMedia)}
+                </S.ContentRatingText>
+              )}
+            </S.ContentRating>
+          )}
       </S.HeroContent>
 
       {/* {!isEmpty(params) && (
