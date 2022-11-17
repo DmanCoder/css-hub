@@ -66,11 +66,19 @@ const certification = (currentMedia: MediaDetailsTypes) => {
   }
 };
 
+const starAverageRating = (currentMedia: MediaDetailsTypes): number | null => {
+  if (utils.isEmpty(currentMedia)) return null;
+  const average = Math.floor(currentMedia?.vote_average / 2);
+  const ratings = average;
+  return ratings;
+};
+
 const getMediaDatails = {
   geners,
   date,
   duration,
   certification,
+  starAverageRating,
 };
 
 export default getMediaDatails;

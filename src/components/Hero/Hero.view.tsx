@@ -36,10 +36,11 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
         {!utils.isEmpty(params) && (
           <S.MediaDetail>
             <S.MediaDetailData>
-              <Assets.Icons.Star />
-              <Assets.Icons.Star />
-              <Assets.Icons.Star />
-              <Assets.Icons.Star />
+              {[...Array(utils.getMediaDatails?.starAverageRating(currentMedia))].map(
+                (item, index) => (
+                  <Assets.Icons.Star key={index} />
+                ),
+              )}
             </S.MediaDetailData>
             <S.MediaDetailData>{utils.getMediaDatails?.date(currentMedia)}</S.MediaDetailData>
             <S.MediaDetailData>{utils.getMediaDatails?.geners(currentMedia)}</S.MediaDetailData>
