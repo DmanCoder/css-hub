@@ -167,26 +167,31 @@ export const Title = styled.h2`
 `;
 
 export const MediaDetail = styled.div`
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 
   ${immaFlex({ align: 'center' })}
-
-  svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    fill: ${({ theme }) => theme.colors.primary};
-
-    @media ${({ theme }) => theme.mediaQ.tablet45} {
-      width: 3.2rem;
-      height: 3.2rem;
-    }
-  }
 `;
 
 export const MediaDetailData = styled.span`
   font-size: 1.3rem;
   margin-right: 1rem;
+
+  &:not(:first-child) {
+    position: relative;
+    bottom: 0.2rem;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    fill: ${({ theme }) => theme.colors.primary};
+
+    @media ${({ theme }) => theme.mediaQ.tablet45} {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
 `;
 
 export const Description = styled.p`
