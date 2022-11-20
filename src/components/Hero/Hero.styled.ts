@@ -202,7 +202,7 @@ export const MediaDetailStarsPrimary = styled.span`
 
 export const MediaDetailStarsSecondary = styled.span`
   svg {
-    fill: ${({ theme }) => theme.colors.iconPrimary};
+    fill: ${({ theme }) => theme.colors.bgPrimaryInverse};
     opacity: 0.3;
   }
 `;
