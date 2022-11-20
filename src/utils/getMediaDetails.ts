@@ -73,7 +73,7 @@ const starAverageRating = (currentMedia: MediaDetailsTypes): number => {
   return ratings;
 };
 
-const getMediaDatails = {
+const getMediaDetails = {
   geners,
   date,
   duration,
@@ -81,4 +81,4 @@ const getMediaDatails = {
   starAverageRating,
 };
 
-export default getMediaDatails;
+export default getMediaDetails;

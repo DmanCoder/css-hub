@@ -16,7 +16,7 @@ import imageError from './imageError';
 import getAverageColor from './getAverageColor';
 import getMediaTypeFromUrlPath from './getMediaTypeFromUrlPath';
 import getMediaRatings from './getMediaRatings';
-import getMediaDatails from './getMediaDatails';
+import getMediaDetails from './getMediaDetails';
 import difference from './difference';
 
 const utils = {
@@ -39,7 +39,7 @@ const utils = {
   getAverageColor,
   getMediaTypeFromUrlPath,
   getMediaRatings,
-  getMediaDatails,
+  getMediaDetails,
   difference,
 };
 

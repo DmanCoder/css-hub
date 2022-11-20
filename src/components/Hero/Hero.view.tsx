@@ -36,7 +36,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
         {!utils.isEmpty(params) && (
           <S.MediaDetail>
             <S.MediaDetailData>
-              {[...Array(utils.getMediaDatails?.starAverageRating(currentMedia))].map(
+              {[...Array(utils.getMediaDetails?.starAverageRating(currentMedia))].map(
                 (item, index) => (
                   <S.MediaDetailStarsPrimary key={index}>
                     <Assets.Icons.Star />
@@ -46,7 +46,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
 
               {[
                 ...Array(
-                  utils.difference(utils.getMediaDatails?.starAverageRating(currentMedia), 5),
+                  utils.difference(utils.getMediaDetails?.starAverageRating(currentMedia), 5),
                 ),
               ].map((item, index) => {
                 return (
@@ -56,9 +56,9 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
                 );
               })}
             </S.MediaDetailData>
-            <S.MediaDetailData>{utils.getMediaDatails?.date(currentMedia)}</S.MediaDetailData>
-            <S.MediaDetailData>{utils.getMediaDatails?.geners(currentMedia)}</S.MediaDetailData>
-            <S.MediaDetailData>{utils.getMediaDatails?.duration(currentMedia)}</S.MediaDetailData>
+            <S.MediaDetailData>{utils.getMediaDetails?.date(currentMedia)}</S.MediaDetailData>
+            <S.MediaDetailData>{utils.getMediaDetails?.geners(currentMedia)}</S.MediaDetailData>
+            <S.MediaDetailData>{utils.getMediaDetails?.duration(currentMedia)}</S.MediaDetailData>
           </S.MediaDetail>
         )}
 
@@ -81,15 +81,15 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
           </S.InfoButton>
         </S.HeroActions>
 
-        {!utils.isEmpty(utils.getMediaDatails?.certification(currentMedia)) &&
+        {!utils.isEmpty(utils.getMediaDetails?.certification(currentMedia)) &&
           utils.isEmpty(params) && (
             <S.ContentRating>
               <S.ContentRatingText>
-                {utils.getMediaDatails?.certification(currentMedia)}
+                {utils.getMediaDetails?.certification(currentMedia)}
               </S.ContentRatingText>
-              {!utils.isEmpty(utils.getMediaDatails?.duration(currentMedia)) && (
+              {!utils.isEmpty(utils.getMediaDetails?.duration(currentMedia)) && (
                 <S.ContentRatingText primary>
-                  {utils.getMediaDatails?.duration(currentMedia)}
+                  {utils.getMediaDetails?.duration(currentMedia)}
                 </S.ContentRatingText>
               )}
             </S.ContentRating>
