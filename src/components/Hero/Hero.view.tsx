@@ -38,9 +38,23 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
             <S.MediaDetailData>
               {[...Array(utils.getMediaDatails?.starAverageRating(currentMedia))].map(
                 (item, index) => (
-                  <Assets.Icons.Star key={index} />
+                  <S.MediaDetailStarsPrimary key={index}>
+                    <Assets.Icons.Star />
+                  </S.MediaDetailStarsPrimary>
                 ),
               )}
+
+              {[
+                ...Array(
+                  utils.difference(utils.getMediaDatails?.starAverageRating(currentMedia), 5),
+                ),
+              ].map((item, index) => {
+                return (
+                  <S.MediaDetailStarsSecondary key={`${index}-stars-left`}>
+                    <Assets.Icons.Star />
+                  </S.MediaDetailStarsSecondary>
+                );
+              })}
             </S.MediaDetailData>
             <S.MediaDetailData>{utils.getMediaDatails?.date(currentMedia)}</S.MediaDetailData>
             <S.MediaDetailData>{utils.getMediaDatails?.geners(currentMedia)}</S.MediaDetailData>

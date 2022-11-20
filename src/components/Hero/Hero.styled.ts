@@ -194,6 +194,18 @@ export const MediaDetailData = styled.span`
   }
 `;
 
+export const MediaDetailStarsPrimary = styled.span`
+  svg {
+    fill: yellow !important;
+  }
+`;
+
+export const MediaDetailStarsSecondary = styled.span`
+  svg {
+    fill: red !important;
+  }
+`;
+
 export const Description = styled.p`
   max-width: 42rem;
   margin-bottom: 2.5rem;

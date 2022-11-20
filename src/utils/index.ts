@@ -17,6 +17,7 @@ import getAverageColor from './getAverageColor';
 import getMediaTypeFromUrlPath from './getMediaTypeFromUrlPath';
 import getMediaRatings from './getMediaRatings';
 import getMediaDatails from './getMediaDatails';
+import difference from './difference';
 
 const utils = {
   isEmpty,
@@ -39,6 +40,7 @@ const utils = {
   getMediaTypeFromUrlPath,
   getMediaRatings,
   getMediaDatails,
+  difference,
 };
 
 export default utils;

@@ -66,8 +66,8 @@ const certification = (currentMedia: MediaDetailsTypes) => {
   }
 };
 
-const starAverageRating = (currentMedia: MediaDetailsTypes): number | null => {
-  if (utils.isEmpty(currentMedia)) return null;
+const starAverageRating = (currentMedia: MediaDetailsTypes): number => {
+  if (utils.isEmpty(currentMedia)) return 0;
   const average = Math.floor(currentMedia?.vote_average / 2);
   const ratings = average;
   return ratings;
