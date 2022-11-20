@@ -6,6 +6,7 @@ import utils from '../../utils';
 import { IHeroProps } from './Hero.types';
 import useHero from './useHero';
 import * as S from './Hero.styled';
+import HeroGallery from '../HeroGallery';
 
 // TODO: Change color of LOGO base on selected network id | Gallery title bottom border
 const Hero: React.FC<IHeroProps> = (): JSX.Element => {
@@ -57,9 +58,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
           <S.MediaDetailInfo>
             <S.MediaDetailData>{utils.getMediaDetails?.date(currentMedia)}</S.MediaDetailData>
             <S.MediaDetailData>{utils.getMediaDetails?.genres(currentMedia)}</S.MediaDetailData>
-            {!utils.isEmpty(params) && (
-              <S.MediaDetailData>{utils.getMediaDetails?.duration(currentMedia)}</S.MediaDetailData>
-            )}
+            <S.MediaDetailData>{utils.getMediaDetails?.duration(currentMedia)}</S.MediaDetailData>
           </S.MediaDetailInfo>
         </S.MediaDetails>
 
@@ -99,15 +98,7 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
           )}
       </S.HeroContent>
 
-      {/* {!isEmpty(params) && (
-        <S.HeroImages>
-          <S.Thmubnails src='https://image.tmdb.org/t/p/w500//dc9IY0ZT2T3gw0RfjmQdsoWp992.jpg'></S.Thmubnails>
-          <S.Thmubnails src='https://image.tmdb.org/t/p/w500//dc9IY0ZT2T3gw0RfjmQdsoWp992.jpg'></S.Thmubnails>
-          <S.Thmubnails src='https://image.tmdb.org/t/p/w500//dc9IY0ZT2T3gw0RfjmQdsoWp992.jpg'></S.Thmubnails>
-          <S.Thmubnails src='https://image.tmdb.org/t/p/w500//dc9IY0ZT2T3gw0RfjmQdsoWp992.jpg'></S.Thmubnails>
-          <S.Thmubnails src='https://image.tmdb.org/t/p/w500//dc9IY0ZT2T3gw0RfjmQdsoWp992.jpg'></S.Thmubnails>
-        </S.HeroImages>
-      )} */}
+      {!utils.isEmpty(params) && <HeroGallery />}
     </S.HeroWrapper>
   );
 };
