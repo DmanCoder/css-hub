@@ -175,6 +175,7 @@ export const MediaDetail = styled.div`
 export const MediaDetailData = styled.span`
   font-size: 1.3rem;
   margin-right: 1rem;
+  white-space: nowrap;
 
   &:not(:first-child) {
     position: relative;

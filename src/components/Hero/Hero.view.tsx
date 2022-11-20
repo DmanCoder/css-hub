@@ -33,34 +33,30 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
 
         <S.Title>{currentMedia?.name || currentMedia?.title}</S.Title>
 
-        {!utils.isEmpty(params) && (
-          <S.MediaDetail>
-            <S.MediaDetailData>
-              {[...Array(utils.getMediaDetails?.starAverageRating(currentMedia))].map(
-                (item, index) => (
-                  <S.MediaDetailStarsPrimary key={index}>
-                    <Assets.Icons.Star />
-                  </S.MediaDetailStarsPrimary>
-                ),
-              )}
+        <S.MediaDetail>
+          <S.MediaDetailData>
+            {[...Array(utils.getMediaDetails?.starAverageRating(currentMedia))].map(
+              (item, index) => (
+                <S.MediaDetailStarsPrimary key={index}>
+                  <Assets.Icons.Star />
+                </S.MediaDetailStarsPrimary>
+              ),
+            )}
 
-              {[
-                ...Array(
-                  utils.difference(utils.getMediaDetails?.starAverageRating(currentMedia), 5),
-                ),
-              ].map((item, index) => {
-                return (
-                  <S.MediaDetailStarsSecondary key={`${index}-stars-left`}>
-                    <Assets.Icons.Star />
-                  </S.MediaDetailStarsSecondary>
-                );
-              })}
-            </S.MediaDetailData>
-            <S.MediaDetailData>{utils.getMediaDetails?.date(currentMedia)}</S.MediaDetailData>
-            <S.MediaDetailData>{utils.getMediaDetails?.geners(currentMedia)}</S.MediaDetailData>
-            <S.MediaDetailData>{utils.getMediaDetails?.duration(currentMedia)}</S.MediaDetailData>
-          </S.MediaDetail>
-        )}
+            {[
+              ...Array(utils.difference(utils.getMediaDetails?.starAverageRating(currentMedia), 5)),
+            ].map((item, index) => {
+              return (
+                <S.MediaDetailStarsSecondary key={`${index}-stars-left`}>
+                  <Assets.Icons.Star />
+                </S.MediaDetailStarsSecondary>
+              );
+            })}
+          </S.MediaDetailData>
+          <S.MediaDetailData>{utils.getMediaDetails?.date(currentMedia)}</S.MediaDetailData>
+          <S.MediaDetailData>{utils.getMediaDetails?.genres(currentMedia)}</S.MediaDetailData>
+          <S.MediaDetailData>{utils.getMediaDetails?.duration(currentMedia)}</S.MediaDetailData>
+        </S.MediaDetail>
 
         <S.Description>{description}</S.Description>
 

@@ -2,7 +2,7 @@ import { store } from '../redux/store';
 import { MediaDetailsTypes, MediaGenres } from '../typescriptGlobals/types';
 import utils from '.';
 
-const geners = (currentMedia: MediaDetailsTypes) => {
+const genres = (currentMedia: MediaDetailsTypes) => {
   if (utils.isEmpty(currentMedia)) return null;
   const genres = currentMedia?.genres || [];
 
@@ -34,10 +34,14 @@ const duration = (currentMedia: MediaDetailsTypes) => {
     const duration = utils.timeConverter(durationInMinutes);
     const hours = duration[0];
     const minutes = duration[1] === 0 ? '' : ` ${duration[1]}m`;
+    console.log(`${hours}h${minutes}`, '`${hours}h${minutes}`');
     return `${hours}h${minutes}`;
   } else {
+    console.log(durationInMinutes, 'durationInMinutes');
     const duration = utils.timeConverter(durationInMinutes);
     const minutes = duration[1];
+    console.log(`${minutes}}`, '`${hours}h${minutes}`', duration);
+
     return `${minutes}m`;
   }
 };
@@ -74,7 +78,7 @@ const starAverageRating = (currentMedia: MediaDetailsTypes): number => {
 };
 
 const getMediaDetails = {
-  geners,
+  genres,
   date,
   duration,
   certification,
