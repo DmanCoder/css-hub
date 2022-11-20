@@ -196,13 +196,14 @@ export const MediaDetailData = styled.span`
 
 export const MediaDetailStarsPrimary = styled.span`
   svg {
-    fill: yellow !important;
+    fill: ${({ theme }) => theme.colors.primary};
   }
 `;
 
 export const MediaDetailStarsSecondary = styled.span`
   svg {
-    fill: red !important;
+    fill: ${({ theme }) => theme.colors.iconPrimary};
+    opacity: 0.3;
   }
 `;
 
