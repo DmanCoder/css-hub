@@ -33,8 +33,8 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
 
         <S.Title>{currentMedia?.name || currentMedia?.title}</S.Title>
 
-        <S.MediaDetail>
-          <S.MediaDetailData>
+        <S.MediaDetails>
+          <S.MediaDetailStars>
             {[...Array(utils.getMediaDetails?.starAverageRating(currentMedia))].map(
               (item, index) => (
                 <S.MediaDetailStarsPrimary key={index}>
@@ -52,30 +52,37 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
                 </S.MediaDetailStarsSecondary>
               );
             })}
-          </S.MediaDetailData>
-          <S.MediaDetailData>{utils.getMediaDetails?.date(currentMedia)}</S.MediaDetailData>
-          <S.MediaDetailData>{utils.getMediaDetails?.genres(currentMedia)}</S.MediaDetailData>
-          <S.MediaDetailData>{utils.getMediaDetails?.duration(currentMedia)}</S.MediaDetailData>
-        </S.MediaDetail>
+          </S.MediaDetailStars>
+
+          <S.MediaDetailInfo>
+            <S.MediaDetailData>{utils.getMediaDetails?.date(currentMedia)}</S.MediaDetailData>
+            <S.MediaDetailData>{utils.getMediaDetails?.genres(currentMedia)}</S.MediaDetailData>
+            {!utils.isEmpty(params) && (
+              <S.MediaDetailData>{utils.getMediaDetails?.duration(currentMedia)}</S.MediaDetailData>
+            )}
+          </S.MediaDetailInfo>
+        </S.MediaDetails>
 
         <S.Description>{description}</S.Description>
 
-        <S.HeroActions>
-          {/* TODO: PLAY OR STOP/RESET TRAILER */}
-          <S.PlayButton title={utils.translate('translateHero.playTrailer')}>
-            {utils.translate('translateHero.playTrailer')}
-          </S.PlayButton>
+        {utils.isEmpty(params) && (
+          <S.HeroActions>
+            {/* TODO: PLAY OR STOP/RESET TRAILER */}
+            <S.PlayButton title={utils.translate('translateHero.playTrailer')}>
+              {utils.translate('translateHero.playTrailer')}
+            </S.PlayButton>
 
-          <S.InfoButton
-            onClick={onNavigateTo({
-              pathTo: `/media-details/${currentMedia?.appended_media_type}/${currentMedia?.id}`,
-            })}
-            title={`${utils.translate('translateHero.moreInfo')} ${
-              currentMedia?.name || currentMedia?.title
-            }`}>
-            <Assets.Icons.GraphicEQ />
-          </S.InfoButton>
-        </S.HeroActions>
+            <S.InfoButton
+              onClick={onNavigateTo({
+                pathTo: `/media-details/${currentMedia?.appended_media_type}/${currentMedia?.id}`,
+              })}
+              title={`${utils.translate('translateHero.moreInfo')} ${
+                currentMedia?.name || currentMedia?.title
+              }`}>
+              <Assets.Icons.GraphicEQ />
+            </S.InfoButton>
+          </S.HeroActions>
+        )}
 
         {!utils.isEmpty(utils.getMediaDetails?.certification(currentMedia)) &&
           utils.isEmpty(params) && (

@@ -166,21 +166,15 @@ export const Title = styled.h2`
   }
 `;
 
-export const MediaDetail = styled.div`
+export const MediaDetails = styled.div`
   margin-bottom: 1rem;
 
   ${immaFlex({ align: 'center' })}
 `;
 
-export const MediaDetailData = styled.span`
-  font-size: 1.3rem;
-  margin-right: 1rem;
+export const MediaDetailStars = styled.div`
   white-space: nowrap;
-
-  &:not(:first-child) {
-    position: relative;
-    bottom: 0.2rem;
-  }
+  margin-right: 1rem;
 
   svg {
     width: 2rem;
@@ -193,6 +187,20 @@ export const MediaDetailData = styled.span`
       height: 2.5rem;
     }
   }
+`;
+
+export const MediaDetailData = styled.span`
+  font-size: 1.3rem;
+  margin-right: 1rem;
+  white-space: nowrap;
+  position: relative;
+  bottom: 0.4rem;
+`;
+
+export const MediaDetailInfo = styled.div`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const MediaDetailStarsPrimary = styled.span`
