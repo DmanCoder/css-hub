@@ -82,21 +82,20 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
             </S.InfoButton>
           </S.HeroActions>
         )}
-
-        {!utils.isEmpty(utils.getMediaDetails?.certification(currentMedia)) &&
-          utils.isEmpty(params) && (
-            <S.ContentRating>
-              <S.ContentRatingText>
-                {utils.getMediaDetails?.certification(currentMedia)}
-              </S.ContentRatingText>
-              {!utils.isEmpty(utils.getMediaDetails?.duration(currentMedia)) && (
-                <S.ContentRatingText primary>
-                  {utils.getMediaDetails?.duration(currentMedia)}
-                </S.ContentRatingText>
-              )}
-            </S.ContentRating>
-          )}
       </S.HeroContent>
+
+      {!utils.isEmpty(utils.getMediaDetails?.certification(currentMedia)) && utils.isEmpty(params) && (
+        <S.ContentRating>
+          <S.ContentRatingText>
+            {utils.getMediaDetails?.certification(currentMedia)}
+          </S.ContentRatingText>
+          {!utils.isEmpty(utils.getMediaDetails?.duration(currentMedia)) && (
+            <S.ContentRatingText primary>
+              {utils.getMediaDetails?.duration(currentMedia)}
+            </S.ContentRatingText>
+          )}
+        </S.ContentRating>
+      )}
 
       {!utils.isEmpty(params) && <HeroGallery />}
     </S.HeroWrapper>

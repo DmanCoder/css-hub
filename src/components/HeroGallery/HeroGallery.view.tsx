@@ -15,6 +15,15 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
       <h2 style={{ color: 'white' }}>Hero Gallery</h2>
       <h2 style={{ color: 'white' }}>Hero Gallery</h2>
       <h2 style={{ color: 'white' }}>Hero Gallery</h2>
+      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
+      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
+      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
+      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
+      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
+      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
+      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
+      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
+      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
       {/* {!isEmpty(params) && (
         <S.HeroImages>
           <S.Thmubnails src='https://image.tmdb.org/t/p/w500//dc9IY0ZT2T3gw0RfjmQdsoWp992.jpg'></S.Thmubnails>

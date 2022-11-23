@@ -13,7 +13,7 @@ export const HeroWrapper = styled.figure`
   margin-bottom: -4rem;
   background: ${({ theme }) => theme.colors.bgTertiary};
   color: ${({ theme }) => theme.colors.textPrimary};
-  ${immaFlex({ align: 'center' })}
+  ${immaFlex({ align: 'center', just: 'space-between' })}
 
   @media ${({ theme }) => theme.mediaQ.tablet45} {
     padding-left: 2.2vw;
@@ -52,24 +52,24 @@ export const Overlay = styled.div`
 export const ContentRating = styled.div`
   display: none;
   @media ${({ theme }) => theme.mediaQ.tablet45} {
+    margin-top: auto;
+    margin-bottom: 30vh;
+    margin-bottom: calc(var(--vh, 1vh) * 30);
     display: block;
     z-index: 10;
-    position: absolute;
-    right: 0;
-    bottom: 15rem;
-    bottom: 0;
-    padding: 0.5rem;
     border-left: 0.2rem solid ${({ theme }) => theme.colors.bgPrimaryInverse};
     background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimary, alpha: 0.3 })};
     opacity: 0.75;
     backdrop-filter: blur(5px);
-    right: 0;
-    ${immaFlex({ align: 'center' })}
   }
 `;
 
 export const ContentRatingText = styled.div<{ primary?: boolean }>`
   display: inline-block;
+
+  &:first-child {
+    margin-left: 0.5rem;
+  }
 
   ${({ primary }) =>
     primary &&
@@ -90,7 +90,12 @@ export const ContentRatingText = styled.div<{ primary?: boolean }>`
 
 export const HeroContent = styled.div`
   position: relative;
-  width: 100%;
+  @media ${({ theme }) => theme.mediaQ.tablet45} {
+    margin-top: auto;
+    margin-bottom: 30vh;
+    margin-bottom: calc(var(--vh, 1vh) * 30);
+    ${immaFlex({ just: 'space-between', dir: 'column' })};
+  }
 `;
 
 export const HeroImages = styled.figure`
@@ -192,15 +197,12 @@ export const MediaDetailStars = styled.div`
 export const MediaDetailData = styled.span`
   font-size: 1.3rem;
   margin-right: 1rem;
-  white-space: nowrap;
   position: relative;
   bottom: 0.4rem;
 `;
 
 export const MediaDetailInfo = styled.div`
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  ${ellipsis({ numberOfLinesToShow: 1 })};
 `;
 
 export const MediaDetailStarsPrimary = styled.span`
@@ -226,6 +228,7 @@ export const Description = styled.p`
   @media ${({ theme }) => theme.mediaQ.tablet45} {
     max-width: 50rem;
     -webkit-line-clamp: 5;
+    margin-bottom: 0;
   }
 
   @media ${({ theme }) => theme.mediaQ.desktop90} {
@@ -235,6 +238,7 @@ export const Description = styled.p`
 `;
 
 export const HeroActions = styled.div`
+  margin-top: 2rem;
   ${immaFlex({ align: 'center' })}
 `;
 
