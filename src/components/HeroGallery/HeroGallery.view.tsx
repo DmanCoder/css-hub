@@ -10,29 +10,17 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
 
   return (
     <S.Wrapper id='hero'>
-      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
-      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
-      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
-      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
-      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
-      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
-      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
-      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
-      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
-      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
-      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
-      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
-      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
-      <h2 style={{ color: 'white' }}>Hero Gallery</h2>
-      {/* {!isEmpty(params) && (
-        <S.HeroImages>
-          <S.Thmubnails src='https://image.tmdb.org/t/p/w500//dc9IY0ZT2T3gw0RfjmQdsoWp992.jpg'></S.Thmubnails>
-          <S.Thmubnails src='https://image.tmdb.org/t/p/w500//dc9IY0ZT2T3gw0RfjmQdsoWp992.jpg'></S.Thmubnails>
-          <S.Thmubnails src='https://image.tmdb.org/t/p/w500//dc9IY0ZT2T3gw0RfjmQdsoWp992.jpg'></S.Thmubnails>
-          <S.Thmubnails src='https://image.tmdb.org/t/p/w500//dc9IY0ZT2T3gw0RfjmQdsoWp992.jpg'></S.Thmubnails>
-          <S.Thmubnails src='https://image.tmdb.org/t/p/w500//dc9IY0ZT2T3gw0RfjmQdsoWp992.jpg'></S.Thmubnails>
-        </S.HeroImages>
-      )} */}
+      <S.Thumbnails>
+        <S.Thumbnail src='https://images.pexels.com/photos/14271136/pexels-photo-14271136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></S.Thumbnail>
+        <S.Thumbnail src='https://images.pexels.com/photos/14271136/pexels-photo-14271136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></S.Thumbnail>
+        <S.Thumbnail src='https://images.pexels.com/photos/14271136/pexels-photo-14271136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></S.Thumbnail>
+        <S.Thumbnail src='https://images.pexels.com/photos/14271136/pexels-photo-14271136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></S.Thumbnail>
+        <S.Thumbnail src='https://images.pexels.com/photos/14271136/pexels-photo-14271136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></S.Thumbnail>
+      </S.Thumbnails>
+      <S.Actions>
+        <button>next</button>
+        <button>prev</button>
+      </S.Actions>
     </S.Wrapper>
   );
 };
