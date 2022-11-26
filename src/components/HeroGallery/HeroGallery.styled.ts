@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
     margin-top: auto;
     margin-bottom: 30vh;
     margin-bottom: calc(var(--vh, 1vh) * 30);
-    ${immaFlex({ align: 'center' })};
+    ${immaFlex({ dir: 'column' })};
   }
 
   @media ${({ theme }) => theme.mediaQ.desktop90} {
@@ -21,6 +21,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Thumbnails = styled.figure`
+  margin-right: auto;
   ${immaFlex({ align: 'center' })}
 `;
 
@@ -43,5 +44,8 @@ export const Thumbnail = styled.img`
 `;
 
 export const Actions = styled.div`
+  position: absolute;
   background-color: red;
+  bottom: -5vh;
+  left: 0;
 `;
