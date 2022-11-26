@@ -11,6 +11,7 @@ import HeroGallery from '../HeroGallery';
 // TODO: Change color of LOGO base on selected network id | Gallery title bottom border
 const Hero: React.FC<IHeroProps> = (): JSX.Element => {
   const { description, currentMedia, networkName, backdropImage, onNavigateTo, params } = useHero();
+  const [temp, setTemp] = React.useState<boolean>(false);
 
   return (
     <S.HeroWrapper id='hero'>
@@ -64,13 +65,14 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
 
         <S.Description>{description}</S.Description>
 
-        {utils.isEmpty(params) && (
-          <S.HeroActions>
-            {/* TODO: PLAY OR STOP/RESET TRAILER */}
-            <S.PlayButton title={utils.translate('translateHero.playTrailer')}>
-              {utils.translate('translateHero.playTrailer')}
-            </S.PlayButton>
+        <S.HeroActions>
+          {/* TODO: PLAY OR STOP/RESET TRAILER */}
+          <S.PlayButton title={utils.translate('translateHero.playTrailer')}>
+            <Assets.Icons.Play />
+            {utils.translate('translateHero.playTrailer')}
+          </S.PlayButton>
 
+          {utils.isEmpty(params) ? (
             <S.InfoButton
               onClick={onNavigateTo({
                 pathTo: `/media-details/${currentMedia?.appended_media_type}/${currentMedia?.id}`,
@@ -80,8 +82,16 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
               }`}>
               <Assets.Icons.GraphicEQ />
             </S.InfoButton>
-          </S.HeroActions>
-        )}
+          ) : (
+            <S.InfoButton
+              onClick={() => setTemp(!temp)}
+              title={`${utils.translate('translateHero.moreInfo')} ${
+                currentMedia?.name || currentMedia?.title
+              }`}>
+              {temp ? <Assets.Icons.PlusHeartFill /> : <Assets.Icons.PlusHeart />}
+            </S.InfoButton>
+          )}
+        </S.HeroActions>
       </S.HeroContent>
 
       {!utils.isEmpty(utils.getMediaDetails?.certification(currentMedia)) && utils.isEmpty(params) && (

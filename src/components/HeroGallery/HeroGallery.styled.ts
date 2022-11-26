@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   @media ${({ theme }) => theme.mediaQ.tablet45} {
     position: relative;
     z-index: 10;
-    width: 40%;
+    width: 45%;
     z-index: 1000;
     align-items: flex-end;
     margin-top: auto;
@@ -26,10 +26,12 @@ export const Thumbnails = styled.figure`
 
 export const Thumbnail = styled.img`
   @media ${({ theme }) => theme.mediaQ.tablet45} {
-    width: 20rem;
-    height: 30rem;
+    width: 17.5rem;
+    height: 25rem;
     border-radius: 1rem;
     display: inline-block;
+    border: 0.1rem solid ${({ theme }) => theme.colors.bgPrimaryInverse};
+    cursor: pointer;
 
     &:not(:last-child) {
       margin-right: 2rem;
@@ -41,5 +43,5 @@ export const Thumbnail = styled.img`
 `;
 
 export const Actions = styled.div`
-  color: white;
+  background-color: red;
 `;

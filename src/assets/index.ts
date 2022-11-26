@@ -9,6 +9,8 @@ import Play from './icons/Play';
 import Shuffle from './icons/Shuffle';
 import DoubleArrow from './icons/DoubleArrow';
 import Star from './icons/Star';
+import PlusHeart from './icons/PlusHeart';
+import PlusHeartFill from './icons/PlusHeartFill';
 
 import Disney from './logos/DisneyPlus';
 import PrimeVideos from './logos/PrimeVideos';
@@ -43,6 +45,8 @@ const Assets: AssetsTypes = {
     Shuffle,
     DoubleArrow,
     Star,
+    PlusHeart,
+    PlusHeartFill,
   },
   imgs: {
     AustraliaFlag,

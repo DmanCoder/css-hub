@@ -7,6 +7,8 @@ import { IGraphEQProps } from './icons/GraphicEQ';
 import { IHorizDropdownProps } from './icons/MoreHoriz';
 import { INotificationProps } from './icons/Notification';
 import { IPlayProps } from './icons/Play';
+import { IPlusHeartProps } from './icons/PlusHeart';
+import { IPlusHeartFillProps } from './icons/PlusHeartFill';
 import { ISearchProps } from './icons/Search';
 import { IShuffleProps } from './icons/Shuffle';
 import { IStarProps } from './icons/Star';
@@ -36,6 +38,8 @@ export type IconsTypes = {
   Shuffle: React.FC<IShuffleProps>;
   DoubleArrow: React.FC<IDoubleArrowProps>;
   Star: React.FC<IStarProps>;
+  PlusHeart: React.FC<IPlusHeartProps>;
+  PlusHeartFill: React.FC<IPlusHeartFillProps>;
 };
 
 export type ImgsTypes = {

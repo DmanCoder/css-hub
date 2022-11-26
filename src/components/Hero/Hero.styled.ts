@@ -262,6 +262,18 @@ export const PlayButton = styled(Button)`
     width: 15.5rem;
     height: 4rem;
   }
+
+  svg {
+    fill: ${({ theme }) => theme.colors.bgPrimaryInverse};
+    height: 2.2rem;
+    width: 2.2rem;
+    margin-right: 0.25rem;
+
+    @media ${({ theme }) => theme.mediaQ.laptop64} {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+  }
 `;
 
 export const InfoButton = styled(Button)`
@@ -278,14 +290,13 @@ export const InfoButton = styled(Button)`
     width: 4rem;
   }
 
-  & svg {
-    height: 2.2rem;
-    width: 2.2rem;
-    position: relative;
+  svg {
+    width: 2rem;
+    height: 2rem;
 
     @media ${({ theme }) => theme.mediaQ.laptop64} {
-      height: 2rem;
-      width: 2rem;
+      /* width: 2.5rem; */
+      /* height: 2.5rem; */
     }
   }
 `;
