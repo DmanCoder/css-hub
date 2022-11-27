@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Assets from '../../assets';
+
 import { IHeroProps } from './HeroGallery.types';
 import useHero from './useHeroGallery';
 import * as S from './HeroGallery.styled';
@@ -17,10 +19,25 @@ const Hero: React.FC<IHeroProps> = (): JSX.Element => {
         <S.Thumbnail src='https://images.pexels.com/photos/14271136/pexels-photo-14271136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></S.Thumbnail>
         <S.Thumbnail src='https://images.pexels.com/photos/14271136/pexels-photo-14271136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></S.Thumbnail>
       </S.Thumbnails>
-      <S.Actions>
-        <button>next</button>
-        <button>prev</button>
-      </S.Actions>
+
+      <S.TempName>
+        <S.Actions>
+          <S.ActionButton>
+            <Assets.Icons.PrevArrow />
+          </S.ActionButton>
+          <S.ActionButton>
+            <Assets.Icons.NextArrow />
+          </S.ActionButton>
+        </S.Actions>
+
+        <S.ProgressBar>
+          <S.ProgressBarIndicator />
+        </S.ProgressBar>
+
+        <S.ProgressNumber>
+          <S.ProgressNumberNum>01</S.ProgressNumberNum>
+        </S.ProgressNumber>
+      </S.TempName>
     </S.Wrapper>
   );
 };

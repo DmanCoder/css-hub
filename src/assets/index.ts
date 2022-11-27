@@ -11,6 +11,8 @@ import DoubleArrow from './icons/DoubleArrow';
 import Star from './icons/Star';
 import PlusHeart from './icons/PlusHeart';
 import PlusHeartFill from './icons/PlusHeartFill';
+import NextArrow from './icons/NextArrow';
+import PrevArrow from './icons/PrevArrow';
 
 import Disney from './logos/DisneyPlus';
 import PrimeVideos from './logos/PrimeVideos';
@@ -47,6 +49,8 @@ const Assets: AssetsTypes = {
     Star,
     PlusHeart,
     PlusHeartFill,
+    PrevArrow,
+    NextArrow,
   },
   imgs: {
     AustraliaFlag,

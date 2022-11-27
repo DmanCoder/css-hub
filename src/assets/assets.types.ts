@@ -5,10 +5,12 @@ import { IDoubleArrowProps } from './icons/DoubleArrow';
 import { IExitProps } from './icons/Exit';
 import { IGraphEQProps } from './icons/GraphicEQ';
 import { IHorizDropdownProps } from './icons/MoreHoriz';
+import { INextArrowProps } from './icons/NextArrow';
 import { INotificationProps } from './icons/Notification';
 import { IPlayProps } from './icons/Play';
 import { IPlusHeartProps } from './icons/PlusHeart';
 import { IPlusHeartFillProps } from './icons/PlusHeartFill';
+import { IPrevArrowProps } from './icons/PrevArrow';
 import { ISearchProps } from './icons/Search';
 import { IShuffleProps } from './icons/Shuffle';
 import { IStarProps } from './icons/Star';
@@ -40,6 +42,8 @@ export type IconsTypes = {
   Star: React.FC<IStarProps>;
   PlusHeart: React.FC<IPlusHeartProps>;
   PlusHeartFill: React.FC<IPlusHeartFillProps>;
+  NextArrow: React.FC<INextArrowProps>;
+  PrevArrow: React.FC<IPrevArrowProps>;
 };
 
 export type ImgsTypes = {
