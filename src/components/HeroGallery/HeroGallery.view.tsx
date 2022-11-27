@@ -8,7 +8,7 @@ import * as S from './HeroGallery.styled';
 
 // TODO: Change color of LOGO base on selected network id | Gallery title bottom border
 const Hero: React.FC<IHeroProps> = (): JSX.Element => {
-  const { test } = useHero();
+  useHero();
 
   return (
     <S.Wrapper id='hero'>

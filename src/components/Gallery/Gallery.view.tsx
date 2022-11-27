@@ -1,12 +1,11 @@
 import React from 'react';
 
-import { GalleryTypes, MediaTypes } from '../../typescriptGlobals/types';
+import { MediaTypes } from '../../typescriptGlobals/types';
 import { imgURL } from '../../api/init';
 
 import { IGalleryProps } from './Gallery.types';
 import useGallery from './useGallery';
 import * as S from './Gallery.styled';
-import { SHUFFLE_NETWORK_ID } from '../../typescriptGlobals/constants';
 
 import utils from '../../utils';
 import Assets from '../../assets';
@@ -17,7 +16,7 @@ import Assets from '../../assets';
 // TODO: https://raddy.dev/blog/netflix-carousel-using-css/
 
 const Gallery: React.FC<IGalleryProps> = ({ section, title }) => {
-  const { networkId, media, onTabClick, onViewMedia, onNavigateTo } = useGallery({ section });
+  const { media, onViewMedia, onNavigateTo } = useGallery({ section });
 
   return (
     <S.Wrapper id={section}>
