@@ -31,6 +31,15 @@ const useHero = (): UseHeroReturnType => {
   });
 
   React.useEffect(() => {
+    const desiredHeightForMediaDetailsPage = 90;
+    const desiredHeightForHomesPage = 100;
+    const galleryHeight = utils.isEmpty(params)
+      ? desiredHeightForHomesPage
+      : desiredHeightForMediaDetailsPage;
+    document.documentElement.style.setProperty('--gh', `${galleryHeight}`); // Set Gallery Height
+  }, []);
+
+  React.useEffect(() => {
     if (!utils.isEmpty(currentMedia)) {
       const imgURL = `${imgFilterURL}/${currentMedia?.backdrop_path}`;
 

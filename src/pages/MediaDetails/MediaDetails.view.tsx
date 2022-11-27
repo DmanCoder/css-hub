@@ -8,6 +8,19 @@ const MediaDetails: React.FC<IMediaDetailsProps> = (): JSX.Element => {
   return (
     <div>
       <Hero />
+      <h3 style={{ color: 'white' }}>TESTING1234</h3>
+      <h3 style={{ color: 'white' }}>TESTING1234</h3>
+      <h3 style={{ color: 'white' }}>TESTING1234</h3>
+      <h3 style={{ color: 'white' }}>TESTING1234</h3>
+      <h3 style={{ color: 'white' }}>TESTING1234</h3>
+      <h3 style={{ color: 'white' }}>TESTING1234</h3>
+      <h3 style={{ color: 'white' }}>TESTING1234</h3>
+      <h3 style={{ color: 'white' }}>TESTING1234</h3>
+      <h3 style={{ color: 'white' }}>TESTING1234</h3>
+      <h3 style={{ color: 'white' }}>TESTING1234</h3>
+      <h3 style={{ color: 'white' }}>TESTING1234</h3>
+      <h3 style={{ color: 'white' }}>TESTING1234</h3>
+      <h3 style={{ color: 'white' }}>TESTING1234</h3>
     </div>
   );
 };
