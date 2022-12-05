@@ -1,6 +1,7 @@
 import { ActionTypes } from '..';
 import {
   MediaAverageColorTypes,
+  MediaDetailsImagesTypes,
   MediaDetailsTypes,
   MediaProductionType,
 } from '../../../typescriptGlobals/types';
@@ -37,13 +38,14 @@ export interface IMediaDetailsRandomNumberAction {
 
 export interface IMediaDetailsImagesAction {
   type: ActionTypes.MEDIA_DETAILS_IMAGES;
-  payload: string[]; // TODO: FIX TYPE LATER
+  payload: MediaDetailsImagesTypes;
 }
 
 export interface IMediaDetailsAction {
   type: ActionTypes.GET_MEDIA_DETAILS;
   payload: MediaDetailsTypes;
 }
+
 export type IMediaDetailDispatchTypes =
   | ISetMediaAverageColorAction
   | ISetMediaBackdropImageAction

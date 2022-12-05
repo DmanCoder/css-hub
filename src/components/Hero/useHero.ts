@@ -8,6 +8,7 @@ import utils from '../../utils';
 import { imgFilterURL } from '../../api/init';
 import React from 'react';
 import {
+  fetchMediaDetailsContentImages,
   setAverageBackgroundColorAXN,
   setBackdropImageAXN,
 } from '../../redux/actions/mediaDetailsActions/mediaDetailsActions';
@@ -55,6 +56,13 @@ const useHero = (): UseHeroReturnType => {
         .catch((e) => {
           console.log(e);
         });
+    }
+  }, [currentMedia]);
+
+  // GET MEDIA IMAGES
+  React.useEffect(() => {
+    if (!utils.isEmpty(currentMedia)) {
+      dispatch(fetchMediaDetailsContentImages(currentMedia));
     }
   }, [currentMedia]);
 

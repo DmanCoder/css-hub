@@ -1,4 +1,8 @@
-import { MediaAverageColorTypes, MediaDetailsTypes } from '../../../typescriptGlobals/types';
+import {
+  MediaAverageColorTypes,
+  MediaDetailsImagesTypes,
+  MediaDetailsTypes,
+} from '../../../typescriptGlobals/types';
 import { ActionTypes } from '../../actions';
 import { IMediaDetailDispatchTypes } from '../../actions/mediaDetailsActions/mediaDetailsActions.types';
 import { IMediaDetailsDefaultState } from './mediaDetailReducer.types';
@@ -8,7 +12,7 @@ const defaultState: IMediaDetailsDefaultState = {
   averageColor: {} as MediaAverageColorTypes,
   currentMedia: {} as MediaDetailsTypes,
   indexPosition: null,
-  images: [],
+  images: {} as MediaDetailsImagesTypes,
 };
 
 const mediaDetailReducer = (
@@ -44,7 +48,7 @@ const mediaDetailReducer = (
     case ActionTypes.GET_MEDIA_CONTENT_RATINGS:
       return {
         ...state,
-        images: action.payload,
+        // images: action.payload,
       };
     default:
       return state;

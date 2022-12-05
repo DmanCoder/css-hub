@@ -7,10 +7,15 @@ import {
   FetchDetailsParamsTypes,
   IMediaContentRatingAction,
   IMediaDetailsAction,
+  IMediaDetailsImagesAction,
   IMediaDetailsRandomNumberAction,
   ISetMediaAverageColorAction,
 } from './mediaDetailsActions.types';
-import { MediaAverageColorTypes, MediaTypes } from '../../../typescriptGlobals/types';
+import {
+  MediaAverageColorTypes,
+  MediaDetailsTypes,
+  MediaTypes,
+} from '../../../typescriptGlobals/types';
 import utils from '../../../utils';
 
 /**
@@ -86,6 +91,32 @@ export const fetchMediaDetailsContentRatings =
         dispatch({
           type: ActionTypes.GET_MEDIA_CONTENT_RATINGS,
           payload: res?.data?.results,
+        });
+      })
+      .catch((err) => {
+        console.log('ERROR...', err);
+      });
+  };
+
+/**
+ * @description Get Current media Images
+ */
+export const fetchMediaDetailsContentImages =
+  (currentMedia: MediaDetailsTypes) => (dispatch: Dispatch<IMediaDetailsImagesAction>) => {
+    const language: string = store.getState().languageRXS;
+    const params = `tv_id=${currentMedia?.id}&season_number=${currentMedia?.number_of_seasons}&number_of_episodes=${currentMedia?.number_of_episodes}&language=${language}&page=1`;
+
+    console.log(currentMedia, params);
+
+    const endPoint = `/api/images/tv/seasons/episode_images?${params}`;
+
+    return dbAPI
+      .get(endPoint)
+      .then((res) => {
+        console.log(res, 'resresresresresresres');
+        dispatch({
+          type: ActionTypes.MEDIA_DETAILS_IMAGES,
+          payload: res?.data,
         });
       })
       .catch((err) => {

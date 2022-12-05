@@ -136,6 +136,25 @@ export type MediaGenres = {
   name: string;
 };
 
+export type MediaImagesTypes = {
+  appended_episode_name: string;
+  appended_vote_average: number;
+  aspect_ratio: number;
+  file_path: string;
+  height: number;
+  iso_639_1: null;
+  vote_average: number;
+  vote_count: number;
+  width: number;
+};
+
+export type MediaDetailsImagesTypes = {
+  appended_name: string;
+  appended_overview: string;
+  appended_vote_average: string;
+  results: MediaImagesTypes[];
+};
+
 export type MediaDetailsTypes = {
   // Movie Detail types
   adult: boolean;
