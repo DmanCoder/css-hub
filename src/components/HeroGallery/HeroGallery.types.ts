@@ -1,5 +1,7 @@
+import { MediaDetailsImagesTypes } from '../../typescriptGlobals/types';
+
 export interface IHeroProps {}
 
 export type UseHeroGalleryReturnType = {
-  test: string;
+  images: MediaDetailsImagesTypes;
 };

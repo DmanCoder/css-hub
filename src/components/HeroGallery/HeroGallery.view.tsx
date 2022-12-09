@@ -3,21 +3,24 @@ import React from 'react';
 import Assets from '../../assets';
 
 import { IHeroProps } from './HeroGallery.types';
-import useHero from './useHeroGallery';
+import useHeroGallery from './useHeroGallery';
 import * as S from './HeroGallery.styled';
+import { imgURL } from '../../api/init';
 
 // TODO: Change color of LOGO base on selected network id | Gallery title bottom border
 const Hero: React.FC<IHeroProps> = (): JSX.Element => {
-  useHero();
+  const { images } = useHeroGallery();
 
   return (
     <S.Wrapper id='hero'>
       <S.Thumbnails>
-        <S.Thumbnail src='https://images.pexels.com/photos/14271136/pexels-photo-14271136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></S.Thumbnail>
-        <S.Thumbnail src='https://images.pexels.com/photos/14271136/pexels-photo-14271136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></S.Thumbnail>
-        <S.Thumbnail src='https://images.pexels.com/photos/14271136/pexels-photo-14271136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></S.Thumbnail>
-        <S.Thumbnail src='https://images.pexels.com/photos/14271136/pexels-photo-14271136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></S.Thumbnail>
-        <S.Thumbnail src='https://images.pexels.com/photos/14271136/pexels-photo-14271136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'></S.Thumbnail>
+        {images?.results?.map((image) => {
+          const width = 'w780';
+          const url = `${imgURL}/${width}/${image.file_path}`;
+          const background = `url('${url}') no-repeat center / cover`;
+
+          return <S.Thumbnail style={{ background }}></S.Thumbnail>;
+        })}
       </S.Thumbnails>
 
       <S.TempName>
