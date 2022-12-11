@@ -30,11 +30,16 @@ export const Thumbnail = styled.div`
     border-radius: 1rem;
     display: inline-block;
     cursor: pointer;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 1) 0px 8px 16px -8px; */
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+      rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+      rgba(0, 0, 0, 0.09) 0px -3px 5px;
     width: 18rem;
     height: 25.5rem;
     border: 0.1rem solid
-      ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimaryInverse, alpha: 0.3 })};
+      ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimaryInverse, alpha: 1 })};
 
     &:not(:last-child) {
       margin-right: 2rem;
@@ -61,8 +66,7 @@ export const Actions = styled.div`
 
 export const ActionButton = styled.button`
   background: none;
-  border: 0.1rem solid
-    ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimaryInverse, alpha: 0.3 })};
+  border: 0.15rem solid ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimaryInverse, alpha: 1 })};
   border-radius: 100%;
   cursor: pointer;
   height: 5.5rem;
@@ -73,7 +77,10 @@ export const ActionButton = styled.button`
   svg {
     width: 1.8rem;
     height: 1.8rem;
-    fill: ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimaryInverse, alpha: 0.3 })} !important;
+
+    path {
+      fill: ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimaryInverse, alpha: 1 })} !important;
+    }
   }
 
   &:last-child {
@@ -82,22 +89,23 @@ export const ActionButton = styled.button`
 `;
 
 export const ProgressBar = styled.div`
-  height: 0.2rem;
+  height: 0.15rem;
+  border-radius: 100rem;
   width: 62%;
-  background: ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimaryInverse, alpha: 0.3 })};
+  background: ${({ theme }) => hex2rgba({ hex: theme.colors.bgPrimaryInverse, alpha: 1 })};
 `;
 
 export const ProgressBarIndicator = styled.div`
-  width: 50%;
+  width: 35%;
   height: 100%;
-  background: ${({ theme }) => hex2rgba({ hex: theme.colors.primary, alpha: 0.3 })};
+  background: ${({ theme }) => hex2rgba({ hex: theme.colors.primary, alpha: 1 })};
 `;
 
 export const ProgressNumber = styled.div`
   font-size: 3.6rem;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.2rem;
 `;
 
 export const ProgressNumberNum = styled.span`
-  font-weight: 100;
+  font-weight: 200;
 `;
