@@ -15,6 +15,7 @@ import * as S from './App.styled';
 // App component
 const App: React.FC<IAppProps> = (): JSX.Element => {
   const { theme, toggleThemeBetweenLightAndDarkMode } = useTheme();
+
   return (
     <ThemeProvider theme={appTheme[theme]}>
       <CssReset />

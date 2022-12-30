@@ -1,5 +1,5 @@
 import {
-  centerElementmentParamTypes,
+  centerElementParamTypes,
   CssTypes,
   EllipsisTypes,
   HEX2rgbaTypes,
@@ -17,7 +17,7 @@ export const immaFlex = (props: ImmaFlexTypes): CssTypes => `
     flex: ${props.flex || null};
 `;
 
-export const centerElement = ({ pos, top, left, topX, topY }: centerElementmentParamTypes) => `
+export const centerElement = ({ pos, top, left, topX, topY }: centerElementParamTypes) => `
   position: ${pos ?? 'absolute'};
   top: ${top ?? '50%'};
   left: ${left ?? '50%'};
