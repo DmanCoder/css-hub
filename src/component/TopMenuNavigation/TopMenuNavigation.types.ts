@@ -1,7 +1,10 @@
 export interface ITopMenuNavigationProps {}
 
 export type UseAnimateHamburgerReturnTypes = {
-  topHamburger: React.RefObject<HTMLSpanElement>;
-  middleHamburger: React.RefObject<HTMLSpanElement>;
-  bottomHamburger: React.RefObject<HTMLSpanElement>;
+  burgerTopRef: React.RefObject<HTMLSpanElement>;
+  burgerMidRef: React.RefObject<HTMLSpanElement>;
+  burgerBotRef: React.RefObject<HTMLSpanElement>;
+  mobileTopNavigationRef: React.RefObject<HTMLDivElement>;
+  mobileListItemsRef: React.MutableRefObject<HTMLLIElement[]>;
+  onHandleToggleHamburger: () => void;
 };

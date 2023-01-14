@@ -48,15 +48,27 @@ export const LogoTwo = styled.span`
   color: ${({ theme }) => theme.colors.primary};
 `;
 
-export const Bars = styled.div``;
+export const Bars = styled.div`
+  padding: 1rem;
+`;
 
 export const Bar = styled.span`
-  height: 0.1rem;
-  width: 3rem;
+  height: 0.01rem;
+  width: 2.8rem;
   background-color: white;
   display: block;
+  position: relative;
+  transform-origin: 50% 50%;
 
   &:not(:last-child) {
     margin-bottom: 0.5rem;
   }
 `;
+
+export const MobileTopNavigation = styled.div`
+  background-color: pink;
+`;
+
+export const MobileList = styled.ul``;
+
+export const MobileListItem = styled.li``;
