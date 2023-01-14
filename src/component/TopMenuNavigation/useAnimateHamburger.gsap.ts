@@ -33,7 +33,7 @@ const useAnimateHamburger = (): UseAnimateHamburgerReturnTypes => {
       .to(burgerTopRef.current, {
         duration: 0.1,
         css: {
-          backgroundColor: 'transparent',
+          height: '0',
         },
       })
       .to(burgerTopRef.current, { duration: 0.7, rotation: -45 })
@@ -41,10 +41,15 @@ const useAnimateHamburger = (): UseAnimateHamburgerReturnTypes => {
       .to(burgerBotRef.current, { duration: 0.7, rotation: -135 }, '-=0.7')
       .to(
         [burgerTopRef.current, burgerMidRef.current, burgerBotRef.current],
-        { duration: 0.1, css: { borderColor: '#000' }, ease: 'power1.out' },
+        { duration: 0.1, ease: 'power1.out' },
         '-=0.7',
       )
-      .to(mobileTopNavigationRef.current, { duration: 1, right: 0, ease: 'power2.out' }, '-=1');
+      .to(mobileTopNavigationRef.current, {
+        delay: -0.6,
+        duration: 1,
+        right: 0,
+        ease: 'power2.out',
+      });
   }, []);
 
   React.useEffect(() => {
