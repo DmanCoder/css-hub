@@ -43,7 +43,8 @@ const useAnimateHamburger = (): UseAnimateHamburgerReturnTypes => {
         [burgerTopRef.current, burgerMidRef.current, burgerBotRef.current],
         { duration: 0.1, css: { borderColor: '#000' }, ease: 'power1.out' },
         '-=0.7',
-      );
+      )
+      .to(mobileTopNavigationRef.current, { duration: 1, right: 0, ease: 'power2.out' }, '-=1');
   }, []);
 
   React.useEffect(() => {

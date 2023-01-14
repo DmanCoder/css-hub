@@ -21,29 +21,29 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({}): JSX.Element =
     <React.Fragment>
       <S.Wrapper>
         <S.List>
-          <S.ListItem>
+          <S.ListItemHoriz>
             <Assets.Icons.MoreHoriz />
-          </S.ListItem>
-          <S.ListItem>
+          </S.ListItemHoriz>
+          <S.ListItemLogo>
             <S.LogoOne>CSS</S.LogoOne>
             <S.LogoTwo>HUB</S.LogoTwo>
-          </S.ListItem>
-          <S.ListItem>TV Shows</S.ListItem>
-          <S.ListItem>Movies</S.ListItem>
-          <S.ListItem>People</S.ListItem>
-          <S.ListItem>My List+</S.ListItem>
-          <S.ListItem>Search ICON</S.ListItem>
-          <S.ListItem>ACCOUNT ICON</S.ListItem>
-          <S.ListItem>Notification ICON</S.ListItem>
-          <S.ListItem>Light/Dark Mode</S.ListItem>
-          <S.ListItem>English Selector ICON</S.ListItem>
-          <S.ListItem onClick={onHandleToggleHamburger}>
+          </S.ListItemLogo>
+          <S.ListItemTvShows>TV Shows</S.ListItemTvShows>
+          <S.ListItemMovies>Movies</S.ListItemMovies>
+          <S.ListItemPeople>People</S.ListItemPeople>
+          <S.ListItemMyList>My List+</S.ListItemMyList>
+          <S.ListItemSearch>Search ICON</S.ListItemSearch>
+          <S.ListItemAccount>ACCOUNT ICON</S.ListItemAccount>
+          <S.ListItemNotification>Notification ICON</S.ListItemNotification>
+          <S.ListItemThemeMode>Light/Dark Mode</S.ListItemThemeMode>
+          <S.ListItemLanguageSelector>English Selector ICON</S.ListItemLanguageSelector>
+          <S.ListItemHamburger onClick={onHandleToggleHamburger}>
             <S.Bars>
               <S.Bar ref={burgerTopRef} />
               <S.Bar ref={burgerMidRef} />
               <S.Bar ref={burgerBotRef} />
             </S.Bars>
-          </S.ListItem>
+          </S.ListItemHamburger>
         </S.List>
       </S.Wrapper>
 

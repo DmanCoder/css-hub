@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  margin-top: 8rem;
+`;
 
 export const Title = styled.h2`
   color: ${({ theme }) => theme.colors.textPrimary};
