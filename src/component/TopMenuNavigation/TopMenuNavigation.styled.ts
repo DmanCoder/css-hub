@@ -107,7 +107,8 @@ export const MobileRightNavigation = styled.div`
 export const MobileList = styled.ul`
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
   height: 100vh;
-  /* padding-top: 4rem; */
+  padding-left: 1rem;
+  padding-right: 1rem;
 `;
 
 export const MobileListItem = styled.li`
@@ -119,12 +120,8 @@ export const MobileListItem = styled.li`
   ${immaFlex({ align: 'center' })};
 
   svg {
-    width: 2.8rem;
-    height: 2.8rem;
-    /* background: ${({ theme }) => theme.colors.backgroundTertiary}; */
-    background: #a7a8ae;
-    /* fill: ${({ theme }) => theme.colors.iconSecondary}; */
-    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
     padding: 0.5rem;
     margin-right: 0.5rem;
   }
@@ -132,14 +129,31 @@ export const MobileListItem = styled.li`
 
 export const MobileListItemLogo = styled(MobileListItem)`
   font-size: 2.4rem;
+  margin-bottom: 0.5rem;
 `;
 
 export const MobileListItemSearch = styled(MobileListItem)`
-  background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.primary, alpha: 0.2 })};
+  /* padding: 0 2rem; */
+  position: relative;
+  margin-bottom: 0.5rem;
 
   svg {
-    /* fill: ${({ theme }) => theme.colors.iconPrimary}; */
+    position: absolute;
+    background-color: ${({ theme }) => theme.colors.backgroundTertiary};
+    fill: ${({ theme }) => theme.colors.textPrimary};
   }
+`;
+
+export const MediaSearchInput = styled.input`
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  height: 3.8rem;
+  text-indent: 3rem;
+  font-size: 1.3rem;
+  padding-right: 1rem;
+  background-color: ${({ theme }) => theme.colors.backgroundTertiary};
+  color: ${({ theme }) => theme.colors.textPrimary};
 `;
 
 export const MobileListItemTvShows = styled(MobileListItem)``;

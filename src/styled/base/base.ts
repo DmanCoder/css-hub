@@ -51,4 +51,12 @@ export const base = css`
     width: 100%;
     height: auto;
   }
+
+  input {
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
 `;

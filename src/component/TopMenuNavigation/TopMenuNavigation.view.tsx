@@ -55,7 +55,11 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({}): JSX.Element =
             <S.LogoTwo>HUB</S.LogoTwo>
           </S.MobileListItemLogo>
           <S.MobileListItemSearch ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
-            <Assets.Icons.Search /> Search
+            <Assets.Icons.Search />
+            <S.MediaSearchInput
+              type='text'
+              placeholder='Search for a movie, tv show, person......'
+            />
           </S.MobileListItemSearch>
           <S.MobileListItemTvShows ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             TV Shows
