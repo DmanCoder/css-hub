@@ -133,11 +133,11 @@ export const MobileListItemLogo = styled(MobileListItem)`
 `;
 
 export const MobileListItemSearch = styled(MobileListItem)`
-  /* padding: 0 2rem; */
   position: relative;
   margin-bottom: 0.5rem;
 
   svg {
+    margin-left: 0.5rem;
     position: absolute;
     background-color: ${({ theme }) => theme.colors.backgroundTertiary};
     fill: ${({ theme }) => theme.colors.textPrimary};
@@ -152,6 +152,7 @@ export const MediaSearchInput = styled.input`
   text-indent: 3rem;
   font-size: 1.3rem;
   padding-right: 1rem;
+  padding-left: 1rem;
   background-color: ${({ theme }) => theme.colors.backgroundTertiary};
   color: ${({ theme }) => theme.colors.textPrimary};
 `;
