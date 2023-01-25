@@ -13,8 +13,9 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({}): JSX.Element =
     burgerBotRef,
     burgerMidRef,
     burgerTopRef,
-    mobileTopNavigationRef,
+    mobileRightNavigationRef,
     mobileListItemsRef,
+    overlayRef,
     onHandleToggleHamburger,
   } = useAnimateHamburger();
   return (
@@ -47,41 +48,45 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({}): JSX.Element =
         </S.List>
       </S.Wrapper>
 
-      <S.MobileTopNavigation ref={mobileTopNavigationRef}>
+      <S.MobileRightNavigation ref={mobileRightNavigationRef}>
         <S.MobileList>
           <S.MobileListItem ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             <S.LogoOne>CSS</S.LogoOne>
             <S.LogoTwo>HUB</S.LogoTwo>
           </S.MobileListItem>
-          <S.MobileListItem ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+          <S.MobileListItemSearch ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+            <Assets.Icons.Search /> Search
+          </S.MobileListItemSearch>
+          <S.MobileListItemTvShows ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             TV Shows
-          </S.MobileListItem>
-          <S.MobileListItem ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+          </S.MobileListItemTvShows>
+          <S.MobileListItemMovies ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             Movies
-          </S.MobileListItem>
-          <S.MobileListItem ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+          </S.MobileListItemMovies>
+          <S.MobileListItemPeople ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             People
-          </S.MobileListItem>
-          <S.MobileListItem ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+          </S.MobileListItemPeople>
+          <S.MobileListItemMyList ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             My List+
-          </S.MobileListItem>
-          <S.MobileListItem ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
-            Search ICON
-          </S.MobileListItem>
-          <S.MobileListItem ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
-            ACCOUNT ICON
-          </S.MobileListItem>
-          <S.MobileListItem ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
-            Notification ICON
-          </S.MobileListItem>
-          <S.MobileListItem ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+          </S.MobileListItemMyList>
+          <S.MobileListItemAccount ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+            <Assets.Icons.Account /> Account
+          </S.MobileListItemAccount>
+          <S.MobileListItemNotification
+            ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+            <Assets.Icons.Notification /> Notification
+          </S.MobileListItemNotification>
+          <S.MobileListItemThemeMode
+            ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             Light/Dark Mode
-          </S.MobileListItem>
+          </S.MobileListItemThemeMode>
           <S.MobileListItem ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
-            English Selector ICON
+            EN <Assets.Icons.ArrowDropdown />
           </S.MobileListItem>
         </S.MobileList>
-      </S.MobileTopNavigation>
+      </S.MobileRightNavigation>
+
+      <S.Overlay ref={overlayRef} onClick={onHandleToggleHamburger}></S.Overlay>
     </React.Fragment>
   );
 };

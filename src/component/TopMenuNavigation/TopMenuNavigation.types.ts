@@ -4,7 +4,8 @@ export type UseAnimateHamburgerReturnTypes = {
   burgerTopRef: React.RefObject<HTMLSpanElement>;
   burgerMidRef: React.RefObject<HTMLSpanElement>;
   burgerBotRef: React.RefObject<HTMLSpanElement>;
-  mobileTopNavigationRef: React.RefObject<HTMLDivElement>;
+  mobileRightNavigationRef: React.RefObject<HTMLDivElement>;
   mobileListItemsRef: React.MutableRefObject<HTMLLIElement[]>;
+  overlayRef: React.RefObject<HTMLDivElement>;
   onHandleToggleHamburger: () => void;
 };

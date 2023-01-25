@@ -24,8 +24,18 @@ const App: React.FC<IAppProps> = (): JSX.Element => {
       <CssReset />
       <TopMenuNavigation />
       <S.Wrapper>
-        <S.Title>Hello world this is me - Life could be...</S.Title>
-        <S.Button onClick={toggleThemeBetweenLightAndDarkMode}>Mode.</S.Button>
+        <S.Tile>
+          <S.Title>Hello world this is me - Life could be...</S.Title>
+          <S.Button onClick={toggleThemeBetweenLightAndDarkMode}>Mode.</S.Button>
+        </S.Tile>
+        <S.Tile>
+          <S.Title>Hello world this is me - Life could be...</S.Title>
+          <S.Button onClick={toggleThemeBetweenLightAndDarkMode}>Mode.</S.Button>
+        </S.Tile>
+        <S.Tile>
+          <S.Title>Hello world this is me - Life could be...</S.Title>
+          <S.Button onClick={toggleThemeBetweenLightAndDarkMode}>Mode.</S.Button>
+        </S.Tile>
       </S.Wrapper>
     </ThemeProvider>
   );

@@ -9,8 +9,9 @@ const useAnimateHamburger = (): UseAnimateHamburgerReturnTypes => {
   const burgerTopRef = React.useRef<HTMLSpanElement>(null);
   const burgerMidRef = React.useRef<HTMLSpanElement>(null);
   const burgerBotRef = React.useRef<HTMLSpanElement>(null);
-  const mobileTopNavigationRef = React.useRef<HTMLDivElement>(null);
+  const mobileRightNavigationRef = React.useRef<HTMLDivElement>(null);
   const mobileListItemsRef = React.useRef<HTMLLIElement[]>([]);
+  const overlayRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     hamburgerTL.current
@@ -44,12 +45,27 @@ const useAnimateHamburger = (): UseAnimateHamburgerReturnTypes => {
         { duration: 0.1, ease: 'power1.out' },
         '-=0.7',
       )
-      .to(mobileTopNavigationRef.current, {
-        delay: -0.6,
-        duration: 1,
-        right: 0,
-        ease: 'power2.out',
-      });
+      .to(
+        mobileRightNavigationRef.current,
+        {
+          delay: -0.6,
+          duration: 1,
+          right: 0,
+          ease: 'power2.out',
+        },
+        'some-label',
+      )
+      .to(
+        overlayRef.current,
+        {
+          duration: 1.25,
+          delay: -0.6,
+          autoAlpha: 1,
+          display: 'block',
+          ease: 'power2.out',
+        },
+        'some-label',
+      );
   }, []);
 
   React.useEffect(() => {
@@ -66,8 +82,9 @@ const useAnimateHamburger = (): UseAnimateHamburgerReturnTypes => {
     burgerTopRef,
     burgerMidRef,
     burgerBotRef,
-    mobileTopNavigationRef,
+    mobileRightNavigationRef,
     mobileListItemsRef,
+    overlayRef,
     onHandleToggleHamburger,
   };
 };

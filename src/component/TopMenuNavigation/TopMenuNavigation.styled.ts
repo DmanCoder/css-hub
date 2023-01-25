@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { immaFlex } from '../../styled/abstract/mixins';
+import { hex2rgba, immaFlex } from '../../styled/abstract/mixins';
 
 export const Wrapper = styled.div`
   height: 5.5rem;
@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   width: 100%;
   z-index: 1000;
   backdrop-filter: blur(0.3rem);
+  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
   ${immaFlex({ align: 'center' })};
 `;
 
@@ -36,7 +37,7 @@ export const ListItemHoriz = styled(ListItem)`
 export const ListItemLogo = styled(ListItem)`
   display: block;
   font-size: 2.4rem;
-  font-weight: 800;
+  font-weight: 750;
   display: block;
 `;
 
@@ -72,7 +73,7 @@ export const ListItemHamburger = styled(ListItem)`
 
 export const Bars = styled.div`
   padding: 1rem;
-  z-index: 10001;
+  /* z-index: 10001; */
 `;
 
 export const Bar = styled.span`
@@ -88,15 +89,72 @@ export const Bar = styled.span`
   }
 `;
 
-export const MobileTopNavigation = styled.div`
+export const MobileRightNavigation = styled.div`
   background-color: black;
-  width: 80vw;
+  width: 75vw;
   height: 100vh;
   position: fixed;
-  z-index: 1000;
-  right: -80vw;
+  top: 0;
+  z-index: 1002;
+  right: -75vw;
 `;
 
-export const MobileList = styled.ul``;
+export const MobileList = styled.ul`
+  background-color: ${({ theme }) => theme.colors.backgroundPrimaryInverse};
+  height: 100vh;
+`;
 
-export const MobileListItem = styled.li``;
+export const MobileListItem = styled.li`
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  ${immaFlex({ align: 'center' })};
+
+  svg {
+    width: 2.8rem;
+    height: 2.8rem;
+    /* background: ${({ theme }) => theme.colors.backgroundTertiary}; */
+    background: #a7a8ae;
+    /* fill: ${({ theme }) => theme.colors.iconSecondary}; */
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+  }
+`;
+
+export const MobileListItemSearch = styled(MobileListItem)`
+  background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.primary, alpha: 0.2 })};
+
+  svg {
+    /* fill: ${({ theme }) => theme.colors.iconPrimary}; */
+  }
+`;
+
+export const MobileListItemTvShows = styled(MobileListItem)``;
+
+export const MobileListItemMovies = styled(MobileListItem)``;
+
+export const MobileListItemPeople = styled(MobileListItem)``;
+
+export const MobileListItemMyList = styled(MobileListItem)``;
+
+export const MobileListItemAccount = styled(MobileListItem)``;
+
+export const MobileListItemNotification = styled(MobileListItem)``;
+
+export const MobileListItemThemeMode = styled(MobileListItem)``;
+
+export const Overlay = styled.div`
+  background-color: red;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+  position: fixed;
+  filter: blur(2rem);
+  background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.backgroundPrimary, alpha: 0.8 })};
+  top: 0;
+  display: none;
+  opacity: 0;
+`;
