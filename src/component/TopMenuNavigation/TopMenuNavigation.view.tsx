@@ -38,22 +38,22 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({}): JSX.Element =
           <S.ListItemNotification>Notification ICON</S.ListItemNotification>
           <S.ListItemThemeMode>Light/Dark Mode</S.ListItemThemeMode>
           <S.ListItemLanguageSelector>English Selector ICON</S.ListItemLanguageSelector>
-          <S.ListItemHamburger onClick={onHandleToggleHamburger}>
-            <S.Bars>
-              <S.Bar ref={burgerTopRef} />
-              <S.Bar ref={burgerMidRef} />
-              <S.Bar ref={burgerBotRef} />
-            </S.Bars>
-          </S.ListItemHamburger>
+          <S.ListItemHamburgerShadow></S.ListItemHamburgerShadow>
         </S.List>
       </S.Wrapper>
 
+      <S.Hamburger onClick={onHandleToggleHamburger}>
+        <S.Bar ref={burgerTopRef} />
+        <S.Bar ref={burgerMidRef} />
+        <S.Bar ref={burgerBotRef} />
+      </S.Hamburger>
+
       <S.MobileRightNavigation ref={mobileRightNavigationRef}>
         <S.MobileList>
-          <S.MobileListItem ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+          <S.MobileListItemLogo ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             <S.LogoOne>CSS</S.LogoOne>
             <S.LogoTwo>HUB</S.LogoTwo>
-          </S.MobileListItem>
+          </S.MobileListItemLogo>
           <S.MobileListItemSearch ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             <Assets.Icons.Search /> Search
           </S.MobileListItemSearch>

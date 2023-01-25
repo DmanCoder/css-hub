@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
   backdrop-filter: blur(0.3rem);
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
   ${immaFlex({ align: 'center' })};
@@ -36,16 +35,18 @@ export const ListItemHoriz = styled(ListItem)`
 
 export const ListItemLogo = styled(ListItem)`
   display: block;
-  font-size: 2.4rem;
-  font-weight: 750;
   display: block;
 `;
 
 export const LogoOne = styled.span`
+  font-weight: 700;
+  font-size: 2.4rem;
   color: ${({ theme }) => theme.colors.iconPrimary};
 `;
 
 export const LogoTwo = styled.span`
+  font-weight: 700;
+  font-size: 2.4rem;
   color: ${({ theme }) => theme.colors.primary};
 `;
 
@@ -67,13 +68,17 @@ export const ListItemThemeMode = styled(ListItem)``;
 
 export const ListItemLanguageSelector = styled(ListItem)``;
 
-export const ListItemHamburger = styled(ListItem)`
+export const ListItemHamburgerShadow = styled(ListItem)`
   display: block;
 `;
 
-export const Bars = styled.div`
+export const Hamburger = styled.div`
+  display: block;
+  position: fixed;
+  right: 1rem;
   padding: 1rem;
-  /* z-index: 10001; */
+  z-index: 1003;
+  top: 1rem;
 `;
 
 export const Bar = styled.span`
@@ -100,8 +105,9 @@ export const MobileRightNavigation = styled.div`
 `;
 
 export const MobileList = styled.ul`
-  background-color: ${({ theme }) => theme.colors.backgroundPrimaryInverse};
+  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
   height: 100vh;
+  /* padding-top: 4rem; */
 `;
 
 export const MobileListItem = styled.li`
@@ -122,6 +128,10 @@ export const MobileListItem = styled.li`
     padding: 0.5rem;
     margin-right: 0.5rem;
   }
+`;
+
+export const MobileListItemLogo = styled(MobileListItem)`
+  font-size: 2.4rem;
 `;
 
 export const MobileListItemSearch = styled(MobileListItem)`
