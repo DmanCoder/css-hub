@@ -95,9 +95,9 @@ export const Bar = styled.span`
 `;
 
 export const MobileRightNavigation = styled.div`
-  background-color: black;
   width: 80%;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: black;
   position: fixed;
   top: 0;
   z-index: 1002;
@@ -114,7 +114,7 @@ export const MobileList = styled.ul`
 
 export const MobileListItem = styled.li`
   padding: 1rem;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 500;
   text-transform: capitalize;
   color: ${({ theme }) => theme.colors.textSecondary};
@@ -124,7 +124,7 @@ export const MobileListItem = styled.li`
     width: 3rem;
     height: 3rem;
     padding: 0.5rem;
-    margin-right: 0.5rem;
+    /* margin-right: 0.5rem; */
   }
 `;
 
@@ -179,17 +179,77 @@ export const HorizontalLine = styled.hr`
 export const MobileListItemThemeMode = styled(MobileListItem)`
   margin-top: auto;
   font-size: 1.3rem;
+  ${immaFlex({ align: 'center' })};
 `;
 
-export const MobileListItemProfile = styled(MobileListItem)``;
+export const Switch = styled.label`
+  position: relative;
+  display: inline-block;
+  width: 6rem;
+  height: 3rem;
+  margin-left: auto;
+  transform: scale(0.8);
+`;
+
+export const SwitchInput = styled.input`
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border: none;
+
+  &:checked + .slider {
+    background-color: ${({ theme }) => theme.colors.primary};
+  }
+
+  &:focus + .slider {
+    box-shadow: 0 0 0.1rem ${({ theme }) => theme.colors.primary};
+  }
+
+  &:checked + .slider:before {
+    -webkit-transform: translateX(2.6rem);
+    -ms-transform: translateX(2.6rem);
+    transform: translateX(2.6rem);
+  }
+`;
+
+export const Slider = styled.span`
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: ${({ theme }) => theme.colors.backgroundTertiary};
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 3.4rem;
+
+  &::before {
+    position: absolute;
+    content: '';
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    left: 0.8rem;
+    bottom: 0.5rem;
+    background-color: ${({ theme }) => theme.colors.backgroundPrimaryInverse};
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+`;
+
+export const MobileListItemProfile = styled(MobileListItem)`
+  svg {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+`;
 
 export const Avatar = styled.figure`
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 0.1rem solid ${({ theme }) => theme.colors.primary};
-  margin-right: 1.3rem;
 `;
 
 export const AvatarImage = styled.img`
@@ -198,7 +258,8 @@ export const AvatarImage = styled.img`
 `;
 
 export const UserData = styled.div`
-  margin-right: 3rem;
+  margin-right: auto;
+  margin-left: 1rem;
 `;
 
 export const Username = styled.h5`

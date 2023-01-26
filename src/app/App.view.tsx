@@ -10,6 +10,7 @@ import TopMenuNavigation from '../component/TopMenuNavigation';
 
 // Hooks
 import useTheme from './useTheme';
+import useDimensions from './useDimensions';
 
 import { IAppProps } from './App.types';
 
@@ -18,6 +19,7 @@ import * as S from './App.styled';
 // App component
 const App: React.FC<IAppProps> = (): JSX.Element => {
   const { theme, toggleThemeBetweenLightAndDarkMode } = useTheme();
+  useDimensions();
 
   return (
     <ThemeProvider theme={AppTheme[theme]}>

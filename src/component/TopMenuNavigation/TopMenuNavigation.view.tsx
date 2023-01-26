@@ -98,12 +98,16 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({}): JSX.Element =
           <S.MobileListItemThemeMode
             ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             Change theme
+            <S.Switch>
+              <S.SwitchInput type='checkbox' />
+              <S.Slider className='slider' />
+            </S.Switch>
           </S.MobileListItemThemeMode>
 
           <S.MobileListItemProfile ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             <S.Avatar>
               <S.AvatarImage
-                src='https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60'
+                src='https://randomuser.me/api/portraits/men/70.jpg'
                 alt='My Profile'
               />
             </S.Avatar>
