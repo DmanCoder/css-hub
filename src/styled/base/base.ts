@@ -23,7 +23,6 @@ export const base = css`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.5;
-    /* visibility: hidden; */
     background-color: ${({ theme }) => theme.colors.backgroundPrimary};
     overscroll-behavior-y: none;
     -ms-overflow-style: none;

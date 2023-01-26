@@ -36,7 +36,7 @@ const theme = {
       backgroundPrimaryInverse: '#FFFFFF',
       backgroundSecondary: '#202427',
       backgroundTertiary: '#2B2F33',
-      textPrimary: '#afb6bf',
+      textPrimary: '#FFFFFF',
       textSecondary: '#626262',
       iconPrimary: '#FFFFFF',
       iconSecondary: '#626262',

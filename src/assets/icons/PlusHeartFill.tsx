@@ -9,7 +9,7 @@ export const Svg = styled.svg`
 `;
 
 export const Path = styled.path`
-  fill: ${({ theme }) => theme.colors.iconPrimary};
+  fill: ${({ theme }) => theme.colors.iconSecondary};
 `;
 
 const PlusHeartFill: React.FC<IPlusHeartFillProps> = (): JSX.Element => {

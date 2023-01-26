@@ -56,21 +56,28 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({}): JSX.Element =
           </S.MobileListItemLogo>
           <S.MobileListItemSearch ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             <Assets.Icons.Search />
-            <S.MediaSearchInput
-              type='text'
-              placeholder='Search for a movie, tv show, person......'
-            />
+            <S.MediaSearchInput type='text' placeholder='Search movie, tv show, person......' />
           </S.MobileListItemSearch>
+          <S.MobileListItemTvShows
+            className='active'
+            ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+            <Assets.Icons.Home />
+            Home
+          </S.MobileListItemTvShows>
           <S.MobileListItemTvShows ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+            <Assets.Icons.RemoteTv />
             TV Shows
           </S.MobileListItemTvShows>
           <S.MobileListItemMovies ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+            <Assets.Icons.Movies />
             Movies
           </S.MobileListItemMovies>
           <S.MobileListItemPeople ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+            <Assets.Icons.People />
             People
           </S.MobileListItemPeople>
           <S.MobileListItemMyList ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+            <Assets.Icons.MyList />
             My List+
           </S.MobileListItemMyList>
           <S.MobileListItemAccount ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
@@ -80,13 +87,33 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({}): JSX.Element =
             ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             <Assets.Icons.Notification /> Notification
           </S.MobileListItemNotification>
-          <S.MobileListItemThemeMode
-            ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
-            Light/Dark Mode
-          </S.MobileListItemThemeMode>
+
           <S.MobileListItem ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+            <Assets.Icons.Language />
             EN <Assets.Icons.ArrowDropdown />
           </S.MobileListItem>
+
+          <S.HorizontalLine />
+
+          <S.MobileListItemThemeMode
+            ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+            Change theme
+          </S.MobileListItemThemeMode>
+
+          <S.MobileListItemProfile ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+            <S.Avatar>
+              <S.AvatarImage
+                src='https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60'
+                alt='My Profile'
+              />
+            </S.Avatar>
+
+            <S.UserData>
+              <S.Username>MoonWalker123</S.Username>
+              <S.Email>moonwalker@gmail.com</S.Email>
+            </S.UserData>
+            <Assets.Icons.Exit />
+          </S.MobileListItemProfile>
         </S.MobileList>
       </S.MobileRightNavigation>
 

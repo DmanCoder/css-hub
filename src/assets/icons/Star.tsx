@@ -8,7 +8,9 @@ export const Svg = styled.svg`
   height: 2.4rem;
 `;
 
-export const Path = styled.path``;
+export const Path = styled.path`
+  fill: ${({ theme }) => theme.colors.iconSecondary};
+`;
 
 const Start: React.FC<IStarProps> = (): JSX.Element => {
   return (

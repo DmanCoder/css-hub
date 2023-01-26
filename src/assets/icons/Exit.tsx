@@ -8,19 +8,14 @@ export const Svg = styled.svg`
   height: 2.4rem;
 `;
 
-export const Path = styled.path``;
-
-export const G = styled.g``;
-
-export const Stop = styled.stop``;
+export const Path = styled.path`
+  fill: ${({ theme }) => theme.colors.iconSecondary};
+`;
 
 const Exit: React.FC<IExitProps> = (): JSX.Element => {
   return (
     <Svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'>
-      <Path
-        fill='currentColor'
-        d='M22 12L18 8V11H10V13H18V16M20 18A10 10 0 1 1 20 6H17.27A8 8 0 1 0 17.27 18Z'
-      />
+      <Path d='M9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h14.55v3H9v30h14.55v3Zm24.3-9.25-2.15-2.15 5.1-5.1h-17.5v-3h17.4l-5.1-5.1 2.15-2.15 8.8 8.8Z' />
     </Svg>
   );
 };

@@ -4,13 +4,19 @@ import { IArrowDropdownProps } from './icons/ArrowDropdown';
 import { IDoubleArrowProps } from './icons/DoubleArrow';
 import { IExitProps } from './icons/Exit';
 import { IGraphEQProps } from './icons/GraphicEQ';
+import { IHomeProps } from './icons/Home';
+import { ILanguageProps } from './icons/Language';
 import { IHorizDropdownProps } from './icons/MoreHoriz';
+import { IMoviesProps } from './icons/Movies';
+import { IMyListProps } from './icons/MyList';
 import { INextArrowProps } from './icons/NextArrow';
 import { INotificationProps } from './icons/Notification';
+import { IPeopleProps } from './icons/People';
 import { IPlayProps } from './icons/Play';
 import { IPlusHeartProps } from './icons/PlusHeart';
 import { IPlusHeartFillProps } from './icons/PlusHeartFill';
 import { IPrevArrowProps } from './icons/PrevArrow';
+import { IRemoteTvProps } from './icons/RemoteTv';
 import { ISearchProps } from './icons/Search';
 import { IShuffleProps } from './icons/Shuffle';
 import { IStarProps } from './icons/Star';
@@ -31,6 +37,7 @@ export type LogoTypes = {
 export type IconsTypes = {
   ArrowDropdown: React.FC<IArrowDropdownProps>;
   Account: React.FC<IAccountProps>;
+  Home: React.FC<IHomeProps>;
   GraphicEQ: React.FC<IGraphEQProps>;
   MoreHoriz: React.FC<IHorizDropdownProps>;
   Search: React.FC<ISearchProps>;
@@ -44,6 +51,11 @@ export type IconsTypes = {
   PlusHeartFill: React.FC<IPlusHeartFillProps>;
   NextArrow: React.FC<INextArrowProps>;
   PrevArrow: React.FC<IPrevArrowProps>;
+  RemoteTv: React.FC<IRemoteTvProps>;
+  Movies: React.FC<IMoviesProps>;
+  People: React.FC<IPeopleProps>;
+  MyList: React.FC<IMyListProps>;
+  Language: React.FC<ILanguageProps>;
 };
 
 export type ImgsTypes = {

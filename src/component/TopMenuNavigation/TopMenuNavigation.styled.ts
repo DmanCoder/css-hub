@@ -96,19 +96,20 @@ export const Bar = styled.span`
 
 export const MobileRightNavigation = styled.div`
   background-color: black;
-  width: 75vw;
+  width: 80%;
   height: 100vh;
   position: fixed;
   top: 0;
   z-index: 1002;
-  right: -75vw;
+  right: -80%;
 `;
 
 export const MobileList = styled.ul`
-  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
   height: 100vh;
   padding-left: 1rem;
   padding-right: 1rem;
+  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+  ${immaFlex({ dir: 'column' })};
 `;
 
 export const MobileListItem = styled.li`
@@ -153,8 +154,9 @@ export const MediaSearchInput = styled.input`
   font-size: 1.3rem;
   padding-right: 1rem;
   padding-left: 1rem;
+  border: 0.1rem solid ${({ theme }) => theme.colors.textSecondary};
   background-color: ${({ theme }) => theme.colors.backgroundTertiary};
-  color: ${({ theme }) => theme.colors.textPrimary};
+  color: ${({ theme }) => theme.colors.textSecondary};
 `;
 
 export const MobileListItemTvShows = styled(MobileListItem)``;
@@ -169,7 +171,47 @@ export const MobileListItemAccount = styled(MobileListItem)``;
 
 export const MobileListItemNotification = styled(MobileListItem)``;
 
-export const MobileListItemThemeMode = styled(MobileListItem)``;
+export const HorizontalLine = styled.hr`
+  border: 0.1rem solid ${({ theme }) => theme.colors.backgroundTertiary};
+  margin-top: 3rem;
+`;
+
+export const MobileListItemThemeMode = styled(MobileListItem)`
+  margin-top: auto;
+  font-size: 1.3rem;
+`;
+
+export const MobileListItemProfile = styled(MobileListItem)``;
+
+export const Avatar = styled.figure`
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 0.1rem solid ${({ theme }) => theme.colors.primary};
+  margin-right: 1.3rem;
+`;
+
+export const AvatarImage = styled.img`
+  height: 100%;
+  width: 100%;
+`;
+
+export const UserData = styled.div`
+  margin-right: 3rem;
+`;
+
+export const Username = styled.h5`
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: ${({ theme }) => theme.colors.textPrimary};
+  margin-bottom: -0.1rem;
+`;
+
+export const Email = styled.p`
+  text-transform: lowercase;
+  font-size: 1.15rem;
+`;
 
 export const Overlay = styled.div`
   background-color: red;

@@ -1,5 +1,6 @@
 import ArrowDropdown from './icons/ArrowDropdown';
 import Account from './icons/Account';
+import Home from './icons/Home';
 import GraphicEQ from './icons/GraphicEQ';
 import MoreHoriz from './icons/MoreHoriz';
 import Search from './icons/Search';
@@ -13,6 +14,11 @@ import PlusHeart from './icons/PlusHeart';
 import PlusHeartFill from './icons/PlusHeartFill';
 import NextArrow from './icons/NextArrow';
 import PrevArrow from './icons/PrevArrow';
+import RemoteTv from './icons/RemoteTv';
+import Movies from './icons/Movies';
+import People from './icons/People';
+import MyList from './icons/MyList';
+import Language from './icons/Language';
 
 import Disney from './logos/DisneyPlus';
 import PrimeVideos from './logos/PrimeVideos';
@@ -38,6 +44,7 @@ const Assets: AssetsTypes = {
   Icons: {
     ArrowDropdown,
     Account,
+    Home,
     GraphicEQ,
     MoreHoriz,
     Search,
@@ -51,6 +58,11 @@ const Assets: AssetsTypes = {
     PlusHeartFill,
     PrevArrow,
     NextArrow,
+    RemoteTv,
+    Movies,
+    People,
+    MyList,
+    Language,
   },
   imgs: {
     AustraliaFlag,
