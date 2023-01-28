@@ -24,36 +24,8 @@ const App: React.FC<IAppProps> = (): JSX.Element => {
   return (
     <ThemeProvider theme={AppTheme[theme]}>
       <CssReset />
-      <TopMenuNavigation />
+      <TopMenuNavigation toggleThemeBetweenLightAndDarkMode={toggleThemeBetweenLightAndDarkMode} />
       <S.Wrapper>
-        <S.Tile>
-          <S.Title>Hello world this is me - Life could be...</S.Title>
-          <S.Button onClick={toggleThemeBetweenLightAndDarkMode}>Mode.</S.Button>
-        </S.Tile>
-        <S.Tile>
-          <S.Title>Hello world this is me - Life could be...</S.Title>
-          <S.Button onClick={toggleThemeBetweenLightAndDarkMode}>Mode.</S.Button>
-        </S.Tile>
-        <S.Tile>
-          <S.Title>Hello world this is me - Life could be...</S.Title>
-          <S.Button onClick={toggleThemeBetweenLightAndDarkMode}>Mode.</S.Button>
-        </S.Tile>
-        <S.Tile>
-          <S.Title>Hello world this is me - Life could be...</S.Title>
-          <S.Button onClick={toggleThemeBetweenLightAndDarkMode}>Mode.</S.Button>
-        </S.Tile>
-        <S.Tile>
-          <S.Title>Hello world this is me - Life could be...</S.Title>
-          <S.Button onClick={toggleThemeBetweenLightAndDarkMode}>Mode.</S.Button>
-        </S.Tile>
-        <S.Tile>
-          <S.Title>Hello world this is me - Life could be...</S.Title>
-          <S.Button onClick={toggleThemeBetweenLightAndDarkMode}>Mode.</S.Button>
-        </S.Tile>
-        <S.Tile>
-          <S.Title>Hello world this is me - Life could be...</S.Title>
-          <S.Button onClick={toggleThemeBetweenLightAndDarkMode}>Mode.</S.Button>
-        </S.Tile>
         <S.Tile>
           <S.Title>Hello world this is me - Life could be...</S.Title>
           <S.Button onClick={toggleThemeBetweenLightAndDarkMode}>Mode.</S.Button>

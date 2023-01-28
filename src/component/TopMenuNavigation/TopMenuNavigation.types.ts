@@ -1,4 +1,6 @@
-export interface ITopMenuNavigationProps {}
+export interface ITopMenuNavigationProps {
+  toggleThemeBetweenLightAndDarkMode: () => void;
+}
 
 export type UseAnimateHamburgerReturnTypes = {
   burgerTopRef: React.RefObject<HTMLSpanElement>;

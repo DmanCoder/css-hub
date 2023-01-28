@@ -8,7 +8,9 @@ import { ITopMenuNavigationProps } from './TopMenuNavigation.types';
 import useAnimateHamburger from './useAnimateHamburger.gsap';
 import * as S from './TopMenuNavigation.styled';
 
-const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({}): JSX.Element => {
+const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({
+  toggleThemeBetweenLightAndDarkMode,
+}): JSX.Element => {
   const {
     burgerBotRef,
     burgerMidRef,
@@ -18,6 +20,7 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({}): JSX.Element =
     overlayRef,
     onHandleToggleHamburger,
   } = useAnimateHamburger();
+
   return (
     <React.Fragment>
       <S.Wrapper>
@@ -99,7 +102,7 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({}): JSX.Element =
             ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             Change theme
             <S.Switch>
-              <S.SwitchInput type='checkbox' />
+              <S.SwitchInput type='checkbox' onChange={toggleThemeBetweenLightAndDarkMode} />
               <S.Slider className='slider' />
             </S.Switch>
           </S.MobileListItemThemeMode>
