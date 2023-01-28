@@ -197,15 +197,15 @@ export const SwitchInput = styled.input`
   height: 0;
   border: none;
 
-  &:checked + .slider {
+  &:checked + span {
     background-color: ${({ theme }) => theme.colors.primary};
   }
 
-  &:focus + .slider {
+  &:focus + span {
     box-shadow: 0 0 0.1rem ${({ theme }) => theme.colors.primary};
   }
 
-  &:checked + .slider:before {
+  &:checked + span:before {
     -webkit-transform: translateX(2.6rem);
     -ms-transform: translateX(2.6rem);
     transform: translateX(2.6rem);
