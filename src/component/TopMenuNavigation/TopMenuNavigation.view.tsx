@@ -61,12 +61,12 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({
             <Assets.Icons.Search />
             <S.MediaSearchInput type='text' placeholder='Search movie, tv show, person......' />
           </S.MobileListItemSearch>
-          <S.MobileListItemTvShows
+          <S.HomeListItemTvShows
             className='active'
             ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             <Assets.Icons.Home />
             Home
-          </S.MobileListItemTvShows>
+          </S.HomeListItemTvShows>
           <S.MobileListItemTvShows ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             <Assets.Icons.RemoteTv />
             TV Shows

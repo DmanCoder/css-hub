@@ -83,7 +83,7 @@ export const Hamburger = styled.div`
 
 export const Bar = styled.span`
   height: 0.1rem;
-  width: 2.8rem;
+  width: 2.5rem;
   background-color: ${({ theme }) => theme.colors.iconPrimary};
   display: block;
   position: relative;
@@ -113,8 +113,10 @@ export const MobileList = styled.ul`
 `;
 
 export const MobileListItem = styled.li`
-  padding: 1rem;
   font-size: 1.3rem;
+  height: 4rem;
+  padding: 0 0.5rem;
+  margin-bottom: 0.5rem;
   font-weight: 500;
   text-transform: capitalize;
   color: ${({ theme }) => theme.colors.textSecondary};
@@ -135,13 +137,13 @@ export const MobileListItemLogo = styled(MobileListItem)`
 
 export const MobileListItemSearch = styled(MobileListItem)`
   position: relative;
-  margin-bottom: 0.5rem;
+  margin: 2rem 0;
 
   svg {
     margin-left: 0.5rem;
     position: absolute;
     background-color: ${({ theme }) => theme.colors.backgroundTertiary};
-    fill: ${({ theme }) => theme.colors.textPrimary};
+    fill: ${({ theme }) => theme.colors.textSecondary};
   }
 `;
 
@@ -154,9 +156,19 @@ export const MediaSearchInput = styled.input`
   font-size: 1.3rem;
   padding-right: 1rem;
   padding-left: 1rem;
+  transition: color 0.25s ease-in-out;
   border: 0.1rem solid ${({ theme }) => theme.colors.textSecondary};
   background-color: ${({ theme }) => theme.colors.backgroundTertiary};
   color: ${({ theme }) => theme.colors.textSecondary};
+
+  &:focus {
+    color: ${({ theme }) => theme.colors.textPrimary};
+  }
+`;
+
+export const HomeListItemTvShows = styled(MobileListItem)`
+  background-color: ${({ theme }) => theme.colors.backgroundTertiary};
+  border-radius: 1rem;
 `;
 
 export const MobileListItemTvShows = styled(MobileListItem)``;
@@ -250,11 +262,14 @@ export const Avatar = styled.figure`
   height: 4rem;
   border-radius: 50%;
   overflow: hidden;
+  border: 0.1rem solid ${({ theme }) => theme.colors.backgroundPrimaryInverse};
 `;
 
 export const AvatarImage = styled.img`
   height: 100%;
   width: 100%;
+  border-radius: 50%;
+  padding: 0.35rem;
 `;
 
 export const UserData = styled.div`
