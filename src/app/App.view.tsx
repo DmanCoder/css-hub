@@ -1,7 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// Theme
+// Application Theme
 import AppTheme from '../styled/theme/theme';
 import { CssReset } from '../styled/main';
 
@@ -12,8 +13,11 @@ import TopMenuNavigation from '../component/TopMenuNavigation';
 import useTheme from './useTheme';
 import useDimensions from './useDimensions';
 
-import { IAppProps } from './App.types';
+// Routes
+import routes from '../routes';
 
+// App Component
+import { IAppProps } from './App.types';
 import * as S from './App.styled';
 
 // App component
@@ -22,16 +26,21 @@ const App: React.FC<IAppProps> = (): JSX.Element => {
   useDimensions();
 
   return (
-    <ThemeProvider theme={AppTheme[theme]}>
-      <CssReset />
-      <TopMenuNavigation toggleThemeBetweenLightAndDarkMode={toggleThemeBetweenLightAndDarkMode} />
-      <S.Wrapper>
-        <S.Tile>
-          <S.Title>Hello world this is me - Life could be...</S.Title>
-          <S.Button onClick={toggleThemeBetweenLightAndDarkMode}>Mode.</S.Button>
-        </S.Tile>
-      </S.Wrapper>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={AppTheme[theme]}>
+        <CssReset />
+        <TopMenuNavigation
+          toggleThemeBetweenLightAndDarkMode={toggleThemeBetweenLightAndDarkMode}
+        />
+        <S.Wrapper>
+          <Routes>
+            {routes.map(({ path, Component }, index) => (
+              <Route key={`${path}-${index}`} path={path} element={<Component />}></Route>
+            ))}
+          </Routes>
+        </S.Wrapper>
+      </ThemeProvider>
+    </Router>
   );
 };
 
