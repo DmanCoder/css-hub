@@ -6,6 +6,7 @@ import Assets from '../../assets';
 // Top Navigation
 import { ITopMenuNavigationProps } from './TopMenuNavigation.types';
 import useAnimateHamburger from './useAnimateHamburger.gsap';
+import useActiveLink from './useActiveLink';
 import * as S from './TopMenuNavigation.styled';
 
 const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({
@@ -20,6 +21,8 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({
     overlayRef,
     onHandleToggleHamburger,
   } = useAnimateHamburger();
+
+  const { isActiveLinks, onToggleLinks } = useActiveLink();
 
   return (
     <React.Fragment>
@@ -62,20 +65,30 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({
             <S.MediaSearchInput type='text' placeholder='Search movie, tv show, person......' />
           </S.MobileListItemSearch>
           <S.HomeListItemTvShows
-            isActiveRoute
-            ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+            ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}
+            onClick={onToggleLinks({ activeLink: '/' })}
+            isActiveRoute={isActiveLinks.home}>
             <Assets.Icons.Home />
             Home
           </S.HomeListItemTvShows>
-          <S.MobileListItemTvShows ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+          <S.MobileListItemTvShows
+            ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}
+            onClick={onToggleLinks({ activeLink: '/tv-shows' })}
+            isActiveRoute={isActiveLinks.tvShows}>
             <Assets.Icons.RemoteTv />
             TV Shows
           </S.MobileListItemTvShows>
-          <S.MobileListItemMovies ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+          <S.MobileListItemMovies
+            ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}
+            onClick={onToggleLinks({ activeLink: '/movies' })}
+            isActiveRoute={isActiveLinks.movies}>
             <Assets.Icons.Movies />
             Movies
           </S.MobileListItemMovies>
-          <S.MobileListItemPeople ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+          <S.MobileListItemPeople
+            ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}
+            onClick={onToggleLinks({ activeLink: '/people' })}
+            isActiveRoute={isActiveLinks.people}>
             <Assets.Icons.People />
             People
           </S.MobileListItemPeople>

@@ -6,9 +6,11 @@ export type ComponentTypes = IHomeProps;
 
 export type RoutePathNamesTypes =
   | '/'
-  | '/:media_type'
-  | '*'
-  | '/media-details/:media_type/:media_id';
+  | '/tv-shows'
+  | '/movies'
+  | '/people'
+  | '/my-list'
+  | '/account';
 
 export type RouteLocationTypes = {
   hash: string;
