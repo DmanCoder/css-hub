@@ -11,3 +11,7 @@ export type UseAnimateHamburgerReturnTypes = {
   overlayRef: React.RefObject<HTMLDivElement>;
   onHandleToggleHamburger: () => void;
 };
+
+export type ListItemProps = {
+  isActiveRoute?: boolean;
+};

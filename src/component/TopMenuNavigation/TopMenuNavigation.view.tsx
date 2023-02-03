@@ -62,7 +62,7 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({
             <S.MediaSearchInput type='text' placeholder='Search movie, tv show, person......' />
           </S.MobileListItemSearch>
           <S.HomeListItemTvShows
-            className='active'
+            isActiveRoute
             ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
             <Assets.Icons.Home />
             Home

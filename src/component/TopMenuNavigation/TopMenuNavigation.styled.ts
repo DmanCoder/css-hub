@@ -1,5 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { hex2rgba, immaFlex } from '../../styled/abstract/mixins';
+import { ListItemProps } from './TopMenuNavigation.types';
 
 export const Wrapper = styled.div`
   height: 5.5rem;
@@ -122,11 +123,17 @@ export const MobileListItem = styled.li`
   color: ${({ theme }) => theme.colors.textSecondary};
   ${immaFlex({ align: 'center' })};
 
+  ${({ isActiveRoute }: ListItemProps) =>
+    isActiveRoute &&
+    css`
+      background-color: ${({ theme }) => theme.colors.backgroundTertiary};
+      border-radius: 1rem;
+    `}
+
   svg {
     width: 3rem;
     height: 3rem;
     padding: 0.5rem;
-    /* margin-right: 0.5rem; */
   }
 `;
 
@@ -166,10 +173,7 @@ export const MediaSearchInput = styled.input`
   }
 `;
 
-export const HomeListItemTvShows = styled(MobileListItem)`
-  background-color: ${({ theme }) => theme.colors.backgroundTertiary};
-  border-radius: 1rem;
-`;
+export const HomeListItemTvShows = styled(MobileListItem)``;
 
 export const MobileListItemTvShows = styled(MobileListItem)``;
 
