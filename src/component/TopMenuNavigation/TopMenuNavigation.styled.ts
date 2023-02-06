@@ -129,6 +129,7 @@ export const MobileListItem = styled.li`
     css`
       background-color: ${({ theme }) => theme.colors.backgroundTertiary};
       border-radius: 1rem;
+      transition: background-color 0.45s ease-in-out;
     `}
 
   svg {

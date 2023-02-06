@@ -7,13 +7,15 @@ import {
 } from './TopMenuNavigation.types';
 
 const useActiveLink = (): UseActiveLinkReturnTypes => {
-  const defaultState = {
+  const defaultState: ActiveLinks = {
     home: false,
     tvShows: false,
     movies: false,
     people: false,
     myList: false,
     account: false,
+    language: false,
+    notification: false,
   };
   const [isActiveLinks, setIsActiveLink] = React.useState<ActiveLinks>(defaultState);
 
@@ -50,10 +52,22 @@ const useActiveLink = (): UseActiveLinkReturnTypes => {
             myList: !isActiveLinks.myList,
           });
           break;
-        case '/account':
+        case 'account':
           setIsActiveLink({
             ...defaultState,
             account: !isActiveLinks.account,
+          });
+          break;
+        case 'notification':
+          setIsActiveLink({
+            ...defaultState,
+            notification: !isActiveLinks.notification,
+          });
+          break;
+        case 'language':
+          setIsActiveLink({
+            ...defaultState,
+            language: !isActiveLinks.language,
           });
           break;
         default:

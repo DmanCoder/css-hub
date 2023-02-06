@@ -26,10 +26,14 @@ export type ActiveLinks = {
   people: boolean;
   myList: boolean;
   account: boolean;
+  language: boolean;
+  notification: boolean;
 };
 
+type NonSpecificRoutes = 'account' | 'language' | 'notification';
+
 export type OnToggleLinksParamsTypes = {
-  activeLink: RoutePathNamesTypes;
+  activeLink: RoutePathNamesTypes | NonSpecificRoutes;
 };
 
 export type ListItemProps = {

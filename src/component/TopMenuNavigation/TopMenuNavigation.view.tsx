@@ -92,19 +92,30 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({
             <Assets.Icons.People />
             People
           </S.MobileListItemPeople>
-          <S.MobileListItemMyList ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+          <S.MobileListItemMyList
+            ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}
+            onClick={onToggleLinks({ activeLink: '/my-list' })}
+            isActiveRoute={isActiveLinks.myList}>
             <Assets.Icons.MyList />
             My List+
           </S.MobileListItemMyList>
-          <S.MobileListItemAccount ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+          <S.MobileListItemAccount
+            ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}
+            onClick={onToggleLinks({ activeLink: 'account' })}
+            isActiveRoute={isActiveLinks.account}>
             <Assets.Icons.Account /> Account
           </S.MobileListItemAccount>
           <S.MobileListItemNotification
-            ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+            ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}
+            onClick={onToggleLinks({ activeLink: 'notification' })}
+            isActiveRoute={isActiveLinks.notification}>
             <Assets.Icons.Notification /> Notification
           </S.MobileListItemNotification>
 
-          <S.MobileListItem ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+          <S.MobileListItem
+            ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}
+            onClick={onToggleLinks({ activeLink: 'language' })}
+            isActiveRoute={isActiveLinks.language}>
             <Assets.Icons.Language />
             EN <Assets.Icons.ArrowDropdown />
           </S.MobileListItem>
