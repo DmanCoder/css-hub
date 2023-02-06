@@ -7,52 +7,52 @@ import {
 } from './TopMenuNavigation.types';
 
 const useActiveLink = (): UseActiveLinkReturnTypes => {
-  const [isActiveLinks, setIsActiveLink] = React.useState<ActiveLinks>({
+  const defaultState = {
     home: false,
     tvShows: false,
     movies: false,
     people: false,
     myList: false,
     account: false,
-  });
+  };
+  const [isActiveLinks, setIsActiveLink] = React.useState<ActiveLinks>(defaultState);
 
   const onToggleLinks = ({ activeLink }: OnToggleLinksParamsTypes) => {
     return () => {
-      // Do something
       switch (activeLink) {
         case '/':
           setIsActiveLink({
-            ...isActiveLinks,
+            ...defaultState,
             home: !isActiveLinks.home,
           });
           break;
         case '/tv-shows':
           setIsActiveLink({
-            ...isActiveLinks,
+            ...defaultState,
             tvShows: !isActiveLinks.tvShows,
           });
           break;
         case '/movies':
           setIsActiveLink({
-            ...isActiveLinks,
+            ...defaultState,
             movies: !isActiveLinks.movies,
           });
           break;
         case '/people':
           setIsActiveLink({
-            ...isActiveLinks,
+            ...defaultState,
             people: !isActiveLinks.people,
           });
           break;
         case '/my-list':
           setIsActiveLink({
-            ...isActiveLinks,
+            ...defaultState,
             myList: !isActiveLinks.myList,
           });
           break;
         case '/account':
           setIsActiveLink({
-            ...isActiveLinks,
+            ...defaultState,
             account: !isActiveLinks.account,
           });
           break;

@@ -109,6 +109,7 @@ export const MobileList = styled.ul`
   height: 100vh;
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-top: 1rem;
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
   ${immaFlex({ dir: 'column' })};
 `;
@@ -131,6 +132,7 @@ export const MobileListItem = styled.li`
     `}
 
   svg {
+    margin-right: 0.6rem;
     width: 3rem;
     height: 3rem;
     padding: 0.5rem;
@@ -149,7 +151,7 @@ export const MobileListItemSearch = styled(MobileListItem)`
   svg {
     margin-left: 0.5rem;
     position: absolute;
-    background-color: ${({ theme }) => theme.colors.backgroundTertiary};
+    background-color: ${({ theme }) => theme.colors.backgroundPrimary};
     fill: ${({ theme }) => theme.colors.textSecondary};
   }
 `;
@@ -164,8 +166,8 @@ export const MediaSearchInput = styled.input`
   padding-right: 1rem;
   padding-left: 1rem;
   transition: color 0.25s ease-in-out;
-  border: 0.1rem solid ${({ theme }) => theme.colors.textSecondary};
-  background-color: ${({ theme }) => theme.colors.backgroundTertiary};
+  /* border: 0.1rem solid ${({ theme }) => theme.colors.textSecondary}; */
+  background-color: ${({ theme }) => theme.colors.backgroundPrimary};
   color: ${({ theme }) => theme.colors.textSecondary};
 
   &:focus {
@@ -188,7 +190,7 @@ export const MobileListItemAccount = styled(MobileListItem)``;
 export const MobileListItemNotification = styled(MobileListItem)``;
 
 export const HorizontalLine = styled.hr`
-  border: 0.1rem solid ${({ theme }) => theme.colors.backgroundTertiary};
+  border: 0.05rem solid ${({ theme }) => theme.colors.backgroundTertiary};
   margin-top: 3rem;
 `;
 
@@ -285,12 +287,12 @@ export const Username = styled.h5`
   font-weight: 600;
   font-size: 1.3rem;
   color: ${({ theme }) => theme.colors.textPrimary};
-  margin-bottom: -0.1rem;
 `;
 
 export const Email = styled.p`
   text-transform: lowercase;
   font-size: 1.15rem;
+  margin-top: -0.3rem;
 `;
 
 export const Overlay = styled.div`
