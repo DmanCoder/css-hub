@@ -27,7 +27,7 @@ export const base = css`
     overscroll-behavior-y: none;
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
-    transition: background 0.5s ease, color 0.5s ease;
+    transition: background, opacity 0.5s ease, color 0.5s ease;
   }
 
   body::-webkit-scrollbar {

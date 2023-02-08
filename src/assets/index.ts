@@ -19,6 +19,7 @@ import Movies from './icons/Movies';
 import People from './icons/People';
 import MyList from './icons/MyList';
 import Language from './icons/Language';
+import TvCast from './icons/TvCast';
 
 import Disney from './logos/DisneyPlus';
 import PrimeVideos from './logos/PrimeVideos';
@@ -63,6 +64,7 @@ const Assets: AssetsTypes = {
     People,
     MyList,
     Language,
+    TvCast,
   },
   imgs: {
     AustraliaFlag,

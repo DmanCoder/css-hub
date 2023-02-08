@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import {
   ActiveLinks,
@@ -7,6 +8,8 @@ import {
 } from './TopMenuNavigation.types';
 
 const useActiveLink = (): UseActiveLinkReturnTypes => {
+  const navigate = useNavigate();
+
   const defaultState: ActiveLinks = {
     home: false,
     tvShows: false,
@@ -75,6 +78,10 @@ const useActiveLink = (): UseActiveLinkReturnTypes => {
       }
     };
   };
+
+  React.useEffect(() => {
+    if (isActiveLinks.home) navigate('/ho');
+  }, [isActiveLinks]);
 
   return {
     isActiveLinks,

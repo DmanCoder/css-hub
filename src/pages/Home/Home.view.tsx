@@ -14,6 +14,34 @@ const Home: React.FC<IHomeProps> = (): JSX.Element => {
         <S.Title>Hello world this is me</S.Title>
         <S.Button>Button</S.Button>
       </S.Tile>
+      <S.Tile>
+        <S.Title>Hello world this is me</S.Title>
+        <S.Button>Button</S.Button>
+      </S.Tile>
+      <S.Tile>
+        <S.Title>Hello world this is me</S.Title>
+        <S.Button>Button</S.Button>
+      </S.Tile>
+      <S.Tile>
+        <S.Title>Hello world this is me</S.Title>
+        <S.Button>Button</S.Button>
+      </S.Tile>
+      <S.Tile>
+        <S.Title>Hello world this is me</S.Title>
+        <S.Button>Button</S.Button>
+      </S.Tile>
+      <S.Tile>
+        <S.Title>Hello world this is me</S.Title>
+        <S.Button>Button</S.Button>
+      </S.Tile>
+      <S.Tile>
+        <S.Title>Hello world this is me</S.Title>
+        <S.Button>Button</S.Button>
+      </S.Tile>
+      <S.Tile>
+        <S.Title>Hello world this is me</S.Title>
+        <S.Button>Button</S.Button>
+      </S.Tile>
     </S.Wrapper>
   );
 };

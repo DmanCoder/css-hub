@@ -32,6 +32,7 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({
             <Assets.Icons.MoreHoriz />
           </S.ListItemHoriz>
           <S.ListItemLogo>
+            <Assets.Icons.TvCast />
             <S.LogoOne>CSS</S.LogoOne>
             <S.LogoTwo>HUB</S.LogoTwo>
           </S.ListItemLogo>
@@ -57,6 +58,7 @@ const TopMenuNavigation: React.FC<ITopMenuNavigationProps> = ({
       <S.MobileRightNavigation ref={mobileRightNavigationRef}>
         <S.MobileList>
           <S.MobileListItemLogo ref={(el: HTMLLIElement) => mobileListItemsRef.current.push(el)}>
+            <Assets.Icons.TvCast />
             <S.LogoOne>CSS</S.LogoOne>
             <S.LogoTwo>HUB</S.LogoTwo>
           </S.MobileListItemLogo>

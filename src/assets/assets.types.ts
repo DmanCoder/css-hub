@@ -20,6 +20,7 @@ import { IRemoteTvProps } from './icons/RemoteTv';
 import { ISearchProps } from './icons/Search';
 import { IShuffleProps } from './icons/Shuffle';
 import { IStarProps } from './icons/Star';
+import { ITvCastProps } from './icons/TvCast';
 import { IAppleTVPlusProps } from './logos/AppleTV';
 import { IDisneyPlusProps } from './logos/DisneyPlus';
 import { IHBOMaxProps } from './logos/HBOMax';
@@ -56,6 +57,7 @@ export type IconsTypes = {
   People: React.FC<IPeopleProps>;
   MyList: React.FC<IMyListProps>;
   Language: React.FC<ILanguageProps>;
+  TvCast: React.FC<ITvCastProps>;
 };
 
 export type ImgsTypes = {

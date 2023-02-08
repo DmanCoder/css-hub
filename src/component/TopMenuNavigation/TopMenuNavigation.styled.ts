@@ -24,10 +24,10 @@ export const ListItem = styled.li`
 
 export const ListItemHoriz = styled(ListItem)`
   display: block;
+  margin-left: -0.4rem;
   ${immaFlex({ align: 'center' })};
 
   svg {
-    fill: blue;
     width: 4rem;
     height: 4rem;
     color: ${({ theme }) => theme.colors.iconPrimary};
@@ -37,12 +37,24 @@ export const ListItemHoriz = styled(ListItem)`
 export const ListItemLogo = styled(ListItem)`
   display: block;
   display: block;
+  margin-left: -4.8rem;
+  ${immaFlex({ align: 'center', just: 'center' })};
+
+  svg {
+    align-self: center;
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  path {
+    fill: ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 export const LogoOne = styled.span`
   font-weight: 700;
   font-size: 2.4rem;
-  color: ${({ theme }) => theme.colors.iconPrimary};
+  color: ${({ theme }) => theme.colors.backgroundPrimaryInverse};
 `;
 
 export const LogoTwo = styled.span`
@@ -79,6 +91,7 @@ export const Hamburger = styled.div`
   right: 1rem;
   padding: 1rem;
   z-index: 1003;
+  right: 0;
   top: 1rem;
 `;
 
@@ -127,16 +140,28 @@ export const MobileListItem = styled.li`
   ${({ isActiveRoute }: ListItemProps) =>
     isActiveRoute &&
     css`
-      background-color: ${({ theme }) => theme.colors.backgroundTertiary};
       border-radius: 1rem;
       transition: background-color 0.45s ease-in-out;
+      background-color: ${({ theme }) => theme.colors.activeHover};
     `}
 
-  svg {
-    margin-right: 0.6rem;
-    width: 3rem;
-    height: 3rem;
-    padding: 0.5rem;
+  &:first-child {
+    svg {
+      align-self: center;
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+
+    path {
+      fill: ${({ theme }) => theme.colors.primary};
+    }
+  }
+
+  &:not(:first-child) {
+    svg {
+      padding: 0.25rem;
+      margin-right: 1rem;
+    }
   }
 `;
 
@@ -207,7 +232,7 @@ export const Switch = styled.label`
   width: 6rem;
   height: 3rem;
   margin-left: auto;
-  transform: scale(0.8);
+  transform: scale(0.7);
 `;
 
 export const SwitchInput = styled.input`
@@ -251,16 +276,17 @@ export const Slider = styled.span`
     border-radius: 50%;
     left: 0.8rem;
     bottom: 0.5rem;
-    background-color: ${({ theme }) => theme.colors.backgroundPrimarySame};
+    background-color: ${({ theme }) => theme.colors.sameLight};
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
 `;
 
 export const MobileListItemProfile = styled(MobileListItem)`
+  margin-bottom: 1rem;
   svg {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3rem;
+    height: 3rem;
   }
 `;
 
