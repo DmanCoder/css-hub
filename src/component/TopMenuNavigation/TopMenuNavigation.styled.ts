@@ -251,7 +251,7 @@ export const Slider = styled.span`
     border-radius: 50%;
     left: 0.8rem;
     bottom: 0.5rem;
-    background-color: ${({ theme }) => theme.colors.backgroundPrimaryInverse};
+    background-color: ${({ theme }) => theme.colors.backgroundPrimarySame};
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
