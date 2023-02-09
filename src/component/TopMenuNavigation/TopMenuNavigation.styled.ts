@@ -192,7 +192,7 @@ export const MediaSearchInput = styled.input`
   padding-right: 1rem;
   padding-left: 1rem;
   transition: color 0.25s ease-in-out;
-  /* border: 0.1rem solid ${({ theme }) => theme.colors.textSecondary}; */
+  border: 0.1rem solid ${({ theme }) => theme.colors.backgroundTertiary};
   background-color: ${({ theme }) => theme.colors.backgroundPrimary};
   color: ${({ theme }) => theme.colors.textSecondary};
 

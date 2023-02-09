@@ -80,7 +80,11 @@ const useActiveLink = (): UseActiveLinkReturnTypes => {
   };
 
   React.useEffect(() => {
-    if (isActiveLinks.home) navigate('/ho');
+    if (isActiveLinks.home) navigate('/');
+    if (isActiveLinks.tvShows) navigate('/tv-shows');
+    if (isActiveLinks.movies) navigate('/movies');
+    if (isActiveLinks.people) navigate('/people');
+    if (isActiveLinks.myList) navigate('/my-list');
   }, [isActiveLinks]);
 
   return {
