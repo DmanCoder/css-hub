@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 // Application Theme
 import AppTheme from '../styled/theme/theme';
@@ -26,21 +26,17 @@ const App: React.FC<IAppProps> = (): JSX.Element => {
   useDimensions();
 
   return (
-    <Router>
-      <ThemeProvider theme={AppTheme[theme]}>
-        <CssReset />
-        <TopMenuNavigation
-          toggleThemeBetweenLightAndDarkMode={toggleThemeBetweenLightAndDarkMode}
-        />
-        <S.Wrapper>
-          <Routes>
-            {routes.map(({ path, Component }, index) => (
-              <Route key={`${path}-${index}`} path={path} element={<Component />}></Route>
-            ))}
-          </Routes>
-        </S.Wrapper>
-      </ThemeProvider>
-    </Router>
+    <ThemeProvider theme={AppTheme[theme]}>
+      <CssReset />
+      <TopMenuNavigation toggleThemeBetweenLightAndDarkMode={toggleThemeBetweenLightAndDarkMode} />
+      <S.Wrapper>
+        <Routes>
+          {routes.map(({ path, Component }, index) => (
+            <Route key={`${path}-${index}`} path={path} element={<Component />}></Route>
+          ))}
+        </Routes>
+      </S.Wrapper>
+    </ThemeProvider>
   );
 };
 
