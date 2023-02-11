@@ -8,6 +8,7 @@ import { CssReset } from '../styled/main';
 
 // Components
 import TopMenuNavigation from '../component/TopMenuNavigation';
+import Loader from '../component/Loader';
 
 // Hooks
 import useTheme from './useTheme';
@@ -28,6 +29,7 @@ const App: React.FC<IAppProps> = (): JSX.Element => {
   return (
     <ThemeProvider theme={AppTheme[theme]}>
       <CssReset />
+      <Loader />
       <TopMenuNavigation toggleThemeBetweenLightAndDarkMode={toggleThemeBetweenLightAndDarkMode} />
       <S.Wrapper>
         <Routes>
