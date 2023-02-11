@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export interface IHBOMaxProps {}
 
 export const Svg = styled.svg`
-  background-color: #5822b4;
+  background: #5822b4;
   background-image: linear-gradient(315deg, #991eeb 0%, #5822b4 74%);
 `;
 

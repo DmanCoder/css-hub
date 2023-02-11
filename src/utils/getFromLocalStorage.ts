@@ -5,7 +5,7 @@ type LSParamTypes = {
   value: LSValueTypes;
 };
 
-const saveToLocalStorage = ({ key, value }: LSParamTypes): void =>
+const getFromLocalStorage = ({ key, value }: LSParamTypes): void =>
   window.localStorage.setItem(key, JSON.stringify(value));
 
-export default saveToLocalStorage;
+export default getFromLocalStorage;

@@ -23,11 +23,11 @@ export const base = css`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.5;
-    background-color: ${({ theme }) => theme.colors.backgroundPrimary};
+    background: ${({ theme }) => theme.colors.backgroundPrimary};
     overscroll-behavior-y: none;
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
-    transition: background, opacity 0.5s ease, color 0.5s ease;
+    transition: background 3.5s ease-in-out;
   }
 
   body::-webkit-scrollbar {

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export interface INetflixProps {}
 
 export const Svg = styled.svg`
-  background-color: #e50712;
+  background: #e50712;
   padding: 0.85rem;
 `;
 

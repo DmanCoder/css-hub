@@ -1,7 +1,7 @@
 import { ActionTypes } from '../../actions';
 import { IThemeDispatchTypes } from '../../actions/themeActions/themeActions.types';
 
-const defaultState = false;
+const defaultState = true;
 
 const countryReducer = (state = defaultState, action: IThemeDispatchTypes) => {
   switch (action.type) {

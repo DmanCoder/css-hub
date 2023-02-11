@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   top: 0;
   width: 100%;
   backdrop-filter: blur(0.3rem);
-  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+  background: ${({ theme }) => theme.colors.backgroundSecondary};
   ${immaFlex({ align: 'center' })};
 `;
 
@@ -98,7 +98,7 @@ export const Hamburger = styled.div`
 export const Bar = styled.span`
   height: 0.1rem;
   width: 2.5rem;
-  background-color: ${({ theme }) => theme.colors.iconPrimary};
+  background: ${({ theme }) => theme.colors.iconPrimary};
   display: block;
   position: relative;
   transform-origin: 50% 50%;
@@ -111,7 +111,7 @@ export const Bar = styled.span`
 export const MobileRightNavigation = styled.div`
   width: 80%;
   height: calc(var(--vh, 1vh) * 100);
-  background-color: black;
+  background: black;
   position: fixed;
   top: 0;
   z-index: 1002;
@@ -123,7 +123,7 @@ export const MobileList = styled.ul`
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 1rem;
-  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+  background: ${({ theme }) => theme.colors.backgroundSecondary};
   ${immaFlex({ dir: 'column' })};
 `;
 
@@ -141,8 +141,8 @@ export const MobileListItem = styled.li`
     isActiveRoute &&
     css`
       border-radius: 1rem;
-      transition: background-color 0.45s ease-in-out;
-      background-color: ${({ theme }) => theme.colors.activeHover};
+      transition: background 0.45s ease-in-out;
+      background: ${({ theme }) => theme.colors.activeHover};
     `}
 
   &:first-child {
@@ -177,7 +177,7 @@ export const MobileListItemSearch = styled(MobileListItem)`
   svg {
     margin-left: 0.5rem;
     position: absolute;
-    background-color: ${({ theme }) => theme.colors.backgroundPrimary};
+    background: ${({ theme }) => theme.colors.backgroundPrimary};
     fill: ${({ theme }) => theme.colors.textSecondary};
   }
 `;
@@ -193,7 +193,7 @@ export const MediaSearchInput = styled.input`
   padding-left: 1rem;
   transition: color 0.25s ease-in-out;
   border: 0.1rem solid ${({ theme }) => theme.colors.backgroundTertiary};
-  background-color: ${({ theme }) => theme.colors.backgroundPrimary};
+  background: ${({ theme }) => theme.colors.backgroundPrimary};
   color: ${({ theme }) => theme.colors.textSecondary};
 
   &:focus {
@@ -242,7 +242,7 @@ export const SwitchInput = styled.input`
   border: none;
 
   &:checked + span {
-    background-color: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => theme.colors.primary};
   }
 
   &:focus + span {
@@ -263,7 +263,7 @@ export const Slider = styled.span`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${({ theme }) => theme.colors.backgroundTertiary};
+  background: ${({ theme }) => theme.colors.backgroundTertiary};
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 3.4rem;
@@ -276,7 +276,7 @@ export const Slider = styled.span`
     border-radius: 50%;
     left: 0.8rem;
     bottom: 0.5rem;
-    background-color: ${({ theme }) => theme.colors.sameLight};
+    background: ${({ theme }) => theme.colors.sameLight};
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
@@ -323,13 +323,13 @@ export const Email = styled.p`
 `;
 
 export const Overlay = styled.div`
-  background-color: red;
+  background: red;
   height: 100vh;
   width: 100vw;
   z-index: 1000;
   position: fixed;
   filter: blur(2rem);
-  background-color: ${({ theme }) => hex2rgba({ hex: theme.colors.backgroundPrimary, alpha: 0.8 })};
+  background: ${({ theme }) => hex2rgba({ hex: theme.colors.backgroundPrimary, alpha: 0.8 })};
   top: 0;
   display: none;
   opacity: 0;

@@ -1,8 +1,9 @@
 import { ActionTypes } from '..';
+import { IsDarkModeType } from '../../../typescriptGlobals/types';
 
 export interface IChangeAppThemeAction {
   type: ActionTypes.CHANGE_APP_THEME;
-  payload: boolean;
+  payload: IsDarkModeType;
 }
 
 export type IThemeDispatchTypes = IChangeAppThemeAction;

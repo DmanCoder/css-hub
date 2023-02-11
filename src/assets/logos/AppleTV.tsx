@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export interface IAppleTVPlusProps {}
 
 export const Svg = styled.svg`
-  background-color: #333333;
+  background: #333333;
   padding: 0.45rem;
 `;
 

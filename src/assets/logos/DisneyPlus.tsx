@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export interface IDisneyPlusProps {}
 
 export const Svg = styled.svg`
-  background-color: #101c50;
+  background: #101c50;
 `;
 
 export const Path = styled.path`

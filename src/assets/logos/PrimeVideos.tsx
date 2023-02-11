@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export interface IPrimeVideosProps {}
 
 export const Svg = styled.svg`
-  background-color: #232f3e;
+  background: #232f3e;
 `;
 
 export const Path = styled.path``;

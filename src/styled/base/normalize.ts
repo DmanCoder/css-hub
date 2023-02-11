@@ -31,7 +31,7 @@ export const normalize = css`
   }
 
   a {
-    background-color: transparent;
+    background: transparent;
   }
 
   abbr[title] {

@@ -6,7 +6,11 @@ import { store } from './redux/store';
 
 import App from './app';
 
+import rehydrateAppDataWhenPageRefreshOccurs from './rehydrateApp';
+
 import reportWebVitals from './reportWebVitals';
+
+rehydrateAppDataWhenPageRefreshOccurs();
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
