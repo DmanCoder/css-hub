@@ -30,7 +30,10 @@ export const ListItemHoriz = styled(ListItem)`
   svg {
     width: 4rem;
     height: 4rem;
-    color: ${({ theme }) => theme.colors.iconPrimary};
+  }
+
+  path {
+    fill: ${({ theme }) => theme.colors.iconPrimary};
   }
 `;
 
