@@ -1,19 +1,21 @@
 import React from 'react';
 
 // Loader component
-// import { IAppLoaderProps } from './AppLoader.types';
-// import useAppLoader from './useAppLoader';
+import { ILoaderProps } from './Loader.types';
+import useAnimateLoader from './useAnimateLoader';
 import * as S from './Loader.styled';
 
-const Loader: React.FC = () => {
-  return (
-    <S.Wrapper>
-      <S.Dots></S.Dots>
-      <S.Dots></S.Dots>
-      <S.Dots></S.Dots>
-      <S.Dots></S.Dots>
+const Loader: React.FC<ILoaderProps> = () => {
+  const { loaderRef, dotsRef, taglineRef } = useAnimateLoader();
 
-      <S.MediaTagline></S.MediaTagline>
+  return (
+    <S.Wrapper ref={loaderRef}>
+      <S.Dots ref={(el: HTMLDivElement) => dotsRef.current.push(el)}></S.Dots>
+      <S.Dots ref={(el: HTMLDivElement) => dotsRef.current.push(el)}></S.Dots>
+      <S.Dots ref={(el: HTMLDivElement) => dotsRef.current.push(el)}></S.Dots>
+      <S.Dots ref={(el: HTMLDivElement) => dotsRef.current.push(el)}></S.Dots>
+
+      <S.MediaTagline ref={taglineRef}></S.MediaTagline>
     </S.Wrapper>
   );
 };
