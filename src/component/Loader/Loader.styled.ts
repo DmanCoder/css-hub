@@ -20,7 +20,7 @@ export const Dots = styled.div`
   height: 1.3rem;
   display: inline-block;
   border-radius: 50%;
-  border: 0.2rem solid ${({ theme }) => theme.colors.sameDarkV2};
+  border: 0.15rem solid ${({ theme }) => theme.colors.sameDarkV2};
 
   &:not(:last-child) {
     margin-right: 0.8rem;
