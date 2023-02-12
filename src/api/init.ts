@@ -4,10 +4,10 @@ import axios from 'axios';
 const isProd: boolean = process.env.NODE_ENV === 'production' ? true : false;
 
 // BASE URL STRING
-const dbURL = !isProd ? 'http://localhost:5000' : process.env.REACT_APP_CSS_HUB_NODE_API;
+const dbURL = !isProd ? 'http://localhost:8080' : process.env.REACT_APP_CSS_HUB_NODE_API;
 
 // IMAGE URL
-const imgURL = 'https://image.tmdb.org/t/p'; // SMALL CANVAS
+const imgURL = 'https://image.tmdb.org/t/p'; // SMALL CANnpm VAS
 const imgFilterURL = `${imgURL}/w1920_and_h1080_multi_faces/`; // LARGE CANVAS
 /*
   "backdrop_sizes": [
