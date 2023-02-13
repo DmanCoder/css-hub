@@ -6,8 +6,11 @@ import React from 'react';
 // Home Component
 import { IHomeProps } from './Home.types';
 import * as S from './Home.styled';
+import useHome from './useHome';
 
 const Home: React.FC<IHomeProps> = (): JSX.Element => {
+  const { test } = useHome();
+  console.log(test, 'testtest');
   return (
     <S.Wrapper>
       <S.Tile>
