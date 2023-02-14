@@ -1,4 +1,4 @@
 export interface IDefaultState {
   isAppLoading: boolean;
-  isLoaderDoneAnimating: boolean;
+  isLoaderDoneAnimating: boolean | null;
 }

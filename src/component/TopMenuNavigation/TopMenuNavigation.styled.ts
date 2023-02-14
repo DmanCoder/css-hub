@@ -8,7 +8,8 @@ export const Wrapper = styled.div`
   top: 0;
   width: 100%;
   backdrop-filter: blur(0.3rem);
-  background: ${({ theme }) => theme.colors.backgroundSecondary};
+  background: transparent;
+  z-index: 1000;
   ${immaFlex({ align: 'center' })};
 `;
 

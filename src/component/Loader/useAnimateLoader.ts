@@ -19,6 +19,22 @@ const useAnimateLoader = (): UseAnimateLoaderReturnTypes => {
   const dotsRef = React.useRef<HTMLDivElement[]>([]);
   const taglineRef = React.useRef<HTMLSpanElement>(null);
 
+  React.useEffect(() => {
+    onStateStaggeredAnimation();
+  }, []);
+
+  React.useEffect(() => {
+    if (isAppLoading) {
+      loaderTL.current.play();
+    }
+
+    if (isLoaderDoneAnimating === true && !isAppLoading) {
+      loaderTL.current.pause();
+      onColorDotsAndExitAppLoaderAnimation();
+      dispatch(loaderProgressToggleAXN(null)); // Set back to default
+    }
+  }, [isAppLoading, isLoaderDoneAnimating]);
+
   const onStateStaggeredAnimation = () => {
     // Creates staggered animation
     loaderTL.current
@@ -32,15 +48,19 @@ const useAnimateLoader = (): UseAnimateLoaderReturnTypes => {
           y: 20,
           autoAlpha: 1,
           ease: 'back.inOut',
+          onStart: () => {
+            dispatch(loaderProgressToggleAXN(false));
+          },
         },
       )
       .to(dotsRef.current, {
-        duration: 0.32,
+        duration: 0.45,
         autoAlpha: 0,
         ease: 'back.inOut',
         onStart: () => {
+          // Since we pause right before the dots are colored and animation is exited
+          // This is called here instead of `onComplete`
           dispatch(loaderProgressToggleAXN(true));
-          // loaderTL.current.pause();
         },
       });
   };
@@ -48,43 +68,21 @@ const useAnimateLoader = (): UseAnimateLoaderReturnTypes => {
   const onColorDotsAndExitAppLoaderAnimation = () => {
     exitLoaderTL.current
       .to(dotsRef.current, {
+        duration: 0.8,
         backgroundColor: '#7C7C85',
         ease: 'power1.in',
       })
-      .to(
-        dotsRef.current,
-        {
-          duration: 0.65,
-          autoAlpha: 0,
-          ease: 'power1.in',
-        },
-        'exit',
-      )
-      .to(
-        loaderRef.current,
-        {
-          duration: 0.75,
-          autoAlpha: 0,
-          ease: 'power1.in',
-        },
-        'exit',
-      );
+      .to(dotsRef.current, {
+        duration: 1,
+        autoAlpha: 0,
+        ease: 'power1.in',
+      })
+      .to(loaderRef.current, {
+        duration: 0.65,
+        autoAlpha: 0,
+        ease: 'power1.in',
+      });
   };
-
-  React.useEffect(() => {
-    onStateStaggeredAnimation();
-  }, []);
-
-  React.useEffect(() => {
-    if (isAppLoading) {
-      loaderTL.current.play();
-    }
-
-    if (isLoaderDoneAnimating && !isAppLoading) {
-      onColorDotsAndExitAppLoaderAnimation();
-      loaderTL.current.pause();
-    }
-  }, [isAppLoading, isLoaderDoneAnimating]);
 
   return { loaderRef, dotsRef, taglineRef };
 };

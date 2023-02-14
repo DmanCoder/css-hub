@@ -7,44 +7,14 @@ import React from 'react';
 import { IHomeProps } from './Home.types';
 import * as S from './Home.styled';
 import useHome from './useHome';
+import Hero from '../../component/Hero';
 
 const Home: React.FC<IHomeProps> = (): JSX.Element => {
   const { test } = useHome();
   console.log(test, 'testtest');
   return (
     <S.Wrapper>
-      <S.Tile>
-        <S.Title>Hello world this is me</S.Title>
-        <S.Button>Button</S.Button>
-      </S.Tile>
-      <S.Tile>
-        <S.Title>Hello world this is me</S.Title>
-        <S.Button>Button</S.Button>
-      </S.Tile>
-      <S.Tile>
-        <S.Title>Hello world this is me</S.Title>
-        <S.Button>Button</S.Button>
-      </S.Tile>
-      <S.Tile>
-        <S.Title>Hello world this is me</S.Title>
-        <S.Button>Button</S.Button>
-      </S.Tile>
-      <S.Tile>
-        <S.Title>Hello world this is me</S.Title>
-        <S.Button>Button</S.Button>
-      </S.Tile>
-      <S.Tile>
-        <S.Title>Hello world this is me</S.Title>
-        <S.Button>Button</S.Button>
-      </S.Tile>
-      <S.Tile>
-        <S.Title>Hello world this is me</S.Title>
-        <S.Button>Button</S.Button>
-      </S.Tile>
-      <S.Tile>
-        <S.Title>Hello world this is me</S.Title>
-        <S.Button>Button</S.Button>
-      </S.Tile>
+      <Hero />
     </S.Wrapper>
   );
 };

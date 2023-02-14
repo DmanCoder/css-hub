@@ -8,7 +8,7 @@ export const loadingToggleAXN = (isLoading: boolean): ILoaderToggleAction => {
   };
 };
 
-export const loaderProgressToggleAXN = (isDone: boolean): ILoaderProgressToggleAction => {
+export const loaderProgressToggleAXN = (isDone: boolean | null): ILoaderProgressToggleAction => {
   return {
     type: ActionTypes.LOADER_PROGRESS_TOGGLE,
     payload: isDone,

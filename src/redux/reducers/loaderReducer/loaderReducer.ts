@@ -4,7 +4,7 @@ import { IDefaultState } from './loaderReducer.types';
 
 const defaultState: IDefaultState = {
   isAppLoading: false,
-  isLoaderDoneAnimating: false,
+  isLoaderDoneAnimating: null,
 };
 
 const loaderReducer = (state = defaultState, action: ILoaderDispatchTypes) => {

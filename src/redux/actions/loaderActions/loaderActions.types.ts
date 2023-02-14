@@ -7,7 +7,7 @@ export interface ILoaderToggleAction {
 
 export interface ILoaderProgressToggleAction {
   type: ActionTypes.LOADER_PROGRESS_TOGGLE;
-  payload: boolean;
+  payload: boolean | null;
 }
 
 export type ILoaderDispatchTypes = ILoaderToggleAction | ILoaderProgressToggleAction;
