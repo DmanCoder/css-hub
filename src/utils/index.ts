@@ -4,6 +4,7 @@ import saveToLocalStorage from './saveToLocalStorage';
 import stringToBoolean from './stringToBoolean';
 import returnNetworkParam from './returnNetworkParam';
 import getMediaTypeFromUrlPath from './getMediaTypeFromUrlPath';
+import getDataFromLocalStorage from './getDataFromLocalStorage';
 
 const utils = {
   isEmpty,
@@ -12,6 +13,7 @@ const utils = {
   stringToBoolean,
   returnNetworkParam,
   getMediaTypeFromUrlPath,
+  getDataFromLocalStorage,
 };
 
 export default utils;
